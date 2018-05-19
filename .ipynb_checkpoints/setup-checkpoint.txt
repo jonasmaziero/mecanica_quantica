@@ -1,5 +1,6 @@
-URL para ver e modificar notebooks no Binder
-https://mybinder.org/v2/gh/jonasmaziero/mecanica_quantica/master
+Link do dropbox para acessar os arquivos
+https://www.dropbox.com/sh/huji3ly96g8w512/AACQOP3Y9cW2cHB_pd5VoqXja?dl=0
+
 
 Python já está instalado no ubuntu. Para instalar demais pacotes, veja 
 http://jupyter.org/install ou simplesmente use os comandos (sem o $):
