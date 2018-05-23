@@ -1,7 +1,7 @@
-URL para ver e modificar notebooks no Binder
-https://mybinder.org/v2/gh/jonasmaziero/mecanica_quantica/master
+Para visualizar os notebooks no navegador, copie o link do GitHub em
+http://nbviewer.jupyter.org/
 
-Python já está instalado no ubuntu. Para instalar demais pacotes, veja 
+Python já vem instalado no ubuntu. Para instalar demais pacotes, veja 
 http://jupyter.org/install ou simplesmente use os comandos (sem o $):
 $ sudo apt-get install python3-numpy
 $ sudo apt-get install python3-scipy
@@ -15,12 +15,10 @@ $ sudo pip3 install jupyter
 Em algum dos meus computadores esse processo funcionou, mas no disco externo não. 
 Nesse caso instalei com o Anaconda (recomendável). Faça o download em:
 https://www.anaconda.com/download/#linux
-e install com:
+e instale com:
 $ sudo bash Anaconda3-5.1.0-Linux-x86_64.sh
 
 Para criar um novo notebook use:
 $ jupyter notebook
-Para abrir um notebook existente use (como os das notas de aula):
-$ ipython notebook name.ipynb
-ou
-$ jupyter notebook name.ipynb
+Para abrir um notebook existente (como os das notas de aula), use:
+$ jupyter notebook file_name.ipynb
