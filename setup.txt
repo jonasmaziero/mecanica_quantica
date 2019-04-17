@@ -22,3 +22,7 @@ Para criar um novo notebook use:
 $ jupyter notebook
 Para abrir um notebook existente (como os das notas de aula), use:
 $ jupyter notebook file_name.ipynb
+
+Para rodar as animações instale o ipywidgets usando:
+$ sudo pip install ipywidgets
+$ jupyter nbextension enable --py widgetsnbextension
