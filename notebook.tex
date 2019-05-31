@@ -1,0 +1,1092 @@
+
+% Default to the notebook output style
+
+    
+
+
+% Inherit from the specified cell style.
+
+
+
+
+    
+\documentclass[11pt]{article}
+
+    
+    
+    \usepackage[T1]{fontenc}
+    % Nicer default font (+ math font) than Computer Modern for most use cases
+    \usepackage{mathpazo}
+
+    % Basic figure setup, for now with no caption control since it's done
+    % automatically by Pandoc (which extracts ![](path) syntax from Markdown).
+    \usepackage{graphicx}
+    % We will generate all images so they have a width \maxwidth. This means
+    % that they will get their normal width if they fit onto the page, but
+    % are scaled down if they would overflow the margins.
+    \makeatletter
+    \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth
+    \else\Gin@nat@width\fi}
+    \makeatother
+    \let\Oldincludegraphics\includegraphics
+    % Set max figure width to be 80% of text width, for now hardcoded.
+    \renewcommand{\includegraphics}[1]{\Oldincludegraphics[width=.8\maxwidth]{#1}}
+    % Ensure that by default, figures have no caption (until we provide a
+    % proper Figure object with a Caption API and a way to capture that
+    % in the conversion process - todo).
+    \usepackage{caption}
+    \DeclareCaptionLabelFormat{nolabel}{}
+    \captionsetup{labelformat=nolabel}
+
+    \usepackage{adjustbox} % Used to constrain images to a maximum size 
+    \usepackage{xcolor} % Allow colors to be defined
+    \usepackage{enumerate} % Needed for markdown enumerations to work
+    \usepackage{geometry} % Used to adjust the document margins
+    \usepackage{amsmath} % Equations
+    \usepackage{amssymb} % Equations
+    \usepackage{textcomp} % defines textquotesingle
+    % Hack from http://tex.stackexchange.com/a/47451/13684:
+    \AtBeginDocument{%
+        \def\PYZsq{\textquotesingle}% Upright quotes in Pygmentized code
+    }
+    \usepackage{upquote} % Upright quotes for verbatim code
+    \usepackage{eurosym} % defines \euro
+    \usepackage[mathletters]{ucs} % Extended unicode (utf-8) support
+    \usepackage[utf8x]{inputenc} % Allow utf-8 characters in the tex document
+    \usepackage{fancyvrb} % verbatim replacement that allows latex
+    \usepackage{grffile} % extends the file name processing of package graphics 
+                         % to support a larger range 
+    % The hyperref package gives us a pdf with properly built
+    % internal navigation ('pdf bookmarks' for the table of contents,
+    % internal cross-reference links, web links for URLs, etc.)
+    \usepackage{hyperref}
+    \usepackage{longtable} % longtable support required by pandoc >1.10
+    \usepackage{booktabs}  % table support for pandoc > 1.12.2
+    \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
+    \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
+                                % normalem makes italics be italics, not underlines
+    
+
+    
+    
+    % Colors for the hyperref package
+    \definecolor{urlcolor}{rgb}{0,.145,.698}
+    \definecolor{linkcolor}{rgb}{.71,0.21,0.01}
+    \definecolor{citecolor}{rgb}{.12,.54,.11}
+
+    % ANSI colors
+    \definecolor{ansi-black}{HTML}{3E424D}
+    \definecolor{ansi-black-intense}{HTML}{282C36}
+    \definecolor{ansi-red}{HTML}{E75C58}
+    \definecolor{ansi-red-intense}{HTML}{B22B31}
+    \definecolor{ansi-green}{HTML}{00A250}
+    \definecolor{ansi-green-intense}{HTML}{007427}
+    \definecolor{ansi-yellow}{HTML}{DDB62B}
+    \definecolor{ansi-yellow-intense}{HTML}{B27D12}
+    \definecolor{ansi-blue}{HTML}{208FFB}
+    \definecolor{ansi-blue-intense}{HTML}{0065CA}
+    \definecolor{ansi-magenta}{HTML}{D160C4}
+    \definecolor{ansi-magenta-intense}{HTML}{A03196}
+    \definecolor{ansi-cyan}{HTML}{60C6C8}
+    \definecolor{ansi-cyan-intense}{HTML}{258F8F}
+    \definecolor{ansi-white}{HTML}{C5C1B4}
+    \definecolor{ansi-white-intense}{HTML}{A1A6B2}
+
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \providecommand{\tightlist}{%
+      \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+    
+    % Additional commands for more recent versions of Pandoc
+    \newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.53,0.00,0.00}{{#1}}}
+    \newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.73,0.40,0.53}{{#1}}}
+    \newcommand{\ImportTok}[1]{{#1}}
+    \newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.73,0.13,0.13}{\textit{{#1}}}}
+    \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.09,0.49}{{#1}}}
+    \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.40,0.40,0.40}{{#1}}}
+    \newcommand{\BuiltInTok}[1]{{#1}}
+    \newcommand{\ExtensionTok}[1]{{#1}}
+    \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.74,0.48,0.00}{{#1}}}
+    \newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.49,0.56,0.16}{{#1}}}
+    \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    \newcommand{\WarningTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textbf{\textit{{#1}}}}}
+    
+    
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatability definitions
+    \def\gt{>}
+    \def\lt{<}
+    % Document parameters
+    \title{08\_position}
+    
+    
+    
+
+    % Pygments definitions
+    
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@fm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@vm\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sa\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@dl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@mb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ch\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cpf\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % Exact colors from NB
+    \definecolor{incolor}{rgb}{0.0, 0.0, 0.5}
+    \definecolor{outcolor}{rgb}{0.545, 0.0, 0.0}
+
+
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=urlcolor,
+      linkcolor=linkcolor,
+      citecolor=citecolor,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+    \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
+    
+    
+
+    \begin{document}
+    
+    
+    \maketitle
+    
+    
+
+    
+    \paragraph{Notas de aula: Mecânica Quântica, Autor: Jonas Maziero,
+Departamento de Física,
+UFSM}\label{notas-de-aula-mecuxe2nica-quuxe2ntica-autor-jonas-maziero-departamento-de-fuxedsica-ufsm}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}216}]:} \PY{o}{\PYZpc{}}\PY{k}{run} init.ipynb
+\end{Verbatim}
+
+
+    \section{Mecânica Quântica na base de
+posição}\label{mecuxe2nica-quuxe2ntica-na-base-de-posiuxe7uxe3o}
+
+    \subsection{Operador posição e a função de onda na base de
+posição}\label{operador-posiuxe7uxe3o-e-a-funuxe7uxe3o-de-onda-na-base-de-posiuxe7uxe3o}
+
+As três coordenadas espaciais que especificam a posição de uma partícula
+em relação a algum referencial são mensuráveis e devem portanto ser
+descritas, dentro do formalismo quântico, por operadores Hermitianos
+\(X_{j},\) para \(j=1,2,3\), tais que
+
+\begin{equation}
+X_{j}|x_{j}\rangle=x_{j}|x_{j}\rangle
+\end{equation}
+
+com \(x_{j}\in\mathbb{R}\) e
+
+\begin{equation}
+\langle x_{j}|x_{j}'\rangle=\delta(x_{j}-x_{j}').
+\end{equation}
+
+Como \(X_{j}\) possui espectro contínuo, sua decomposição espectral será
+
+\begin{equation}
+X_{j} = \int dx_{j}x_{j}|x_{j}\rangle\langle x_{j}|.
+\end{equation}
+
+Como fizemos para outros observáveis, se fazemos medidas de posição para
+um sistema quântico preparado no estado \(|\psi\rangle\), é conveniente
+escrevermos
+
+\begin{equation}
+|\psi\rangle = \int dx_{j}c_{x_{j}}|x_{j}\rangle.
+\end{equation}
+
+Os coeficientes nessa superposição são conhecidos como \emph{função de
+onda} na base de posição:
+
+\begin{equation}
+c_{x_{j}} = \langle x_{j}|\psi\rangle =: \psi(x_{j}).
+\end{equation}
+
+Para observáveis com espectro contínuo, existe uma complicação na
+interpretação da ortogonalidade entre autovetores correspondentes a
+autovalores diferentes. Isso se deve ao fato de que na prática só
+conseguimos distinguir experimentalmente entre valores cuja diferença é
+finita, e não infinitesimal. Tirando esse detalhe, a \emph{interpretação
+estatística} é a usual. A regra de Born nos diz que
+
+\begin{equation}
+|\psi(x_{j})|^{2}dx_{j}
+\end{equation}
+
+é a probabilidade de ao medirmos \(X_{j}\) obtermos seu valor entre
+\(x_{j}\) e \(x_{j}+dx_{j}\), com \(|\psi(x_{j})|^{2}\) sendo a
+densidade de probabilidade. Claro, como a partícula deve estar em algum
+lugar, devemos ter a \emph{condição de normalização}:
+
+\begin{equation}
+\int_{-\infty}^{+\infty}|\psi(x_{j})|^{2}dx_{j} = 1.
+\end{equation}
+
+    \subsection{Operador de translação
+espacial}\label{operador-de-translauxe7uxe3o-espacial}
+
+Esse operador descreve, como o nome diz, mudanças do estado de posição.
+Para mudanças infinitesimais teremos
+
+\begin{equation}
+T(dx_{j})|x_{j}\rangle := |x_{j}+dx_{j}\rangle.
+\end{equation}
+
+Obter \(T\) explicitamente será importante para derivarmos as relações
+de comutação entre posição e momento linear. Como motivação, comecemos
+considerendo o operador de evolução temporal para \(H\) independente do
+tempo e "expandido em primeira ordem" em \(t\):
+
+\begin{equation}
+U_{t} = e^{-iHt/\hbar} \approx \mathbb{I} - \frac{i}{\hbar}Ht.
+\end{equation}
+
+Agora notemos que momento linear (velocidade) está relacionado com
+mudanças de posição e que a unidade de \(Ht\) e \(p_{j}x_{j}\) é a mesma
+para escrever o operador de translação espacial do estado quântico por
+uma quantidade infinitesimal \(dx_{j}\) como
+
+\begin{equation}
+T(dx_{j}) = \mathbb{I} - \frac{i}{\hbar}P_{j}dx_{j},
+\end{equation}
+
+em que \(P_{j}\) é o operador Hermitiano que representa a componente
+\(j\) do momento linear.
+
+\textbf{Exercício:} Para o operador \(T\) definido na última equação,
+considere \(O(dx_{j}^{2})\approx 0\) para verificar que
+
+\begin{align}
+& \lim_{dx_{j}\rightarrow 0}T(dx_{j}) = \mathbb{I}, \\
+& T(dx_{j})T(dx_{j}') = T(dx_{j}+dx_{j}'), \\
+& T^{\dagger}(dx_{j}) = T(-dx_{j}), \\
+& T^{\dagger}(dx_{j})T(dx_{j}) = T(dx_{j})T^{\dagger}(dx_{j}) = \mathbb{I}. \\
+\end{align}
+
+    \subsection{Relação de comutação posição-momento
+linear}\label{relauxe7uxe3o-de-comutauxe7uxe3o-posiuxe7uxe3o-momento-linear}
+
+Nas próximas demonstrações, a ideia é obter duas expressões para a mesma
+quantidade. Vamos começar verificando que
+
+\begin{align}
+[X_{j},T(dx_{j})]|x_{j}\rangle & = X_{j}T(dx_{j})|x_{j}\rangle - T(dx_{j})X_{j}|x_{j}\rangle = X_{j}|x_{j}+dx_{j}\rangle - T(dx_{j})x_{j}|x_{j}\rangle \\
+& = (x_{j}+dx_{j})|x_{j}+dx_{j}\rangle - x_{j}|x_{j}+dx_{j}\rangle = dx_{j}|x_{j}+dx_{j}\rangle \\
+& = dx_{j}T(dx_{j})|x_{j}\rangle = dx_{j}\left(\mathbb{I} - \frac{i}{\hbar}P_{j}dx_{j}\right)|x_{j}\rangle = dx_{j}|x_{j}\rangle - \frac{i}{\hbar}P_{j}dx_{j}^{2}|x_{j}\rangle \\
+                               & \approx dx_{j}\mathbb{I}|x_{j}\rangle.
+\end{align}
+
+Como esta relação vale para qualquer estado da base
+\(\{|x_{j}\rangle\}\), vale para qualquer estado (\textbf{exercício:}
+verifique essa afirmação) e teremos que
+\([X_{j},T(dx_{j})]=dx_{j}\mathbb{I}\). Mas também podemos escrever
+
+\begin{align}
+[X_{j},T(dx_{j})] & = [X_{j},\mathbb{I} - \frac{i}{\hbar}P_{j}dx_{j}] = [X_{j},\mathbb{I}]  - \frac{i}{\hbar}dx_{j} [X_{j},P_{j}] \\
+                  & = - \frac{i}{\hbar}dx_{j} [X_{j},P_{j}].
+\end{align}
+
+Chegamos assim na \emph{relação de comutação posição-momento linear}:
+
+\begin{equation}
+[X_{j},P_{j}] = i\hbar\mathbb{I},
+\end{equation}
+
+lembrando, \(j=1,2,3\).
+
+    \subsubsection{Relação de incerteza de
+Heisenberg}\label{relauxe7uxe3o-de-incerteza-de-heisenberg}
+
+Lembrando, um caso particular da relação de incerteza de
+Heisenberg-Robertson-Schrödinger é
+
+\begin{equation}
+\sigma_{A}\sigma_{B} \ge \frac{1}{2}|\langle[A,B]\rangle|.
+\end{equation}
+
+Substituindo nessa relação \(A\) e \(B\) por posição e momento linear,
+respectivamente, obtemos a (original) \emph{relação de incerteza de
+Heisenberg}:
+
+\begin{equation}
+\sigma_{X_{j}}\sigma_{P_{j}} \ge \frac{\hbar}{2}
+\end{equation}
+
+pois
+
+\begin{equation}
+|\langle[X_{j},P_{j}]\rangle| = |\langle i\hbar\mathbb{I}\rangle| = \hbar.
+\end{equation}
+
+    \subsection{Translações finitas}\label{translauxe7uxf5es-finitas}
+
+Para descrever deslocamentos por uma quantidade finita \(\Delta x_{j}\),
+consideremos o operador de translação espacial associado
+\(T(\Delta x_{j})\) como sendo obtido a partir da composição de um
+número muito grande \(N\) de translações infinitesimais \(T(dx_{j})\),
+i.e., \(\Delta x_{j}=Ndx_{j}\) e
+
+\begin{align}
+T(\Delta x_{j}) & = T(dx_{j})T(dx_{j})\cdots T(dx_{j}) = \lim_{N\rightarrow\infty}\left(T(dx_{j})\right)^{N} \\
+                & = \lim_{N\rightarrow\infty}\left(\mathbb{I} - \frac{i}{\hbar}P_{j}dx_{j}\right)^{N} = \lim_{N\rightarrow\infty}\left(\mathbb{I} - \frac{iP_{j}\Delta x_{j}/\hbar}{N}\right)^{N}.
+\end{align}
+
+Agora, usando \(1/n=x/N\) teremos que
+
+\begin{equation}
+\lim_{N\rightarrow\infty}\left(1+\frac{x}{N}\right)^{N} =\lim_{n\rightarrow\infty}\left(1+\frac{1}{n}\right)^{nx} =\left(\lim_{n\rightarrow\infty}\left(1+\frac{1}{n}\right)^{n}\right)^{x} = e^{x}.
+\end{equation}
+
+Assim,
+
+\begin{equation}
+T(\Delta x_{j}) = e^{-iP_{j}\Delta x_{j}/\hbar}.
+\end{equation}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{c+c1}{\PYZsh{} Verificação da série acima}
+        \PY{n}{n} \PY{o}{=} \PY{n}{symbols}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{n}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{limit}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{+}\PY{l+m+mi}{1}\PY{o}{/}\PY{n}{n}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{n}{n}\PY{p}{,} \PY{n}{n}\PY{p}{,} \PY{n}{oo}\PY{p}{)}
+\end{Verbatim}
+
+
+    \subsection{Relações de comutação
+canônicas}\label{relauxe7uxf5es-de-comutauxe7uxe3o-canuxf4nicas}
+
+Pense na medida das coordenadas espaciais de uma partícula através de um
+conjunto de pares laser-detector colocados em lados opostos em uma mesma
+coordenada. É claro que nesse esquema podemos medir uma coordenada de
+posição sem mudar o valor da outra. Por isso, concluímos que as
+\emph{coordenadas de posição são observáveis compatíveis}, i.e.,
+
+\begin{equation}
+[X_{j},X_{k}] = \mathbb{0}\space\forall j,k.
+\end{equation}
+
+Vamos mostrar que o mesmo segue para as componentes do momento linear.
+Para isso notemos que pela composição das translações espaciais,
+
+\begin{equation}
+T(\Delta x_{1}\hat{e}_{1})T(\Delta x_{2}\hat{e}_{2}) = T(\Delta x_{2}\hat{e}_{2})T(\Delta x_{1}\hat{e}_{1}) = T(\Delta x_{1}\hat{e}_{1}+\Delta x_{2}\hat{e}_{2}),
+\end{equation}
+
+(que vale pelo menos para geometria Euclidiana) e assim
+
+\begin{align}
+\mathbb{0} & = [T(\Delta x_{1}\hat{e}_{1}),T(\Delta x_{2}\hat{e}_{2})] = \left[e^{-iP_{1}\Delta x_{1}/\hbar}, e^{-iP_{2}\Delta x_{2}/\hbar}\right] \\
+           & = \left[\mathbb{I} -iP_{1}\Delta x_{1}/\hbar + (-iP_{1}\Delta x_{1}/\hbar)^{2}/2! + \cdots, \mathbb{I} -iP_{2}\Delta x_{2}/\hbar + (-iP_{2}\Delta x_{2}/\hbar)^{2}/2! + \cdots\right] \\
+           & = \alpha[P_{1},P_{2}] + \beta[P_{1},P_{2}^{2}] + \cdots + \xi[P_{1}^{2},P_{2}] + \cdots.
+\end{align}
+
+Usando \([AB,C] = A[B,C] + [A,C]B\) e \([A,BC]=B[A,C]+[A,B]C\), vemos
+que todos os termos não nulos da última equação serão proporcionais a
+\([P_{1},P_{2}]\). Portanto, a única maneira dessa relação ser igual ao
+operador nulo é se essas componentes do momento linear comutarem.
+Fazendo uma análise análoga chegaremos na conclusão de que
+
+\begin{equation}
+[P_{j},P_{k}]=\mathbb{O} \text{ para } j,k=1,2,3.
+\end{equation}
+
+\emph{OBS:} Não podemos usar translações infinitesimais para demonstrar
+este resultado pois e.g.
+\([T(dx_{1}\hat{e}_{1}),T(dx_{2}\hat{e}_{2})] = -dx_{1}dx_{2}[P_{1},P_{2}]/\hbar\).
+
+Por fim, baseado nos resultados demonstrados até então, vemos que, como
+\([X_{j},X_{k\ne j}]=[P_{j},P_{k\ne j}]=\mathbb{O}\), podemos descrever
+os estados de posição,
+\(|\vec{x}\rangle=|x_{1}\rangle\otimes|x_{2}\rangle\otimes|x_{3}\rangle\),
+e de momento linear,
+\(|\vec{p}\rangle=|p_{1}\rangle\otimes|p_{2}\rangle\otimes|p_{3}\rangle\),
+usando vetores normalizados em
+\(\mathbb{R}^{3}=\mathbb{R}\otimes\mathbb{R}\otimes\mathbb{R}\).
+Portanto \(X_{j}\) e \(P_{k\ne j}\) atuam em espaços diferentes, e por
+conseguinte comutam:
+
+\begin{equation}
+[X_{j},P_{k\ne j}]=\mathbb{O}.
+\end{equation}
+
+\textbf{Exercício:} Verifique que para quaisquer dois operadores
+lineares \(A:\mathcal{H}_{a}\rightarrow\mathcal{H}_{a}\) e
+\(B:\mathcal{H}_{b}\rightarrow\mathcal{H}_{b}\) teremos
+
+\begin{equation}
+[A\otimes\mathbb{I}_{b},\mathbb{I}_{a}\otimes B]=\mathbb{O}_{ab},
+\end{equation}
+
+com \(\mathbb{O}_{ab}\) sendo o operador nulo em
+\(\mathcal{H}_{ab}=\mathcal{H}_{a}\otimes\mathcal{H}_{b}\). \emph{OBS.}
+No caso da posição e momento linear teríamos e.g.
+\([X_{1}\otimes\mathbb{I}_{2}\otimes\mathbb{I}_{3},\mathbb{I}_{1}\otimes P_{2}\otimes\mathbb{I}_{3}]=\mathbb{O}_{123}\).
+
+Resumindo, obtivemos assim as chamadas \emph{relações de comutação
+canônicas}:
+
+\begin{align}
+& [X_{j},X_{k}] = \mathbb{0}, \\
+& [P_{j},P_{k}] = \mathbb{0}, \\
+& [X_{j},P_{k}] = i\hbar\mathbb{I}\delta_{jk}, \\
+\end{align}
+
+com \(j,k=1,2,3\).
+
+\textbf{Exercício:} Descreva um experimento que pode ser utilizado para
+fazer medidas projetivas das componentes do momento linear de uma
+partícula em MQ.
+
+    \subsection{Operador momento linear na base de
+posição}\label{operador-momento-linear-na-base-de-posiuxe7uxe3o}
+
+Para
+\(|\psi\rangle = \int_{-\infty}^{\infty} dx_{j}\psi(x_{j})|x_{j}\rangle\)
+e \(\delta x_{j}\) infinitesimal teremos
+
+\begin{align}
+T(\delta x_{j})|\psi\rangle & = \int_{-\infty}^{\infty} dx_{j}\psi(x_{j}) T(\delta x_{j})|x_{j}\rangle = \int_{-\infty}^{\infty} dx_{j}\psi(x_{j}) |x_{j}+\delta x_{j}\rangle \\
+                            & = \int_{-\infty}^{\infty} dx_{j}'\psi(x_{j}'-\delta x_{j})|x_{j}'\rangle,
+\end{align}
+
+onde fizemos a troca de variável \(x_{j}'=x_{j}+\delta x_{j}\). Agora
+expandimos a função de onda em série de Taylor,
+
+\begin{equation}
+\psi(x_{j}'-\delta x_{j}) \approx \psi(x_{j}') - \delta x_{j}\partial_{x_{j}'}\psi(x_{j}'),
+\end{equation}
+
+para obter
+
+\begin{equation}
+T(\delta x_{j})|\psi\rangle = \int_{-\infty}^{\infty} dx_{j}'\left(\psi(x_{j}') - \delta x_{j}\partial_{x_{j}'}\psi(x_{j}')\right)|x_{j}'\rangle.
+\end{equation}
+
+Tomando o produto interno de \(|x_{j}\rangle\) com essa equação,
+
+\begin{align}
+\langle x_{j}|T(\delta x_{j})|\psi\rangle & = \int_{-\infty}^{\infty} dx_{j}'\left(\psi(x_{j}') - \delta x_{j}\partial_{x_{j}'}\psi(x_{j}')\right)\langle x_{j}|x_{j}'\rangle = \int_{-\infty}^{\infty} dx_{j}'\left(\psi(x_{j}') - \delta x_{j}\partial_{x_{j}'}\psi(x_{j}')\right)\delta(x_{j}-x_{j}') \\
+& = \psi(x_{j}) - \delta x_{j}\partial_{x_{j}}\psi(x_{j}).
+\end{align}
+
+Por outro lado, se usamos \(T\) em termos de \(P_{j}\) obteremos
+
+\begin{align}
+\langle x_{j}|T(\delta x_{j})|\psi\rangle & = \langle x_{j}|\left(\mathbb{I} - \frac{i}{\hbar}P_{j}\delta x_{j}\right)|\psi\rangle = \langle x_{j}|\psi\rangle - \delta x_{j}\frac{i}{\hbar}\langle x_{j}|P_{j}|\psi\rangle \\
+& = \psi(x_{j}) - \delta x_{j}\frac{i}{\hbar}\langle x_{j}|P_{j}|\psi\rangle.
+\end{align}
+
+Dessas duas expressões, obtemos a ação do \emph{operador momento linear
+na base de posição}:
+
+\begin{equation}
+\langle x_{j}|P_{j}|\psi\rangle = \frac{\hbar}{i}\partial_{x_{j}}\langle x_{j}|\psi\rangle.
+\end{equation}
+
+    Por hora, vamos deixar de lado a extrutura produto tensorial e escrever
+estados de posição como
+
+\begin{equation}
+|\vec{x}\rangle = |x_{1}\rangle\otimes|x_{2}\rangle\otimes|x_{3}\rangle =: |x_{1},x_{2},x_{3}\rangle 
+\end{equation}
+
+e o vetor operador momento linear como
+
+\begin{equation}
+\vec{P} = \hat{e}_{1}P_{1}\otimes\mathbb{I}_{2}\otimes\mathbb{I}_{3}+\hat{e}_{2}\mathbb{I}_{1}\otimes P_{2}\otimes\mathbb{I}_{3} + \hat{e}_{3}\mathbb{I}_{1}\otimes\mathbb{I}_{2}\otimes P_{3} =: \sum_{j=1}^{3}\hat{e}_{j}P_{j}.
+\end{equation}
+
+Seguindo,
+
+\begin{align}
+\langle \vec{x}|\vec{P}|\psi\rangle & = \langle x_{1},x_{2},x_{3}|\vec{P}|\psi\rangle = \sum_{j=1}^{3}\hat{e}_{j}\langle x_{1},x_{2},x_{3}|P_{j}|\psi\rangle = \sum_{j=1}^{3}\hat{e}_{j}\frac{\hbar}{i}\partial_{x_{j}}\langle x_{1},x_{2},x_{3}|\psi\rangle \\
+                 & = \frac{\hbar}{i}\nabla_{\vec{x}}\langle\vec{x}|\psi\rangle.
+\end{align}
+
+    \subsection{Valores médios de "posição" e de "momento
+linear"}\label{valores-muxe9dios-de-posiuxe7uxe3o-e-de-momento-linear}
+
+Como vimos, o valor médio de um observável \(O\) com espectro contínuo
+também é calculado por
+\(\langle O\rangle_{\psi} = \langle \psi|O|\psi\rangle\). Para uma
+componente da posição, usando
+\(\mathbb{I}=\int dx_{j}|x_{j}\rangle\langle x_{j}|\) (com a integral
+sobre \(\mathbb{R}\)), teremos
+
+\begin{align}
+\langle X_{j}\rangle_{\psi} & = \langle\psi|X_{j}|\psi\rangle = \langle\psi|\mathbb{I}X_{j}\mathbb{I}|\psi\rangle = \iint dx_{j}dx_{j}'\langle\psi|x_{j}\rangle\langle x_{j}|X_{j}|x_{j}'\rangle\langle x_{j}'|\psi\rangle \\ 
+& = \iint dx_{j}dx_{j}'\psi^{*}(x_{j})\langle x_{j}|x_{j}'|x_{j}'\rangle\psi(x_{j}') = \iint dx_{j}dx_{j}'x_{j}'\psi^{*}(x_{j})\delta(x_{j}-x_{j}')\psi(x_{j}') \\
+& = \int dx_{j}|\psi(x_{j})|^{2}x_{j}.
+\end{align}
+
+\textbf{Exercício:} Pelo mesmo procedimento, verifique que para
+\(n\in\mathbb{N}_{>1}\):
+
+\begin{equation}
+\langle X_{j}^{n}\rangle_{\psi} = \int dx_{j}|\psi(x_{j})|^{2}x_{j}^{n}.
+\end{equation}
+
+Para o momento linear
+
+\begin{align}
+\langle P_{j}\rangle_{\psi} & = \langle\psi|P_{j}|\psi\rangle = \langle\psi|\mathbb{I}P_{j}|\psi\rangle = \int dx_{j}\langle\psi|x_{j}\rangle\langle x_{j}|P_{j}|\psi\rangle = \int dx_{j}\psi^{*}(x_{j})\left(\frac{\hbar}{i}\partial_{x_{j}}\right)\langle x_{j}|\psi\rangle \\
+& = \int dx_{j}\psi^{*}(x_{j})\left(\frac{\hbar}{i}\partial_{x_{j}}\right)\psi(x_{j}).
+\end{align}
+
+    No caso de \(P_{j}^{2}=P_{j}P_{j}\) fazemos
+
+\begin{align}
+\langle P_{j}^{2}\rangle_{\psi} & = \langle\psi|P_{j}P_{j}|\psi\rangle = \langle\psi|\mathbb{I}P_{j}\mathbb{I}P_{j}|\psi\rangle = \iint dx_{j}dx_{j}'\langle\psi|x_{j}\rangle\langle x_{j}|P_{j}|x_{j}'\rangle\langle x_{j}'|P_{j}|\psi\rangle \\
+& = \iint dx_{j}dx_{j}'\psi^{*}(x_{j})\langle x_{j}|P_{j}|x_{j}'\rangle\left(\frac{\hbar}{i}\partial_{x_{j}'}\psi(x_{j}')\right) = \iint dx_{j}dx_{j}'\psi^{*}(x_{j})\langle x_{j}|P_{j}\left(\left(\frac{\hbar}{i}\partial_{x_{j}'}\psi(x_{j}')\right)|x_{j}'\rangle\right) \\
+& = \iint dx_{j}dx_{j}'\psi^{*}(x_{j})\frac{\hbar}{i}\partial_{x_{j}}\left(\langle x_{j}|\left(\frac{\hbar}{i}\partial_{x_{j}'}\psi(x_{j}')\right)|x_{j}'\rangle\right) = \iint dx_{j}dx_{j}'\psi^{*}(x_{j})\frac{\hbar}{i}\partial_{x_{j}}\left(\left(\frac{\hbar}{i}\partial_{x_{j}'}\psi(x_{j}')\right)\langle x_{j}|x_{j}'\rangle\right) \\
+& = \int dx_{j}\psi^{*}(x_{j})\frac{\hbar}{i}\partial_{x_{j}}\int dx_{j}'\left(\left(\frac{\hbar}{i}\partial_{x_{j}'}\psi(x_{j}')\right)\delta(x_{j}-x_{j}')\right) = \int dx_{j}\psi^{*}(x_{j})\frac{\hbar}{i}\partial_{x_{j}}\left(\frac{\hbar}{i}\partial_{x_{j}}\psi(x_{j})\right) \\
+& = \int dx_{j}\psi^{*}(x_{j})\left(\frac{\hbar}{i}\right)^{2}\partial_{x_{j}x_{j}}\psi(x_{j}) = \int dx_{j}\psi^{*}(x_{j})\left(\frac{\hbar}{i}\partial_{x_{j}}\right)^{2}\psi(x_{j}).
+\end{align}
+
+\textbf{Exercício:} Pelo mesmo procedimento, pode-se verificar que para
+\(n\in\mathbb{N}_{>2}\):
+
+\begin{equation}
+\langle P_{j}^{n}\rangle_{\psi} = \int dx_{j}\psi^{*}(x_{j})\left(\frac{\hbar}{i}\partial_{x_{j}}\right)^{n}\psi(x_{j}).
+\end{equation}
+
+    \subsection{Equação de Schrödinger na base de
+posição}\label{equauxe7uxe3o-de-schruxf6dinger-na-base-de-posiuxe7uxe3o}
+
+Considere um Hamiltoniano que inclui a energia cinética e potencial de
+uma partícula:
+
+\begin{equation}
+H_{t} = \frac{P^{2}}{2m} + U_{t},
+\end{equation}
+
+em que \(m\) é a massa da partícula e \(P^{2}=\vec{P}\cdot\vec{P}\).
+Consideremos agora a equação de Schrödinger para o vetor de estado:
+
+\begin{equation}
+i\hbar\partial_{t}|\psi_{t}\rangle = H_{t}|\psi_{t}\rangle.
+\end{equation}
+
+Seguindo, tomemos o produto interno de \(|\vec{x}\rangle\) com a eq. de
+Schrödinger:
+
+\begin{equation}
+i\hbar\partial_{t}\langle\vec{x}|\psi_{t}\rangle = \langle\vec{x}|\frac{P^{2}}{2m}|\psi_{t}\rangle + \langle\vec{x}|U_{t}|\psi_{t}\rangle.
+\end{equation}
+
+    Agora,
+
+\begin{align}
+\langle x_{j}|P_{j}^{2}|\psi\rangle & = \int dx_{j}'\langle x_{j}|P_{j}|x_{j}'\rangle\langle x_{j}'|P_{j}|\psi\rangle = \int dx_{j}'\langle x_{j}|P_{j}|x_{j}'\rangle(\hbar/i)(\partial_{x_{j}'}\psi(x_{j}'))  \\
+& = \int dx_{j}'\langle x_{j}|P_{j}\left((\hbar/i)(\partial_{x_{j}'}\psi(x_{j}'))|x_{j}'\rangle\right) = \int dx_{j}'(\hbar/i)\partial_{x_{j}}\left(\langle x_{j}|(\hbar/i)(\partial_{x_{j}'}\psi(x_{j}'))|x_{j}'\rangle\right) \\ 
+& = -\hbar^{2}\int dx_{j}'\partial_{x_{j}}\left((\partial_{x_{j}'}\psi(x_{j}'))\langle x_{j}|x_{j}'\rangle\right) = -\hbar^{2}\partial_{x_{j}}\int dx_{j}'(\partial_{x_{j}'}\psi(x_{j}'))\delta(x_{j}-x_{j}') \\
+& = -\hbar^{2}\partial_{x_{j}}(\partial_{x_{j}}\psi(x_{j})) = -\hbar^{2}\partial_{x_{j}x_{j}}\psi(x_{j}).
+\end{align}
+
+Ainda, usando
+\(\langle\vec{x}|P_{j}^{2}|\psi\rangle=-\hbar^{2}\partial_{x_{j}x_{j}}\psi(\vec{x})\),
+vem que
+
+\begin{align}
+\langle\vec{x}|P^{2}|\psi\rangle & = \langle\vec{x}|\sum_{j}P_{j}^{2}|\psi\rangle = \sum_{j}\langle\vec{x}|P_{j}^{2}|\psi\rangle = -\hbar^{2}\sum_{j}\partial_{x_{j}x_{j}}\psi(\vec{x}) \\
+     & = -\hbar^{2}\nabla^{2}_{\vec{x}}\psi(\vec{x}).
+\end{align}
+
+Substituindo na eq. de Schrödinger acima, e usando
+
+\begin{equation}
+U_{t}|\vec{x}\rangle = u_{t}(\vec{x})|\vec{x}\rangle
+\end{equation}
+
+com \(u_{t}(\vec{x})\) sendo uma função escalar, obtemos a equação de
+Schrödinger para os coeficientes
+\(\left(c_{\vec{x}}=\langle\vec{x}|\psi_{t}\rangle=\psi_{t}(\vec{x})\right)\)
+do estado na base de posição
+\(\left(|\psi_{t}\rangle=\int d^{3}x c_{\vec{x}}|\vec{x}\rangle\right)\):
+
+\begin{equation}
+i\hbar\partial_{t}\psi_{t}(\vec{x}) = \frac{-\hbar^{2}}{2m}\nabla^{2}_{\vec{x}}\psi_{t}(\vec{x}) + u_{t}(\vec{x})\psi_{t}(\vec{x}).
+\end{equation}
+
+    \subsubsection{Equação de Schrödinger independente do
+tempo}\label{equauxe7uxe3o-de-schruxf6dinger-independente-do-tempo}
+
+Se o Hamiltoniano é indenpendente do tempo, i.e.,
+\(u_{t}(\vec{x})=u(\vec{x})\), usamos separação de variáveis,
+
+\begin{equation}
+\psi_{t}(\vec{x}) = \xi(\vec{x})\phi_{t},
+\end{equation}
+
+para escrever
+
+\begin{equation}
+\xi(\vec{x})i\hbar\partial_{t}\phi_{t} = \frac{-\hbar^{2}}{2m}\phi_{t}\nabla_{\vec{x}}\xi(\vec{x}) + u(\vec{x})\xi(\vec{x})\phi_{t}.
+\end{equation}
+
+Dividindo toda eq. por \(\xi(\vec{x})\phi_{t}\), podemos escrever
+
+\begin{equation}
+\phi_{t}^{-1}i\hbar\partial_{t}\phi_{t} = \frac{-\hbar^{2}}{2m}\xi^{-1}(\vec{x})\nabla_{\vec{x}}\xi(\vec{x}) + u(\vec{x}).
+\end{equation}
+
+Como as variáveis tempo e posição são independentes, a única forma dessa
+igualdade ser verdadeira é se os dois lados forem iguais a uma
+constante. Assim
+
+\begin{equation}
+i\hbar\partial_{t}\phi_{t} = C\phi_{t}
+\end{equation}
+
+e
+
+\begin{equation}
+\frac{-\hbar^{2}}{2m}\nabla_{\vec{x}}\xi(\vec{x}) + u(\vec{x})\xi(\vec{x}) = C\xi(\vec{x}).
+\end{equation}
+
+Essa constante é a energia. Então o perfil espacial da função de onda,
+\(\xi(\vec{x})\), ganha somente uma fase temporal
+\(\phi_{t} = e^{-iEt/\hbar}\) que não muda os valores de probabilidade
+para medidas de posição. \emph{OBS.} Um dos problemas práticos mais
+frequentes na aplicação da MQ é a solução (analítica ou numérica) desta
+última equação diferencial.
+
+    \subsection{\texorpdfstring{Base de momento linear (e relação entre
+\(|\vec{x}\rangle\) e
+\(|\vec{p}\rangle\))}{Base de momento linear (e relação entre \textbar{}\textbackslash{}vec\{x\}\textbackslash{}rangle e \textbar{}\textbackslash{}vec\{p\}\textbackslash{}rangle)}}\label{base-de-momento-linear-e-relauxe7uxe3o-entre-vecxrangle-e-vecprangle}
+
+Quase tudo que discutimos para a posição também vale para o momento
+linear. Em particular, \(P_{j}=P_{j}^{\dagger}\),
+\(P_{j}|p_{j}\rangle=p_{j}|p_{j}\rangle\) e
+\(P_{j}=\int_{-\infty}^{+\infty}p_{j}|p_{j}\rangle\langle p_{j}|dp_{j}\)
+para \(j=1,2,3\). Também podemos escrever o estado do sistema na base de
+momento
+
+\begin{equation}
+|\psi_{t}\rangle = \int d^{3}p \psi_{t}(\vec{p})|\vec{p}\rangle,
+\end{equation}
+
+com \(\psi_{t}(\vec{p}) = \langle\vec{p}|\psi_{t}\rangle\). Se
+conhecemos a "forma" da energia potencial \(U_{t}\) também podemos obter
+uma equação diferencial para esses coeficientes.
+
+No entanto, se temos \(\psi_{t}(\vec{x})\) e queremos obter
+\(\psi_{t}(\vec{p})\), podemos começar olhando para
+
+\begin{equation}
+\psi_{t}(\vec{p}) = \langle \vec{p}|\psi_{t}\rangle = \langle \vec{p}|\int d^{3}x \psi_{t}(\vec{x})|\vec{x}\rangle = \int d^{3}x \psi_{t}(\vec{x})\langle \vec{p}|\vec{x}\rangle.
+\end{equation}
+
+Lembrando,
+\(\langle\vec{x}|\vec{P}|\psi\rangle = -i\hbar\nabla_{\vec{x}}\langle\vec{x}|\psi\rangle\).
+Como essa equação vale para qualquer \(|\psi\rangle\), podemos escrever
+
+\begin{equation}
+\langle\vec{x}|\vec{P}|\vec{p}\rangle = \langle\vec{x}|\vec{p}|\vec{p}\rangle = \vec{p}\langle\vec{x}|\vec{p}\rangle = -i\hbar\nabla_{\vec{x}}\langle\vec{x}|\vec{p}\rangle.
+\end{equation}
+
+    Para \(C\in\mathbb{C}\), podemos verificar que essa equação é satisfeita
+pela seguinte função (\textbf{exercício})
+
+\begin{equation}
+\langle\vec{x}|\vec{p}\rangle = Ce^{i\vec{p}\cdot\vec{x}/\hbar}.
+\end{equation}
+
+Para obter a constante, usamos a representação da função delta de Dirac
+
+\begin{equation}
+\delta(x-a) = \frac{1}{2\pi}\int_{-\infty}^{+\infty}dp e^{ip(x-a)}
+\end{equation}
+
+aplicada em
+
+\begin{align}
+\langle\vec{x}|\vec{x}'\rangle & = \delta(\vec{x}-\vec{x}') = \Pi_{j=1}^{3}\delta(x_{j}-x_{j}') = \langle\vec{x}|\mathbb{I}|\vec{x}'\rangle = \int d^{3}p \langle\vec{x}|\vec{p}\rangle\langle\vec{p}|\vec{x}'\rangle \\ 
+& = \int d^{3}p Ce^{i\vec{p}\cdot\vec{x}/\hbar}C^{*}e^{-i\vec{p}\cdot\vec{x'}/\hbar} = |C|^{2}\int d^{3}p e^{i\vec{p}\cdot(\vec{x}-\vec{x}')/\hbar} \\ 
+& = |C|^{2}(2\pi)^{3}\Pi_{j=1}^{3}\frac{1}{2\pi}\int dp_{j} e^{ip_{j}(x_{j}-x_{j}')/\hbar} = |C|^{2}(2\pi\hbar)^{3}\Pi_{j=1}^{3}\delta(x_{j}-x_{j}').
+\end{align}
+
+Portanto, se usamos \(C\in\mathbb{R}\) então \(C=1/(2\pi\hbar)^{3/2}\) e
+
+\begin{equation}
+\langle\vec{x}|\vec{p}\rangle = \frac{1}{(2\pi\hbar)^{3/2}}e^{i\vec{p}\cdot\vec{x}/\hbar}.
+\end{equation}
+
+Ou seja, as funções de onda nas bases de posição e de momento linear
+estão relacionadas pela \emph{transformada de Fourier}:
+
+\begin{align}
+\psi(\vec{p}) & = \frac{1}{(2\pi\hbar)^{3/2}}\int d^{3}x e^{-i\vec{p}\cdot\vec{x}/\hbar}\psi(\vec{x}), \\
+\psi(\vec{x}) & = \frac{1}{(2\pi\hbar)^{3/2}}\int d^{3}p e^{i\vec{p}\cdot\vec{x}/\hbar}\psi(\vec{p}).
+\end{align}
+
+    \textbf{Exercício:} A função de onda que nos fornece o pacote de ondas
+Gaussiano em uma dimensão lê-se:
+
+\begin{equation}
+\psi(x) = \frac{1}{\pi^{1/4}d^{1/2}}e^{ik_{x}x-x^{2}/2d^{2}},
+\end{equation}
+
+com \(k_{x},d\in\mathbb{R}\). Para este estado, calcule o desvio padrão
+da posição e do momento linear. Discorra sobre o que esse resultado tem
+de notável em relação à relação de incerteza de Heisenberg. Mostre
+também que a função de onda correspondente na base de momento linear é
+
+\begin{equation}
+\psi(p_{x}) = \sqrt{\frac{d}{\hbar\sqrt{\pi}}}e^{-d^{2}(p_{x}-\hbar k_{x})^{2}/2\hbar^{2}}.
+\end{equation}
+
+    As respectivas densidades de probabilidade são
+
+\begin{align}
+& |\psi(x)|^{2} = \frac{1}{\pi^{1/4}d^{1/2}}e^{ik_{x}x-x^{2}/2d^{2}}\frac{1}{\pi^{1/4}d^{1/2}}e^{-ik_{x}x-x^{2}/2d^{2}} = \frac{1}{\pi^{1/2}d} e^{-x^{2}/d^{2}}, \\
+& |\psi(p_{x})|^{2} = \sqrt{\frac{d}{\hbar\sqrt{\pi}}}e^{-d^{2}(p_{x}-\hbar k_{x})^{2}/2\hbar^{2}}\sqrt{\frac{d}{\hbar\sqrt{\pi}}}e^{-d^{2}(p_{x}-\hbar k_{x})^{2}/2\hbar^{2}} = \frac{d}{\hbar\sqrt{\pi}}e^{-d^{2}(p_{x}-\hbar k_{x})^{2}/\hbar^{2}}
+\end{align}
+
+Visualize as respectivas densidades de probabilidade abaixo (usamos
+\(\hbar=1\)).
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}217}]:} \PY{k}{def} \PY{n+nf}{gaussian}\PY{p}{(}\PY{n}{d}\PY{p}{,}\PY{n}{kx}\PY{p}{)}\PY{p}{:}
+              \PY{n}{hb} \PY{o}{=} \PY{l+m+mi}{1}
+              \PY{n}{x} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mf}{10.0}\PY{p}{,} \PY{l+m+mf}{10.0}\PY{p}{,} \PY{n}{num}\PY{o}{=}\PY{l+m+mi}{100}\PY{p}{)}
+              \PY{n}{p} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mf}{10.0}\PY{p}{,} \PY{l+m+mf}{10.0}\PY{p}{,} \PY{n}{num}\PY{o}{=}\PY{l+m+mi}{100}\PY{p}{)}
+              \PY{n}{y1} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n+nb}{pow}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{/}\PY{n+nb}{pow}\PY{p}{(}\PY{n}{d}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{)}\PY{o}{*}\PY{n}{d}\PY{p}{)}
+              \PY{n}{y2} \PY{o}{=} \PY{n}{d}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n+nb}{pow}\PY{p}{(}\PY{n}{d}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{*}\PY{n+nb}{pow}\PY{p}{(}\PY{n}{p}\PY{o}{\PYZhy{}}\PY{n}{hb}\PY{o}{*}\PY{n}{kx}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{/}\PY{n+nb}{pow}\PY{p}{(}\PY{n}{hb}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{n}{hb}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{)}\PY{p}{)}
+              \PY{n}{plt}\PY{o}{.}\PY{n}{subplot}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{)}
+              \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{y1}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}.}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+              \PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}x\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+              \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}|}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{psi(x)|\PYZca{}}\PY{l+s+si}{\PYZob{}2\PYZcb{}}\PY{l+s+s1}{\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+              \PY{n}{plt}\PY{o}{.}\PY{n}{subplot}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{)}
+              \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{p}\PY{p}{,} \PY{n}{y2}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+              \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}p\PYZus{}}\PY{l+s+si}{\PYZob{}x\PYZcb{}}\PY{l+s+s1}{\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+              \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}|}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{psi(p\PYZus{}}\PY{l+s+si}{\PYZob{}x\PYZcb{}}\PY{l+s+s1}{)|\PYZca{}}\PY{l+s+si}{\PYZob{}2\PYZcb{}}\PY{l+s+s1}{\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+              \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}218}]:} \PY{n}{interactive}\PY{p}{(}\PY{n}{gaussian}\PY{p}{,} \PY{n}{d} \PY{o}{=} \PY{p}{(}\PY{l+m+mf}{0.1}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{,} \PY{n}{kx} \PY{o}{=} \PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    
+    \begin{verbatim}
+interactive(children=(FloatSlider(value=2.5500000000000003, description='d', max=5.0, min=0.1), IntSlider(valu…
+    \end{verbatim}
+
+    
+    \subsection{Difração por uma única
+fenda}\label{difrauxe7uxe3o-por-uma-uxfanica-fenda}
+
+Vamos utilizar a complementaridade entre posição e momento linear para
+entender a origem do padrão de difração de fenda única. Consideremos um
+quanton incidindo em uma placa isolante na qual se perfurou uma fenda
+unidimensional, de largura desprezível e comprimento \(w\). A função de
+onda de posição na direção \(y\) da fenda é
+
+\begin{equation}
+\psi(y)=1/\sqrt{w},
+\end{equation}
+
+pois a probabilidade de encontrar o quanton em qualquer intervalo de
+posição na fenda é a mesma, para \(y\in[-w/2,w/2]\) e nula para todos os
+outros valores de \(y\). No espaço de momento linear, a função de onda
+será
+
+\begin{align}
+\psi(p_{y}) & = (2\pi\hbar)^{-1/2}\int_{-w/2}^{w/2}dye^{-ip_{y}y/\hbar}w^{-1/2} = (2\pi\hbar w)^{-1/2}(i\hbar/p_{y})\left(e^{-ip_{y}y/\hbar}\right)_{-w/2}^{w/2} \\ 
+& = (\hbar/2\pi w)^{1/2}(i/p_{y})\left(e^{-ip_{y}w/2\hbar}-e^{ip_{y}w/2\hbar}\right) = \sqrt{\frac{2\hbar}{\pi w}}\frac{\sin\frac{p_{y}w}{2\hbar}}{p_{y}} = \sqrt{\frac{2\hbar}{\pi w}}\frac{\sin\frac{pwy}{2\hbar l}}{py/l}.
+\end{align}
+
+Para visualizar graficamente a densidade de probabilidade
+\(|\psi(p_{y})|^{2}\), vamos fixar \(\pi w/2\hbar\). Veja a figura
+abaixo.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}280}]:} \PY{k}{def} \PY{n+nf}{difract}\PY{p}{(}\PY{n}{p}\PY{p}{,}\PY{n}{w}\PY{p}{,}\PY{n}{l}\PY{p}{)}\PY{p}{:}
+              \PY{n}{hb} \PY{o}{=} \PY{l+m+mi}{1}
+              \PY{n}{pwth} \PY{o}{=} \PY{l+m+mi}{1}
+              \PY{n}{N} \PY{o}{=} \PY{l+m+mi}{300}
+              \PY{n}{xv} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{n}{N}\PY{p}{)}
+              \PY{n}{yv} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{n}{N}\PY{p}{)}
+              \PY{n}{dx} \PY{o}{=} \PY{l+m+mi}{60}\PY{o}{/}\PY{n}{N}
+              \PY{n}{x} \PY{o}{=} \PY{o}{\PYZhy{}}\PY{l+m+mi}{30}
+              \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{n}{N}\PY{p}{)}\PY{p}{:}
+                  \PY{n}{x} \PY{o}{+}\PY{o}{=} \PY{n}{dx}
+                  \PY{n}{xv}\PY{p}{[}\PY{n}{j}\PY{p}{]} \PY{o}{=} \PY{n}{x}
+                  \PY{c+c1}{\PYZsh{}yv[j] = (sin((x*pwth)/pi)**2)/(pwth*x**2)}
+                  \PY{n}{yv}\PY{p}{[}\PY{n}{j}\PY{p}{]} \PY{o}{=} \PY{p}{(}\PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{hb}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{n}{pi}\PY{o}{*}\PY{n}{w}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{p}{(}\PY{n+nb}{pow}\PY{p}{(}\PY{n}{sin}\PY{p}{(}\PY{p}{(}\PY{n}{p}\PY{o}{*}\PY{n}{w}\PY{o}{*}\PY{n}{x}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{hb}\PY{o}{*}\PY{n}{l}\PY{p}{)}\PY{p}{)}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{n+nb}{pow}\PY{p}{(}\PY{n}{p}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{*}\PY{n+nb}{pow}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{/}\PY{n+nb}{pow}\PY{p}{(}\PY{n}{l}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+              \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{xv}\PY{p}{,} \PY{n}{yv}\PY{p}{,} \PY{n}{color} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{blue}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+              \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}y\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+              \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}|}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{psi(y)|\PYZca{}}\PY{l+s+si}{\PYZob{}2\PYZcb{}}\PY{l+s+s1}{\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+              \PY{n}{axes} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{gca}\PY{p}{(}\PY{p}{)}
+              \PY{c+c1}{\PYZsh{}plt.xlim([\PYZhy{}15,15])}
+              \PY{c+c1}{\PYZsh{}plt.ylim([0,])}
+              \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}375}]:} \PY{c+c1}{\PYZsh{}interactive(difract(poth), poth = (1,2))}
+          \PY{n}{difract}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{,}\PY{l+m+mf}{0.1}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_25_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \textbf{Exercício:} Obtenha \(\psi(\vec{p})\) considerando a difração
+por uma fenda circular, com raio \(R\).
+
+    \subsection{Interferência para duas
+fendas}\label{interferuxeancia-para-duas-fendas}
+
+Consideremos duas fendas \(a\) e \(b\), cada uma de largura \(w\),
+separadas por uma distância \(d\) e com posições \(y_{a}= d/2\) e
+\(y_{b}=-d/2\). Os detectores estão a uma distância horizontal \(l\) da
+placa onde se fez as fendas, com \(l\gg d\). Pela impossibilidade de se
+prever por qual fenda o quanton passou e pela simetria entre as fendas,
+inferimos que a função de onda do quanton é:
+
+\begin{equation}
+\psi(y) = 2^{-1/2}(\psi_{a}(y)+\psi_{b}(y)),
+\end{equation}
+
+com \(\psi_{s}(y)\) sendo a função de onda de fenda única. Tomando a
+transformada de Fourier obtemos
+
+\begin{equation}
+\psi(p_{y}) = \sqrt{\frac{\hbar}{\pi w}}\left(\frac{\sin\frac{p_{y}^{a}w}{2\hbar}}{p_{y}^{a}} + \frac{\sin\frac{p_{y}^{b}w}{2\hbar}}{p_{y}^{b}} \right),
+\end{equation}
+
+com \(p_{y}^{s}\) sendo o momento linear associado com o quanton
+passando pela fenda \(s\). A densidade de probabilidade para o quantum
+ser detectado na posição \((x=l,y)\) será
+
+\begin{equation}
+|\psi(y)|^{2} = \frac{\hbar}{\pi w}\left(\frac{\sin^{2}\frac{p_{y}^{a}w}{2\hbar}}{(p_{y}^{a})^{2}} + \frac{\sin^{2}\frac{p_{y}^{b}w}{2\hbar}}{(p_{y}^{b})^{2}} + \frac{2\sin\frac{p_{y}^{a}w}{2\hbar}\sin\frac{p_{y}^{b}w}{2\hbar}}{p_{y}^{a}p_{y}^{b}}\right).
+\end{equation}
+
+Pode-se verificar que \(p_{y}^{a}\approx p(y-d/2)/l\) e
+\(p_{y}^{b}\approx p(y+d/2)/l\), com \(p\equiv||\vec{p}||\). Assim
+
+\begin{equation}
+|\psi(y)|^{2} \approx \frac{\hbar}{\pi w}\left(\frac{\sin^{2}\frac{p(y-d/2)w}{2\hbar l}}{(p(y-d/2)/l)^{2}} + \frac{\sin^{2}\frac{p(y+d/2)w}{2\hbar l}}{(p(y+d/2)/l)^{2}} + \frac{2\sin\frac{p(y-d/2)w}{2\hbar l}\sin\frac{p(y+d/2)w}{2\hbar l}}{(p(y-d/2)/l)(p(y+d/2)/l)}\right).
+\end{equation}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}379}]:} \PY{k}{def} \PY{n+nf}{double\PYZus{}slit}\PY{p}{(}\PY{n}{p}\PY{p}{,}\PY{n}{w}\PY{p}{,}\PY{n}{d}\PY{p}{,}\PY{n}{l}\PY{p}{)}\PY{p}{:}
+              \PY{n}{hb} \PY{o}{=} \PY{l+m+mi}{1}
+              \PY{n}{N} \PY{o}{=} \PY{l+m+mi}{300}
+              \PY{n}{xv} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{n}{N}\PY{p}{)}
+              \PY{n}{yv} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{n}{N}\PY{p}{)}
+              \PY{n}{dx} \PY{o}{=} \PY{l+m+mi}{60}\PY{o}{/}\PY{n}{N}
+              \PY{n}{x} \PY{o}{=} \PY{o}{\PYZhy{}}\PY{l+m+mi}{30}
+              \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{n}{N}\PY{p}{)}\PY{p}{:}
+                  \PY{n}{x} \PY{o}{+}\PY{o}{=} \PY{n}{dx}
+                  \PY{n}{xv}\PY{p}{[}\PY{n}{j}\PY{p}{]} \PY{o}{=} \PY{n}{x}
+                  \PY{n}{yv}\PY{p}{[}\PY{n}{j}\PY{p}{]} \PY{o}{=} \PY{n+nb}{pow}\PY{p}{(}\PY{n}{sin}\PY{p}{(}\PY{p}{(}\PY{n}{p}\PY{o}{*}\PY{p}{(}\PY{n}{x}\PY{o}{\PYZhy{}}\PY{n}{d}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{*}\PY{n}{w}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{hb}\PY{o}{*}\PY{n}{l}\PY{p}{)}\PY{p}{)}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{/}\PY{n+nb}{pow}\PY{p}{(}\PY{n}{p}\PY{o}{*}\PY{p}{(}\PY{n}{x}\PY{o}{\PYZhy{}}\PY{n}{d}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{/}\PY{n}{l}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)} 
+                  \PY{n}{yv}\PY{p}{[}\PY{n}{j}\PY{p}{]} \PY{o}{+}\PY{o}{=} \PY{n+nb}{pow}\PY{p}{(}\PY{n}{sin}\PY{p}{(}\PY{p}{(}\PY{n}{p}\PY{o}{*}\PY{p}{(}\PY{n}{x}\PY{o}{+}\PY{n}{d}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{*}\PY{n}{w}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{hb}\PY{o}{*}\PY{n}{l}\PY{p}{)}\PY{p}{)}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{/}\PY{n+nb}{pow}\PY{p}{(}\PY{n}{p}\PY{o}{*}\PY{p}{(}\PY{n}{x}\PY{o}{+}\PY{n}{d}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{/}\PY{n}{l}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}
+                  \PY{n}{yv}\PY{p}{[}\PY{n}{j}\PY{p}{]} \PY{o}{+}\PY{o}{=} \PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{sin}\PY{p}{(}\PY{p}{(}\PY{n}{p}\PY{o}{*}\PY{p}{(}\PY{n}{x}\PY{o}{\PYZhy{}}\PY{n}{d}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{*}\PY{n}{w}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{hb}\PY{o}{*}\PY{n}{l}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{n}{sin}\PY{p}{(}\PY{p}{(}\PY{n}{p}\PY{o}{*}\PY{p}{(}\PY{n}{x}\PY{o}{+}\PY{n}{d}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{*}\PY{n}{w}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{hb}\PY{o}{*}\PY{n}{l}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{n+nb}{pow}\PY{p}{(}\PY{n}{p}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{*}\PY{p}{(}\PY{n}{x}\PY{o}{\PYZhy{}}\PY{n}{d}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{*}\PY{p}{(}\PY{n}{x}\PY{o}{+}\PY{n}{d}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{/}\PY{n+nb}{pow}\PY{p}{(}\PY{n}{l}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}
+                  \PY{n}{yv}\PY{p}{[}\PY{n}{j}\PY{p}{]} \PY{o}{*}\PY{o}{=} \PY{n}{hb}\PY{o}{/}\PY{p}{(}\PY{n}{pi}\PY{o}{*}\PY{n}{w}\PY{p}{)}
+              \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{xv}\PY{p}{,} \PY{n}{yv}\PY{p}{,} \PY{n}{color} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{blue}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+              \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}y\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+              \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}|}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{psi(y)|\PYZca{}}\PY{l+s+si}{\PYZob{}2\PYZcb{}}\PY{l+s+s1}{\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+              \PY{n}{axes} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{gca}\PY{p}{(}\PY{p}{)}
+              \PY{c+c1}{\PYZsh{}plt.xlim([\PYZhy{}15,15])}
+              \PY{c+c1}{\PYZsh{}plt.ylim([0,])}
+              \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}380}]:} \PY{n}{double\PYZus{}slit}\PY{p}{(}\PY{l+m+mi}{100}\PY{p}{,}\PY{l+m+mf}{0.1}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_29_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+    \textbf{Exercício:} Considere que a função de onda para uma fenda única,
+na posição \(\vec{x}\) na placa de detecção, é aproximada por uma onda
+esférica:
+
+\begin{equation}
+\psi_{s}(\vec{x}) = ||\vec{x}-\vec{x}_{s}||^{-1}e^{i\vec{k}\cdot(\vec{x}-\vec{x}_{s})-\omega t},
+\end{equation}
+
+com \(\vec{x}_{s}\) sendo a posição da fenda \(s=a,b\). Verifique que
+para a interferência de fenda dupla, no limite \(l\gg |y\pm d/2|\),
+teremos
+
+\begin{equation}
+|\psi(y)|^{2} = \frac{2}{l^{2}}\left(1-\frac{y^{2}+d^{2}/2}{l^{2}}\right)\left(1+\cos\frac{kyd}{l}\right).
+\end{equation}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}366}]:} \PY{k}{def} \PY{n+nf}{double\PYZus{}slit\PYZus{}}\PY{p}{(}\PY{n}{k}\PY{p}{,}\PY{n}{d}\PY{p}{,}\PY{n}{l}\PY{p}{)}\PY{p}{:}
+              \PY{n}{N} \PY{o}{=} \PY{l+m+mi}{400}
+              \PY{n}{xv} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{n}{N}\PY{p}{)}
+              \PY{n}{yv} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{n}{N}\PY{p}{)}
+              \PY{n}{dx} \PY{o}{=} \PY{l+m+mi}{60}\PY{o}{/}\PY{n}{N}
+              \PY{n}{x} \PY{o}{=} \PY{o}{\PYZhy{}}\PY{l+m+mi}{30}
+              \PY{k}{for} \PY{n}{j} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{n}{N}\PY{p}{)}\PY{p}{:}
+                  \PY{n}{x} \PY{o}{+}\PY{o}{=} \PY{n}{dx}
+                  \PY{n}{xv}\PY{p}{[}\PY{n}{j}\PY{p}{]} \PY{o}{=} \PY{n}{x}
+                  \PY{n}{yv}\PY{p}{[}\PY{n}{j}\PY{p}{]} \PY{o}{=} \PY{p}{(}\PY{l+m+mf}{2.0}\PY{o}{/}\PY{n+nb}{pow}\PY{p}{(}\PY{n}{l}\PY{p}{,}\PY{l+m+mf}{2.0}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{p}{(}\PY{l+m+mf}{1.0}\PY{o}{\PYZhy{}}\PY{p}{(}\PY{n+nb}{pow}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{l+m+mf}{2.0}\PY{p}{)}\PY{o}{+}\PY{n+nb}{pow}\PY{p}{(}\PY{n}{d}\PY{p}{,}\PY{l+m+mf}{2.0}\PY{p}{)}\PY{o}{/}\PY{l+m+mf}{2.0}\PY{p}{)}\PY{o}{/}\PY{n+nb}{pow}\PY{p}{(}\PY{n}{l}\PY{p}{,}\PY{l+m+mf}{2.0}\PY{p}{)}\PY{p}{)}\PY{c+c1}{\PYZsh{}*(1+cos(k*x*d/l))}
+              \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{xv}\PY{p}{,} \PY{n}{yv}\PY{p}{,} \PY{n}{color} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{blue}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+              \PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}y\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+              \PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}|}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{psi(y)|\PYZca{}}\PY{l+s+si}{\PYZob{}2\PYZcb{}}\PY{l+s+s1}{\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+              \PY{n}{axes} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{gca}\PY{p}{(}\PY{p}{)}
+              \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}373}]:} \PY{n}{double\PYZus{}slit\PYZus{}}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{,}\PY{l+m+mi}{100}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{center}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_32_0.png}
+    \end{center}
+    { \hspace*{\fill} \\}
+    
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+    \end{document}
