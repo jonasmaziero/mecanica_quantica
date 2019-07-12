@@ -141,7 +141,7 @@
     \def\gt{>}
     \def\lt{<}
     % Document parameters
-    \title{eqs}
+    \title{P2\_2019\_1}
     
     
     
@@ -280,80 +280,208 @@
     
 
     
-    \paragraph{Notas de aula: Mecânica Quântica, Autor: Jonas Maziero,
-Departamento de Física,
-UFSM}\label{notas-de-aula-mecuxe2nica-quuxe2ntica-autor-jonas-maziero-departamento-de-fuxedsica-ufsm}
+    \subsubsection{\texorpdfstring{Universidade Federal de Santa Maria,
+Departamento de Física FSC 1046 - Mecânica Quântica II, Prof. Jonas
+Maziero Semestre 2019/1, Data: 12 de julho de
+2019}{Universidade Federal de Santa Maria, Departamento de Física   FSC 1046 - Mecânica Quântica II, Prof. Jonas Maziero   Semestre 2019/1, Data: 12 de julho de 2019}}\label{universidade-federal-de-santa-maria-departamento-de-fuxedsica-fsc-1046---mecuxe2nica-quuxe2ntica-ii-prof.-jonas-maziero-semestre-20191-data-12-de-julho-de-2019}
 
-    \begin{equation}
-X \equiv (x_{j},p_{j}) \text{, } p_{j} = N_{j}/N \text{, } \langle X\rangle=\sum_{j}x_{j}p_{j} \text{, } Var(X)= \langle X^{2}\rangle-\langle X\rangle^{2} \text{, } Cov(X,Y)=\langle XY\rangle - \langle X\rangle\langle Y\rangle
+\section{Prova II}\label{prova-ii}
+
+    \(1.\) Considere a decomposição espectral do Hamiltoniano da interação
+dipolar magnética:
+
+\begin{equation}
+H_{d} = 0|\Psi_{-}\rangle\langle\Psi_{-}|+2D|\Psi_{+}\rangle\langle\Psi_{+}|-D(|\Phi_{-}\rangle\langle\Phi_{-}|+|\Phi_{+}
+\rangle\langle\Phi_{+}|),
 \end{equation}
 
-    \begin{equation}
-i\hbar\partial_{t}U_{t}=H_{t}U_{t} \text{, }[H_{t},H_{t'}]=\mathbb{O}\Rightarrow U_{t}=e^{-\frac{i}{\hbar}\int_{0}^{t}H_{t'}dt'}
+em que
+\(|\Psi_{\pm}\rangle=2^{-1/2}(|z_{+}\rangle\otimes|z_{-}\rangle\pm|z_{-}\rangle\otimes|z_{+}\rangle)\)
+e
+\(|\Phi_{\pm}\rangle=2^{-1/2}(|z_{+}\rangle\otimes|z_{+}\rangle\pm|z_{-}\rangle\otimes|z_{-}\rangle)\).
+Para duas partículas de spin 1/2 preparadas no estado
+\(|\psi_{0}\rangle = |z_{+}\rangle\otimes|z_{-}\rangle\), interagindo
+segundo \(H_{d}\), verifique que o estado evoluído desse sistema em
+\(t=\pi\hbar/4D\) pode ser escrito como
+
+\begin{equation}
+e^{-i\pi/4}\left(|z_{+}\rangle\otimes|z_{-}\rangle - i|z_{-}\rangle\otimes|z_{+}\rangle\right)/\sqrt{2}.
 \end{equation}
 
-    \begin{equation}
-O_{t}^{S}=O_{0}^{S}=(O_{0}^{S})^{\dagger}=\sum_{j}o_{j}|o_{j}^{S}\rangle\langle o_{j}^{S}| \text{,  } |\psi_{t}^{S}\rangle=U_{t}|\psi_{0}^{S}\rangle \text{, } i\hbar\partial_{t}|\psi_{t}^{S}\rangle = H_{t}|\psi_{t}^{S}\rangle \text{,  } Pr(o_{j})_{t}=|\langle o_{j}^{S}|\psi_{t}^{S}\rangle|^{2}
+    \emph{Sol.} Como o Hamiltoniano é independente do tempo, o operador de
+evolução temporal pode ser esrito como:
+
+\begin{equation}
+U_{t} = e^{-iHt/\hbar} = |\Psi_{-}\rangle\langle\Psi_{-}|+e^{-i2Dt/\hbar}|\Psi_{+}\rangle\langle\Psi_{+}|+e^{iDt/\hbar}(|\Phi_{-}\rangle\langle\Phi_{-}|+|\Phi_{+}\rangle\langle\Phi_{+}|).
 \end{equation}
 
-    \begin{align}
-& O_{t}^{H} = (O_{t}^{H})^{\dagger}=\sum_{j}o_{j}|o_{j}^{H}\rangle\langle o_{j}^{H}| \text{, } |o_{j}^{H}\rangle = U_{t}^{\dagger}|o_{j}^{S}\rangle \text{, } |\psi_{t}^{H}\rangle=|\psi_{0}^{S}\rangle \text{,  } Pr(o_{j})_{t}=|\langle o_{j}^{H}|\psi_{0}^{S}\rangle|^{2} \\
-& O_{t}^{H} = U_{t}^{\dagger}O_{t}^{S}U_{t} \text{, } i\hbar\partial_{t}O_{t}^{H} = [O_{t}^{H},H_{t}^{H}] + i\hbar\partial_{t}^{H}O_{t}^{S}
+Usando que \(\langle\psi_{0}|\Psi_{\pm}\rangle=1/\sqrt{2}\) e que
+\(\langle\psi_{0}|\Phi_{\pm}\rangle=0\) teremos
+
+\begin{align}
+|\psi_{t}\rangle & = U_{t}|\psi_{0}\rangle \\
+& = |\Psi_{-}\rangle\langle\Psi_{-}|\psi_{0}\rangle+e^{-i2Dt/\hbar}|\Psi_{+}\rangle\langle\Psi_{+}|\psi_{0}\rangle+e^{iDt/\hbar}(|\Phi_{-}\rangle\langle\Phi_{-}|\psi_{0}\rangle+|\Phi_{+}\rangle\langle\Phi_{+}|\psi_{0}\rangle) \\
+&  = e^{-iDt/\hbar}\left(e^{iDt/\hbar}|\Psi_{-}\rangle + e^{-iDt/\hbar}|\Psi_{+}\rangle\right)/\sqrt{2} \\
+&  = e^{-iDt/\hbar}\left((e^{iDt/\hbar}+e^{-iDt/\hbar})|z_{+}\rangle\otimes|z_{-}\rangle + (-e^{iDt/\hbar}+e^{-iDt/\hbar})|z_{-}\rangle\otimes|z_{+}\rangle \right)/2 \\
+&  = e^{-iDt/\hbar}\left(\cos(Dt/\hbar)|z_{+}\rangle\otimes|z_{-}\rangle - i\sin(Dt/\hbar)|z_{-}\rangle\otimes|z_{+}\rangle \right).
 \end{align}
 
-    \begin{equation}
-H_{t}=H_{c}+V_{t} \text{, } W_{t}=e^{-iH_{c}t/\hbar} \text{, } |o_{j}^{I}(t)\rangle=W_{t}^{\dagger}|o_{j}^{S}\rangle \text{, } O_{t}^{I}=W_{t}^{\dagger}O_{t}^{S}W_{t} \text{, } i\hbar\partial_{t}|\psi_{t}^{I}\rangle = V_{t}|\psi_{t}^{I}\rangle \text{, } Pr(o_{j})_{t}=|\langle o_{j}^{I}|\psi_{t}^{I}\rangle|^{2}
+Fazendo \(Dt/\hbar=\pi/4\) obteremos o resultado esperado.
+
+    \(2.\) Partindo da equação de Schrödinger
+\(i\hbar\partial_{t}|\psi_{t}\rangle=H|\psi_{t}\rangle\) com
+\(H=P^{2}/2m + V_{t}\), assumindo que
+\(V_{t}|\vec{x}\rangle=u_{t}(\vec{x})|\vec{x}\rangle\) com
+\(u_{t}(\vec{x})\) sendo uma função escalar, e dado que
+\(\langle x_{j}|P_{j}|\psi\rangle = \frac{\hbar}{i}\partial_{x_{j}}\langle x_{j}|\psi\rangle\),
+obtenha a equação de Schödinger na base de posição:
+
+\begin{equation}
+i\hbar\partial_{t}\psi_{t}(\vec{x}) = \frac{-\hbar^{2}}{2m}\nabla^{2}_{\vec{x}}\psi_{t}(\vec{x}) + u_{t}(\vec{x})\psi_{t}(\vec{x}).
 \end{equation}
 
-    \begin{equation}
-\hat{n}\cdot\vec{\sigma} = \begin{bmatrix} \cos\theta & e^{-i\phi}sin\theta \\ e^{i\phi}sin\theta & -\cos\theta \end{bmatrix}\text{, } |n_{+1}\rangle=\cos(\theta/2)|z_{+}\rangle+e^{i\phi}\sin(\theta/2)|z_{-}\rangle \text{, }|n_{-1}\rangle=\sin(\theta/2)|z_{+}\rangle-e^{i\phi}\cos(\theta/2)|z_{-}\rangle
+    \emph{Sol.} Está nas notas de aula: " Seguindo, tomemos o produto
+interno de \(|\vec{x}\rangle\) com a eq. de Schrödinger:
+
+\begin{equation}
+i\hbar\partial_{t}\langle\vec{x}|\psi_{t}\rangle = \langle\vec{x}|\frac{P^{2}}{2m}|\psi_{t}\rangle + \langle\vec{x}|U_{t}|\psi_{t}\rangle.
 \end{equation}
 
-    \begin{equation}
-H = \hbar\omega(N+\mathbb{I}/2) \text{, } N=a^{\dagger}a \text{, } [a,a^{\dagger}]=\mathbb{I} \text{, } N|n\rangle=n|n\rangle \text{, } n=0,1,2,\cdots \text{, } a|n\rangle=\sqrt{n}|n-1\rangle \text{, } a^{\dagger}|n\rangle=\sqrt{n+1}|n+1\rangle
-\end{equation}
+Agora,
 
-    \begin{equation}
-Var(A)Var(B)\ge 2^{-2}|\langle[A,B]\rangle|^{2}+(CovQ(A,B))^{2}\text{, } CovQ(A,B)=(Cov(A,B)+Cov(B,A))/2
-\end{equation}
-
-    \begin{equation}
-\mathrm{Var}(A)+\mathrm{Var}(B) \ge \max\left(2^{-1}|\langle\xi|(A\pm B)|\xi_{\perp}\rangle|^{2},\pm i\langle[A,B]\rangle + |\langle\xi_{\perp}|(A\pm iB)|\xi\rangle|^{2}\right)
-\end{equation}
-
-    \begin{equation}
-\sigma_{H_{t}}\Delta t_{O} \ge \frac{\hbar}{2} \text{, } \Delta t_{O} := \frac{\sigma_{O_{t}}}{|\partial_{t}\langle O_{t}\rangle|} \text{, } H_{t}=H\Rightarrow t_{\perp} \ge \frac{\hbar\pi}{2\sigma_{H}}
-\end{equation}
-
-    \begin{align}
-& \{|\psi_{j}\rangle,p_{j}\}\equiv\rho=\sum_{j}p_{j}|\psi_{j}\rangle\langle\psi_{j}| \text{, } Tr(\rho)=1 \text{, } \rho\ge\mathbb{O} \text{, } Pr(o|\rho)=Tr(\rho\Pi_{o})  \text{, } \rho_{t}\equiv\{U_{t}|\psi_{j}\rangle,p_{j}\}=U_{t}\rho U_{t}^{\dagger} \text{, } i\hbar\partial_{t}\rho_{t}=[H_{t},\rho_{t}] \\
-& \rho_{th} = Z^{-1}e^{-\beta H} \text{, } Z = Tr(e^{-\beta H}) \text{, } S_{th}(\rho)/(k_{B}\ln 2) = S_{vN}(\rho) = -\mathrm{Tr}(\rho\log_{2}\rho) \text{, } -k_{B}T\ln Z =: F = \langle H\rangle - TS_{th}
+\begin{align}
+\langle x_{j}|P_{j}^{2}|\psi\rangle & = \int dx_{j}'\langle x_{j}|P_{j}|x_{j}'\rangle\langle x_{j}'|P_{j}|\psi\rangle = \int dx_{j}'\langle x_{j}|P_{j}|x_{j}'\rangle(\hbar/i)(\partial_{x_{j}'}\psi(x_{j}'))  \\
+& = \int dx_{j}'\langle x_{j}|P_{j}\left((\hbar/i)(\partial_{x_{j}'}\psi(x_{j}'))|x_{j}'\rangle\right) = \int dx_{j}'(\hbar/i)\partial_{x_{j}}\left(\langle x_{j}|(\hbar/i)(\partial_{x_{j}'}\psi(x_{j}'))|x_{j}'\rangle\right) \\ 
+& = -\hbar^{2}\int dx_{j}'\partial_{x_{j}}\left((\partial_{x_{j}'}\psi(x_{j}'))\langle x_{j}|x_{j}'\rangle\right) = -\hbar^{2}\partial_{x_{j}}\int dx_{j}'(\partial_{x_{j}'}\psi(x_{j}'))\delta(x_{j}-x_{j}') \\
+& = -\hbar^{2}\partial_{x_{j}}(\partial_{x_{j}}\psi(x_{j})) = -\hbar^{2}\partial_{x_{j}x_{j}}\psi(x_{j}).
 \end{align}
 
-    \begin{align}
-& (A\otimes B)(C\otimes D)=AC\otimes BD \text{;}\hspace{1cm} |\Psi\rangle = \sum_{j_{1}=1}^{d_{1}}\sum_{j_{2}=1}^{d_{2}}\cdots\sum_{j_{n}=1}^{d_{n}} c_{j_{1}j_{2}\cdots j_{n}} |\psi_{j_{1}}\rangle\otimes|\psi_{j_{2}}\rangle\cdots\otimes|\psi_{j_{n}}\rangle \\
-& Pr\left(o_{j}^{(1)},o_{k}^{(2)}|\Psi\right) = \left|\langle\Psi|\left(|o_{j}^{(1)}\rangle\otimes|o_{k}^{(2)}\rangle\right)\right|^{2} \text{;}\hspace{1cm} Pr\left(o_{j}^{(1)}|\Psi\right) = \sum_{k}Pr\left(o_{j}^{(1)},o_{k}^{(2)}|\Psi\right)
+Ainda, usando
+\(\langle\vec{x}|P_{j}^{2}|\psi\rangle=-\hbar^{2}\partial_{x_{j}x_{j}}\psi(\vec{x})\),
+vem que
+
+\begin{align}
+\langle\vec{x}|P^{2}|\psi\rangle & = \langle\vec{x}|\sum_{j}P_{j}^{2}|\psi\rangle = \sum_{j}\langle\vec{x}|P_{j}^{2}|\psi\rangle = -\hbar^{2}\sum_{j}\partial_{x_{j}x_{j}}\psi(\vec{x}) \\
+     & = -\hbar^{2}\nabla^{2}_{\vec{x}}\psi(\vec{x}).
 \end{align}
 
-    \begin{align}
-& [X_{j},X_{k}] = \mathbb{0}\text{, }\hspace{0.2cm} [P_{j},P_{k}] = \mathbb{0}\text{, } \hspace{0.2cm} [X_{j},P_{k}] = i\hbar\mathbb{I}\delta_{jk}\text{, } \hspace{0.2cm} j,k=1,2,3 \\
-& \langle x_{j}|P_{j}|\psi\rangle = \frac{\hbar}{i}\partial_{x_{j}}\langle x_{j}|\psi\rangle \text{, } \langle X_{j}^{n}\rangle_{\psi} = \int dx_{j}|\psi(x_{j})|^{2}x_{j}^{n} \text{, } \langle P_{j}^{n}\rangle_{\psi} = \int dx_{j}\psi^{*}(x_{j})\left(\frac{\hbar}{i}\partial_{x_{j}} \right)^{n}\psi(x_{j}) \\
-& i\hbar\partial_{t}\psi_{t}(\vec{x}) = \frac{-\hbar^{2}}{2m}\nabla^{2}_{\vec{x}}\psi_{t}(\vec{x}) + u_{t}(\vec{x})\psi_{t}(\vec{x}) \text{, } \psi(\vec{p}) = \frac{1}{(2\pi\hbar)^{3/2}}\int d^{3}x e^{-i\vec{p}\cdot\vec{x}/\hbar}\psi(\vec{x})
+Substituindo na eq. de Schrödinger acima, e usando
+
+\begin{equation}
+U_{t}|\vec{x}\rangle = u_{t}(\vec{x})|\vec{x}\rangle
+\end{equation}
+
+com \(u_{t}(\vec{x})\) sendo uma função escalar, obtemos a equação de
+Schrödinger para os coeficientes
+\(\left(c_{\vec{x}}=\langle\vec{x}|\psi_{t}\rangle=\psi_{t}(\vec{x})\right)\)
+do estado na base de posição
+\(\left(|\psi_{t}\rangle=\int d^{3}x c_{\vec{x}}|\vec{x}\rangle\right)\):
+
+\begin{equation}
+i\hbar\partial_{t}\psi_{t}(\vec{x}) = \frac{-\hbar^{2}}{2m}\nabla^{2}_{\vec{x}}\psi_{t}(\vec{x}) + u_{t}(\vec{x})\psi_{t}(\vec{x}).
+\end{equation}
+
+"
+
+    \(3.\) Considere o problema da soma de momento angular em Mecânica
+Quântica. Obtenha a base \(|j_{a},j_{b},j,m\rangle\) em termos da base
+\(|j_{a},m_{a}\rangle\otimes|j_{b},m_{b}\rangle\) para \(j_{a}=1/2\) e
+\(j_{b}=1/2\).
+
+    \emph{Sol.} Temos que \(m_{a}=-1/2,1/2\), \(m_{b}=-1/2,1/2\),
+\(j=0\Rightarrow m=0\) e \(j=1\Rightarrow m=-1,0,1\). Temos a restrição
+\(m\ne m_{a}+m_{b}\Rightarrow C^{j_{a}j_{b}j}_{m_{a}m_{b}m}=0\). Assim
+
+\begin{equation}
+|j=1,m=1\rangle = |m_{a}=1/2\rangle\otimes|m_{b}=1/2\rangle.
+\end{equation}
+
+Aplicando o operador de abaixamento,
+
+\begin{equation}
+J_{-}|j=1,m=1\rangle = \hbar\sqrt{1(1+1)-1(1-1)}|j=1,m=0\rangle = \hbar\sqrt{2}|j=1,m=0\rangle.
+\end{equation}
+
+Assim,
+
+\begin{align}
+|j=1,m=0\rangle & = \hbar^{-1}2^{-1/2}\left( J_{-}^{a}|m_{a}=1/2\rangle\otimes|m_{b}=1/2\rangle + |m_{a}=1/2\rangle\otimes J_{-}^{a}|m_{b}=1/2\rangle \right) \\
+ & = \hbar^{-1}2^{-1/2}\left( \hbar\sqrt{1/2(1/2+1)-1/2(1/2-1)}|m_{a}=-1/2\rangle\otimes|m_{b}=1/2\rangle + |m_{a}=1/2\rangle\otimes \hbar\sqrt{1/2(1/2+1)-1/2(1/2-1)}|m_{b}=-1/2\rangle \right) \\
+ & = 2^{-1/2}\left(|m_{a}=-1/2\rangle\otimes|m_{b}=1/2\rangle + |m_{a}=1/2\rangle\otimes |m_{b}=-1/2\rangle \right).
 \end{align}
 
-    \begin{align}
-& [L_{j},L_{k}] = i\hbar\varepsilon_{jkl}L_{l} \text{, } [L^{2},L_{k}] = \mathbb{O}  \text{ para } k=1,2,3 \text{, } L_{\pm} := L_{1} \pm iL_{2} \text{, } L_{\pm}L_{\mp} = L^{2} - L_{3}^{2} \pm\hbar L_{3} \\
-& L_{\pm}|l,m\rangle = \hbar\sqrt{l(l+1)-m(m\pm1)}|l,m\pm1\rangle \\
-& \vec{J} := \vec{J}_{a}\otimes\mathbb{I}_{b} + \mathbb{I}_{a}\otimes\vec{J}_{b} = \sum_{i=1}^{3}\hat{e}_{i}\left(J_{i}^{a}\otimes\mathbb{I}_{b} + \mathbb{I}_{a}\otimes J_{i}^{b}\right)=\sum_{i=1}^{3}\hat{e}_{i}J_{j} \text{, } J_{\pm} = J_{\pm}^{a}\otimes\mathbb{I}_{b} + \mathbb{I}_{a}\otimes J_{\pm}^{b} \\
-& m = m_{a}+m_{b}
+Como devemos ter \(m=m_{a}+m_{b}\), segue que
+
+\begin{equation}
+|j=1,m=-1\rangle = |m_{a}=-1/2\rangle\otimes|m_{b}=-1/2\rangle.
+\end{equation}
+
+Para o outro valor de \(j\) (\(j=0\)), precisaremos usar a normalização
+do estado
+
+\begin{equation}
+|j=0,m=0\rangle = C^{1/2,1/2,0}_{-1/2,1/2,0}|m_{a}=-1/2\rangle\otimes|m_{b}=1/2\rangle + C^{1/2,1/2,0}_{1/2,-1/2,0}|m_{a}=1/2\rangle\otimes |m_{b}=-1/2\rangle,
+\end{equation}
+
+que nos fornece a equação:
+
+\begin{equation}
+|C^{1/2,1/2,0}_{-1/2,1/2,0}|^{2}+|C^{1/2,1/2,0}_{1/2,-1/2,0}|^{2}=1.
+\end{equation}
+
+Também precisamos utilizar a ortogonalidade com outros estados com
+diferentes valores de \(j\) e mesmo valor de \(m\):
+
+\begin{align}
+\langle j=1,m=0|j=0,m=0\rangle = 0 = 2^{-1/2}C^{1/2,1/2,0}_{-1/2,1/2,0} + 2^{-1/2}C^{1/2,1/2,0}_{1/2,-1/2,0} \Rightarrow C^{1/2,1/2,0}_{-1/2,1/2,0} = -C^{1/2,1/2,0}_{1/2,-1/2,0}.
 \end{align}
 
-    \begin{align}
-& E_{n}=E_{n}^{(0)}+ E_{n}^{(1)} + E_{n}^{(2)}+\cdots; \hspace{0.2cm} E_{n}^{(1)} = \langle\psi_{n}^{(0)}|H_{1}|\psi_{n}^{(0)}\rangle; \hspace{0.2cm} E_{n}^{(2)} = \sum_{m\ne n}\frac{|\langle\psi_{n}^{(0)}|H_{1}|\psi_{m}^{(0)}\rangle|^{2}}{E_{n}^{(0)}-E_{m}^{(0)}}; \\
-& |\psi_{n}\rangle = N_{n}(|\psi_{n}^{(0)}\rangle+\sum_{j}|\psi_{n}^{(j)}\rangle); \hspace{0.2cm} |\psi_{n}^{(1)}\rangle = \sum_{m\ne n}\frac{\langle\psi_{m}^{(0)}|H_{1}|\psi_{n}^{(0)}\rangle}{E_{n}^{(0)}-E_{m}^{(0)}}|\psi_{m}^{(0)}\rangle; \\
-& E_{n}^{(1)}c_{n,l} = \sum_{k=1}^{d_{n}}\langle\psi_{n,l}^{(0)}|H_{1}|\psi_{n,k}^{(0)}\rangle c_{n,k}; \\
-& |\psi_{t}\rangle = \sum_{n}a_{n}(t)e^{-iE_{n}^{(0)}t/\hbar}|\psi_{n}^{(0)}\rangle; \hspace{0.2cm} a_{n}(t) = \sum_{k=0}^{\infty}a_{n}^{(k)}(t); \\
-& a_{m}^{(j)}(t) = \frac{1}{i\hbar}\int_{0}^{t}dt'\sum_{n}a_{n}^{(j-1)}(t')e^{i\omega_{mn}t'}\langle\psi_{m}^{(0)}|H_{1}|\psi_{n}^{(0)}\rangle.
+Assumindo coeficientes reais teremos que
+\(C^{1/2,1/2,0}_{-1/2,1/2,0}=-C^{1/2,1/2,0}_{1/2,-1/2,0}=2^{-1/2}\) e
+
+\begin{equation}
+|j=0,m=0\rangle = 2^{-1/2}\left(|m_{a}=-1/2\rangle\otimes|m_{b}=1/2\rangle - |m_{a}=1/2\rangle\otimes |m_{b}=-1/2\rangle \right).
+\end{equation}
+
+    \(4.\) Considere o Hamiltoniano \(H=H_{0}+H_{1}\) com
+\(H_{0}=-\omega\sigma_{y}\) e Hamiltoniano perturbativo
+\(H_{1}=-\epsilon\sigma_{x}\), i.e., \(\omega\gg\epsilon\). Calcule as
+correções perturbativas de primeira e de segunda ordem para as
+auto-energias desse sistema e as correções de primeira ordem para os
+autovetores de \(H\).
+
+    \emph{Sol.} Temos
+\(H_{0}=-\omega|y_{+}\rangle\langle y_{+}|+\omega|y_{-}\rangle\langle y_{-}|\).
+Assim \(E_{1}^{(0)}=-\omega\), \(E_{2}^{(0)}=\omega\),
+\(|\psi_{1}^{(0)}\rangle = |y_{+}\rangle\) e
+\(|\psi_{2}^{(0)}\rangle = |y_{-}\rangle\). Utilizaremos a relação
+
+\begin{equation}
+\sigma_{x}|y_{\pm}\rangle = \sigma_{x}(|z_{+}\rangle \pm i|z_{-}\rangle)/\sqrt{2} = (\sigma_{x}|z_{+}\rangle \pm i\sigma_{x}|z_{-}\rangle)/\sqrt{2} = (|z_{-}\rangle \pm i|z_{+}\rangle)/\sqrt{2} = \pm i|y_{\mp}\rangle.
+\end{equation}
+
+Correções de primeira ordem para a energia
+(\(E_{n}^{(1)} = \langle\psi_{n}^{(0)}|H_{1}|\psi_{n}^{(0)}\rangle\)):
+
+\begin{align}
+E_{1}^{(1)} & = \langle\psi_{1}^{(0)}|H_{1}|\psi_{1}^{(0)}\rangle = -\epsilon\langle y_{+}|\sigma_{x}|y_{+}\rangle = -i\epsilon\langle y_{+}|y_{-}\rangle = 0, \\
+E_{2}^{(1)} & = \langle\psi_{2}^{(0)}|H_{1}|\psi_{2}^{(0)}\rangle = -\epsilon\langle y_{-}|\sigma_{x}|y_{-}\rangle = i\epsilon\langle y_{-}|y_{+}\rangle = 0. \\
+\end{align}
+
+Correções de segunda ordem para a energia
+(\(E_{n}^{(2)} = \sum_{m\ne n}\frac{|\langle\psi_{n}^{(0)}|H_{1}|\psi_{m}^{(0)}\rangle|^{2}}{E_{n}^{(0)}-E_{m}^{(0)}}\)):
+
+\begin{align}
+E_{1}^{(2)} & = \sum_{m\ne 1}\frac{|\langle\psi_{1}^{(0)}|H_{1}|\psi_{m}^{(0)}\rangle|^{2}}{E_{1}^{(0)}-E_{m}^{(0)}} = \frac{|\langle\psi_{1}^{(0)}|H_{1}|\psi_{2}^{(0)}\rangle|^{2}}{E_{1}^{(0)}-E_{2}^{(0)}} = \frac{\epsilon^{2}|\langle y_{+}|\sigma_{x}|y_{-}\rangle|^{2}}{-\omega-\omega} = \frac{-\epsilon^{2}}{2\omega}, \\
+E_{2}^{(2)} & =  \sum_{m\ne 2}\frac{|\langle\psi_{2}^{(0)}|H_{1}|\psi_{m}^{(0)}\rangle|^{2}}{E_{2}^{(0)}-E_{m}^{(0)}} = \frac{|\langle\psi_{2}^{(0)}|H_{1}|\psi_{1}^{(0)}\rangle|^{2}}{E_{2}^{(0)}-E_{1}^{(0)}} = \frac{\epsilon^{2}|\langle y_{-}|\sigma_{x}|y_{+}\rangle|^{2}}{\omega-(-\omega)} = \frac{\epsilon^{2}}{2\omega}.
+\end{align}
+
+Correções de primeira ordem para o estado
+(\(|\psi_{n}^{(1)}\rangle = \sum_{m\ne n}\frac{\langle\psi_{m}^{(0)}|H_{1}|\psi_{n}^{(0)}\rangle}{E_{n}^{(0)}-E_{m}^{(0)}}|\psi_{m}^{(0)}\rangle\)):
+
+\begin{align}
+|\psi_{1}^{(1)}\rangle & = \sum_{m\ne 1}\frac{\langle\psi_{m}^{(0)}|H_{1}|\psi_{1}^{(0)}\rangle}{E_{1}^{(0)}-E_{m}^{(0)}}|\psi_{m}^{(0)}\rangle = \frac{\langle\psi_{2}^{(0)}|H_{1}|\psi_{1}^{(0)}\rangle}{E_{1}^{(0)}-E_{2}^{(0)}}|\psi_{2}^{(0)}\rangle = \frac{-\epsilon\langle y_{-}|\sigma_{x}|y_{+}\rangle}{-\omega-\omega}|y_{-}\rangle = \frac{i\epsilon}{2\omega}|y_{-}\rangle, \\
+|\psi_{2}^{(1)}\rangle & = \sum_{m\ne 2}\frac{\langle\psi_{m}^{(0)}|H_{1}|\psi_{2}^{(0)}\rangle}{E_{2}^{(0)}-E_{m}^{(0)}}|\psi_{m}^{(0)}\rangle = \frac{\langle\psi_{1}^{(0)}|H_{1}|\psi_{2}^{(0)}\rangle}{E_{2}^{(0)}-E_{1}^{(0)}}|\psi_{1}^{(0)}\rangle = \frac{-\epsilon\langle y_{+}|\sigma_{x}|y_{-}\rangle}{\omega+\omega}|y_{+}\rangle = \frac{i\epsilon}{2\omega}|y_{+}\rangle.
 \end{align}
 
 
