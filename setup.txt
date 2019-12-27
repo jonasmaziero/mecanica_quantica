@@ -1,7 +1,15 @@
-Para visualizar os notebooks no navegador, copie o link do GitHub em
+Para visualizar os notebooks no navegador, copie o link do GitHub, 
+https://github.com/jonasmaziero/mecanica_quantica, em
 http://nbviewer.jupyter.org/
 
-Python já vem instalado no ubuntu. Para instalar demais pacotes, veja 
+Para interagir com os notebooks, copie o link do GitHub em
+https://mybinder.org
+Depois clique em launch. Depois que o link da máquina virtual
+for criado, o copie no navegador e espere carregar. Depois 
+é só aproveitar.
+
+Para modificar os notebooks, você fazer algumas instalações.
+Python já vem instalado no Ubuntu. Para instalar os demais pacotes, veja 
 http://jupyter.org/install ou simplesmente use os comandos (sem o $):
 $ sudo apt-get install python3-numpy
 $ sudo apt-get install python3-scipy
