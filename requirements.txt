@@ -1,2 +1,4 @@
+numpy==1.14.*
+matplotlib==2.*
 sympy
 matplotlib==3.*
