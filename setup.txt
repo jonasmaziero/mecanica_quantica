@@ -1,6 +1,8 @@
 Para visualizar os notebooks no navegador, copie o link do GitHub, 
-https://github.com/jonasmaziero/mecanica_quantica, em
+https://github.com/jonasmaziero/mecanica_quantica, em:
 http://nbviewer.jupyter.org/
+Para interagir com os notebooks, copie o link do GitHUb em: 
+https://mybinder.org/
 
 Para interagir com os notebooks, copie o link do GitHub em
 https://mybinder.org
