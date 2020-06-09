@@ -1,6 +1,6 @@
-# Quantum Mechanics
-Class notes on quantum mechanics (in portuguese)
+# Mecânica Quântica
+Notas de aula sobre o formalismo da MQ e sobre algumas aplicações, como teoria de perturbação.
 
-This class notes shall be developed in the next years. 
-I will gradually add more elements to make easier for the student 
-to understand QM with algebraic calculations, plots and animations.
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jonasmaziero/mecanica_quantica/master)
+
+https://nbviewer.jupyter.org/github/jonasmaziero/mecanica_quantica/tree/master/
