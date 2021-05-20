@@ -1,9 +1,6 @@
 Para visualizar os notebooks no navegador, copie o link do GitHub, 
 https://github.com/jonasmaziero/mecanica_quantica, em:
 http://nbviewer.jupyter.org/
-Para interagir com os notebooks, copie o link do GitHUb em: 
-https://mybinder.org/
-
 Para interagir com os notebooks, copie o link do GitHub em
 https://mybinder.org
 Depois clique em launch. Depois que o link da máquina virtual
@@ -33,6 +30,6 @@ $ jupyter notebook
 Para abrir um notebook existente (como os das notas de aula), use:
 $ jupyter notebook file_name.ipynb
 
-Para rodar as animações instale o ipywidgets usando:
+Para rodar as animações, instale o ipywidgets usando:
 $ sudo pip install ipywidgets
 $ jupyter nbextension enable --py widgetsnbextension
