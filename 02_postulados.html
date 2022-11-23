@@ -14607,7 +14607,7 @@ body[data-format='mobile'] .jp-OutputArea-child .jp-OutputArea-output {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Formalismo-Qu%C3%A2ntico">Formalismo Qu&#226;ntico<a class="anchor-link" href="#Formalismo-Qu%C3%A2ntico">&#182;</a></h2><p>Em toda teoria física, buscamos descrever os <strong>estados</strong> possíveis do sistema de interesse, as <strong>mudanças</strong> desses estados (evolução temporal) e as quantidades <strong>observáveis</strong> e suas medidas.</p>
+<h1 id="Formalismo-Qu%C3%A2ntico">Formalismo Qu&#226;ntico<a class="anchor-link" href="#Formalismo-Qu%C3%A2ntico">&#182;</a></h1><p>Em toda teoria física, buscamos descrever os <strong>estados</strong> possíveis do sistema de interesse, as <strong>mudanças</strong> desses estados (evolução temporal) e as quantidades <strong>observáveis</strong> e suas medidas.</p>
 <p>Por exemplo, em Mecânica Newtoniana (MN) o estado de um sistema em um certo instante de tempo é especificado pelos valores de posição e velocidade em relação a um certo referencial inercial, e a evolução temporal é dada pela segunda lei de Newton. Os observáveis são essencialmente as posições, das quais obtemos as velocidades usando o parâmetro tempo. Está implicito em MN que os valores dos observáveis estão determinarmos antes mesmo de serem medidos, e que todos esses observáveis podem ter valores bem definidos em um determinado instante de tempo.</p>
 <p>Na sequência veremos os postulados da Mecânica Quântica (MQ) para descrever estados, mudanças desses estados, observáveis e suas medidas. Veremos que a parte da medida difere muito daquela da MN, principalmente por causa da existência de observáveis que não podem ter valores bem definidos ao mesmo tempo.</p>
 
@@ -14904,6 +14904,8 @@ i.e., $U_{t}U_{t}^{\dagger}=U_{t}U_{t}^{\dagger}=\mathbb{I}$. O operador de evol
 \begin{equation}
 i\hbar\partial_{t} U_{t} = H_{t}U_{t},
 \end{equation}
+com a condição inicial 
+$$U_0=\mathbb{I},$$
 onde $H_{t}$ é o operador Hamiltoniano do sistema no instante de tempo $t$, $\hbar$ é a constante de Planck dividida por $2\pi$ e usamos a notação $\partial_{t} = \frac{\partial}{\partial_{t}}$.</p>
 <p><em>OBS.</em> As duas equações acima são equivalentes à equação de Schrödinger para o estado
 \begin{equation}
@@ -14925,7 +14927,7 @@ i\hbar\partial_{t} |\psi_{t}\rangle &amp; = i\hbar\partial_{t}(U_{t}|\psi_{0}\ra
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Solu%C3%A7%C3%A3o-para-$U_%7Bt%7D$-quando-$H_%7Bt%7D=H$">Solu&#231;&#227;o para $U_{t}$ quando $H_{t}=H$<a class="anchor-link" href="#Solu%C3%A7%C3%A3o-para-$U_%7Bt%7D$-quando-$H_%7Bt%7D=H$">&#182;</a></h3><p>Nesse tipo de situação, i.e., quando o Hamiltoniano não depende do tempo, podemos verificar que a seguinte forma geral é válida:
+<h2 id="Solu%C3%A7%C3%A3o-para-$U_%7Bt%7D$-quando-$H_%7Bt%7D=H$">Solu&#231;&#227;o para $U_{t}$ quando $H_{t}=H$<a class="anchor-link" href="#Solu%C3%A7%C3%A3o-para-$U_%7Bt%7D$-quando-$H_%7Bt%7D=H$">&#182;</a></h2><p>Nesse tipo de situação, i.e., quando o Hamiltoniano não depende do tempo, podemos verificar que a seguinte forma geral é válida:
 \begin{equation}
 U_{t} = e^{-iHt/\hbar}.
 \end{equation}
@@ -14951,7 +14953,7 @@ em que usamos $H|E_j\rangle=E_j|E_j\rangle$.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Solu%C3%A7%C3%A3o-para-$U_%7Bt%7D$-quando-$%5BH_%7Bt%7D,H_%7Bt'%7D%5D=%5Cmathbb%7B0%7D$">Solu&#231;&#227;o para $U_{t}$ quando $[H_{t},H_{t'}]=\mathbb{0}$<a class="anchor-link" href="#Solu%C3%A7%C3%A3o-para-$U_%7Bt%7D$-quando-$%5BH_%7Bt%7D,H_%7Bt'%7D%5D=%5Cmathbb%7B0%7D$">&#182;</a></h3><p>Vamos verificar que neste caso
+<h2 id="Solu%C3%A7%C3%A3o-para-$U_%7Bt%7D$-quando-$%5BH_%7Bt%7D,H_%7Bt'%7D%5D=%5Cmathbb%7B0%7D$">Solu&#231;&#227;o para $U_{t}$ quando $[H_{t},H_{t'}]=\mathbb{0}$<a class="anchor-link" href="#Solu%C3%A7%C3%A3o-para-$U_%7Bt%7D$-quando-$%5BH_%7Bt%7D,H_%7Bt'%7D%5D=%5Cmathbb%7B0%7D$">&#182;</a></h2><p>Vamos verificar que neste caso
 \begin{equation}
 U_{t} = e^{-\frac{i}{\hbar}\int_{0}^{t}H_{t'}dt'}.
 \end{equation}
@@ -14978,7 +14980,7 @@ i\hbar\partial_{t} U_{t} &amp; = H_{t}\sum_{k=0}^{\infty}\frac{(k+1)}{(k+1)!}\le
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Solu%C3%A7%C3%A3o-para-$U_%7Bt%7D$-quando-$%5BH_%7Bt%7D,H_%7Bt'%7D%5D%5Cne-0$">Solu&#231;&#227;o para $U_{t}$ quando $[H_{t},H_{t'}]\ne 0$<a class="anchor-link" href="#Solu%C3%A7%C3%A3o-para-$U_%7Bt%7D$-quando-$%5BH_%7Bt%7D,H_%7Bt'%7D%5D%5Cne-0$">&#182;</a></h3><p>Neste caso geral, começamos reescrevendo a <strong>equação de Schrödinger na forma integral</strong>:
+<h2 id="Solu%C3%A7%C3%A3o-para-$U_%7Bt%7D$-quando-$%5BH_%7Bt%7D,H_%7Bt'%7D%5D%5Cne-0$">Solu&#231;&#227;o para $U_{t}$ quando $[H_{t},H_{t'}]\ne 0$<a class="anchor-link" href="#Solu%C3%A7%C3%A3o-para-$U_%7Bt%7D$-quando-$%5BH_%7Bt%7D,H_%7Bt'%7D%5D%5Cne-0$">&#182;</a></h2><p>Neste caso geral, começamos reescrevendo a <strong>equação de Schrödinger na forma integral</strong>:
 \begin{align}
 &amp; \partial_{t}U_{t}=-(i/\hbar)H_{t}U_{t}, \\
 &amp; \therefore\ \int_{0}^{t}dt'\partial_{t'}U_{t'}=U_{t}-U_{0}=U_{t}-\mathbb{I}=-\frac{i}{\hbar}\int_{0}^{t}dt'H_{t'}U_{t'}, \\
@@ -14990,11 +14992,96 @@ U_{t} &amp; = \mathbb{I}-\frac{i}{\hbar}\int_{0}^{t}dt'H_{t'}\left(\mathbb{I}-\f
 &amp; = \mathbb{I} + \left(\frac{-i}{\hbar}\right)\int_{0}^{t}dt'H_{t'} + \left(\frac{-i}{\hbar}\right)^{2}\int_{0}^{t}dt'H_{t'}\int_{0}^{t'}dt''H_{t''}U_{t''} \\
 &amp; = \mathbb{I} + \left(\frac{-i}{\hbar}\right)\int_{0}^{t}dt'H_{t'} + \left(\frac{-i}{\hbar}\right)^{2}\int_{0}^{t}dt'H_{t'}\int_{0}^{t'}dt''H_{t''}  \\ 
 &amp; \hspace{0.5cm} + \left(\frac{-i}{\hbar}\right)^{3}\int_{0}^{t}dt'H_{t'}\int_{0}^{t'}dt''H_{t''}\int_{0}^{t''}dt'''H_{t'''}+\cdots \\
-&amp; = \mathbb{I} + \sum_{j=1}^{\infty}\left(\frac{-i}{\hbar}\right)^{j}\int_{0}^{t}dt_{1}H_{t_{1}}\int_{0}^{t_{1}}dt_{2}H_{t_{2}}\cdots\int_{0}^{t_{j-1}}dt_{j}H_{t_{j}},
+&amp; = \mathbb{I} + \sum_{j=1}^{\infty}\left(\frac{-i}{\hbar}\right)^{j}\int_{0}^{t}dt_{1}H_{t_{1}}\int_{0}^{t_{1}}dt_{2}H_{t_{2}}\cdots\int_{0}^{t_{j-1}}dt_{j}H_{t_{j}} \\
+&amp; = \mathbb{I} + \sum_{j=1}^{\infty}\left(\frac{-i}{\hbar}\right)^{j}\int_{0}^{t}dt_{1}\int_{0}^{t_{1}}dt_{2}\cdots\int_{0}^{t_{j-1}}dt_{j}H_{t_{1}}H_{t_{2}}\cdots H_{t_{j}}, \hspace{1cm} (*)
 \end{align}
 que é chamada de <strong>série de Dyson</strong>. Note que 
 $$0 \le t_{j}\le t_{j-1}\le \cdots\le t'''\equiv t_{3}\le t''\equiv t_{2}\le t'\equiv t_{1}\le t$$
 (temos que ter ordenamento temporal).</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h4 id="Operador-de-ordenamento-temporal">Operador de ordenamento temporal<a class="anchor-link" href="#Operador-de-ordenamento-temporal">&#182;</a></h4><p>O operador de ordenamento temporal $\mathcal{T}$ é definido de forma que quando aplicado a um produto de operadores, este ordena esse operadores baseado na sua dependência temporal com segue:
+$$\mathcal{T}\big(H_{t_1}H_{t_2}\cdots H_{t_j}\big) = H_{t_{i_1}}H_{t_{i_2}}\cdots H_{t_{i_j}}$$
+com
+$$t_{i_1}\ge t_{i_2} \ge \cdots \ge t_{i_j}.$$</p>
+<p>Vamos considerar a integral da série de Dyson com somente dois hamiltonianos, i.e.,
+$$J_2 = \int_{0}^{t}dt_1 \int_{0}^{t_1}dt_2 H_{t_1}H_{t_2} \equiv \int_{0}^{t}dt_1 \int_{0}^{t_1}dt_2 \mathcal{T}\big(H_{t_1}H_{t_2}\big). \hspace{1cm} (\star)$$
+Na sequência, vamos tirar a dependência entre as variáveis de integração, fazendo com que todos os limites de integração variem de $0$ a $t$.</p>
+<p><img src='fig_T_ordering.png' width='500'></p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>A região de integração da integral $J_2$ está mostrada na figura acima, da esquerda. Podemos obter o mesmo resultado para integral, i.e., percorrer a mesma área de parâmetros de integração, usando:
+$$J_2 = \int_{0}^{t}dt_2 \int_{t_2}^{t}dt_1 H_{t_1}H_{t_2}.$$
+Se trocarmos os limites de integração, obtemos
+$$J_2 = \int_{0}^{t}dt_1 \int_{t_1}^{t}dt_2 H_{t_2}H_{t_1} = \int_{0}^{t}dt_1 \int_{t_1}^{t}dt_2 \mathcal{T}\big(H_{t_1}H_{t_2}\big).  \hspace{1cm} (\star\star)$$</p>
+<p>Assim, das equações $(\star)$ e $(\star\star)$, obtemos
+\begin{align}
+J_2 &amp; = \frac{1}{2}\big( \int_{0}^{t}dt_1 \int_{0}^{t_1}dt_2 \mathcal{T}\big(H_{t_1}H_{t_2}\big) + \int_{0}^{t}dt_1 \int_{t_1}^{t}dt_2 \mathcal{T}\big(H_{t_1}H_{t_2}\big)\big) \\
+&amp; = \frac{1}{2}\int_{0}^{t}dt_1 \int_{0}^{t}dt_2 \mathcal{T}\big(H_{t_1}H_{t_2}\big),
+\end{align}
+desacoplando assim os limites de integração.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Para a integral que aparece na série de Dyson,
+$$J_j = \int_{0}^{t}dt_{1}\int_{0}^{t_{1}}dt_{2}\cdots\int_{0}^{t_{j-1}}dt_{j}H_{t_{1}}H_{t_{2}}\cdots H_{t_{j}},$$
+vemos que a integração é feita em uma região limitada por um hipercubo de dimensão $j$, com a região definida por
+$$t_j\ge t_{j-1}\ge\cdots\ge t_2\ge t_1.$$
+O volume dessa região é $1/j!$ do volume do hipercubo, o que nos permite desacoplar os limites de integração e obter
+$$J_j = \frac{1}{j!}\int_{0}^{t}dt_1\int_{0}^{t}dt_2\cdots\int_{0}^{t}dt_j\mathcal{T}\big(H_{t_1}H_{t_2}\cdots H_{t_j}\big).$$</p>
+<p>Substituindo esta expressão na série de Dyson, eq. ($*$), obteremos
+\begin{align}
+U_t &amp; = \mathbb{I} + \sum_{j=1}^{\infty}\left(\frac{-i}{\hbar}\right)^{j}\frac{1}{j!}\int_{0}^{t}dt_1\int_{0}^{t}dt_2\cdots\int_{0}^{t}dt_j\mathcal{T}\big(H_{t_1}H_{t_2}\cdots H_{t_j}\big) \\
+&amp; =: \mathcal{T}e^{-\frac{i}{\hbar}\int_{0}^{t}H_{t'}dt'}.
+\end{align}
+Note que esta última expressão, que é elegante e aparece com frequência na literatura, tem nela escondida toda a complicação da 1ª igualdade.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Vamos considerar o caso particular em que
+$$[H_t,H_{t'}]=0\ \forall\ t,t'.$$
+Nesse caso o ordenamento temporal não faz diferença, i.e.,
+$$\mathcal{T}\big(H_{t_1}H_{t_2}\cdots H_{t_j}\big)\equiv H_{t_1}H_{t_2}\cdots H_{t_j}.$$
+Assim, podemos escrever
+\begin{align}
+U_t &amp; = \mathbb{I} + \sum_{j=1}^{\infty}\left(\frac{-i}{\hbar}\right)^{j}\frac{1}{j!}\int_{0}^{t}dt_1 H_{t_1}\int_{0}^{t}dt_2 H_{t_2}\cdots\int_{0}^{t}dt_j H_{t_j} \\
+&amp; = \mathbb{I} + \sum_{j=1}^{\infty}\frac{1}{j!}\left(\frac{-i}{\hbar}\int_{0}^{t}dt' H_{t'}\right)^{j} \\
+&amp; = e^{-\frac{i}{\hbar}\int_{0}^{t}dt' H_{t'}}. 
+\end{align}</p>
 
 </div>
 </div>
