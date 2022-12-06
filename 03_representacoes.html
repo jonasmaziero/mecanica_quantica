@@ -14083,7 +14083,7 @@ onde definimos o operador derivada na representação de Heisenberg como
 \begin{equation}
 H_{t} = H_{c} + V_{t},
 \end{equation}
-onde $H_{c} (V_{t})$ é um operador Hermitiano que independe(depende) explicitamente do tempo.</p>
+onde $H_{c} (V_{t})$ é um operador Hermitiano que independe(depende) explicitamente do tempo. Outro contexto no qual a RI é útil é quando $V_t$ está relacionado com a interação entre os constituintes do sistema enquanto $H_c$ é a soma dos hamiltonianos individuais desses subsistems.</p>
 <p><em>OBS.</em> Veremos que na RI os estados evoluem sob $V_{t}$ e observáveis evoluem sob $H_{c}$.</p>
 <p>Usando a parte independente do tempo do Hamiltoniano, definiremos o seguinte <em>operador unitário:</em>
 \begin{equation}
@@ -14125,7 +14125,7 @@ i\hbar\partial_{t}O_{t}^{I} &amp; = -H_{c}W_{t}^{\dagger} O^{S} W_{t} + W^{\dagg
 &amp; = [O_{t}^{I},H_{c}] \\
 &amp; = [O_{t}^{I},H_{c}^{I}],
 \end{align}
-pois $H_{c}^{I}=H_{c}$ uma vez que $[W_{t},H_{c}]=0$.</p>
+pois $H_{c}^{I}=W_t^\dagger H_c W_t=H_{c}$ uma vez que $[W_{t},H_{c}]=0$.</p>
 
 </div>
 </div>
@@ -14199,13 +14199,16 @@ c_{1}(t) \\ c_{2}(t) \\ \vdots \\ c_{d}(t)
 \end{bmatrix}
 .
 \end{equation}
-Acima usamos $\omega_{jj}=0$ e $V_{jk}(t) = V_{jk}$. Ademais, note que $\omega_{jk}=-\omega_{kj}$.</p>
+Acima usamos 
+$$\omega_{jj}=0 \text{ e } V_{jk}(t) = V_{jk}.$$ 
+Ademais, note que 
+$$\omega_{jk}=-\omega_{kj}.$$</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Se nosso objetivo for calcular as probabilidades dos autovalores de $H_{c}$, ao resolvermos este sistema de equações lineares teremos resolvido o problema pois
+<p>Se nosso objetivo for calcular as probabilidades dos autovalores de $H_{c}$, ao resolvermos este sistema de equações diferenciais lineares teremos resolvido o problema pois
 \begin{equation}
 Pr(E_{j}^{c}) = |c_{j}(t)|^{2}.
 \end{equation}</p>
