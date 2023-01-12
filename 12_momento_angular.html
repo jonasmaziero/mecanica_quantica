@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>11_posicao_momento_linear</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>12_momento_angular</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -13971,13 +13971,13 @@ a.anchor-link {
 
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2>Notas de Aula de Mecânica Quântica<br>Autor: Jonas Maziero</h2>
+<h2>Notas de aula de Mecânica Quântica <br> Autor: Jonas Maziero</h2>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="o">%</span><span class="k">run</span> init.ipynb
@@ -13991,1017 +13991,50 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="Mec%C3%A2nica-Qu%C3%A2ntica-na-base-de-posi%C3%A7%C3%A3o">Mec&#226;nica Qu&#226;ntica na base de posi&#231;&#227;o<a class="anchor-link" href="#Mec%C3%A2nica-Qu%C3%A2ntica-na-base-de-posi%C3%A7%C3%A3o">&#182;</a></h1>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Operador-posi%C3%A7%C3%A3o-e-fun%C3%A7%C3%A3o-de-onda,-na-base-de-posi%C3%A7%C3%A3o">Operador posi&#231;&#227;o e fun&#231;&#227;o de onda, na base de posi&#231;&#227;o<a class="anchor-link" href="#Operador-posi%C3%A7%C3%A3o-e-fun%C3%A7%C3%A3o-de-onda,-na-base-de-posi%C3%A7%C3%A3o">&#182;</a></h2><p>As três coordenadas espaciais que especificam a posição de uma partícula em relação a algum referencial são mensuráveis e devem portanto ser descritas, dentro do formalismo quântico, por operadores Hermitianos $X_{j},$ para $j=1,2,3$, tais que 
-\begin{equation}
-X_{j}|x_{j}\rangle=x_{j}|x_{j}\rangle
-\end{equation}
-com $x_{j}\in\mathbb{R}$ e
-\begin{equation}
-\langle x_{j}|x_{j}'\rangle=\delta(x_{j}-x_{j}').
-\end{equation}
-Note que acima estamos assumindo implicitamente e teoricamante que dois estados de posição infinitesimalmente próximos são distinguíveis, o que não é factível experimentalmente. Continuando com a teoria, como $X_{j}$ possui espectro contínuo, sua decomposição espectral será
-\begin{equation}
-X_{j} = \int dx_{j}x_{j}|x_{j}\rangle\langle x_{j}|.
-\end{equation}</p>
-<p>Como fizemos para outros observáveis, se fazemos medidas de posição para um sistema quântico preparado em um estado genérico $|\psi\rangle$, é conveniente escrevermos
-\begin{equation}
-|\psi\rangle = \int dx_{j}c_{x_{j}}|x_{j}\rangle.
-\end{equation}
-Os coeficientes nessa superposição são conhecidos como <strong>função de onda</strong> na base de posição:
-\begin{equation}
-c_{x_{j}} = \langle x_{j}|\psi\rangle =: \psi(x_{j}).
-\end{equation}</p>
-<p>Para observáveis com espectro contínuo, existe uma complicação na interpretação da ortogonalidade entre autovetores correspondentes a autovalores diferentes. Isso se deve ao fato de que na prática só conseguimos distinguir experimentalmente entre valores cuja diferença é finita, e não infinitesimal. Tirando esse detalhe, a <em>interpretação estatística</em> é a usual. A regra de Born nos diz que
-\begin{equation}
-|\psi(x_{j})|^{2}dx_{j}
-\end{equation}
-é a probabilidade de ao medirmos $X_{j}$ obtermos seu valor entre $x_{j}$ e $x_{j}+dx_{j}$, com $|\psi(x_{j})|^{2}$ sendo a densidade de probabilidade. Claro, como a partícula deve estar em algum lugar, devemos ter a <em>condição de normalização</em>:
-\begin{equation}
-\int_{-\infty}^{+\infty}|\psi(x_{j})|^{2}dx_{j} = 1.
-\end{equation}</p>
-<p>OBS. Aqui consideramos que não há emaranhamento entre as coordenadas do quanton. No entanto, definições análogas seguem para o caso geral, usando o vetor posição com $|\psi\rangle = \iiint dV c_{\vec{r}}|\vec{r}\rangle$, com $dV$ sendo um elemento de volume.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Operador-de-transla%C3%A7%C3%A3o-espacial">Operador de transla&#231;&#227;o espacial<a class="anchor-link" href="#Operador-de-transla%C3%A7%C3%A3o-espacial">&#182;</a></h2><p>Esse operador descreve, como o nome diz, mudanças do estado de posição. Para mudanças infinitesimais teremos
-\begin{equation}
-T(\delta x_{j})|x_{j}\rangle := |x_{j}+\delta x_{j}\rangle.
-\end{equation}
-Obter $T$ explicitamente será importante para derivarmos as relações de comutação entre posição e momento linear. Como motivação, comecemos considerando o operador de evolução temporal para $H$ independente do tempo e "expandido em primeira ordem" em $t$:
-\begin{equation}
-U_{\delta t} = e^{-iH\delta t/\hbar} \approx \mathbb{I} - \frac{i}{\hbar}H\delta t.
-\end{equation}
-Agora notemos que momento linear (velocidade) está relacionado com mudanças de posição e que a unidade de $Ht$ e de $P_{j}x_{j}$ é a mesma para escrever o operador de translação espacial do estado quântico por uma quantidade infinitesimal $dx_{j}$ como 
-\begin{equation}
-T(\delta x_{j}) = \mathbb{I} - \frac{i}{\hbar}P_{j}\delta x_{j},
-\end{equation}
-em que $P_{j}$ é o operador Hermitiano que representa a componente $j$ do momento linear.</p>
-<p>Considerando-se $\mathcal{O}(\delta x_{j}^{2})\approx 0$, pode-se verificar que o operador de translação espacial $T$, definido na última equação, corresponde ao operador identidade quanto tomamos o limite do deslocamente espacial indo pra zero,
-\begin{equation}
-\lim_{\delta x_{j}\rightarrow 0}T(\delta x_{j}) = \mathbb{I},
-\end{equation}
-que este operador obedece uma lei de composicão, para descolamento em uma certa direção,
-\begin{equation}
-T(\delta x_{j})T(\delta x_{j}') = T(\delta x_{j}+\delta x_{j}'),
-\end{equation}
-que o seu adjunto é um operador de deslocamento infinitesimal no sentido contrário, 
-\begin{equation}
-T^{\dagger}(\delta x_{j}) = T(-\delta x_{j}),
-\end{equation}
-e que é um operador unitário,
-\begin{equation}
-T^{\dagger}(\delta x_{j})T(\delta x_{j}) = T(\delta x_{j})T^{\dagger}(\delta x_{j}) = \mathbb{I}.
-\end{equation}</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Rela%C3%A7%C3%A3o-de-comuta%C3%A7%C3%A3o-posi%C3%A7%C3%A3o-momento-linear">Rela&#231;&#227;o de comuta&#231;&#227;o posi&#231;&#227;o-momento linear<a class="anchor-link" href="#Rela%C3%A7%C3%A3o-de-comuta%C3%A7%C3%A3o-posi%C3%A7%C3%A3o-momento-linear">&#182;</a></h2><p>Nas próximas demonstrações, a ideia é obter duas expressões para a mesma quantidade. Vamos começar verificando que
+<h1 id="Momento-angular-orbital">Momento angular orbital<a class="anchor-link" href="#Momento-angular-orbital">&#182;</a></h1><p>Quantizando a expressão clássica
 \begin{align}
-[X_{j},T(\delta x_{j})]|x_{j}\rangle &amp; = X_{j}T(\delta x_{j})|x_{j}\rangle - T(\delta x_{j})X_{j}|x_{j}\rangle \\ 
-&amp; = X_{j}|x_{j}+\delta x_{j}\rangle - T(\delta x_{j})x_{j}|x_{j}\rangle \\
-&amp; = (x_{j}+\delta x_{j})|x_{j}+\delta x_{j}\rangle - x_{j}|x_{j}+\delta x_{j}\rangle = \delta x_{j}|x_{j}+\delta x_{j}\rangle \\
-&amp; = \delta x_{j}T(\delta x_{j})|x_{j}\rangle = \delta x_{j}\left(\mathbb{I} - \frac{i}{\hbar}P_{j}\delta x_{j}\right)|x_{j}\rangle \\
-&amp;= \delta x_{j}|x_{j}\rangle - \frac{i}{\hbar}P_{j}(\delta x_{j})^{2}|x_{j}\rangle \\
-                               &amp; \approx \delta x_{j}\mathbb{I}|x_{j}\rangle.
+&amp; \vec{L} = \vec{X}\mathrm{x}\vec{P} \\
+&amp; = \sum_{j=1}^{3}\hat{e}_{j}(\vec{X}\mathrm{x}\vec{P})_{j} \\
+&amp; = \sum_{j=1}^{3}\hat{e}_{j}\sum_{k,l=1}^{3}\varepsilon_{jkl}X_{k}P_{l} \\
+&amp; = \sum_{j=1}^{3}\hat{e}_{j}L_{j}, \\
+&amp; \therefore L_{j}=\sum_{k,l=1}^{3}\varepsilon_{jkl}X_{k}P_{l}.
 \end{align}</p>
-<p>Como esta relação vale para qualquer estado da base $\{|x_{j}\rangle\}$, vale para qualquer estado e teremos que $[X_{j},T(\delta x_{j})]=dx_{j}\mathbb{I}$. Mas também podemos escrever
+<h2 id="Rela%C3%A7%C3%A3o-de-comuta%C3%A7%C3%A3o-para-as-componentes-do-momento-angular-(orbital)">Rela&#231;&#227;o de comuta&#231;&#227;o para as componentes do momento angular (orbital)<a class="anchor-link" href="#Rela%C3%A7%C3%A3o-de-comuta%C3%A7%C3%A3o-para-as-componentes-do-momento-angular-(orbital)">&#182;</a></h2><p>Usando novamente $[A,BC]=B[A,C]+[A,B]C$ e $[AB,C] = A[B,C]+[A,C]B$, teremos
 \begin{align}
-[X_{j},T(\delta x_{j})] &amp; = [X_{j},\mathbb{I} - \frac{i}{\hbar}P_{j}\delta x_{j}] = [X_{j},\mathbb{I}]  - \frac{i}{\hbar}\delta x_{j} [X_{j},P_{j}] \\
-                  &amp; = - \frac{i}{\hbar}\delta x_{j} [X_{j},P_{j}].
-\end{align}
-Chegamos assim na seguinte relação de comutação posição-momento linear para as componentes:
-\begin{equation}
-[X_{j},P_{j}] = i\hbar\mathbb{I}.
-\end{equation}
-Lembrando, $j=1,2,3$.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Rela%C3%A7%C3%A3o-de-incerteza-de-Heisenberg">Rela&#231;&#227;o de incerteza de Heisenberg<a class="anchor-link" href="#Rela%C3%A7%C3%A3o-de-incerteza-de-Heisenberg">&#182;</a></h3><p>Como vimos anteriormente, um caso particular da relação de incerteza de Heisenberg-Robertson-Schrödinger é
-\begin{equation}
-\sigma_{A}\sigma_{B} \ge \frac{1}{2}|\langle[A,B]\rangle|,
-\end{equation}
-que é a relação de incerteza da Robertson. Substituindo, nessa relação, $A$ e $B$ por posição e momento linear, respectivamente, obtemos a (original) <em>relação de incerteza de Heisenberg</em>:
-\begin{equation}
-\sigma_{X_{j}}\sigma_{P_{j}} \ge \frac{\hbar}{2}
-\end{equation}
-pois
-\begin{equation}
-|\langle[X_{j},P_{j}]\rangle| = |\langle i\hbar\mathbb{I}\rangle| = \hbar.
-\end{equation}</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Transla%C3%A7%C3%B5es-finitas">Transla&#231;&#245;es finitas<a class="anchor-link" href="#Transla%C3%A7%C3%B5es-finitas">&#182;</a></h2><p>Para descrever deslocamentos por uma quantidade finita $\Delta x_{j}$, consideremos o operador de translação espacial associado $T(\Delta x_{j})$ como sendo obtido a partir da composição de um número muito grande $N$ de translações infinitesimais $T(\delta x_{j})$, i.e., $\Delta x_{j}=N\delta x_{j}$ e
-\begin{align}
-T(\Delta x_{j}) &amp; = T(\delta x_{j})T(\delta x_{j})\cdots T(\delta x_{j}) = \lim_{N\rightarrow\infty}\left(T(\delta x_{j})\right)^{N} \\
-                &amp; = \lim_{N\rightarrow\infty}\left(\mathbb{I} - \frac{i}{\hbar}P_{j}\delta x_{j}\right)^{N} = \lim_{N\rightarrow\infty}\left(\mathbb{I} - \frac{iP_{j}\Delta x_{j}/\hbar}{N}\right)^{N}.
-\end{align}
-Agora, usando $1/n=x/N$ teremos que
-\begin{equation}
-\lim_{N\rightarrow\infty}\left(1+\frac{x}{N}\right)^{N} =\lim_{n\rightarrow\infty}\left(1+\frac{1}{n}\right)^{nx} =\left(\lim_{n\rightarrow\infty}\left(1+\frac{1}{n}\right)^{n}\right)^{x} = e^{x}.
-\end{equation}
-Assim,
-\begin{equation}
-T(\Delta x_{j}) = e^{-iP_{j}\Delta x_{j}/\hbar}.
-\end{equation}</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">);</span> <span class="n">limit</span><span class="p">((</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="o">/</span><span class="n">n</span><span class="p">)</span><span class="o">**</span><span class="n">n</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">oo</span><span class="p">)</span> <span class="c1"># limites no sympy</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[2]:</div>
-
-
-
-
-<div class="jp-RenderedLatex jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/latex">
-$\displaystyle e$
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Rela%C3%A7%C3%B5es-de-comuta%C3%A7%C3%A3o-can%C3%B4nicas">Rela&#231;&#245;es de comuta&#231;&#227;o can&#244;nicas<a class="anchor-link" href="#Rela%C3%A7%C3%B5es-de-comuta%C3%A7%C3%A3o-can%C3%B4nicas">&#182;</a></h2><p>Pense na medida das coordenadas espaciais de um quanton através de um conjunto de pares laser-detector colocados em lados opostos em uma mesma coordenada. É claro que nesse esquema podemos medir duas coordenadas de posição simultâneamente. Por isso, concluímos que as <em>coordenadas de posição são observáveis compatíveis</em>, i.e.,
-\begin{equation}
-[X_{j},X_{k}] = \mathbb{0}\space\forall j,k.
-\end{equation}</p>
-<p>Vamos mostrar que o mesmo segue para as componentes do momento linear. Para isso notemos que pela composição das translações espaciais finitas,
-\begin{align}
-&amp; T(\Delta x_{1}\hat{e}_{1})T(\Delta x_{2}\hat{e}_{2}) = T(\Delta x_{2}\hat{e}_{2})T(\Delta x_{1}\hat{e}_{1}) \\ 
-&amp; = T(\Delta x_{1}\hat{e}_{1}+\Delta x_{2}\hat{e}_{2}),
-\end{align}
-(que vale para geometria Euclidiana) e assim
-\begin{align}
-\mathbb{0} &amp; = [T(\Delta x_{1}\hat{e}_{1}),T(\Delta x_{2}\hat{e}_{2})] = \left[e^{-iP_{1}\Delta x_{1}/\hbar}, e^{-iP_{2}\Delta x_{2}/\hbar}\right] \\
-           &amp; = \left[\mathbb{I} -iP_{1}\Delta x_{1}/\hbar + (-iP_{1}\Delta x_{1}/\hbar)^{2}/2! + \cdots, \mathbb{I} -iP_{2}\Delta x_{2}/\hbar + (-iP_{2}\Delta x_{2}/\hbar)^{2}/2! + \cdots\right] \\
-           &amp; = \alpha[P_{1},P_{2}] + \beta[P_{1},P_{2}^{2}] + \cdots + \xi[P_{1}^{2},P_{2}] + \cdots.
-\end{align}
-Usando $[AB,C] = A[B,C] + [A,C]B$ e $[A,BC]=B[A,C]+[A,B]C$, vemos que todos os termos não nulos da última equação serão proporcionais a $[P_{1},P_{2}]$. Portanto, a única maneira dessa relação ser igual ao operador nulo é se essas componentes do momento linear comutarem. Fazendo uma análise análoga para as outras combinações de translações, chegaremos na conclusão de que 
-\begin{equation}
-[P_{j},P_{k}]=\mathbb{O} \text{ para } j,k=1,2,3.
-\end{equation}</p>
-<p><em>OBS:</em> Não podemos usar translações infinitesimais para demonstrar este resultado pois e.g. $[T(dx_{1}\hat{e}_{1}),T(dx_{2}\hat{e}_{2})] = -dx_{1}dx_{2}[P_{1},P_{2}]/\hbar$.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Por fim, baseado nos resultados demonstrados até então, vemos que, como $[X_{j},X_{k\ne j}]=[P_{j},P_{k\ne j}]=\mathbb{O}$, podemos descrever os estados de posição,
-\begin{equation}
-|\vec{x}\rangle=|x_{1}\rangle\otimes|x_{2}\rangle\otimes|x_{3}\rangle,
-\end{equation}
-e de momento linear, 
-\begin{equation}
-|\vec{p}\rangle=|p_{1}\rangle\otimes|p_{2}\rangle\otimes|p_{3}\rangle,
-\end{equation}
-usando vetores normalizados em 
-$$\mathcal{H}=\mathcal{H}_1 \otimes\mathcal{H}_2 \otimes\mathcal{H}_3 .$$
-Portanto $X_{j}$ e $P_{k\ne j}$ atuam em espaços diferentes, e por conseguinte comutam:
-\begin{equation}
-[X_{j},P_{k\ne j}]=\mathbb{O}.
-\end{equation}</p>
-<p><em>OBS.</em> No caso da posição e momento linear teríamos e.g. $[X_{1}\otimes\mathbb{I}_{2}\otimes\mathbb{I}_{3},\mathbb{I}_{1}\otimes P_{2}\otimes\mathbb{I}_{3}]=\mathbb{O}_{123}$.</p>
-<p>Resumindo, obtivemos assim as chamadas <strong>relações de comutação canônicas</strong>:
-\begin{align}
-&amp; [X_{j},X_{k}] = \mathbb{0}, \\
-&amp; [P_{j},P_{k}] = \mathbb{0}, \\
-&amp; [X_{j},P_{k}] = i\hbar\mathbb{I}\delta_{jk}, \\
-\end{align}
-com $j,k=1,2,3$.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<h2 id="2%C2%AA-lei-de-Newton-como-um-limite-da-MQ">2&#170; lei de Newton como um limite da MQ<a class="anchor-link" href="#2%C2%AA-lei-de-Newton-como-um-limite-da-MQ">&#182;</a></h2><p>Para um operador energia potencial sendo uma função bem comportada da posição
-\begin{equation}
-U=U(\{X_{j}\}),
-\end{equation}
-na representação de Heisenberg, teremos
-\begin{equation}
-H^{H}=\sum_{j}\frac{(P_{j}^{H})^{2}}{2m} + U(\{X_{j}^{H}\}).
-\end{equation}
-Consideremos a eq. de Heisenberg:
-\begin{align}
-i\hbar\partial_{t}X^{H}_{j} &amp; = [X_{j}^{H},H^{H}]  + i\hbar U_{t}^{\dagger}(\partial_{t}X_{j}^{S})U_{t} \\ 
-&amp; = [X_{j}^{H},\frac{1}{2m}\sum_{k}(P_{k}^{H})^{2} + U(\{X_{k}^{H}\})] + 0 \\
-&amp; = \frac{1}{2m}\sum_{k}[X_{j}^{H},(P_{k}^{H})^{2}] + [X_{j}^{H},U(\{X_{k}^{H}\})] \\
-&amp; = \frac{1}{2m}\sum_{k}\left(P_{k}^{H}[X_{j}^{H},P_{k}^{H}]+[X_{j}^{H},P_{k}^{H}]P_{k}^{H}\right) + 0 \\
-&amp; = \frac{1}{2m}\sum_{k}\left(P_{k}^{H}i\hbar\delta_{jk}\mathbb{I}+i\hbar\delta_{jk}\mathbb{I}P_{k}^{H}\right) + 0 \\ 
-&amp; = \frac{i\hbar P_{j}^{H}}{m}.
-\end{align}
-Acima usamos o fato que a relação de comutação é a mesma nas representação de Schrödinger e de Heisenberg e que $\mathbb{I}^{H}=\mathbb{I}^{S}$. Assim
-\begin{equation}
-m\partial_{t}X^{H}_{j} = P_{j}^{H}.
-\end{equation}</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Ademais, usando o fato de que $[H^{S},U_{t}]=\mathbb{O}$, pois $H^{S}$ é independente do tempo, teremos
-\begin{align}
-\partial_{t}H^{H} &amp; = \partial_{t}(U_{t}^{\dagger}H^{S}U_{t}) = \partial_{t}(H^{S}U_{t}^{\dagger}U_{t}) = \partial_{t}H^{S} = 0 \\
-&amp; = \partial_{t}\left(\sum_{j}(P_{j}^{H})^{2}/2m + U(\{X_{j}^{H}\})\right) \\ 
-&amp; = \frac{1}{2m}\sum_{j}2P_{j}^{H}\partial_{t}P_{j}^{H} + \partial_{t}U(\{X_{j}^{H}\}) \\ 
-&amp; = \frac{1}{m}\sum_{j}P_{j}^{H}\partial_{t}P_{j}^{H} + \sum_{j}\partial_{t}X_{j}^{H}\partial_{X_{j}^{H}}U(\{X_{j}^{H}\}) \\
-&amp; = \frac{1}{m}\sum_{j}P_{j}^{H}\partial_{t}P_{j}^{H} + \sum_{j}\frac{P_{j}^{H}}{m}\partial_{X_{j}^{H}}U(\{X_{j}^{H}\}) \\
-&amp; = \frac{1}{m}\sum_{j}P_{j}^{H}\left(\partial_{t}P_{j}^{H} + \partial_{X_{j}^{H}}U(\{X_{j}^{H}\})\right) \\
-\end{align}
-Por conseguinte
-\begin{equation}
-\partial_{t}P_{j}^{H} = - \partial_{X_{j}^{H}}U(\{X_{j}^{H}\}) = F_{j}^{H}.
-\end{equation}</p>
-<p>Juntando esses resultados teremos que
-\begin{align}
-&amp; m\partial_{tt}X_{j}^{H} = \partial_{t}P_{j}^{H} = - \partial_{X_{j}^{H}}U(\{X_{j}^{H}\}) = F_{j}^{H} \\
-&amp; \therefore m\partial_{tt}\vec{X}_{H} = \partial_{t}\vec{P}_{H} = - \nabla_{\vec{X}_{H}}U(\vec{X}_{H}) = \vec{F}_{H}, \\
-&amp; \therefore m\partial_{tt}\langle\psi_{0}^{S}|\vec{X}(t)|\psi_{0}^{S}\rangle = \partial_{t}\langle\psi_{0}^{S}|\vec{P}(t)|\psi_{0}^{S}\rangle = \langle\psi_{0}^{S}|(-\nabla_{\vec{X}}U(\vec{X}))|\psi_{0}^{S}\rangle = \langle\psi_{0}^{S}|\vec{F}(t)|\psi_{0}^{S}\rangle, \\
-&amp; \therefore m\partial_{tt}\langle\vec{X}(t)\rangle = \partial_{t}\langle\vec{P}(t)\rangle = \langle - \nabla_{\vec{X}}U(\vec{X})\rangle = \langle\vec{F}(t)\rangle,
-\end{align}
-onde $\langle O(t)\rangle$ é o valor esperado do observável $O$ no instante de tempo $t$ (em qualquer representação).</p>
-<p>Vemos assim que o centro do pacote de ondas do quanton se move sujeito à força média seguindo a 2ª lei de Newton. Isso implica que a Mecânica Clássica é o limite da Mecânica Quântica em que os quantons são localizados (pacotes de onda estreitos), comportando-se assim como partículas clássicas.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<h2 id="Operador-momento-linear-na-base-de-posi%C3%A7%C3%A3o">Operador momento linear na base de posi&#231;&#227;o<a class="anchor-link" href="#Operador-momento-linear-na-base-de-posi%C3%A7%C3%A3o">&#182;</a></h2><p>Para $|\psi\rangle = \int_{-\infty}^{\infty} dx_{j}\psi(x_{j})|x_{j}\rangle$ e $\delta x_{j}$ infinitesimal teremos
-\begin{align}
-T(\delta x_{j})|\psi\rangle &amp; = \int_{-\infty}^{\infty} dx_{j}\psi(x_{j}) T(\delta x_{j})|x_{j}\rangle \\
-&amp; = \int_{-\infty}^{\infty} dx_{j}\psi(x_{j}) |x_{j}+\delta x_{j}\rangle \\
-&amp; = \int_{-\infty}^{\infty} dx_{j}'\psi(x_{j}'-\delta x_{j})|x_{j}'\rangle,
-\end{align}
-onde fizemos a troca de variável $x_{j}'=x_{j}+\delta x_{j}$. Agora expandimos a função de onda em série de Taylor,
-\begin{equation}
-\psi(x_{j}'-\delta x_{j}) \approx \psi(x_{j}') - \delta x_{j}\partial_{x_{j}'}\psi(x_{j}'),
-\end{equation}
-para obter
-\begin{equation}
-T(\delta x_{j})|\psi\rangle = \int_{-\infty}^{\infty} dx_{j}'\left(\psi(x_{j}') - \delta x_{j}\partial_{x_{j}'}\psi(x_{j}')\right)|x_{j}'\rangle.
-\end{equation}
-Tomando o produto interno de $|x_{j}\rangle$ com essa equação,
-\begin{align}
-\langle x_{j}|T(\delta x_{j})|\psi\rangle &amp; = \int_{-\infty}^{\infty} dx_{j}'\left(\psi(x_{j}') - \delta x_{j}\partial_{x_{j}'}\psi(x_{j}')\right)\langle x_{j}|x_{j}'\rangle \\
-&amp; = \int_{-\infty}^{\infty} dx_{j}'\left(\psi(x_{j}') - \delta x_{j}\partial_{x_{j}'}\psi(x_{j}')\right)\delta(x_{j}-x_{j}') \\
-&amp; = \psi(x_{j}) - \delta x_{j}\partial_{x_{j}}\psi(x_{j}).
+[L_{j},L_{k}] &amp; = \left[\sum_{l,m=1}^{3}\varepsilon_{jlm}X_{l}P_{m} , \sum_{p,q=1}^{3}\varepsilon_{kpq}X_{p}P_{q} \right] \\
+&amp; = \sum_{l,m,p,q=1}^{3}\varepsilon_{jlm}\varepsilon_{kpq}\left[X_{l}P_{m} , X_{p}P_{q} \right] \\
+              &amp; = \sum_{l,m,p,q=1}^{3}\varepsilon_{jlm}\varepsilon_{kpq}\left(X_{l}[P_{m} , X_{p}P_{q}] + [X_{l} , X_{p}P_{q}]P_{m} \right) \\
+              &amp; = \sum_{l,m,p,q=1}^{3}\varepsilon_{jlm}\varepsilon_{kpq}\left(X_{l}X_{p}[P_{m},P_{q}] + X_{l}[P_{m},X_{p}]P_{q} + X_{p}[X_{l},P_{q}]P_{m} + [X_{l} , X_{p}]P_{q}P_{m} \right) \\
+              &amp; = \sum_{l,m,p,q=1}^{3}\varepsilon_{jlm}\varepsilon_{kpq}\left(\mathbb{0} + X_{l}(-i\hbar\mathbb{1}\delta_{mp})P_{q} + X_{p}(i\hbar\mathbb{1}\delta_{lq})P_{m} + \mathbb{0} \right) \\
+              &amp; = -i\hbar\sum_{l,m,q=1}^{3}\varepsilon_{jlm}\varepsilon_{kmq}X_{l}P_{q} + i\hbar\sum_{l,m,p=1}^{3}\varepsilon_{jlm}\varepsilon_{kpl}X_{p}P_{m} \\
 \end{align}</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Por outro lado, se usamos $T$ em termos de $P_{j}$ obteremos
-\begin{align}
-\langle x_{j}|T(\delta x_{j})|\psi\rangle &amp; = \langle x_{j}|\left(\mathbb{I} - \frac{i}{\hbar}P_{j}\delta x_{j}\right)|\psi\rangle \\
-&amp; = \langle x_{j}|\psi\rangle - \delta x_{j}\frac{i}{\hbar}\langle x_{j}|P_{j}|\psi\rangle \\
-&amp; = \psi(x_{j}) - \delta x_{j}\frac{i}{\hbar}\langle x_{j}|P_{j}|\psi\rangle.
-\end{align}</p>
-<p>Dessas duas expressões, obtemos a ação do <strong>operador momento linear na base de posição</strong>:
+<p>Podemos verificar que
 \begin{equation}
-\langle x_{j}|P_{j}|\psi\rangle = \frac{\hbar}{i}\partial_{x_{j}}\langle x_{j}|\psi\rangle.
+\sum_{j=1}^{3}\varepsilon_{jkl}\varepsilon_{jmn} = \delta_{km}\delta_{ln} - \delta_{kn}\delta_{lm}.
 \end{equation}</p>
-<p>Por hora, vamos deixar de lado a estrutura produto tensorial e escrever estados de posição como
-\begin{equation}
-|\vec{x}\rangle = |x_{1}\rangle\otimes|x_{2}\rangle\otimes|x_{3}\rangle =: |x_{1},x_{2},x_{3}\rangle 
-\end{equation}
-e o vetor operador momento linear como
-\begin{align}
-\vec{P} &amp; = \hat{e}_{1}P_{1}\otimes\mathbb{I}_{2}\otimes\mathbb{I}_{3}+\hat{e}_{2}\mathbb{I}_{1}\otimes P_{2}\otimes\mathbb{I}_{3} + \hat{e}_{3}\mathbb{I}_{1}\otimes\mathbb{I}_{2}\otimes P_{3} \\ 
-&amp;=: \sum_{j=1}^{3}\hat{e}_{j}P_{j}.
-\end{align}
-Seguindo,
-\begin{align}
-\langle \vec{x}|\vec{P}|\psi\rangle &amp; = \langle x_{1},x_{2},x_{3}|\vec{P}|\psi\rangle \\
-&amp; = \sum_{j=1}^{3}\hat{e}_{j}\langle x_{1},x_{2},x_{3}|P_{j}|\psi\rangle = \sum_{j=1}^{3}\hat{e}_{j}\frac{\hbar}{i}\partial_{x_{j}}\langle x_{1},x_{2},x_{3}|\psi\rangle \\
-&amp; = \frac{\hbar}{i}\nabla_{\vec{x}}\langle\vec{x}|\psi\rangle.
-\end{align}</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>OBS. Para estados produto $|\psi\rangle=|\xi\rangle\otimes|\eta\rangle\otimes|\zeta\rangle$ teremos e.g.
-\begin{align}
-\langle\vec{x}|P_{1}|\psi\rangle &amp; = (\langle x_{1}|\otimes\langle x_{2}|\otimes\langle x_{3}|)(P_{1}\otimes\mathbb{I}_{2}\otimes\mathbb{I}_{2})(|\xi\rangle\otimes|\eta\rangle\otimes|\zeta\rangle) \\
-&amp; = \langle x_{1}|P_{1}|\xi\rangle\otimes\langle x_{2}|\eta\rangle\otimes\langle x_{3}|\zeta\rangle \\
-&amp; = (-i\hbar\partial_{x_{1}}\langle x_{1}|\xi\rangle)\otimes\langle x_{2}|\eta\rangle\otimes\langle x_{3}|\zeta\rangle \\
-&amp; = (-i\hbar\partial_{x_{1}}(\langle x_{1}|\otimes\langle x_{2}|\otimes\langle x_{3}|)(|\xi\rangle\otimes|\eta\rangle\otimes|\zeta\rangle) \\
-&amp; =-i\hbar\partial_{x_{1}}\langle\vec{x}|\psi\rangle.
-\end{align}
-Portanto, para esse tipo de estado, teremos $\langle \vec{x}|\vec{P}|\psi\rangle=-i\hbar\nabla_{\vec{x}}\langle\vec{x}|\psi\rangle$. No entanto, para estados do tipo 
-\begin{equation}
-|\psi\rangle = \iiint C_{\xi,\eta,\zeta}|\xi\rangle\otimes|\eta\rangle\otimes|\zeta\rangle,
-\end{equation}
-a verificação não é direta.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Valores-m%C3%A9dios-de-posi%C3%A7%C3%A3o-e-de-momento-linear">Valores m&#233;dios de posi&#231;&#227;o e de momento linear<a class="anchor-link" href="#Valores-m%C3%A9dios-de-posi%C3%A7%C3%A3o-e-de-momento-linear">&#182;</a></h2><p>Como vimos, o valor médio de um observável $O$ com espectro contínuo também é calculado por $\langle O\rangle_{\psi} = \langle \psi|O|\psi\rangle$. Para uma componente da posição, usando
-\begin{equation}
-\mathbb{I}=\int dx_{j}|x_{j}\rangle\langle x_{j}|
-\end{equation}
-(com a integral sobre $\mathbb{R}$), teremos
-\begin{align}
-\langle X_{j}\rangle_{\psi} &amp; = \langle\psi|X_{j}|\psi\rangle \\
-&amp; = \langle\psi|\mathbb{I}X_{j}\mathbb{I}|\psi\rangle \\
-&amp; = \iint dx_{j}dx_{j}'\langle\psi|x_{j}\rangle\langle x_{j}|X_{j}|x_{j}'\rangle\langle x_{j}'|\psi\rangle \\ 
-&amp; = \iint dx_{j}dx_{j}'\psi^{*}(x_{j})\langle x_{j}|x_{j}'|x_{j}'\rangle\psi(x_{j}') \\
-&amp; = \iint dx_{j}dx_{j}'x_{j}'\psi^{*}(x_{j})\delta(x_{j}-x_{j}')\psi(x_{j}') \\
-&amp; = \int dx_{j}|\psi(x_{j})|^{2}x_{j} = \int dx_{j}\psi(x_{j})^{*}x_{j}\psi(x_{j}).
-\end{align}</p>
-<p>Pelo mesmo procedimento, pode-se verificar que para $n\in\mathbb{N}_{&gt;1}$:
-\begin{equation}
-\langle X_{j}^{n}\rangle_{\psi} = \int dx_{j}|\psi(x_{j})|^{2}x_{j}^{n} = \int dx_{j}\psi(x_{j})^{*}x_{j}^{n}\psi(x_{j}).
-\end{equation}</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Para o momento linear
-\begin{align}
-\langle P_{j}\rangle_{\psi} &amp; = \langle\psi|P_{j}|\psi\rangle = \langle\psi|\mathbb{I}P_{j}|\psi\rangle \\ 
-&amp; = \int dx_{j}\langle\psi|x_{j}\rangle\langle x_{j}|P_{j}|\psi\rangle \\
-&amp; = \int dx_{j}\psi^{*}(x_{j})\left(\frac{\hbar}{i}\partial_{x_{j}}\right)\langle x_{j}|\psi\rangle \\
-&amp; = \int dx_{j}\psi^{*}(x_{j})\left(\frac{\hbar}{i}\partial_{x_{j}}\right)\psi(x_{j}).
-\end{align}</p>
-<p>No caso de $P_{j}^{2}=P_{j}P_{j}$ fazemos
-\begin{align}
-\langle P_{j}^{2}\rangle_{\psi} &amp; = \langle\psi|P_{j}P_{j}|\psi\rangle = \langle\psi|\mathbb{I}P_{j}\mathbb{I}P_{j}|\psi\rangle \\
-&amp; = \iint dx_{j}dx_{j}'\langle\psi|x_{j}\rangle\langle x_{j}|P_{j}|x_{j}'\rangle\langle x_{j}'|P_{j}|\psi\rangle \\
-&amp; = \iint dx_{j}dx_{j}'\psi^{*}(x_{j})\langle x_{j}|P_{j}|x_{j}'\rangle\left(\frac{\hbar}{i}\partial_{x_{j}'}\psi(x_{j}')\right) \\
-&amp; = \iint dx_{j}dx_{j}'\psi^{*}(x_{j})\langle x_{j}|P_{j}\left(\left(\frac{\hbar}{i}\partial_{x_{j}'}\psi(x_{j}')\right)|x_{j}'\rangle\right) \\
-&amp; = \iint dx_{j}dx_{j}'\psi^{*}(x_{j})\frac{\hbar}{i}\partial_{x_{j}}\left(\langle x_{j}|\left(\frac{\hbar}{i}\partial_{x_{j}'}\psi(x_{j}')\right)|x_{j}'\rangle\right) \\
-&amp; = \iint dx_{j}dx_{j}'\psi^{*}(x_{j})\frac{\hbar}{i}\partial_{x_{j}}\left(\left(\frac{\hbar}{i}\partial_{x_{j}'}\psi(x_{j}')\right)\langle x_{j}|x_{j}'\rangle\right) \\
-&amp; = \int dx_{j}\psi^{*}(x_{j})\frac{\hbar}{i}\partial_{x_{j}}\int dx_{j}'\left(\left(\frac{\hbar}{i}\partial_{x_{j}'}\psi(x_{j}')\right)\delta(x_{j}-x_{j}')\right)  \\
-&amp; = \int dx_{j}\psi^{*}(x_{j})\frac{\hbar}{i}\partial_{x_{j}}\left(\frac{\hbar}{i}\partial_{x_{j}}\psi(x_{j})\right) \\
-&amp; = \int dx_{j}\psi^{*}(x_{j})\left(\frac{\hbar}{i}\right)^{2}\partial_{x_{j}x_{j}}\psi(x_{j}) \\
-&amp; = \int dx_{j}\psi^{*}(x_{j})\left(\frac{\hbar}{i}\partial_{x_{j}}\right)^{2}\psi(x_{j}).
-\end{align}
-Pelo mesmo procedimento, pode-se verificar que para $n\in\mathbb{N}_{&gt;2}$:
-\begin{equation}
-\langle P_{j}^{n}\rangle_{\psi} = \int dx_{j}\psi^{*}(x_{j})\left(\frac{\hbar}{i}\partial_{x_{j}}\right)^{n}\psi(x_{j}).
-\end{equation}</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Eq.-de-Schr%C3%B6dinger-na-base-de-posi%C3%A7%C3%A3o">Eq. de Schr&#246;dinger na base de posi&#231;&#227;o<a class="anchor-link" href="#Eq.-de-Schr%C3%B6dinger-na-base-de-posi%C3%A7%C3%A3o">&#182;</a></h2><p>Considere um Hamiltoniano que inclui a energia cinética e potencial de uma partícula:
-\begin{equation}
-H_{t} = \frac{P^{2}}{2m} + U_{t},
-\end{equation}
-em que $m$ é a massa da partícula e $P^{2}=\vec{P}\cdot\vec{P}$. Consideremos agora a equação de Schrödinger para o vetor de estado:
-\begin{equation}
-i\hbar\partial_{t}|\psi_{t}\rangle = H_{t}|\psi_{t}\rangle.
-\end{equation}</p>
-<p>Seguindo, tomemos o produto interno de $|\vec{x}\rangle$ com a eq. de Schrödinger:
-\begin{equation}
-i\hbar\partial_{t}\langle\vec{x}|\psi_{t}\rangle = \langle\vec{x}|\frac{P^{2}}{2m}|\psi_{t}\rangle + \langle\vec{x}|U_{t}|\psi_{t}\rangle.
-\end{equation}</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Pode-se verificar que 
-\begin{equation}
-\langle x_{j}|P_{j}^{2}|\psi\rangle = -\hbar^{2}\partial_{x_{j}x_{j}}\psi(x_{j}) \therefore \langle\vec{x}|P_{j}^{2}|\psi\rangle=-\hbar^{2}\partial_{x_{j}x_{j}}\psi(\vec{x}).
-\end{equation}
-Assim vem que
-\begin{align}
-\langle\vec{x}|P^{2}|\psi\rangle &amp; = \langle\vec{x}|\sum_{j}P_{j}^{2}|\psi\rangle \\
-&amp; = \sum_{j}\langle\vec{x}|P_{j}^{2}|\psi\rangle \\
-&amp; = -\hbar^{2}\sum_{j}\partial_{x_{j}x_{j}}\psi(\vec{x}) \\
-&amp; = -\hbar^{2}\nabla^{2}_{\vec{x}}\psi(\vec{x}).
-\end{align}</p>
-<p>Substituindo na eq. de Schrödinger acima, e assumindo
-\begin{equation}
-U_{t}|\vec{x}\rangle = u_{t}(\vec{x})|\vec{x}\rangle
-\end{equation}
-com $u_{t}(\vec{x})$ sendo uma função escalar da posição, obtemos a equação de Schrödinger para os coeficientes $\left(c_{\vec{x}}=\langle\vec{x}|\psi_{t}\rangle=\psi_{t}(\vec{x})\right)$ do estado na base de posição $\left(|\psi_{t}\rangle=\int d^{3}x c_{\vec{x}}|\vec{x}\rangle\right)$:
-\begin{equation}
-i\hbar\partial_{t}\psi_{t}(\vec{x}) = \frac{-\hbar^{2}}{2m}\nabla^{2}_{\vec{x}}\psi_{t}(\vec{x}) + u_{t}(\vec{x})\psi_{t}(\vec{x}).
-\end{equation}
-Ou seja, a MQ ondulatória de Schödinger está contida dentro do formalismo que estamos estudando nessa disciplina.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-<h1 id="Base-de-momento-linear">Base de momento linear<a class="anchor-link" href="#Base-de-momento-linear">&#182;</a></h1><p>Quase tudo que discutimos para a posição também vale para o momento linear. Em particular, 
-\begin{equation}
-P_{j}=P_{j}^{\dagger},\ P_{j}|p_{j}\rangle=p_{j}|p_{j}\rangle \text{ com } p_{j}\in\mathbb{R}
-\end{equation}
-e 
-\begin{equation}
-P_{j}=\int_{-\infty}^{+\infty}p_{j}|p_{j}\rangle\langle p_{j}|dp_{j} \text{ para } j=1,2,3.
-\end{equation}
-Também podemos escrever o estado do sistema na base de momento linear
-\begin{equation}
-|\psi_{t}\rangle = \int d^{3}p \psi_{t}(\vec{p})|\vec{p}\rangle,
-\end{equation}
-com $\psi_{t}(\vec{p}) = \langle\vec{p}|\psi_{t}\rangle$ sendo a função de onda na base do momento linear. Se conhecemos a "forma" da energia potencial $U_{t}$ também podemos obter uma equação diferencial para esses coeficientes. No entanto, se temos $\psi_{t}(\vec{x})$ e queremos obter $\psi_{t}(\vec{p})$, podemos começar olhando para
-\begin{align}
-\psi_{t}(\vec{p}) &amp; = \langle \vec{p}|\psi_{t}\rangle \\
-&amp; = \langle \vec{p}|\int d^{3}x \psi_{t}(\vec{x})|\vec{x}\rangle \\
-&amp; = \int d^{3}x \psi_{t}(\vec{x})\langle \vec{p}|\vec{x}\rangle.
-\end{align}
-Lembrando, $\langle\vec{x}|\vec{P}|\psi\rangle = -i\hbar\vec{\nabla}_{\vec{x}}\langle\vec{x}|\psi\rangle$. Como essa equação vale para qualquer $|\psi\rangle$, podemos escrever
-\begin{align}
-\langle\vec{x}|\vec{P}|\vec{p}\rangle &amp;= \langle\vec{x}|\vec{p}|\vec{p}\rangle = \vec{p}\langle\vec{x}|\vec{p}\rangle \\ 
-&amp; = -i\hbar\vec{\nabla}_{\vec{x}}\langle\vec{x}|\vec{p}\rangle.
-\end{align}</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Para $C\in\mathbb{C}$, pode-se verificar que essa equação é satisfeita pela seguinte função
-\begin{equation}
-\langle\vec{x}|\vec{p}\rangle = Ce^{i\vec{p}\cdot\vec{x}/\hbar}.
-\end{equation}
-Para obter a constante, usamos a representação integral da função delta de Dirac
-\begin{equation}
-\delta(x-a) = \frac{1}{2\pi}\int_{-\infty}^{+\infty}dp e^{ip(x-a)}
-\end{equation}
-aplicada em
-\begin{align}
-\langle\vec{x}|\vec{x}'\rangle &amp; = (\langle x_{1}|\otimes\langle x_{2}|\otimes\langle x_{3}|)(|x_{1}'\rangle\otimes|x_{2}'\rangle\otimes|x_{3}'\rangle) \\
-&amp; = \Pi_{j=1}^{3}\langle x_{j}|x_{j}'\rangle \\
-&amp; = \Pi_{j=1}^{3}\delta(x_{j}-x_{j}') \\ 
-&amp; = \langle\vec{x}|\mathbb{I}|\vec{x}'\rangle = \int d^{3}p \langle\vec{x}|\vec{p}\rangle\langle\vec{p}|\vec{x}'\rangle \\ 
-&amp; = \int d^{3}p Ce^{i\vec{p}\cdot\vec{x}/\hbar}C^{*}e^{-i\vec{p}\cdot\vec{x}'/\hbar} \\
-&amp; = |C|^{2}\int d^{3}p e^{i\vec{p}\cdot(\vec{x}-\vec{x}')/\hbar} \\ 
-&amp; = |C|^{2}\int d^{3}p e^{i(p_1 (x_1-x_1')+p_2 (x_2-x_2')+p_3 (x_3-x_3'))/\hbar} \\ 
-&amp; = |C|^{2}(2\pi)^{3}\hbar^{3}\Pi_{j=1}^{3}\frac{1}{2\pi}\int d(p_{j}/\hbar) e^{i(p_{j}/\hbar)(x_{j}-x_{j}')} \\
-&amp;= |C|^{2}(2\pi\hbar)^{3}\Pi_{j=1}^{3}\delta(x_{j}-x_{j}').
-\end{align}
-Portanto, se usamos $C\in\mathbb{R}$ então $C=1/(2\pi\hbar)^{3/2}$ e
-\begin{equation}
-\langle\vec{x}|\vec{p}\rangle = \frac{1}{(2\pi\hbar)^{3/2}}e^{i\vec{p}\cdot\vec{x}/\hbar}.
-\end{equation}</p>
-<p>Ou seja, as funções de onda nas bases de posição e de momento linear estão relacionadas pela <strong>transformada de Fourier</strong>:
-\begin{align}
-\psi(\vec{p}) &amp; = \frac{1}{(2\pi\hbar)^{3/2}}\int d^{3}x e^{-i\vec{p}\cdot\vec{x}/\hbar}\psi(\vec{x}), \\
-\psi(\vec{x}) &amp; = \frac{1}{(2\pi\hbar)^{3/2}}\int d^{3}p e^{i\vec{p}\cdot\vec{x}/\hbar}\psi(\vec{p}).
-\end{align}</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Pacote-Gaussiano">Pacote Gaussiano<a class="anchor-link" href="#Pacote-Gaussiano">&#182;</a></h2><p>A função de onda que nos fornece o pacote de ondas Gaussiano em uma dimensão centrado em $x=0$ lê-se:
-\begin{equation}
-\psi_{G}(x) = \frac{1}{\pi^{1/4}d^{1/2}}e^{ikx-x^{2}/2d^{2}}\ \therefore\ |\psi_{G}(x)|^{2} = \frac{1}{\pi^{1/2}d}e^{-x^{2}/d^{2}},
-\end{equation}
-com $k,d\in\mathbb{R}$. Teremos assim que a função de onda na base de momento linear é
-\begin{align}
-\psi(p) &amp; = (2\pi\hbar)^{-1/2}\int_{-\infty}^{+\infty}e^{-ipx/\hbar}\psi_{G}(x)dx \\
-&amp; = (2\pi\hbar)^{-1/2}\pi^{-1/4}d^{-1/2}\int_{-\infty}^{+\infty}e^{-\hbar^{-1}ipx}e^{ikx-2^{-1}d^{-2}x^{2}}dx \\
-&amp; = (2\hbar)^{-1/2}\pi^{-3/4}d^{-1/2}\int_{-\infty}^{+\infty}e^{-i\hbar^{-1}(p-\hbar k)x-2^{-1}d^{-2}x^{2}}dx \\
-&amp; = (2\hbar)^{-1/2}\pi^{-3/4}d^{-1/2}\int_{-\infty}^{+\infty}e^{-\left(2^{-1/2}di\hbar^{-1}(p-\hbar k)+2^{-1/2}d^{-1}x\right)^2}e^{-2^{-1}d^{2}\hbar^{-2}(p-\hbar k)^{2}}dx,
-\end{align}
-em que completamos quadrados para obter a última expressão. Fazendo a seguinte mudança de variável: 
-$$y = 2^{-1/2}di\hbar^{-1}(p-\hbar k)+2^{-1/2}d^{-1}x\ \therefore\ dy = 2^{-1/2}d^{-1}dx$$
-obtemos
-\begin{align}
-\psi(p) &amp; = (2\hbar)^{-1/2}\pi^{-3/4}d^{-1/2}e^{-2^{-1}d^{2}\hbar^{-2}(p-\hbar k)^{2}}\int_{-\infty}^{+\infty}e^{-y^{2}}dy2^{1/2}d \\
-&amp; = \hbar^{-1/2}\pi^{-3/4}d^{1/2}e^{-2^{-1}d^{2}\hbar^{-2}(p-\hbar k)^{2}}\pi^{1/2} \\
-&amp; = \hbar^{-1/2}\pi^{-1/4}d^{1/2}e^{-2^{-1}d^{2}\hbar^{-2}(p-\hbar k)^{2}}.
-\end{align}</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Lembrando, para $n\in\mathbb{N_{&gt;0}}$ temos $\langle X^{n}\rangle_{\psi} = \int_{-\infty}^{\infty}x^{n}|\psi(x)|^{2}dx$ e $\langle P^{n}\rangle_{\psi} = \int_{-\infty}^{\infty}\psi^{*}(x)(-i\hbar\partial_{x})^{n}\psi(x)dx$. Assim
-\begin{align}
-\langle X\rangle_{\psi_{G}} &amp; = \int_{-\infty}^{+\infty}x|\psi_{G}(x)|^{2}dx \\
-&amp; = \frac{1}{\pi^{1/2}d}\int_{-\infty}^{+\infty}xe^{ikx-x^{2}/2d^{2}}e^{-ikx-x^{2}/2d^{2}}dx \\
-&amp; = \frac{1}{\pi^{1/2}d}\int_{-\infty}^{+\infty}xe^{-x^{2}/d^{2}}dx \\
-&amp; = 0,
-\end{align}
-pois a função sendo integrada é ímpar. Para o quadrado da posição usa o truque de Feynman:
-\begin{align}
-\langle X^{2}\rangle_{\psi_{G}} &amp; = \int_{-\infty}^{+\infty}x^{2}|\psi_{G}(x)|^{2}dx = \frac{1}{\pi^{1/2}d}\int_{-\infty}^{+\infty}x^{2}e^{-x^{2}/d^{2}}dx \\
-&amp; = -\frac{1}{\pi^{1/2}d}\partial_{d^{-2}}\int_{-\infty}^{+\infty}e^{-d^{-2}x^{2}}dx = -\frac{1}{\pi^{1/2}d}\partial_{d^{-2}}\sqrt{\pi/d^{-2}} \\
-&amp; = -\frac{1}{d}\partial_{d^{-2}}(d^{-2})^{-1/2} = -\frac{1}{d}(-1/2)(d^{-2})^{-3/2} \\
-&amp; = \frac{d^{2}}{2}.
-\end{align}</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Pode-se verificar que para o momento linear
-\begin{align}
-&amp;\langle P\rangle = \hbar k, \\
-&amp;\langle P^{2}\rangle = \hbar^{2}k^{2} + \hbar^{2}d^{-2}2^{-1}.
-\end{align}</p>
-<p>As variâncias são 
-\begin{align}
-\mathrm{Var}(X)&amp; =\langle X^{2}\rangle-\langle X\rangle^{2} = 2^{-1}d^{2}, \\
-\mathrm{Var}(P)&amp;=\langle P^{2}\rangle-\langle P\rangle^{2} = \hbar^{2}d^{-2}2^{-1}.
-\end{align}
-Isso nos leva a 
-\begin{equation}
-\mathrm{Var}(X)\mathrm{Var}(P)=\hbar^{2}/4,
-\end{equation}
-que é o mínimo possível na relação de incerteza de Heisenberg.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">psi_gauss_x</span><span class="p">(</span><span class="n">kx</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="p">((</span><span class="n">cos</span><span class="p">(</span><span class="n">kx</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">kx</span><span class="o">*</span><span class="n">x</span><span class="p">))</span><span class="o">*</span><span class="p">(</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">d</span><span class="o">**</span><span class="mi">2</span><span class="p">))))</span><span class="o">/</span><span class="p">(</span><span class="n">pi</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="n">d</span><span class="p">))</span>
-
-<span class="n">kx</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;k_</span><span class="si">{x}</span><span class="s1"> d&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">positive</span><span class="o">=</span><span class="kc">True</span><span class="p">);</span> <span class="n">x</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">real</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">norm</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">simplify</span><span class="p">(</span><span class="n">psi_gauss_x</span><span class="p">(</span><span class="n">kx</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="n">conjugate</span><span class="p">(</span><span class="n">psi_gauss_x</span><span class="p">(</span><span class="n">kx</span><span class="p">,</span><span class="n">d</span><span class="p">,</span><span class="n">x</span><span class="p">))),(</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="n">oo</span><span class="p">,</span><span class="o">+</span><span class="n">oo</span><span class="p">))</span> <span class="c1"># ok!</span>
-<span class="n">xm</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">d</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span><span class="o">*</span><span class="n">d</span><span class="p">),(</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="n">oo</span><span class="p">,</span><span class="o">+</span><span class="n">oo</span><span class="p">))</span> <span class="c1"># valor médio de x</span>
-<span class="n">x2m</span> <span class="o">=</span> <span class="n">integrate</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">d</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span><span class="o">*</span><span class="n">d</span><span class="p">),(</span><span class="n">x</span><span class="p">,</span><span class="o">-</span><span class="n">oo</span><span class="p">,</span><span class="o">+</span><span class="n">oo</span><span class="p">))</span> <span class="c1"># valor médio de x^2</span>
-<span class="n">norm</span><span class="p">,</span> <span class="n">xm</span><span class="p">,</span> <span class="n">x2m</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[6]:</div>
-
-
-
-
-<div class="jp-RenderedLatex jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/latex">
-$\displaystyle \left( 1.0, \  0, \  \frac{d^{2}}{2}\right)$
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>As respectivas densidades de probabilidade são
-\begin{align}
-&amp; |\psi_{G}(x)|^{2} = \frac{1}{\pi^{1/2}d} e^{-x^{2}/d^{2}}, \\
-&amp; |\psi_{G}(p)|^{2} = \frac{d}{\hbar\sqrt{\pi}}e^{-d^{2}(p-\hbar k)^{2}/\hbar^{2}}.
-\end{align}
-Visualize as respectivas densidades de probabilidade abaixo (usamos $\hbar=1$).</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[2]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">gaussian</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">kx</span><span class="p">):</span>
-    <span class="kn">import</span> <span class="nn">matplotlib</span><span class="p">;</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span><span class="mi">12</span><span class="p">});</span> 
-    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">dpi</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
-    <span class="n">hb</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">10.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">200</span><span class="p">);</span> 
-    <span class="n">p</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">10.0</span><span class="p">,</span> <span class="mf">10.0</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
-    <span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="nb">pow</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="nb">pow</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">*</span><span class="n">d</span><span class="p">)</span>
-    <span class="n">y2</span> <span class="o">=</span> <span class="n">d</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="nb">pow</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="nb">pow</span><span class="p">(</span><span class="n">p</span><span class="o">-</span><span class="n">hb</span><span class="o">*</span><span class="n">kx</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="nb">pow</span><span class="p">(</span><span class="n">hb</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="n">hb</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">))</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="s1">&#39;-.&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$|\psi(x)|^</span><span class="si">{2}</span><span class="s1">$&#39;</span><span class="p">);</span> 
-    <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="s1">&#39;--&#39;</span><span class="p">);</span> 
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$p_</span><span class="si">{x}</span><span class="s1">$&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$|\psi(p_</span><span class="si">{x}</span><span class="s1">)|^</span><span class="si">{2}</span><span class="s1">$&#39;</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<span class="n">interactive</span><span class="p">(</span><span class="n">gaussian</span><span class="p">,</span> <span class="n">d</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="n">kx</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-
-
-
-
-<div id="ee45e860-08a4-4aff-9bdd-af36b4f25627" class="jupyter-widgets jp-OutputArea-output ">
-<script type="text/javascript">
-var element = document.getElementById('ee45e860-08a4-4aff-9bdd-af36b4f25627');
-</script>
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "47ecec02328e499a9fe6957d11e4a4f0", "version_major": 2, "version_minor": 0}
-</script>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Evolu%C3%A7%C3%A3o-do-pacote-gaussiano-para-uma-part%C3%ADcula-livre">Evolu&#231;&#227;o do pacote gaussiano para uma part&#237;cula livre<a class="anchor-link" href="#Evolu%C3%A7%C3%A3o-do-pacote-gaussiano-para-uma-part%C3%ADcula-livre">&#182;</a></h2><p>Consideremos um quanton com função de onda inicial na base de posição 
-$$\Psi(x,0) = \psi_{G}(x) = \frac{1}{\pi^{1/4}d^{1/2}}e^{ikx-x^{2}/2d^{2}}.$$
-Vimos que neste caso a função de onda na base de momento linear é
-$$\Psi(p,0) = \psi(p) = \hbar^{-1/2}\pi^{-1/4}d^{1/2}e^{-2^{-1}d^{2}\hbar^{-2}(p-\hbar k)^{2}}.$$
-Se este quanton está livre, o operador hamiltoniano fica escrito como
-$$H = \frac{P^2}{2m}.$$</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Como podemos escrever qualquer estado como uma combinação linear dos autovetores do operador momento linear, i.e., $|\psi\rangle=\int_{-\infty}^{\infty}dp \psi(p)|p\rangle$, podemos fazer isso para o estado inicial
-$$|\Psi_0\rangle = \int_{-\infty}^{\infty}dp \Psi(p,0)|p\rangle.$$
-Assim, o estado evoluído no tempo pode ser obtido como segue
-\begin{align}
-|\Psi_t\rangle &amp; = U_t|\Psi_0\rangle = e^{-iHt/\hbar}|\Psi_0\rangle \\
-&amp; = e^{-iP^2 t/2m\hbar}\int_{-\infty}^{\infty}dp \Psi(p,0)|p\rangle \\
-&amp; = \int_{-\infty}^{\infty}dp \Psi(p,0)e^{-iP^2 t/2m\hbar}|p\rangle \hspace{1cm} (\star) \\
-&amp; = \int_{-\infty}^{\infty}dp \Psi(p,0)e^{-ip^2 t/2m\hbar}|p\rangle \hspace{1cm} (\star\star)  \\
-&amp; = \int_{-\infty}^{\infty}dp \hbar^{-1/2}\pi^{-1/4}d^{1/2}e^{-2^{-1}d^{2}\hbar^{-2}(p-\hbar k)^{2}}e^{-ip^2 t/2m\hbar}|p\rangle.
-\end{align}</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Usando 
-$$\langle x|p\rangle = \frac{1}{(2\pi\hbar)^{1/2}}e^{ipx/\hbar}$$
-teremos que
-\begin{align}
-&amp; \Psi(x,t) = \langle x|\Psi_t\rangle \\
-&amp; = \langle x|\int_{-\infty}^{\infty}dp \hbar^{-1/2}\pi^{-1/4}d^{1/2}e^{-2^{-1}d^{2}\hbar^{-2}(p-\hbar k)^{2}}e^{-ip^2 t/2m\hbar}|p\rangle \\
-&amp; = \int_{-\infty}^{\infty}dp \hbar^{-1/2}\pi^{-1/4}d^{1/2}e^{-2^{-1}d^{2}\hbar^{-2}(p-\hbar k)^{2}}e^{-ip^2 t/2m\hbar} \langle x|p\rangle \\
-&amp; = \int_{-\infty}^{\infty}dp \hbar^{-1/2}\pi^{-1/4}d^{1/2}e^{-2^{-1}d^{2}\hbar^{-2}(p-\hbar k)^{2}}e^{-ip^2 t/2m\hbar} \frac{1}{(2\pi\hbar)^{1/2}}e^{ipx/\hbar} \\
-&amp; = \frac{d^{1/2}}{2^{1/2}\pi^{3/4}\hbar}\int_{-\infty}^{\infty}dp e^{-2^{-1}d^{2}\hbar^{-2}(p-\hbar k)^{2}}e^{-ip^2 t/2m\hbar}e^{ipx/\hbar} \\
-&amp; = \frac{d^{1/2}}{2^{1/2}\pi^{3/4}\hbar}\sqrt{\frac{\pi}{b}}\exp\Big(\frac{-2bk^2 d^2 + c^2 }{4b}\Big) \\
-&amp; = \Big(\frac{1}{\pi d^2}\Big)^{1/4}\frac{1}{\sqrt{1 + \frac{it\hbar}{md^2}}}\exp\Big(\frac{-i\hbar k^2 d^2 t/2m + ikd^2x - x^2/2 }{d^2\big(1 + \frac{it\hbar}{md^2}\big)}\Big) \\
-\end{align}</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>em que usamos
-\begin{align}
-I &amp; = \int_{-\infty}^{\infty}dp e^{-2^{-1}d^{2}\hbar^{-2}(p-\hbar k)^{2}}e^{-ip^2 t/2m\hbar}e^{ipx/\hbar} \\
-&amp; = \int_{-\infty}^{\infty}dp e^{-(p^2-2\hbar kp+\hbar^2 k^2)d^2 /2\hbar^2}e^{-ip^2 t/2m\hbar}e^{ipx/\hbar} \\
-&amp; = e^{-k^2 d^2 /2}\int_{-\infty}^{\infty}dp e^{-(d^2/2\hbar^2 +it/2m\hbar)p^2 + (kd^2 /\hbar + ix/\hbar)p} \\
-&amp; =: e^{-k^2 d^2 /2}\int_{-\infty}^{\infty}dp e^{-(bp^2 - cp)} \\
-&amp; =: e^{-k^2 d^2 /2}\int_{-\infty}^{\infty}dp e^{-(\sqrt{b}p - c/2\sqrt{b})^2 + c^2 /4b} \\
-&amp; =: e^{-k^2 d^2 /2 + c^2 /4b}\int_{-\infty}^{\infty}\frac{dy}{\sqrt{b}} e^{-y^2} \\
-&amp; =: e^{-k^2 d^2 /2 + c^2 /4b}\sqrt{\frac{\pi}{b}} \\
-&amp; =: \sqrt{\frac{\pi}{b}}\exp\Big(\frac{-4bk^2 d^2 /2 + c^2 }{4b}\Big) \\
-\end{align}
-onde definimos
-$$b := d^2/2\hbar^2 +it/2m\hbar\ \text{e}\ c:= kd^2 /\hbar + ix/\hbar$$
-e fizemos a mudança de variável
-$$y = \sqrt{b}p - c/2\sqrt{b}\ \therefore\ dy = \sqrt{b}dp.$$</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Teremos assim a densidade de probabilidade
-\begin{align}
-|\Psi(x,t)|^2 &amp; = \Big(\frac{1}{\pi d^2}\Big)^{1/2}\frac{1}{\sqrt{1 + \big(\frac{t\hbar}{md^2}\big)^2}}\exp\Big(\frac{- x^2 }{d^2\big(1 + \big(\frac{t\hbar}{md^2}\big)^2\big)}\Big) \\
-&amp; = \Big(\frac{1}{\pi d_t^2}\Big)^{1/2}\exp\Big(\frac{- x^2 }{d_t^2}\Big) \\
-\end{align}
-com
-$$d_t = d\sqrt{1 + \big(\frac{t\hbar}{md^2}\big)^2}.$$
-Assim
-$$Var(X(t)) = \frac{d_t^2}{2} = \frac{d^2}{2} \Big(1 + \big(\frac{t\hbar}{md^2}\big)^2\Big).$$</p>
-<p>Vemos assim que o pacote de ondas continua sendo gaussiano. Ademais, vemos que a largura do pacote de ondas aumenta com uma dependência quadrática com o tempo.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">gaussian_free</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
-    <span class="kn">import</span> <span class="nn">matplotlib</span><span class="p">;</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span><span class="mi">12</span><span class="p">});</span> 
-    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">dpi</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
-    <span class="n">d</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">hbb</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">m</span><span class="o">=</span><span class="mi">1</span>
-    <span class="n">dt</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.5</span><span class="o">*</span><span class="n">d</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="p">((</span><span class="n">t</span><span class="o">*</span><span class="n">hbb</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">m</span><span class="o">*</span><span class="n">d</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">sqrt</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span><span class="o">*</span><span class="n">dt</span><span class="p">))</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="n">dt</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span> 
-    <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$|\Psi(x,t)|^</span><span class="si">{2}</span><span class="s1">$&#39;</span><span class="p">);</span> 
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<span class="n">interactive</span><span class="p">(</span><span class="n">gaussian_free</span><span class="p">,</span> <span class="n">t</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-
-
-
-
-<div id="3ed83a37-41b2-4cf3-b87a-889f26f59b75" class="jupyter-widgets jp-OutputArea-output ">
-<script type="text/javascript">
-var element = document.getElementById('3ed83a37-41b2-4cf3-b87a-889f26f59b75');
-</script>
-<script type="application/vnd.jupyter.widget-view+json">
-{"model_id": "ad427480550f488399238ee6bd6f86d0", "version_major": 2, "version_minor": 0}
-</script>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">t_universe</span> <span class="o">=</span> <span class="mi">13</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">9</span><span class="o">*</span><span class="mi">365</span><span class="o">*</span><span class="mi">24</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="p">;</span> <span class="n">t_universe</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
-
-
-
-
-<div class="jp-RenderedLatex jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/latex">
-$\displaystyle 409968000000000000$
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dt</span> <span class="o">=</span> <span class="p">(((</span><span class="mi">10</span><span class="o">**-</span><span class="mi">9</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="p">((</span><span class="n">t_universe</span><span class="o">*</span><span class="n">hb</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">me</span><span class="o">*</span><span class="p">((</span><span class="mi">10</span><span class="o">**-</span><span class="mi">9</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)))</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># tamanho do pacote de ondas</span>
-<span class="n">dt</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
-
-
-
-
-<div class="jp-RenderedLatex jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/latex">
-$\displaystyle 1.12627453593356 \cdot 10^{45}$
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Su</span> <span class="o">=</span> <span class="mi">93</span><span class="o">*</span><span class="mi">10</span><span class="o">**</span><span class="mi">9</span><span class="o">*</span><span class="mi">360</span><span class="o">*</span><span class="mi">24</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="mi">60</span><span class="o">*</span><span class="n">c</span> <span class="c1"># tamanho do universo visível, em metros</span>
-<span class="n">Su</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[13]:</div>
-
-
-
-
-<div class="jp-RenderedLatex jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/latex">
-$\displaystyle 8.67201249067776 \cdot 10^{26}$
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dt</span><span class="o">/</span><span class="n">Su</span> <span class="c1"># tamanho do pacote de ondas em frente ao tamanho do universo</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[14]:</div>
-
-
-
-
-<div class="jp-RenderedLatex jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/latex">
-$\displaystyle 1.29874644108767 \cdot 10^{18}$
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Exemplo">Exemplo<a class="anchor-link" href="#Exemplo">&#182;</a></h4><p>O universo tem certa de $13.77$ bilhões de anos. Consideremos um elétron que foi criado há 
-$$t = 13 \text{ bilhões de anos,}$$
-com uma função de onda gaussina com largura em posição
-$$d=10^{-9}\text{ m}.$$ 
-A largura do pacote de ondas desse elétron hoje seria
-$$d_t \approx 10^{45}\text{ m}.$$
-Considerando que o tamanho do universo visível é estimado ser
-$$S_u = 10^{26} \text{ m},$$
-vemos que o elétron seria muito maior que o universo como um todo:
-$$dt \approx 10^{18}S_u.$$</p>
-<p>Especulativamente, observo que, por exemplo, se um elétron é criado no espaço vazio, e passa um tempo suficiente para que seu pacote de ondas cresça ao ponto de que parte dele se sobreponha com matéria (estrelas, planetas, poeira, parte da função de onda de outros quantons extensos), e ocorrer uma medida projetiva de posição, o elétron assumirá uma posição bem definida, passando a fazer parte e.g. daquela estrela. Esse seria um mecanismo de aumento de massa de agregados, pois a partir de então repetidas medidas de posição seriam feitas.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Eq.-de-Schr%C3%B6dinger-na-base-de-momento-linear">Eq. de Schr&#246;dinger na base de momento linear<a class="anchor-link" href="#Eq.-de-Schr%C3%B6dinger-na-base-de-momento-linear">&#182;</a></h2><p>Tomamos o produto interno de um autovetor de momento, $|\vec{p}\rangle$, com a equação de Schrödinger para o estado, $i\hbar\partial_t|\psi_t\rangle=H_t|\psi_t\rangle$, obtendo
-\begin{align}
-&amp; \langle\vec{p}|i\hbar\partial_t|\psi_t\rangle = i\hbar\partial_t\langle\vec{p}|\psi_t\rangle  = i\hbar\partial_t\psi_t(\vec{p}) \\
-&amp; = \langle\vec{p}|H_t|\psi_t\rangle = \langle\vec{p}|\Big(\frac{P^2}{2m}+U_t\Big)|\psi_t\rangle \\
-&amp; = \frac{p^2}{2m}\psi_t(\vec{p}) + \langle\vec{p}|U_t|\psi_t\rangle.
-\end{align}</p>
-<h3 id="Part%C3%ADcula-livre">Part&#237;cula livre<a class="anchor-link" href="#Part%C3%ADcula-livre">&#182;</a></h3><p>Neste caso $U_t = \mathbb{O}$. Assim, vem que
-\begin{align}
-&amp; i\hbar\partial_t\psi_t(\vec{p}) = \frac{p^2}{2m}\psi_t(\vec{p}) \\
-&amp; \therefore\ \partial_t\psi_t(\vec{p}) = \frac{-ip^2}{2m\hbar}\psi_t(\vec{p}) \\
-&amp; \therefore\ \psi_t(\vec{p}) = \psi_0(\vec{p})e^{-ip^2t/2m\hbar} = \psi_0(\vec{p})e^{-iEt/\hbar},
-\end{align}
-em que usamos $E = p^2/2m$. Acima obtivemos essa mesma equação quando passamos da Eq. $(\star)$ para a Eq. $(\star\star)$.</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Oscilador-harm%C3%B4nico-1D">Oscilador harm&#244;nico 1D<a class="anchor-link" href="#Oscilador-harm%C3%B4nico-1D">&#182;</a></h3><p>Neste caso, o operador energia potencial como ser escrito como
-$$U = m\omega^2 X^2 /2.$$
-Precisamos obter
-$$\langle\vec{p}|U_t|\psi_t\rangle$$</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ss</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># verificação da última igualdade</span>
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">m</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">):</span>
+            <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">):</span>
+                <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
+                <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">):</span>
+                    <span class="n">s</span> <span class="o">+=</span> <span class="n">LeviCivita</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="p">)</span><span class="o">*</span><span class="n">LeviCivita</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">m</span><span class="p">,</span><span class="n">n</span><span class="p">)</span>
+                <span class="n">ss</span> <span class="o">+=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">s</span><span class="o">-</span><span class="p">(</span><span class="n">KroneckerDelta</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">m</span><span class="p">)</span><span class="o">*</span><span class="n">KroneckerDelta</span><span class="p">(</span><span class="n">l</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="o">-</span><span class="n">KroneckerDelta</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">n</span><span class="p">)</span><span class="o">*</span><span class="n">KroneckerDelta</span><span class="p">(</span><span class="n">l</span><span class="p">,</span><span class="n">m</span><span class="p">)))</span>
+                <span class="c1">#print(ss)</span>
 </pre></div>
 
      </div>
@@ -15012,29 +14045,582 @@ $$\langle\vec{p}|U_t|\psi_t\rangle$$</p>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Obtemos assim
+\begin{align}
+[L_{j},L_{k}] &amp; = i\hbar\sum_{l,q=1}^{3}\sum_{m=1}^{3}\varepsilon_{mjl}\varepsilon_{mkq}X_{l}P_{q} - i\hbar\sum_{m,p=1}^{3}\sum_{l=1}^{3}\varepsilon_{ljm}\varepsilon_{lkp}X_{p}P_{m} \\
+              &amp; = i\hbar\sum_{l,q=1}^{3}(\delta_{jk}\delta_{lq}-\delta_{jq}\delta_{lk})X_{l}P_{q} - i\hbar\sum_{m,p=1}^{3}(\delta_{jk}\delta_{mp}-\delta_{jp}\delta_{mk})X_{p}P_{m}.
+\end{align}
+Como para $j=k$ temos $[L_{j},L_{k}]=\mathbb{O}$, vamos considerar a relação acima com $j\ne k\Rightarrow \delta_{jk}=0$. Assim
+\begin{align}
+[L_{j},L_{k}] &amp; = -i\hbar\sum_{l,q=1}^{3}\delta_{jq}\delta_{lk}X_{l}P_{q} + i\hbar\sum_{m,p=1}^{3}\delta_{jp}\delta_{mk}X_{p}P_{m} \\
+              &amp; = i\hbar(-X_{k}P_{j} + X_{j}P_{k}).
+\end{align}</p>
+<p>Substituindo os índices,
+\begin{align}
+[L_{1},L_{2}] &amp; = i\hbar(X_{1}P_{2}-X_{2}P_{1}) \\
+&amp; = i\hbar\sum_{j,k}\varepsilon_{3jk}X_{j}P_{k} \\ 
+&amp; = i\hbar L_{3} =  i\hbar\varepsilon_{123}L_{3}.
+\end{align}
+Analogamente, verificar-se que 
+\begin{align}
+[L_{2},L_{3}] &amp; = i\hbar(X_{2}P_{3} - X_{3}P_{2}) \\
+&amp; = i\hbar(\epsilon_{123}X_{2}P_{3} + \epsilon_{132}X_{3}P_{2}) \\
+&amp; = i\hbar L_{1} = i\hbar\varepsilon_{231}L_{1}, \\
+[L_{1},L_{3}] &amp; = i\hbar(X_{1}P_{3} - X_{3}P_{1}) \\
+&amp; = i\hbar(-\epsilon_{213}X_{1}P_{3} - \epsilon_{231}X_{3}P_{1}) \\
+&amp; = -i\hbar L_{2} \\
+&amp; = i\hbar\varepsilon_{132}L_{2}.
+\end{align}
+Com isso, a importante relação de comutação para as componentes do momento angular pode ser escrita em uma forma geral:
+\begin{align}
+[L_{j},L_{k}] &amp; = i\hbar\varepsilon_{jkl}L_{l} \\
+&amp; = i\hbar\sum_{l=1}^{3}\varepsilon_{jkl}L_{l}.
+\end{align}
+Essa relação de comutação defina a chamada álgebra do momento angular.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Autovalores-do-momento-angular">Autovalores do momento angular<a class="anchor-link" href="#Autovalores-do-momento-angular">&#182;</a></h2><p>Aqui, consideremos qualquer operador $\vec{L}$ cujas componentes satisfazem a relação de comutação $[L_{j},L_{k}] = i\hbar\varepsilon_{jkl}L_{l}$. O método de diagonalização que usaremos aqui é semelhante àquele utilizado na solução do oscilador harmônico. Primeiramente verifiquemos que o quadrado do momento angular comuta com todas as suas componentes:
+\begin{align}
+[L^{2},L_{k}] &amp; = \left[\sum_{j=1}^{3}L_{j}^{2},L_{k}\right] \\
+&amp; = \sum_{j=1}^{3}[L_{j}L_{j},L_{k}] \\
+&amp; = \sum_{j=1}^{3}(L_{j}[L_{j},L_{k}] + [L_{j},L_{k}]L_{j}) \\
+&amp; = \sum_{j=1}^{3}\left(L_{j}i\hbar\sum_{l=1}^{3}\varepsilon_{jkl}L_{l} + i\hbar\sum_{l=1}^{3}\varepsilon_{jkl}L_{l}L_{j}\right) \\
+&amp; = i\hbar\sum_{j,l=1}^{3}\varepsilon_{jkl}(L_{j}L_{l} + L_{l}L_{j}) \\
+&amp; = i\hbar\sum_{j,l=1}^{3}\varepsilon_{jkl}\{L_{j},L_{l}\}.
+\end{align}
+Considerando as componentes explicitamente, temos por exemplo que
+\begin{align}
+[L^{2},L_{1}] &amp; = i\hbar(\varepsilon_{213}\{L_{2},L_{3}\} + \varepsilon_{312}\{L_{3},L_{2}\}) \\
+&amp; = i\hbar\{L_{2},L_{3}\}(\varepsilon_{213} + \varepsilon_{312}) \\ 
+&amp; = i\hbar\{L_{2},L_{3}\}(\varepsilon_{213} - \varepsilon_{213}) \\
+&amp; = 0,
+\end{align}
+onde usamos $\{L_{j},L_{k}\}=\{L_{k},L_{j}\}$. Analogamente, pode-se verificar também que $[L^{2},L_{2}]=[L^{2},L_{3}]=0$. Com isso vemos que
+\begin{equation}
+[L^{2},L_{k}] = 0  \text{ para } k=1,2,3.
+\end{equation}</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Seguindo, consideremos que $L^{2}$ compartilha a base de autovetores $|l,m\rangle$ com $L_{3}$ e
+\begin{cases}
+L^{2}|l,m\rangle = \lambda|l,m\rangle \\
+L_{3}|l,m\rangle = \hbar m|l,m\rangle.
+\end{cases}
+Vamos verificar que $\lambda = \hbar^{2}l(l+1)$ com $l=n/2$ para $n\in\mathbb{N}$ e $m=-l,-l+1,\cdots,-1,0,1\cdots,l-1,l$. Para isso precisaremos dos <em>operadores escada</em>:
+\begin{equation}
+L_{\pm} := L_{1} \pm iL_{2}.
+\end{equation}
+Como
+\begin{equation}
+[L^{2},L_{\pm}] = [L^{2},L_{1}] \pm i[L^{2},L_{2}] = 0, 
+\end{equation}
+vemos que os vetores $L_{\pm}|l,m\rangle$ também são autovetores de $L^{2}$ correspondentes aos mesmos autovalores $\lambda$ que $|l,m\rangle$, i.e.,
+\begin{equation}
+L^{2}(L_{\pm}|l,m\rangle) = \lambda(L_{\pm}|l,m\rangle).
+\end{equation}
+Por outro lado, os operadores escada não comutam com as componentes do momento angular. Por exemplo
+\begin{align}
+[L_{3},L_{\pm}] &amp; = [L_{3},L_{1}] \pm i[L_{3},L_{2}] = i\hbar\varepsilon_{312}L_{2} \pm i i\hbar\varepsilon_{321}L_{1} \\
+&amp;= i\hbar L_{2} \pm \hbar L_{1} = \pm\hbar(L_{1} \pm iL_{2}) \\
+&amp; = \pm\hbar L_{\pm}.
+\end{align}
+Por outro lado, vemos que
+\begin{align}
+L_{3}(L_{\pm}|l,m\rangle) &amp; = (L_{3}L_{\pm})|l,m\rangle = (\pm\hbar L_{\pm} + L_{\pm}L_{3})|l,m\rangle \\
+&amp;= \pm\hbar L_{\pm}|l,m\rangle + L_{\pm}L_{3}|l,m\rangle = \pm\hbar L_{\pm}|l,m\rangle + L_{\pm}\hbar m|l,m\rangle \\
+                          &amp; = \hbar( m \pm 1)(L_{\pm}|l,m\rangle).
+\end{align}</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Ou seja, os vetores $L_{\pm}|l,m\rangle$ também são autovetores de $L_{3}$, mas com autovalores aumentados ou diminuídos de $\hbar$ em relação àquele associado com $|l,m\rangle$. Agora, como $L^{2} = L_{1}^{2}+L_{2}^{2}+L_{3}^{2}$, não poderemos aumentar nem diminuir indefinidamente os autovalores de $L_{3}$ através da aplicação dos operadores escada. Por isso, para os valores definidos por $m:=\pm l$ a ação dos operadores escada nos retorna o vetor nulo:
+\begin{equation}
+L_{\pm}|l,m =\pm l\rangle := |\oslash\rangle.
+\end{equation}</p>
+<p>Note que como $m_{\min}=-l$ e $m_{\max}=l$ e $m$ aumenta ou diminiu de 1 em 1, para um dado $l$, os possíveis valores de $m$ são:
+\begin{equation}
+m=-l,-l+1,\cdots,l-1,l.
+\end{equation}</p>
+<p>Continuando, consideremos
+\begin{align}
+L_{\pm}L_{\mp} &amp; = (L_{1} \pm iL_{2})(L_{1} \mp iL_{2}) = L_{1}^{2} \mp iL_{1}L_{2} \pm iL_{2}L_{1} + L_{2}^{2}  \\ 
+&amp; = L_{1}^{2} + L_{2}^{2} + L_{3}^{2} - L_{3}^{2} \mp i[L_{1},L_{2}]  = L^{2} - L_{3}^{2} \mp ii\hbar\varepsilon_{123}L_{3} \\
+&amp; = L^{2} - L_{3}^{2} \pm\hbar L_{3}.
+\end{align}
+Então, podemos considerar
+\begin{align}
+L^{2}|l,m=l\rangle &amp; = (L_{-}L_{+} + L_{3}^{2} + \hbar L_{3})|l,l\rangle  \\ 
+&amp;= L_{-}L_{+}|l,l\rangle + L_{3}^{2}|l,l\rangle + \hbar L_{3}|l,l\rangle  = |\oslash\rangle + \hbar^{2}l^{2}|l,l\rangle + \hbar\hbar l|l,l\rangle \\
+                 &amp; = \hbar^{2}l(l+1)|l,l\rangle  \\
+                 &amp; = \lambda|l,l\rangle.
+\end{align}</p>
+<h3 id="Dom%C3%ADnio-de-$l$">Dom&#237;nio de $l$<a class="anchor-link" href="#Dom%C3%ADnio-de-$l$">&#182;</a></h3><p>Consideremos que os autovalores de $L_{3}$ são, por definição, $\hbar m$ e que vimos que se começamos no estado $|l,m=-l\rangle$ e aplicamos $L_{+}$ um número $n$ de vezes, aumentaremos o valor de $m$ de uma unidade em cada aplicação de $L_{+}$, até obtermos o estado $|l,m=l\rangle$, i.e.,
+\begin{equation}
+|l,m=l\rangle := L_{+}^{n}|l,m=-l\rangle \text{, com } n\in\mathbb{N}.
+\end{equation}
+Como $n\in\mathbb{N}$ teremos que 
+\begin{align}
+&amp; l=-l+n\Rightarrow 2l=n \Rightarrow l = \frac{n}{2}, \\
+&amp; \therefore l= 0, \frac{1}{2}, 1, \frac{3}{2}, 2, \frac{5}{2},\cdots.
+\end{align}</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="A%C3%A7%C3%A3o-dos-operadores-escada-na-base-$%7Cl,m%5Crangle$">A&#231;&#227;o dos operadores escada na base $|l,m\rangle$<a class="anchor-link" href="#A%C3%A7%C3%A3o-dos-operadores-escada-na-base-$%7Cl,m%5Crangle$">&#182;</a></h3><p>Como os operadores escada aumentam ou diminuem o número quântico $m$ de uma unidade, teremos e.g.
+\begin{equation}
+L_{+}|l,m\rangle \propto |l,m+1\rangle =: c|l,m+1\rangle,
+\end{equation}
+onde introduzimos a constate $c$ para transformar a proporcionalidade em igualdade. Olhemos agora para o quadrado da norma desse vetor
+\begin{align}
+\langle l,m|L_{+}^{\dagger}L_{+}|l,m\rangle &amp; = \langle l,m|L_{-}L_{+}|l,m\rangle = \langle l,m|(L^{2} - L_{3}^{2} -\hbar L_{3})|l,m\rangle \\
+&amp; = \langle l,m|\left(\hbar^{2}l(l+1)-\hbar^{2}m^{2}-\hbar^{2}m\right)|l,m\rangle \\
+&amp;= \left(\hbar^{2}l(l+1)-\hbar^{2}m^{2}-\hbar^{2}m\right)\langle l,m|l,m\rangle \\
+&amp; = \hbar^{2}[l(l+1) - m(m+1)]  \\
+&amp; = \langle l,m+1|c^{*}c|l,m+1\rangle = |c|^{2}.
+\end{align}
+Usando $c\in\mathbb{R}$ obtemos
+\begin{equation}
+L_{+}|l,m\rangle = \hbar\sqrt{l(l+1)-m(m+1)}|l,m+1\rangle.
+\end{equation}
+Pode-se mostrar também que
+\begin{equation}
+L_{-}|l,m\rangle = \hbar\sqrt{l(l+1)-m(m-1)}|l,m-1\rangle.
+\end{equation}</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<hr>
+<h1 id="Soma-de-momentos-angulares">Soma de momentos angulares<a class="anchor-link" href="#Soma-de-momentos-angulares">&#182;</a></h1><p>Consideremos os momentos angulares $\vec{J}_{s}$ com $s=a,b$, ou seja
+\begin{equation}
+[J_{j}^{s},J_{k}^{s}]=i\hbar\varepsilon_{jkl}J_{l}^{s} \text{ para } j,k=1,2,3.
+\end{equation}
+Para esses dois graus de liberdade, a soma desses momentos angulares é representada por um operador Hermitiano que atua no espaço de Hilbert composto $\mathcal{H}_{a}\otimes\mathcal{H}_{b}$ e que é escrito como segue:
+\begin{equation}
+\vec{J} := \vec{J}_{a}\otimes\mathbb{I}_{b} + \mathbb{I}_{a}\otimes\vec{J}_{b} = \sum_{i=1}^{3}\hat{e}_{i}\left(J_{i}^{a}\otimes\mathbb{I}_{b} + \mathbb{I}_{a}\otimes J_{i}^{b}\right) = \sum_{i=1}^{3}\hat{e}_{i}J_{j}.
+\end{equation}</p>
+<p>Para os conjuntos de observáveis
+\begin{equation}
+\{J_{a}^{2},J_{3}^{a},J_{b}^{2},J_{3}^{b}\} \text{ e } \{J_{a}^{2},J_{b}^{2},J^{2},J_{3}\},
+\end{equation}
+verificaremos na sequência que os observáveis dentro de cada um dos conjuntos formam um conjunto de observáveis mutuamente compatíveis. Bom, já temos que $[J_{s}^{2},J_{3}^{s}]=0$. Para os cálculos que seguem, primeiro usamos $(A\otimes B)(C\otimes D) = AC\otimes BD$, que vale para quaisquer operadores $A,C:\mathcal{H}_{a}\rightarrow\mathcal{H}_{a}$ e $B,D:\mathcal{H}_{b}\rightarrow\mathcal{H}_{b}$, para ver que 
+\begin{align}
+[A\otimes\mathbb{I}_{b},\mathbb{I}_{a}\otimes B] &amp; = (A\otimes\mathbb{I}_{b})(\mathbb{I}_{a}\otimes B) - (\mathbb{I}_{a}\otimes B)(A\otimes\mathbb{I}_{b}) \\
+&amp;= (A\mathbb{I}_{a}\otimes\mathbb{I}_{b}B) - (\mathbb{I}_{a}A\otimes B\mathbb{I}_{b}) \\
+&amp; = A\otimes B - A\otimes B \\
+&amp; = 0.
+\end{align}
+Esse resultado pode ser aplicado diretamente a
+\begin{align}
+&amp; [J_{a}^{2},J_{b}^{2}] = [J_{a}^{2}\otimes\mathbb{I}_{b},\mathbb{I}_{a}\otimes J_{b}^{2}] = 0, \\
+&amp; [J_{a}^{2},J_{3}^{b}] = [J_{a}^{2}\otimes\mathbb{I}_{b},\mathbb{I}_{a}\otimes J_{3}^{b}] = 0, \\
+&amp; [J_{b}^{2},J_{3}^{a}] = [\mathbb{I}_{a}\otimes J_{b}^{2},J_{3}^{a}\otimes\mathbb{I}_{b}] = 0, \\
+&amp; [J_{3}^{a},J_{3}^{b}] = [J_{3}^{a}\otimes\mathbb{I}_{b},\mathbb{I}_{a}\otimes J_{3}^{b}] = 0.
+\end{align}</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Agora vamos para o segundo conjunto de operadores. Aqui começamos verificando que $\vec{J}$ é de fato um momento angular:
+\begin{align}
+[J_{j},J_{k}] &amp; = [J_{j}^{a}\otimes\mathbb{I}_{b} + \mathbb{I}_{a}\otimes J_{j}^{b}, J_{k}^{a}\otimes\mathbb{I}_{b} + \mathbb{I}_{a}\otimes J_{k}^{b}] \\
+              &amp; = [J_{j}^{a}\otimes\mathbb{I}_{b},J_{k}^{a}\otimes\mathbb{I}_{b}] + [J_{j}^{a}\otimes\mathbb{I}_{b},\mathbb{I}_{a}\otimes J_{k}^{b}] + [\mathbb{I}_{a}\otimes J_{j}^{b},J_{k}^{a}\otimes\mathbb{I}_{b}] + [\mathbb{I}_{a}\otimes J_{j}^{b},\mathbb{I}_{a}\otimes J_{k}^{b}] \\
+              &amp; = [J_{j}^{a},J_{k}^{a}]\otimes\mathbb{I}_{b} + 0 + 0 + \mathbb{I}_{a}\otimes[J_{j}^{b},J_{k}^{b}] \\
+              &amp; = i\hbar\varepsilon_{jkl}J_{l}^{a}\otimes\mathbb{I}_{b} + \mathbb{I}_{a}\otimes i\hbar\varepsilon_{jkl}J_{l}^{b} \\
+              &amp; = i\hbar\varepsilon_{jkl}\left(J_{l}^{a}\otimes\mathbb{I}_{b} + \mathbb{I}_{a}\otimes J_{l}^{b}\right)  \\
+              &amp; = i\hbar\varepsilon_{jkl}J_{l}.
+\end{align}
+Pela mesma demonstração feita no caso do momento angular orbital, temos aqui que
+\begin{equation}
+[J^{2},J_{j}] = 0
+\end{equation}
+para $j=1,2,3$. Desse resultado segue que $[J^{2},J_{3}]=0$. Pode-se verificar que
+\begin{equation}
+J^{2} = \vec{J}\cdot\vec{J} =  J_{a}^{2}\otimes\mathbb{I}_{b} +  \mathbb{I}_{a}\otimes J_{b}^{2} + 2\sum_{j=1}^{3}J_{j}^{a}\otimes J_{j}^{b}. \\
+\end{equation}</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Usando
+\begin{equation}
+[A\otimes B,A'\otimes\mathbb{I}] = [A,A']\otimes B
+\end{equation}
+vemos que
+\begin{align}
+[J^{2},J_{a}^{2}] &amp; = [J^{2},J_{a}^{2}\otimes\mathbb{I}_{b}] \\
+                  &amp; = [J_{a}^{2}\otimes\mathbb{I}_{b},J_{a}^{2}\otimes\mathbb{I}_{b}] + [\mathbb{I}_{a}\otimes J_{b}^{2},J_{a}^{2}\otimes\mathbb{I}_{b}] + [2\sum_{j=1}^{3}J_{j}^{a}\otimes J_{j}^{b},J_{a}^{2}\otimes\mathbb{I}_{b}] \\
+                  &amp; = 0 + 0 + 2\sum_{j=1}^{3}[J_{j}^{a},J_{a}^{2}]\otimes J_{j}^{b} = 0.
+\end{align}
+Do mesmo modo, pode-se verificar que
+\begin{equation}
+[J^{2},J_{b}^{2}] = 0.
+\end{equation}
+Nos falta ainda olhar para
+\begin{align}
+[J_{a}^{2},J_{3}] &amp; = [J_{a}^{2}\otimes\mathbb{I}_{b},J_{3}^{a}\otimes\mathbb{I}_{b} + \mathbb{I}_{a}\otimes J_{3}^{b}] \\ 
+&amp; = [J_{a}^{2}\otimes\mathbb{I}_{b},J_{3}^{a}\otimes\mathbb{I}_{b}] + [J_{a}^{2}\otimes\mathbb{I}_{b},\mathbb{I}_{a}\otimes J_{3}^{b}] \\
+                  &amp; = 0.
+\end{align}
+Analogamente, pode-se verificar que
+\begin{equation}
+[J_{b}^{2},J_{3}] = 0.
+\end{equation}</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Vamos denotar os autovetores comuns de $\{J_{a}^{2},J_{3}^{a},J_{b}^{2},J_{3}^{b}\}$ por $|j_{a},m_{a}\rangle\otimes|j_{b},m_{b}\rangle$ e para os autovetores comuns de $\{J_{a}^{2},J_{b}^{2},J^{2},J_{3}\}$ usaremos $|j_{a},j_{b},j,m\rangle$. Assim
+\begin{align}
+&amp; J_{a}^{2}\otimes\mathbb{I}_{b}|j_{a},m_{a}\rangle\otimes|j_{b},m_{b}\rangle = \hbar^{2}j_{a}(j_{a}+1)|j_{a},m_{a}\rangle\otimes|j_{b},m_{b}\rangle, \\
+&amp; J_{3}^{a}\otimes\mathbb{I}_{b}|j_{a},m_{a}\rangle\otimes|j_{b},m_{b}\rangle = \hbar m_{a}|j_{a},m_{a}\rangle\otimes|j_{b},m_{b}\rangle, \\
+&amp; \mathbb{I}_{a}\otimes J_{b}^{2}|j_{a},m_{a}\rangle\otimes|j_{b},m_{b}\rangle = \hbar^{2}j_{b}(j_{b}+1)|j_{a},m_{a}\rangle\otimes|j_{b},m_{b}\rangle, \\
+&amp; \mathbb{I}_{a}\otimes J_{3}^{b}|j_{a},m_{a}\rangle\otimes|j_{b},m_{b}\rangle = \hbar m_{b}|j_{a},m_{a}\rangle\otimes|j_{b},m_{b}\rangle
+\end{align}
+e
+\begin{align}
+&amp; J_{a}^{2}\otimes\mathbb{I}_{b}|j_{a},j_{b},j,m\rangle = \hbar^{2}j_{a}(j_{a}+1)|j_{a},j_{b},j,m\rangle, \\
+&amp; \mathbb{I}_{a}\otimes J_{b}^{2}|j_{a},j_{b},j,m\rangle = \hbar^{2}j_{b}(j_{b}+1)|j_{a},j_{b},j,m\rangle, \\
+&amp; J^{2}|j_{a},j_{b},j,m\rangle = \hbar^{2}j(j+1)|j_{a},j_{b},j,m\rangle, \\
+&amp; J_{3}|j_{a},j_{b},j,m\rangle = \hbar m|j_{a},j_{b},j,m\rangle.
+\end{align}</p>
+<p>Notemos ainda que
+\begin{align}
+J_{3}|j_{a},m_{a}\rangle\otimes|j_{b},m_{b}\rangle &amp; = J_{3}^{a}\otimes\mathbb{I}_{b}|j_{a},m_{a}\rangle\otimes|j_{b},m_{b}\rangle + \mathbb{I}_{a}\otimes J_{3}^{b}|j_{a},m_{a}\rangle\otimes|j_{b},m_{b}\rangle \\
+               &amp; = \hbar m_{a}|j_{a},m_{a}\rangle\otimes|j_{b},m_{b}\rangle + \hbar m_{b}|j_{a},m_{a}\rangle\otimes|j_{b},m_{b}\rangle \\
+               &amp; = \hbar (m_{a}+m_{b})|j_{a},m_{a}\rangle\otimes|j_{b},m_{b}\rangle.
+\end{align}</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Ou seja, $|j_{a},m_{a}\rangle\otimes|j_{b},m_{b}\rangle$ também é autovetor de $J_{3}$ com autovalor $\hbar(m_{a}+m_{b})$. No entanto, as componentes dos momentos angulares individuias não comutam com o momento angular total. Por exemplo:
+\begin{align}
+[J^{2},J_{3}^{a}] &amp; = \sum_{j=1}^{3}[J_{j}^{2},J_{3}^{a}\otimes\mathbb{I}_{b}] \\
+&amp; = \sum_{j=1}^{3}\left(J_{j}[J_{j},J_{3}^{a}\otimes\mathbb{I}_{b}] + [J_{j},J_{3}^{a}\otimes\mathbb{I}_{b}]J_{j} \right) \\
+                  &amp; = \sum_{j=1}^{3}\left(J_{j}[J_{j}^{a}\otimes\mathbb{I}_{b}+\mathbb{I}_{a}\otimes J_{j}^{b},J_{3}^{a}\otimes\mathbb{I}_{b}] + [J_{j}^{a}\otimes\mathbb{I}_{b}+\mathbb{I}_{a}\otimes J_{j}^{b},J_{3}^{a}\otimes\mathbb{I}_{b}]J_{j} \right) \\
+                &amp; = \sum_{j=1}^{3}\left(J_{j}([J_{j}^{a},J_{3}^{a}]\otimes\mathbb{I}_{b}+0) + ([J_{j}^{a},J_{3}^{a}]\otimes\mathbb{I}_{b}+0)J_{j} \right) \\
+                &amp; = \sum_{j=1}^{3}i\hbar \varepsilon_{j3k}\left(J_{j}J_{k}^{a}\otimes\mathbb{I}_{b} + J_{k}^{a}\otimes\mathbb{I}_{b}J_{j} \right) \\
+                &amp; = i\hbar \varepsilon_{13k}\left(J_{1}J_{k}^{a}\otimes\mathbb{I}_{b} + J_{k}^{a}\otimes\mathbb{I}_{b}J_{1} \right) + i\hbar \varepsilon_{23k}\left(J_{2}J_{k}^{a}\otimes\mathbb{I}_{b} + J_{k}^{a}\otimes\mathbb{I}_{b}J_{2} \right) \\
+                &amp; = i\hbar \varepsilon_{132}\left(J_{1}J_{2}^{a}\otimes\mathbb{I}_{b} + J_{2}^{a}\otimes\mathbb{I}_{b}J_{1} \right) + i\hbar \varepsilon_{231}\left(J_{2}J_{1}^{a}\otimes\mathbb{I}_{b} + J_{1}^{a}\otimes\mathbb{I}_{b}J_{2} \right) \\
+                &amp; = i\hbar\left(J_{2}J_{1}^{a}\otimes\mathbb{I}_{b} + J_{1}^{a}\otimes\mathbb{I}_{b}J_{2} - J_{1}J_{2}^{a}\otimes\mathbb{I}_{b} - J_{2}^{a}\otimes\mathbb{I}_{b}J_{1} \right) \\
+                &amp; = i\hbar(J_{2}^{a}\otimes\mathbb{I}_{b}+\mathbb{I}_{a}\otimes J_{2}^{b})J_{1}^{a}\otimes\mathbb{I}_{b} + J_{1}^{a}\otimes\mathbb{I}_{b}(J_{2}^{a}\otimes\mathbb{I}_{b}+\mathbb{I}_{a}\otimes J_{2}^{b}) \\
+                &amp; \hspace{1cm} - (J_{1}^{a}\otimes\mathbb{I}_{b}+\mathbb{I}_{a}\otimes J_{1}^{b})J_{2}^{a}\otimes\mathbb{I}_{b} - J_{2}^{a}\otimes\mathbb{I}_{b}(J_{1}^{a}\otimes\mathbb{I}_{b}+\mathbb{I}_{a}\otimes J_{1}^{b})  \\
+                &amp; = i\hbar(J_{2}^{a}J_{1}^{a}\otimes\mathbb{I}_{b} + J_{1}^{a}\otimes J_{2}^{b} + J_{1}^{a}J_{2}^{a}\otimes\mathbb{I}_{b}  + J_{1}^{a}\otimes J_{2}^{b} \\
+                &amp; \hspace{1cm} - J_{1}^{a}J_{2}^{a}\otimes\mathbb{I}_{b} - J_{2}^{a}\otimes J_{1}^{b} - J_{2}^{a}J_{1}^{a}\otimes\mathbb{I}_{b} - J_{2}^{a}\otimes J_{1}^{b}) \\
+                &amp; = 2i\hbar(J_{1}^{a}\otimes J_{2}^{b} - J_{2}^{a}\otimes J_{1}^{b}) \\
+                &amp; \ne 0.                
+\end{align}
+Analogamente, pode-se verificar que
+\begin{equation}
+[J^{2},J_{3}^{b}] \ne 0.
+\end{equation}</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Estes últimos resultados nos mostram que, para os momentos angulares individuais fixos (i.e., para os valores dos números quânticos $j_{s}$ fixos), estados $|j_{a},j_{b},j,m\rangle$ com momento angular total fixo devem corresponder a superposições de dois ou mais estados $|j_{a},m_{a}\rangle\otimes|j_{b},m_{b}\rangle$ com valores fixos das componentes $z$ dos momentos angulares individuais. Para escrevermos essa superposição explicitamente, vamos utilizar a relação de completezaa:
+\begin{equation}
+\sum_{m_{s}=-j_{s}}^{j_{s}}|j_{s},m_{s}\rangle\langle j_{s},m_{s}| = \mathbb{I}_{j_{s}}
+\end{equation}
+para escrever o operador identidade no subespaço $\mathcal{H}_{j_{a}}\otimes\mathcal{H}_{j_{b}}\subset\mathcal{H}$ gerado por estados com $\{j_{s}\}_{s=a,b}$ constantes. Segue assim que
+\begin{align}
+|j_{a},j_{b},j,m\rangle &amp; = \mathbb{I}_{j_{a}}\otimes\mathbb{I}_{j_{b}}|j_{a},j_{b},j,m\rangle \\
+                        &amp; = \left(\sum_{m_{a}=-j_{a}}^{j_{a}}|j_{a},m_{a}\rangle\langle j_{a},m_{a}|\otimes\sum_{m_{b}=-j_{b}}^{j_{b}}|j_{b},m_{b}\rangle\langle j_{b},m_{b}|\right)|j_{a},j_{b},j,m\rangle \\
+                        &amp; = \sum_{m_{a}=-j_{a}}^{j_{a}}\sum_{m_{b}=-j_{b}}^{j_{b}}(|j_{a},m_{a}\rangle\otimes|j_{b},m_{b}\rangle)(\langle j_{a},m_{a}|\otimes\langle j_{b},m_{b}|)|j_{a},j_{b},j,m\rangle \\
+                        &amp; =: \sum_{m_{a}=-j_{a}}^{j_{a}}\sum_{m_{b}=-j_{b}}^{j_{b}} C_{m_{a}m_{b}m}^{j_{a}j_{b}j}|j_{a},m_{a}\rangle\otimes|j_{b},m_{b}\rangle,
+\end{align}
+onde usamos novamente $AB\otimes CD=(A\otimes C)(B\otimes D)$ e definimos os chamados <em>coeficientes de Clebsch-Gordan</em> como:
+\begin{equation}
+C_{m_{a}m_{b}m}^{j_{a}j_{b}j} := (\langle j_{a},m_{a}|\otimes\langle j_{b},m_{b}|)|j_{a},j_{b},j,m\rangle.
+\end{equation}</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Existem tabelas desses coeficientes, cuja obtenção usa restrições algébricas e simetrias. Por exemplo, uma condição necessária para que os coeficientes sejam não nulos é que
+\begin{equation}
+m=m_{a}+m_{b}.
+\end{equation}
+Para verificar essa afirmação consideremos ("atua" $J_{3}$ na esquerda e $J_{3}^{s}$ na direita)
+\begin{align}
+&amp; (\langle j_{a},m_{a}|\otimes\langle j_{b},m_{b}|)(J_{3} - J_{3}^{a}\otimes\mathbb{I}_{b} - \mathbb{I}_{a}\otimes J_{3}^{b})|j_{a},j_{b},j,m\rangle = (\langle j_{a},m_{a}|\otimes\langle j_{b},m_{b}|)\mathbb{O}|j_{a},j_{b},j,m\rangle = 0, \\
+&amp; \therefore \hbar(m-m_{a}-m_{b})(\langle j_{a},m_{a}|\otimes\langle j_{b},m_{b}|)|j_{a},j_{b},j,m\rangle = 0, \\
+&amp; \therefore \hbar(m-m_{a}-m_{b})C_{m_{a}m_{b}m}^{j_{a}j_{b}j} = 0.
+\end{align}</p>
+<p>OBS. Como a base $|j_{s},m_{s}\rangle$ possiu $2j_{s}+1$ vetores, temos a dimensão
+\begin{equation}
+\dim(\mathcal{H}_{j_{a}}\otimes\mathcal{H}_{j_{b}}) = (2j_{a}+1)(2j_{b}+1),
+\end{equation}
+que é igual ao número de estados da base $\{|j_{a},j_{b},j,m\rangle\}$.</p>
+<p>Agora, fixados os valores de $j_{s}$, se conhecermos também os possíveis valores de $m_{s}$, e consequentemente os possíveis valores de $m$, para obter os possíveis valores de $j$, notemos que o maior momento angular total é obtido se $\vec{J}_{a}$ e $\vec{J}_{b}$ forem "paralelos", ou seja, se tiverem e.g. os valores máximos das componentes $z$ dos momentos angulares individuais, i.e., se $\{m_{s}=j_{s}\}_{s=a,b}$. Assim
+\begin{equation}
+m=m_{a}+m_{b}=j_{a}+j_{b}=j_{\max}.
+\end{equation}
+Por outro lado, o menor valor possível de $j$ é obtido se $\vec{J}_{a}$ e $\vec{J}_{b}$ forem "antiparalelos", ou seja, se e.g. $m_{a}=j_{a}$ e $m_{b}=-j_{b}$ ou $m_{a}=-j_{a}$ e $m_{b}=j_{b}$. Para ter o mínimo entre $m=j_{a}-j_{b}$ e $m=j_{b}-j_{a}$ usamos como o menor valor de $j$ o módulo $|j_{a}-j_{b}|$, i.e., 
+\begin{equation}
+j_{min}=\min(j_{a}-j_{b},j_{b}-j_{a}) = |j_{a}-j_{b}|.
+\end{equation}
+Com isso segue que $j\in\mathbb{N}$ com
+\begin{equation}
+j=|j_{a}-j_{b}|,|j_{a}-j_{b}|+1,\cdots,j_{a}+j_{b}.
+\end{equation}</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Exemplo:-Soma-de-dois-spins-1/2"><strong>Exemplo:</strong> Soma de dois spins 1/2<a class="anchor-link" href="#Exemplo:-Soma-de-dois-spins-1/2">&#182;</a></h2><p>Como um primeiro exemplo, consideremos que $j_{s}=1/2$ para $s=a,b$. Nesse caso $m_{s}=-1/2,1/2$, $j=0,1$, $m(j=0)=0$ e $m(j=1)=-1,0,1$. Vamos determinar os coeficientes de Clebsch-Gordan nesse caso. Por conveniência, não escreveremos $j_{s}$ nos labels dos vetores de estado. Usando a restrição $m=m_{a}+m_{b}$ e começando com o estado de maior componente $z$ do momento angular total, vemos que
+\begin{align}
+|j=1,m=1\rangle &amp; = \sum_{m_{a}=-1/2}^{1/2}\sum_{m_{b}=-1/2}^{1/2}C_{m_{a}m_{b}m}^{j_{a}j_{b}j}|m_{a}\rangle\otimes|m_{b}\rangle \\
+                &amp; = C_{-1/2,-1/2,1}^{1/2,1/2,1}|-1/2\rangle\otimes|-1/2\rangle + C_{-1/2,1/2,1}^{1/2,1/2,1}|-1/2\rangle\otimes|1/2\rangle + C_{1/2,-1/2,1}^{1/2,1/2,1}|1/2\rangle\otimes|-1/2\rangle + C_{1/2,1/2,1}^{1/2,1/2,1}|1/2\rangle\otimes|1/2\rangle \\
+                &amp; = 0 + 0 + 0 + C_{1/2,1/2,1}^{1/2,1/2,1}|1/2\rangle\otimes|1/2\rangle \\
+                &amp; = |m_{a}=1/2\rangle\otimes|m_{b}=1/2\rangle.
+\end{align}</p>
+<p>Seguindo, aplicamos o operador de abaixamento $J_{-} = J_{1}-iJ_{2}$ nesse estado, lembrando que $J_{-}|j,m\rangle=\hbar\sqrt{j(j+1)-m(m-1)}|j,m-1\rangle$,
+para obter $J_{-}|j=1,m=1\rangle=\hbar\sqrt{1(1+1)-1(1-1)}|1,1-1\rangle=\hbar\sqrt{2}|1,0\rangle$. Assim
+\begin{align}
+|j=1,m=0\rangle &amp; = (1/\hbar\sqrt{2})J_{-}|j=1,m=1\rangle \\
+                &amp; = (1/\hbar\sqrt{2})(J_{-}^{a}\otimes\mathbb{I}_{b} + \mathbb{I}_{a}\otimes J_{-}^{b})|1/2\rangle\otimes|1/2\rangle \\
+                &amp; = (1/\hbar\sqrt{2})((J_{-}^{a}|1/2\rangle)\otimes|1/2\rangle + |1/2\rangle\otimes(J_{-}^{b}|1/2\rangle)) \\
+                &amp; = (1/\hbar\sqrt{2})((\hbar\sqrt{j_{a}(j_{a}+1)-m_{a}(m_{a}-1)}|1/2-1\rangle)\otimes|1/2\rangle + |1/2\rangle\otimes(\hbar\sqrt{j_{b}(j_{b}+1)-m_{b}(m_{b}-1)}|1/2-1\rangle)) \\
+                &amp; = (1/\sqrt{2})(\sqrt{1/2(1/2+1)-(1/2)(1/2-1)}|-1/2\rangle\otimes|1/2\rangle + \sqrt{(1/2)(1/2+1)-(1/2)(1/2-1)}|1/2\rangle\otimes|-1/2\rangle) \\
+                &amp; = (1/\sqrt{2})(\sqrt{3/4+1/4}|-1/2\rangle\otimes|1/2\rangle + \sqrt{3/4+1/4}|1/2\rangle\otimes|-1/2\rangle) \\
+                &amp; = (1/\sqrt{2})|m_{a}=-1/2\rangle\otimes|m_{b}=1/2\rangle + (1/\sqrt{2})|m_{a}=1/2\rangle\otimes|m_{b}=-1/2\rangle \\
+\end{align}</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Ainda, $J_{-}|j=1,m=0\rangle=\hbar\sqrt{1(1+1)-0(0-1)}|1,0-1\rangle=\hbar\sqrt{2}|1,-1\rangle$. Assim
+\begin{align}
+|j=1,m=-1\rangle &amp; = (\hbar^{-1}/\sqrt{2})J_{-}|j=1,m=0\rangle \\
+                 &amp; = (\hbar^{-1}/2)(J_{-}^{a}\otimes\mathbb{I}_{b} + \mathbb{I}_{a}\otimes J_{-}^{b})(|-1/2\rangle\otimes|1/2\rangle + |1/2\rangle\otimes|-1/2\rangle) \\
+                 &amp; = (\hbar^{-1}/2)(J_{-}^{a}\otimes\mathbb{I}_{b}|-1/2\rangle\otimes|1/2\rangle + J_{-}^{a}\otimes\mathbb{I}_{b}|1/2\rangle\otimes|-1/2\rangle + \mathbb{I}_{a}\otimes J_{-}^{b}|-1/2\rangle\otimes|1/2\rangle + \mathbb{I}_{a}\otimes J_{-}^{b}|1/2\rangle\otimes|-1/2\rangle) \\
+                 &amp; = (1/2)(|\oslash\rangle\otimes|1/2\rangle + \sqrt{1}|-1/2\rangle\otimes|-1/2\rangle + \sqrt{1}|-1/2\rangle\otimes|-1/2\rangle + |1/2\rangle\otimes|\oslash\rangle) \\
+                 &amp; = |m_{a}=-1/2\rangle\otimes|m_{b}=-1/2\rangle.
+\end{align}</p>
+<p>Construíremos o estado que falta da base como o primeiro
+\begin{align}
+|j=0,m=0\rangle &amp; = \sum_{m_{a}=-1/2}^{1/2}\sum_{m_{b}=-1/2}^{1/2}C_{m_{a}m_{b}m}^{j_{a}j_{b}j}|m_{a}\rangle\otimes|m_{b}\rangle \\
+                &amp; = C_{-1/2,-1/2,0}^{1/2,1/2,0}|-1/2\rangle\otimes|-1/2\rangle + C_{-1/2,1/2,0}^{1/2,1/2,0}|-1/2\rangle\otimes|1/2\rangle + C_{1/2,-1/2,0}^{1/2,1/2,0}|1/2\rangle\otimes|-1/2\rangle + C_{1/2,1/2,0}^{1/2,1/2,0}|1/2\rangle\otimes|1/2\rangle \\
+                &amp; = 0 + C_{-1/2,1/2,0}^{1/2,1/2,0}|-1/2\rangle\otimes|1/2\rangle + C_{1/2,-1/2,0}^{1/2,1/2,0}|1/2\rangle\otimes|-1/2\rangle + 0 \\
+                &amp; = (1/\sqrt{2})\left(|m_{a}=-1/2\rangle\otimes|m_{b}=1/2\rangle - |m_{a}=1/2\rangle\otimes|m_{b}=-1/2\rangle\right),
+\end{align}
+com a escolha dos coeficientes de Clebsch-Gordan feita de forma que o estado seja normalizado e ortogonal aos outros estados da base, i.e.,
+\begin{equation}
+|||j=0,m=0\rangle||=1 \therefore |C_{-1/2,1/2,0}^{1/2,1/2,0}|^{2}+|C_{1/2,-1/2,0}^{1/2,1/2,0}|^{2}=1
+\end{equation}
+e
+\begin{equation}
+\langle j=1,m=0|j=0,m=0\rangle=0 \therefore (1/\sqrt{2})C_{-1/2,1/2,0}^{1/2,1/2,0}+(1/\sqrt{2})C_{1/2,-1/2,0}^{1/2,1/2,0}=0.
+\end{equation}</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <hr>
 <h1 id="Exerc%C3%ADcios">Exerc&#237;cios<a class="anchor-link" href="#Exerc%C3%ADcios">&#182;</a></h1><ol>
-<li><p>Para o operador de translação espacial $T(\delta x_{j}) = \mathbb{I} - \frac{i}{\hbar}P_{j}\delta x_{j}$, considerando $O(\delta x_{j}^{2})\approx 0$, verifique que $\lim_{\delta x_{j}\rightarrow 0}T(\delta x_{j}) = \mathbb{I}$, que $T(\delta x_{j})T(\delta x_{j}') = T(\delta x_{j}+\delta x_{j}')$, que $T^{\dagger}(\delta x_{j}) = T(-\delta x_{j})$ e que $T^{\dagger}(\delta x_{j})T(\delta x_{j}) = T(\delta x_{j})T^{\dagger}(\delta x_{j}) = \mathbb{I}.$</p>
+<li><p>Escreva explicitamente a relação de incerteza de Robertson para as componentes do momento angular, e a discuta no que concerne a (in)compatibilidade dessas componentes.</p>
 </li>
-<li><p>Mostre que se a relação $[X_{j},T(\delta x_{j})]|x_{j}\rangle = \delta x_{j}\mathbb{I}|x_{j}\rangle$ vale para os estados da base $\{|x_{j}\rangle\}$, então ela vale também para um estado qualquer $|\psi\rangle\in\mathcal{H}$.</p>
+<li><p>Verifique que $[L^{2},L_{2}]=[L^{2},L_{3}]=\mathbb{O}$.</p>
 </li>
-<li><p>Prove que $\lim_{n\rightarrow\infty}\left(1+\frac{1}{n}\right)^{n}=e$.</p>
+<li><p>Analogamente ao que fizemos usando $L^{2}=L_{-}L_{+} + L_{3}^{2} + \hbar L_{3}$, obtenha $\lambda=\hbar^{2}l(l+1)$ usando $L^{2}=L_{+}L_{-} + L_{3}^{2} - \hbar L_{3}$.</p>
 </li>
-<li><p>Verifique que $\langle X_{j}^{2}\rangle_{\psi} = \int dx_{j}|\psi(x_{j})|^{2}x_{j}^{2}$.</p>
+<li><p>Verifique que $L_{-}|l,m\rangle = \hbar\sqrt{l(l+1)-m(m-1)}|l,m-1\rangle$.</p>
 </li>
-<li><p>Verifique que $\langle P_{j}^{3}\rangle_{\psi} = \int dx_{j}\psi^{*}(x_{j})\left(\frac{\hbar}{i}\partial_{x_{j}}\right)^{3}\psi(x_{j})$.</p>
+<li><p>Verifique que $J^{2} = J_{a}^{2}\otimes\mathbb{I}_{b} +  \mathbb{I}_{a}\otimes J_{b}^{2} + 2\sum_{j=1}^{3}J_{j}^{a}\otimes J_{j}^{b}$.</p>
 </li>
-<li><p>Verifique que $\langle x_{j}|P_{j}^{2}|\psi\rangle = -\hbar^{2}\partial_{x_{j}x_{j}}\psi(x_{j})$.</p>
+<li><p>Verifique que $[A\otimes B,A'\otimes\mathbb{I}] = [A,A']\otimes B$.</p>
 </li>
-<li><p>Usando o operador de mudança de momento linear $T_{p}(\delta p_{j})=\mathbb{I}-(i/\hbar)X_{j}\delta p_{j}$, tal que $T_{p}(\delta p_{j})|p_{j}\rangle=|p_{j}+\delta p_{j}\rangle$, verifique que, na base de momento linear, o operador posição atua de forma tal que $\langle p_{j}|X_{j}|\psi\rangle=-i\hbar\partial_{p_{j}}\langle p_{j}|\psi\rangle$.</p>
+<li><p>Verifique que $[J^{2},J_{b}^{2}] = \mathbb{O}$.</p>
 </li>
-<li><p>Verifique que a função $\langle\vec{x}|\vec{p}\rangle = Ce^{i\vec{p}\cdot\vec{x}/\hbar}$, com $C\in\mathbb{C}$ constante, satisfaz a eq. diferencial $\vec{\nabla}_{\vec{x}}\langle\vec{x}|\vec{p}\rangle =(i\vec{p}/\hbar)\langle\vec{x}|\vec{p}\rangle$.</p>
+<li><p>Verifique que $[J_{b}^{2},J_{3}] = \mathbb{O}$.</p>
 </li>
-<li><p>Para um quantum com função de onda $\psi_{G}(x) = \frac{1}{\pi^{1/4}d^{1/2}}e^{ikx-x^{2}/2d^{2}}$, verifique que $\langle P\rangle = \hbar k$ e $\langle P^{2}\rangle = \hbar^{2}k^{2} + \hbar^{2}d^{-2}2^{-1}$.</p>
+<li><p>Verifique que $[J^{2},J_{3}^{b}] = 2i\hbar(J_{2}^{a}\otimes J_{1}^{b}-J_{1}^{a}\otimes J_{2}^{b}) \ne \mathbb{O}$.</p>
+</li>
+<li><p>Obtenha a base $|j,m\rangle$ em termos da base $|m_{a}\rangle\otimes|m_{b}\rangle$ para $j_{a}=1$ e $j_{b}=1/2$.</p>
 </li>
 </ol>
 
 </div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<hr>
+<hr>
+<h1 id="Material-suplementar">Material suplementar<a class="anchor-link" href="#Material-suplementar">&#182;</a></h1>
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Rela%C3%A7%C3%A3o-de-recurs%C3%A3o-para-os-coeficientes-de-Clebsch-Gordan">Rela&#231;&#227;o de recurs&#227;o para os coeficientes de Clebsch-Gordan<a class="anchor-link" href="#Rela%C3%A7%C3%A3o-de-recurs%C3%A3o-para-os-coeficientes-de-Clebsch-Gordan">&#182;</a></h3><p>Vamos considerar $j_{a},j_{b},j$ fixos. De $|j,m\rangle=\sum_{m_{a},m_{b}}C_{m_{a}m_{b}m}^{j_{a}j_{b}j}|m_{a}\rangle\otimes|m_{b}\rangle$ teremos que
+\begin{align}
+J_{\pm}|j,m\rangle &amp; = \hbar\sqrt{j(j+1)-m(m\pm1)}|j,m\pm1\rangle \\
+        &amp; = (J_{\pm}^{a}\otimes\mathbb{I}_{b}+\mathbb{I}_{a}\otimes J_{\pm}^{b})|j,m\rangle \\
+        &amp; = \sum_{m_{a},m_{b}}C_{m_{a}m_{b}m}^{j_{a}j_{b}j}\left(J_{\pm}^{a}|m_{a}\rangle\otimes|m_{b}\rangle + |m_{a}\rangle\otimes J_{\pm}^{b}|m_{b}\rangle\right) \\
+        &amp; = \sum_{m_{a},m_{b}}C_{m_{a}m_{b}m}^{j_{a}j_{b}j}\hbar\sqrt{j_{a}(j_{a}+1)-m_{a}(m_{a}\pm1)}|m_{a}\pm1\rangle\otimes|m_{b}\rangle \\
+         &amp; + \sum_{m_{a},m_{b}}C_{m_{a}m_{b}m}^{j_{a}j_{b}j}\hbar\sqrt{j_{b}(j_{b}+1)-m_{b}(m_{b}\pm1)}|m_{a}\rangle\otimes|m_{b}\pm1\rangle. 
+\end{align}
+Tomando o produto interno de $|m_{a}'\rangle\otimes|m_{b}'\rangle$ com esta última equação dividida por $\hbar$ vem que
+\begin{align}
+&amp; \sqrt{j(j+1)-m(m\pm1)}\langle m_{a}'|\otimes\langle m_{b}'|j,m\pm1\rangle \\
+&amp; = \sqrt{j(j+1)-m(m\pm1)}C_{m_{a}'m_{b}'(m\pm1)}^{j_{a}j_{b}j} \\
+&amp; = \sum_{m_{a},m_{b}}C_{m_{a}m_{b}m}^{j_{a}j_{b}j}\sqrt{j_{a}(j_{a}+1)-m_{a}(m_{a}\pm1)}(\langle m_{a}'|\otimes\langle m_{b}'|)(|m_{a}\pm1\rangle\otimes|m_{b}\rangle) \\ 
+&amp; + \sum_{m_{a},m_{b}}C_{m_{a}m_{b}m}^{j_{a}j_{b}j}\sqrt{j_{b}(j_{b}+1)-m_{b}(m_{b}\pm1)}(\langle m_{a}'|\otimes\langle m_{b}'|)(|m_{a}\rangle\otimes|m_{b}\pm1\rangle) \\
+&amp; = \sum_{m_{a},m_{b}}C_{m_{a}m_{b}m}^{j_{a}j_{b}j}\sqrt{j_{a}(j_{a}+1)-m_{a}(m_{a}\pm1)}\delta_{m_{a}',m_{a}\pm1}\delta_{m_{b}',m_{b}} \\ 
+&amp; + \sum_{m_{a},m_{b}}C_{m_{a}m_{b}m}^{j_{a}j_{b}j}\sqrt{j_{b}(j_{b}+1)-m_{b}(m_{b}\pm1)}\delta_{m_{a}',m_{a}}\delta_{m_{b}',m_{b}\pm1} \\
+&amp; = C_{(m_{a}'\mp1)m_{b}'m}^{j_{a}j_{b}j}\sqrt{j_{a}(j_{a}+1)-m_{a}'(m_{a}'\mp1)} \\
+&amp; + C_{m_{a}'(m_{b}'\mp1)m}^{j_{a}j_{b}j}\sqrt{j_{b}(j_{b}+1)-m_{b}'(m_{b}'\mp1)}.
+\end{align}
+Usando $m'=m\pm1$ e trocando os números quânticos com linha pelos sem obtemos
+\begin{align}
+\sqrt{j(j+1)-m(m\mp1)}C_{m_{a}m_{b}m}^{j_{a}j_{b}j} &amp; = C_{(m_{a}\mp1)m_{b}(m\mp1)}^{j_{a}j_{b}j}\sqrt{j_{a}(j_{a}+1)-m_{a}(m_{a}\mp1)} \\
+&amp; + C_{m_{a}(m_{b}\mp1)(m\mp1)}^{j_{a}j_{b}j}\sqrt{j_{b}(j_{b}+1)-m_{b}(m_{b}\mp1)}.
+\end{align}</p>
+<p><strong>Exercício:</strong> Forneça um exemplo de aplicação dessa relação na resolução do último exercício.</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="Exemplo:-Soma-de-dois-spins-1-($j_%7Ba%7D=j_%7Bb%7D=1$)">Exemplo: Soma de dois spins 1 ($j_{a}=j_{b}=1$)<a class="anchor-link" href="#Exemplo:-Soma-de-dois-spins-1-($j_%7Ba%7D=j_%7Bb%7D=1$)">&#182;</a></h2><p>Começamos com
+\begin{equation}
+|j=2,m=2\rangle = |m_{a}=1\rangle\otimes|m_{b}=1\rangle.
+\end{equation}
+Usa $\hbar\sqrt{2(2+1)-2(2-1)}=2\hbar=:c$ para escrever
+\begin{align}
+|j=2,m=1\rangle &amp;= c^{-1}\hbar\sqrt{1(1+1)-1(1-1)}|m_{a}=1\rangle\otimes|m_{b}=0\rangle + \hbar\sqrt{1(1+1)-1(1-1)}|m_{a}=0\rangle\otimes|m_{b}=1\rangle \\
+&amp;= 2^{-1/2}(|m_{a}=1\rangle\otimes|m_{b}=0\rangle + |m_{a}=0\rangle\otimes|m_{b}=1\rangle). 
+\end{align}
+Agora $c=\sqrt{2}\hbar$ e
+\begin{align}
+|j=2,m=0\rangle &amp; = 
+\end{align}</p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>OBS. Esse código está ainda sendo produzido e testado. Não utilizar!</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[59]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">cJp</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">m</span><span class="p">):</span>
+    <span class="n">hb</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;hbar&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">hb</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="n">j</span><span class="o">*</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="n">m</span><span class="o">*</span><span class="p">(</span><span class="n">m</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+<span class="k">def</span> <span class="nf">cJm</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">m</span><span class="p">):</span>
+    <span class="n">hb</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;hbar&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">hb</span><span class="o">*</span><span class="n">sqrt</span><span class="p">(</span><span class="n">j</span><span class="o">*</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="n">m</span><span class="o">*</span><span class="p">(</span><span class="n">m</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[71]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">clebsch_gordan</span><span class="p">(</span><span class="n">ja</span><span class="p">,</span><span class="n">jb</span><span class="p">):</span>
+    <span class="n">nma</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">ja</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">nmb</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">jb</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">nj</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">ja</span><span class="o">+</span><span class="n">jb</span><span class="o">-</span><span class="nb">abs</span><span class="p">(</span><span class="n">ja</span><span class="o">-</span><span class="n">jb</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; ja = &#39;</span><span class="p">,</span><span class="n">ja</span><span class="p">,</span><span class="s1">&#39; jb = &#39;</span><span class="p">,</span><span class="n">jb</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">nj</span><span class="p">):</span>
+        <span class="n">j</span> <span class="o">=</span> <span class="n">ja</span><span class="o">+</span><span class="n">jb</span><span class="o">-</span><span class="n">k</span>
+        <span class="n">nm</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">m</span> <span class="o">=</span> <span class="n">j</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;j=&#39;</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="s1">&#39;m=&#39;</span><span class="p">,</span><span class="n">m</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ma=&#39;</span><span class="p">,</span><span class="n">ja</span><span class="p">,</span><span class="s1">&#39;, mb=&#39;</span><span class="p">,</span><span class="n">jb</span><span class="p">,</span><span class="s1">&#39;, ccg=&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;, Os outros coeficientes são nulos&#39;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">nm</span><span class="p">):</span>
+            <span class="n">m</span> <span class="o">=</span> <span class="n">j</span><span class="o">-</span><span class="n">l</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;j = &#39;</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="s1">&#39;, m = &#39;</span><span class="p">,</span><span class="n">m</span><span class="p">)</span>
+            <span class="n">norm</span> <span class="o">=</span> <span class="n">cJm</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">m</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">nma</span><span class="p">):</span>
+                <span class="n">ma</span> <span class="o">=</span> <span class="n">ja</span><span class="o">-</span><span class="n">p</span>
+                <span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">nmb</span><span class="p">):</span>
+                    <span class="n">mb</span> <span class="o">=</span> <span class="n">jb</span><span class="o">-</span><span class="n">q</span>
+                    <span class="k">if</span> <span class="n">m</span> <span class="o">!=</span> <span class="p">(</span><span class="n">ma</span><span class="o">+</span><span class="n">mb</span><span class="p">):</span>
+                        <span class="n">ccg</span> <span class="o">=</span> <span class="mi">0</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="n">ma</span> <span class="o">!=</span> <span class="p">(</span><span class="o">-</span><span class="n">ja</span><span class="p">):</span>
+                            <span class="n">ccg</span> <span class="o">=</span> <span class="n">cJm</span><span class="p">(</span><span class="n">ja</span><span class="p">,</span><span class="n">ma</span><span class="p">)</span><span class="o">/</span><span class="n">norm</span> 
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="n">ccg</span> <span class="o">=</span> <span class="n">cJm</span><span class="p">(</span><span class="n">jb</span><span class="p">,</span><span class="n">mb</span><span class="p">)</span><span class="o">/</span><span class="n">norm</span> 
+                    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ma = &#39;</span><span class="p">,</span><span class="n">ma</span><span class="p">,</span><span class="s1">&#39;, mb = &#39;</span><span class="p">,</span><span class="n">mb</span><span class="p">,</span><span class="s1">&#39;, ccg = &#39;</span><span class="p">,</span><span class="n">ccg</span><span class="p">)</span>
+                        
+    <span class="k">return</span>
+<span class="n">clebsch_gordan</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre> ja =  0.5  jb =  0.5
+j= 1.0 m= 1.0
+ma= 0.5 , mb= 0.5 , ccg= 1 , Os outros coeficientes são nulos
+j =  1.0 , m =  0.0
+ma =  0.5 , mb =  0.5 , ccg =  0
+ma =  0.5 , mb =  -0.5 , ccg =  0.707106781186547
+ma =  -0.5 , mb =  0.5 , ccg =  0.707106781186547
+ma =  -0.5 , mb =  -0.5 , ccg =  0
+j =  1.0 , m =  -1.0
+ma =  0.5 , mb =  0.5 , ccg =  0
+ma =  0.5 , mb =  -0.5 , ccg =  0
+ma =  -0.5 , mb =  0.5 , ccg =  0
+ma =  -0.5 , mb =  -0.5 , ccg =  nan
+j= 0.0 m= 0.0
+ma= 0.5 , mb= 0.5 , ccg= 1 , Os outros coeficientes são nulos
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
 </div>
 </body>
 
