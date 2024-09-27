@@ -1,0 +1,35 @@
+Para visualizar os notebooks no navegador, copie o link do GitHub, 
+https://github.com/jonasmaziero/mecanica_quantica, em:
+http://nbviewer.jupyter.org/
+Para interagir com os notebooks, copie o link do GitHub em
+https://mybinder.org
+Depois clique em launch. Depois que o link da máquina virtual
+for criado, o copie no navegador e espere carregar. Depois 
+é só aproveitar.
+
+Para modificar os notebooks, você fazer algumas instalações.
+Python já vem instalado no Ubuntu. Para instalar os demais pacotes, veja 
+http://jupyter.org/install ou simplesmente use os comandos (sem o $):
+$ sudo apt-get install python3-numpy
+$ sudo apt-get install python3-scipy
+$ sudo apt-get install python3-matplotlib
+$ sudo apt-get install python3-pandas
+$ sudo apt-get install python3-pip
+$ sudo pip3 install sympy	
+$ sudo pip3 install ipython
+$ sudo pip3 install jupyter
+
+Em algum dos meus computadores esse processo funcionou, mas no disco externo não. 
+Nesse caso instalei com o Anaconda (recomendável). Faça o download em:
+https://www.anaconda.com/download/#linux
+e instale com:
+$ sudo bash Anaconda3-5.1.0-Linux-x86_64.sh
+
+Para criar um novo notebook use:
+$ jupyter notebook
+Para abrir um notebook existente (como os das notas de aula), use:
+$ jupyter notebook file_name.ipynb
+
+Para rodar as animações, instale o ipywidgets usando:
+$ sudo pip install ipywidgets
+$ jupyter nbextension enable --py widgetsnbextension
