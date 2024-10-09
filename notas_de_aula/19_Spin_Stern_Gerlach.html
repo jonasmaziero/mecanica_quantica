@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>12_Barreira_Tunelamento</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>19_Spin_Stern_Gerlach</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7482,7 +7482,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3>Notas de aula: Mecânica Quântica <br/> Autor: Jonas Maziero</h3>
+<h3>Notas de aula de Mecânica Quântica <br/> Autor: Jonas Maziero</h3>
 </div>
 </div>
 </div>
@@ -7493,77 +7493,72 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Potencial-Barreira-e-Tunelamento-Qu%C3%A2ntico">Potencial Barreira e Tunelamento Quântico<a class="anchor-link" href="#Potencial-Barreira-e-Tunelamento-Qu%C3%A2ntico">¶</a></h1><p>Para a barreira de potencial, podemos escrever a função energia potencial como:
-\begin{cases}
-U(x&lt;0)=0, \\
-U(0&lt;x&lt;a)=U_{0}=\text{constante}, \\
-U(x&gt;a)=0.
-\end{cases}
-As soluções da equação de Schrödinher, que, para as três regiões, pode ser escrita na forma 
+<h1 id="Spin">Spin<a class="anchor-link" href="#Spin">¶</a></h1><p>Na sequência, tratatemos majoritariamente da teoria clássica. Só no final falaremos sobre quantização do momento magnético.</p>
+<h2 id="Rela%C3%A7%C3%A3o-entre-momento-magn%C3%A9tico-e-momento-angular">Relação entre momento magnético e momento angular<a class="anchor-link" href="#Rela%C3%A7%C3%A3o-entre-momento-magn%C3%A9tico-e-momento-angular">¶</a></h2><p>O exemplo típico, e mais simples, de momento magnético em eletrodinâmica clássica é aquele de uma partícula de massa $m$ e carga elétrica $q$ se movimentando em uma trajetória círcular de raio $r$. Veja a figura abaixo.</p>
+<img alt="No description has been provided for this image" src="fig_larmor.png" width="200"/>
+<p>Para 
 \begin{equation}
-\partial_{xx}\Xi(x)+k^{2}\Xi(x)=0,
+t=\frac{2\pi r}{v}
 \end{equation}
-são obtidas como no caso do potencial dregrau.</p>
-<h2 id="$E%3CU_%7B0%7D$">$E&lt;U_{0}$<a class="anchor-link" href="#$E%3CU_%7B0%7D$">¶</a></h2><p>Nesse caso as soluções da EqSIT1D podem ser escritas na forma
-\begin{cases}
-\Xi_{e}(x&lt;0) = c_{ed}e^{ik_{e}x} + c_{ee}e^{-ik_{e}x}, \\
-\Xi_{b}(0&lt;x&lt;a) = c_{bd}e^{-k_{b}x} + c_{bc}e^{k_{b}x}, \\
-\Xi_{d}(x&gt;a) = c_{dd}e^{ik_{e}x} + c_{de}e^{-ik_{e}x},
-\end{cases}
-com
+sendo o período de uma volta completa da partícula em seu movimento circular com velocidade $v$, como a corrente elétrica pode ser escrita como 
 \begin{equation}
-k_{e}=\frac{\sqrt{2mE}}{\hbar} \text{ e } k_{b}=\frac{\sqrt{2m(U_{0}-E)}}{\hbar}.
+i = \frac{q}{t} = \frac{qv}{2\pi r},
 \end{equation}
-Assim
+o módulo do momento magnético associado a esse movimento é
 \begin{equation}
-\frac{k_{b}}{k_{e}} = \frac{\sqrt{2m(U_{0}-E)}}{\sqrt{2mE}} \therefore k_{b} = k_{e}\sqrt{\frac{U_{0}}{E}-1}.
+\mu = iA = \frac{qv}{2\pi r}\pi r^{2} = \frac{qrv}{2} = \frac{qrmv}{2m}.
 \end{equation}
-OBS. Aqui não usarei o til para diferenciar os dois casos.</p>
-<p>Novamente, $c_{ed}$ determina o fluxo de quantons incidindo na barreira de potencial e consideramos que os quantons movem-se inicialmente na região $x&lt;0$ da esquerda para a direita. Pontanto, se o quanton passou para a região $x&gt;a$ não há motivo para este retornar, então
+OBS. A direção de $\mu$ é aquela da linha ortogonal ao plano da "espira de corrente". O sentido é obtido usando a regra da mão direita.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>O módulo do momento angular $\vec{L}=\vec{r}\mathrm{x}\vec{p}$ da partícula em movimento circular é
 \begin{equation}
-c_{de} := 0.
+L = |\vec{r}\mathrm{x}\vec{p}| = rp\sin 90^{\circ} = rmv.
+\end{equation}</p>
+<p>Vemos assim que o momento magnético da partícula em movimento circular está relacionado ao momento angular por
+\begin{equation}
+\vec{\mu} = \frac{q}{2m}\vec{L}.
+\end{equation}
+Vale observar que $\vec{\mu}$ e $\vec{L}$ são paralelos se $q&gt;0$ e antiparalelos se $q&lt;0$.</p>
+<p>Em geral, movimento de rotação de cargas elétricas (momento angular) estará associado à existência de um momento magnético. Este resultado é conhecido como <strong>teorema de Larmor</strong> (<a href="https://en.wikipedia.org/wiki/Larmor_precession">https://en.wikipedia.org/wiki/Larmor_precession</a>).</p>
+<p>Para casos mais gerais que o movimento circular, assumiremos que
+\begin{equation}
+\vec{\mu} \propto \frac{q}{2m}\vec{L} = g\frac{q}{2m}\vec{L} =:\gamma\vec{L},
+\end{equation}
+em que $g$ é a razão giromagnética e $\gamma$ é o chamado fator giromagnético (de rotação), que é um fator de proporcionalidade que depende somente da forma da distribuição de cargas elétricas em movimento de rotação.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Momento-magn%C3%A9tico-sujeito-a-um-campo-magn%C3%A9tico">Momento magnético sujeito a um campo magnético<a class="anchor-link" href="#Momento-magn%C3%A9tico-sujeito-a-um-campo-magn%C3%A9tico">¶</a></h2><p>Um momento magnético $\vec{\mu}$ sujeito a um campo magnético $\vec{B}$ sofre um torque
+\begin{equation}
+\vec{\tau}=\vec{\mu}\mathrm{x}\vec{B}.
+\end{equation}</p>
+<p>Como o trabalho necessário para fazer o dipolo magnético mudar sua orientação angular de uma quantidade $d\theta$ é
+\begin{equation}
+dW=\tau d\theta=\mu B\sin\theta d\theta = d(-\mu B\cos\theta)=dU,
+\end{equation}
+a energia potencial de interação entre $\vec{\mu}$ e $\vec{B}$ é
+\begin{equation}
+U =-\mu B\cos\theta= -\vec{\mu}\cdot\vec{B}.
 \end{equation}</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [56]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib</span>
-<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-<span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">'font.size'</span><span class="p">:</span><span class="mi">12</span><span class="p">})</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">dpi</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
-<span class="n">U0</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">;</span> <span class="n">m</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">;</span> <span class="n">xmin</span> <span class="o">=</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">;</span> <span class="n">xmax</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span><span class="o">*</span><span class="n">xmin</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="sa">r</span><span class="s1">'$U_0$'</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="mf">0.5</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="mf">0.5</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="sa">r</span><span class="s1">'$a=$'</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">)[:</span><span class="mi">4</span><span class="p">],</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="mf">0.01</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="mf">0.01</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">xmin</span><span class="p">,</span><span class="n">xmax</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.01</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">0.3</span><span class="p">,</span><span class="n">U0</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">0.2</span><span class="p">,</span><span class="n">U0</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span> <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s2">"&lt;-"</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">U0</span><span class="p">),</span> <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s2">"-"</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">U0</span><span class="p">),</span> <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s2">"-"</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="o">-</span><span class="mf">0.01</span><span class="p">,</span><span class="n">U0</span><span class="o">-</span><span class="mf">0.001</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="mf">0.01</span><span class="p">,</span><span class="n">U0</span><span class="o">-</span><span class="mf">0.001</span><span class="p">),</span> <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s2">"-"</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedImage jp-OutputArea-output" tabindex="0">
-<img alt="No description has been provided for this image" class="" src="data:image/png;base64,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1JNPPqm4uLgW6y5fvlxPPvmk1aYCAAAggFhaijBw4MAW78pWVVVJ+tud29bqStLtt9/uVT5lyhRJ0oEDB1qtm52drerqas+noqLCSrMBAAAQACwF28TERB0+fFhut9urvLS0VJKUkJDQat2mdbhXa3ooQ69erTclJCREYWFhXh8AAADgSpaCbVpamurq6lRYWOhVnpeXJ5fLpTFjxrRa94c//KEkadu2bV7lxcXF6tWrl2655RYrTQEAAAC8WFpjO2XKFKWmpmrRokWqqalRXFycCgoKtH37duXn53ueYZuZmam8vDyVl5crOjpa0pePBHv55Zf105/+VOfPn9fIkSO1c+dOrVy5Uj/96U89+wEAAAC+sPzjsS1btignJ0dLly5VVVWVhg8f7vWDMElqaGhQQ0ODrnz3ww033KAdO3boscce07PPPquqqip97WtfU25urh566KHOuRoAAAAELEtvHuspePMYAABAz9bj3zwGAAAA9FQEWwAAANgCwRYAAAC2QLAFAACALRBsAQAIYI899pgcDoeOHz/e4vbY2FjddtttXdwqwDcEWwAAAtiBAwc0YMAAfe1rX2u27dNPP9Xx48c1evTobmgZYB3BFgCAAHbgwIFWg+u+ffskiWCL6wbBFgCAAHXy5EmdO3dO3/zmN1vcvn//fkkEW1w/CLYAAASo9oLrvn37FBoaqhEjRnRlswCfEWwBAAhQBw4ckKQ279gmJycrODhYknTu3DlNmzZNN954o+Lj47Vjx44uayvQEQRbAAAC1P79+xUREaGYmJhm26qqqvTJJ5943c297777NGTIEJ07d07PP/+87rrrLlVWVnZhi4G2EWwBAAhQBw8eVHJycovb9uzZI0m69dZbJUl1dXV6/fXXtWzZMvXt21f/+I//qOTkZG3durXL2gu0h2ALAEAAamho0JkzZzRw4MAWt7/++usKCgrSpEmTJEnHjh2T0+lUVFSUZ5/ExEQdOnSoS9oLdATBFgCAABQUFKRBgwbp4MGDunz5ste2gwcPKi8vTzNmzNBXvvIVSV/esQ0LC/PaLywsTHV1dV3WZqA9wd3dAAAA0D2WLFmixx9/XJMnT9acOXPUu3dv7du3Ty+99JJiY2P14osvevZ1Op2qqanxql9TUyOn09nFrQZaR7AF2vCHP/xBO3fu7O5mAECnCg8P10MPPaScnBxF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ly86q8/Wrl2r3r17a86cOZbbcD2ONX8F6tzmr0Cd266Fazq3dfj5CV2guLjYSDKbNm3yKp88ebJPj34xxpiPP/7YOJ1Oc+edd3qV33rrrSYhIcHrmB988IGRZF566SXfLqCb+NtvjY2NJjMz0zgcDrN69WrL53/uueeMJPP6669brnut+dM3q1atMpLMnj17PGWXL182o0aNMmPGjPHal/H0JTuPpfZ09vzF3NWxPvu///s/ExwcbO666y5L576ex9rVrD6CKVDntitZ7bNAntuuZLXfWnKt57YeFWyN+fL5hQMGDDCrV682b731lrn33nuNJJOfn++13/z5801QUJD55JNPPGUTJ040Tz75pCkqKjK7du0yL774onG5XKZfv36mtLTUq/7u3btNcHCwSUtLMzt27DAbNmwwUVFRJiEhwXz++eddcq2dyZ9++9nPfmYkmfnz55sPPvjA63PgwAHPfn/84x/N7bffbn7zm9+YN9980/z2t781ixYtMkFBQeZ73/ueaWho6LLrtaIjfdNSv3z++edm1KhRJioqymzYsMHs2LHDpKWlmeDgYPP22297nSMQx1MgjqX2+NpvzF3W+6xJbm6ukWTefPPNFo9v17FmzJf/Y7B582bz6quvGkkmIyPDbN682WzevNl89tlnxhjmtqv52meBPrf52m/dMbf1uGBbW1trFi9ebIYMGWJ69+5tkpKSTEFBQbP97rnnHiPJHD9+3FO2ZMkSM3LkSNOvXz8THBxsXC6XmT17tjl69GiL53rzzTfN2LFjTWhoqImIiDA/+tGPWnwI8/XAn36Ljo42klr8REdHe/Y7duyYmTp1qhk6dKgJCQkxoaGhJjEx0TzzzDM9eoLrSN+01C/GGHPmzBnzox/9yERERJjQ0FAzduxYs2PHjhbPE2jjKRDHUnt87TfmLt/+fRpjTHx8vImJifE8QP5qdh1rxrT9762pr5jbvPnaZ4E+t/nab90xtzmMMabjCxcAAACAnolVzAAAALAFgi0AAABsgWALAAAAWyDYAgAAwBYItgAAALAFgi0AAABsgWALAAAAWyDYAgAAwBYItgAAALAFgi0AAABsgWALAAAAWyDYAgAAwBb+H/DbEENhHZsPAAAAAElFTkSuQmCC"/>
-</div>
-</div>
-</div>
-</div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -7571,378 +7566,42 @@ c_{de} := 0.
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>As outras constantes, $c_{ee},c_{bd},c_{ba},c_{dd}$, são determinadas, em termos de $c_{ed}$, impondo a continuidade da função de onda e de sua primeira derivada. Usando
+<h3 id="Campo-magn%C3%A9tico-constante">Campo magnético constante<a class="anchor-link" href="#Campo-magn%C3%A9tico-constante">¶</a></h3><p>Vamos considerar o exemplo de um campo magnético
+\begin{equation}
+\vec{B}=b\hat{k}
+\end{equation}
+com $b\in\mathbb{R}$ constante no espaço. Da 2ª lei de Newton para rotações,
+\begin{equation}
+\partial_{t}\vec{L}=\vec{\tau},
+\end{equation}
+teremos que
+\begin{align}
+\partial_{t}\vec{L} &amp; = \partial_{t}L_x\hat{i} + \partial_{t}L_y\hat{j}+\partial_{t}L_z\hat{k} \\
+&amp;= \vec{\tau} = \vec{\mu}\mathrm{x}\vec{B} \\
+&amp; = \gamma\vec{L}\mathrm{x}\vec{B} \\
+&amp; = \gamma(L_{x}\hat{i}+L_{y}\hat{j}+L_{z}\hat{k})\mathrm{x}(b\hat{k}) \\
+&amp;= \gamma b(-L_{x}\hat{j}+L_{y}\hat{i}+0).
+\end{align}
+Ou seja
 \begin{cases}
-\partial_{x}\Xi_{e} = ik_{e}\left(c_{ed}e^{ik_{e}x}-c_{ee}e^{-ik_{e}x}\right), \\
-\partial_{x}\Xi_{b} = -k_{b}\left(c_{bd}e^{-k_{b}x}-c_{bc}e^{k_{b}x}\right), \\
-\partial_{x}\Xi_{d} = ik_{e}c_{dd}e^{ik_{e}x},
+\partial_{t}L_{x}=\omega L_{y}, \\
+\partial_{t}L_{y}=-\omega L_{x}, \\
+\partial_{t}L_{z}=0 \therefore L_{z}(t)=L_{z}(0),
 \end{cases}
-teremos
-\begin{align}
-\Xi_{e}(x=0) = \Xi_{b}(x=0) &amp; \\
-&amp; \therefore c_{ed}+c_{ee}=c_{bd}+c_{bc} \therefore -c_{ee}+c_{bd}+c_{bc}+0c_{dd}=c_{ed}, \\
-\Xi_{b}(x=a) = \Xi_{d}(x=a) &amp; \\ 
-&amp; \therefore c_{bd}e^{-k_{b}a}+c_{bc}e^{k_{b}a}=c_{dd}e^{ik_{e}a} \therefore 0c_{ee}+e^{-k_{b}a}c_{bd}+e^{k_{b}a}c_{bc}-e^{ik_{e}a}c_{dd}=0, \\
-\partial_{x}\Xi_{e}(x=0)=\partial_{x}\Xi_{b}(x=0) &amp; \\ 
-&amp; \therefore ik_{e}(c_{ed}-c_{ee})=-k_{b}(c_{bd}-c_{bc}) \therefore ik_{e}c_{ee}-k_{b}c_{bd}+k_{b}c_{bc}+0c_{dd}=ik_{e}c_{ed}, \\
-\partial_{x}\Xi_{e}(x=a)=\partial_{x}\Xi_{b}(x=a) &amp; \\ 
-&amp; \therefore -k_{b}\left(c_{bd}e^{-k_{b}a}-c_{bc}e^{k_{b}a}\right) = ik_{e}c_{dd}e^{ik_{e}a} \therefore 0c_{ee}-k_{b}e^{-k_{b}a}c_{bd}+k_{b}e^{k_{b}a}c_{bc}-ik_{e}e^{ik_{e}a}c_{dd}=0.
-\end{align}
-Este sistema de equações lineares (SEL) está resolvido com o código Sympy abaixo.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">init_printing</span><span class="p">,</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">solve</span><span class="p">,</span> <span class="n">exp</span>
-<span class="n">init_printing</span><span class="p">(</span><span class="n">use_unicode</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="n">ced</span><span class="p">,</span><span class="n">cee</span><span class="p">,</span><span class="n">cbd</span><span class="p">,</span><span class="n">cbc</span><span class="p">,</span><span class="n">cdd</span><span class="o">=</span><span class="n">symbols</span><span class="p">(</span><span class="s1">'c_</span><span class="si">{ed}</span><span class="s1">,c_</span><span class="si">{ee}</span><span class="s1">,c_</span><span class="si">{bd}</span><span class="s1">,c_</span><span class="si">{bc}</span><span class="s1">,c_</span><span class="si">{dd}</span><span class="s1">'</span><span class="p">)</span>
-<span class="n">a</span><span class="p">,</span><span class="n">ke</span><span class="p">,</span><span class="n">kb</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">'a,k_</span><span class="si">{e}</span><span class="s1">,k_</span><span class="si">{b}</span><span class="s1">'</span><span class="p">)</span>
-<span class="n">solve</span><span class="p">([</span><span class="n">ced</span><span class="o">+</span><span class="n">cee</span><span class="o">-</span><span class="n">cbd</span><span class="o">-</span><span class="n">cbc</span><span class="p">,</span> 
-       <span class="n">cbd</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">kb</span><span class="o">*</span><span class="n">a</span><span class="p">)</span><span class="o">+</span><span class="n">cbc</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="n">kb</span><span class="o">*</span><span class="n">a</span><span class="p">)</span><span class="o">-</span><span class="n">cdd</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">ke</span><span class="o">*</span><span class="n">a</span><span class="p">),</span> 
-      <span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">ke</span><span class="o">*</span><span class="p">(</span><span class="n">ced</span><span class="o">-</span><span class="n">cee</span><span class="p">)</span><span class="o">+</span><span class="n">kb</span><span class="o">*</span><span class="p">(</span><span class="n">cbd</span><span class="o">-</span><span class="n">cbc</span><span class="p">),</span> 
-       <span class="o">-</span><span class="n">kb</span><span class="o">*</span><span class="p">(</span><span class="n">cbd</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">kb</span><span class="o">*</span><span class="n">a</span><span class="p">)</span><span class="o">-</span><span class="n">cbc</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="n">kb</span><span class="o">*</span><span class="n">a</span><span class="p">))</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">ke</span><span class="o">*</span><span class="n">cdd</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">ke</span><span class="o">*</span><span class="n">a</span><span class="p">)],</span>
-      <span class="p">[</span><span class="n">ced</span><span class="p">,</span><span class="n">cee</span><span class="p">,</span><span class="n">cbd</span><span class="p">,</span><span class="n">cbc</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
-<div class="jp-RenderedLatex jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/latex" tabindex="0">
-$\displaystyle \left\{ c_{bc} : 0.5 c_{dd} e^{- a k_{b}} e^{i a k_{e}} + \frac{0.5 i c_{dd} k_{e} e^{- a k_{b}} e^{i a k_{e}}}{k_{b}}, \  c_{bd} : 0.5 c_{dd} e^{a k_{b}} e^{i a k_{e}} - \frac{0.5 i c_{dd} k_{e} e^{a k_{b}} e^{i a k_{e}}}{k_{b}}, \  c_{ed} : \frac{0.25 i c_{dd} k_{b} e^{a k_{b}} e^{i a k_{e}}}{k_{e}} - \frac{0.25 i c_{dd} k_{b} e^{- a k_{b}} e^{i a k_{e}}}{k_{e}} + 0.5 c_{dd} e^{a k_{b}} e^{i a k_{e}} + 0.5 c_{dd} e^{- a k_{b}} e^{i a k_{e}} - \frac{0.25 i c_{dd} k_{e} e^{a k_{b}} e^{i a k_{e}}}{k_{b}} + \frac{0.25 i c_{dd} k_{e} e^{- a k_{b}} e^{i a k_{e}}}{k_{b}}, \  c_{ee} : - \frac{0.25 i c_{dd} k_{b} e^{a k_{b}} e^{i a k_{e}}}{k_{e}} + \frac{0.25 i c_{dd} k_{b} e^{- a k_{b}} e^{i a k_{e}}}{k_{e}} - \frac{0.25 i c_{dd} k_{e} e^{a k_{b}} e^{i a k_{e}}}{k_{b}} + \frac{0.25 i c_{dd} k_{e} e^{- a k_{b}} e^{i a k_{e}}}{k_{b}}\right\}$
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Assim
-\begin{align}
-c_{bc} &amp;= \frac{c_{dd}e^{-ak_{b}+iak_{e}}}{2}\left(\frac{k_{b}+ik_{e}}{k_{b}}\right), \\
-c_{bd} &amp;= \frac{c_{dd}e^{ak_{b}+iak_{e}}}{2}\left(\frac{k_{b}-ik_{e}}{k_{b}}\right), \\
-c_{ed} &amp;= \frac{c_{dd}e^{iak_{e}}}{2}\left(2\cosh(ak_{b})+i\frac{k_{b}^{2}-k_{e}^{2}}{k_{b}k_{e}}\sinh(ak_{b})\right), \\
-c_{ee} &amp;= -\frac{ic_{dd}e^{iak_{e}}}{2}\frac{k_{b}^{2}+k_{e}^{2}}{k_{b}k_{e}}\sinh(ak_{b}).
-\end{align}</p>
-<p>Na forma matricial, o SEL acima fica escrito como segue:
+onde definimos
 \begin{equation}
-\begin{bmatrix} -1&amp;1&amp;1&amp;0 \\ 0&amp;e^{-k_{b}a}&amp;e^{k_{b}a}&amp;-e^{ik_{e}a} \\ ik_{e}&amp;-k_{b}&amp;k_{b}&amp;0 \\ 0&amp;-k_{b}e^{-k_{b}a}&amp;k_{b}e^{k_{b}a}&amp;-ik_{e}e^{ik_{e}a} \end{bmatrix}\begin{bmatrix} c_{ee}\\c_{bd}\\c_{bc}\\c_{dd}\end{bmatrix}=\begin{bmatrix} c_{ed} \\ 0 \\ ik_{e}c_{ed} \\ 0\end{bmatrix}\text{ ou } A|x\rangle=|y\rangle.
-\end{equation}
-Se $\det(A)\ne 0$, a inversa de $A$ existe e a solução desse sistema de equações lineares não homogêneo é
+\omega := \gamma b.
+\end{equation}</p>
+<p>Agora, podemos desacoplar as equações diferenciais acima definindo os <strong>operadores escada</strong> (trate simplesmente como uma mudança de variável):
 \begin{equation}
-|x\rangle=A^{-1}|y\rangle \text{, com } (A^{-1})_{j,k}=\frac{(-1)^{k+j}\det(A^{(k,j)})}{\det(A)}.
+L_{\pm}:=L_{x}\pm i L_{y}.
 \end{equation}
-No entanto, essas contas são muito longas para os propósitos dessa disciplina, e por isso usaremos os resultados obtidos com o Sympy, como mostrado abaixo.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [45]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Matrix</span><span class="p">,</span> <span class="n">simplify</span>
-
-<span class="n">A</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">kb</span><span class="o">*</span><span class="n">a</span><span class="p">),</span><span class="n">exp</span><span class="p">(</span><span class="n">kb</span><span class="o">*</span><span class="n">a</span><span class="p">),</span><span class="o">-</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">ke</span><span class="o">*</span><span class="n">a</span><span class="p">)],[</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">ke</span><span class="p">,</span><span class="o">-</span><span class="n">kb</span><span class="p">,</span><span class="n">kb</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
-            <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="n">kb</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">kb</span><span class="o">*</span><span class="n">a</span><span class="p">),</span><span class="n">kb</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="n">kb</span><span class="o">*</span><span class="n">a</span><span class="p">),</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">ke</span><span class="o">*</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">ke</span><span class="o">*</span><span class="n">a</span><span class="p">)]]);</span> <span class="n">A</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[45]:</div>
-<div class="jp-RenderedLatex jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/latex" tabindex="0">
-$\displaystyle \left[\begin{matrix}-1 &amp; 1 &amp; 1 &amp; 0\\0 &amp; e^{- a k_{b}} &amp; e^{a k_{b}} &amp; - e^{1.0 i a k_{e}}\\1.0 i k_{e} &amp; - k_{b} &amp; k_{b} &amp; 0\\0 &amp; - k_{b} e^{- a k_{b}} &amp; k_{b} e^{a k_{b}} &amp; - 1.0 i k_{e} e^{1.0 i a k_{e}}\end{matrix}\right]$
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [47]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">Am1</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">inv</span><span class="p">()</span><span class="c1">#; simplify(Am1) # is not working anymore</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [48]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">cee</span> <span class="o">=</span> <span class="n">Am1</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">ced</span> <span class="o">+</span> <span class="mi">0</span> <span class="o">+</span> <span class="n">Am1</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">ke</span><span class="o">*</span><span class="n">ced</span> <span class="o">+</span> <span class="mi">0</span><span class="p">;</span> <span class="n">simplify</span><span class="p">(</span><span class="n">cee</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[48]:</div>
-<div class="jp-RenderedLatex jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/latex" tabindex="0">
-$\displaystyle \frac{1.0 c_{ed} \left(- k_{b}^{2} e^{2 a k_{b}} + k_{b}^{2} - k_{e}^{2} e^{2 a k_{b}} + k_{e}^{2}\right)}{1.0 k_{b}^{2} e^{2 a k_{b}} - 1.0 k_{b}^{2} - 2.0 i k_{b} k_{e} e^{2 a k_{b}} - 2.0 i k_{b} k_{e} - 1.0 k_{e}^{2} e^{2 a k_{b}} + 1.0 k_{e}^{2}}$
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [49]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">cbd</span> <span class="o">=</span> <span class="n">Am1</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">ced</span> <span class="o">+</span> <span class="mi">0</span> <span class="o">+</span> <span class="n">Am1</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">ke</span><span class="o">*</span><span class="n">ced</span> <span class="o">+</span> <span class="mi">0</span><span class="p">;</span> <span class="n">simplify</span><span class="p">(</span><span class="n">cbd</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[49]:</div>
-<div class="jp-RenderedLatex jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/latex" tabindex="0">
-$\displaystyle \frac{2.0 c_{ed} k_{e} \left(i k_{b} + k_{e}\right) e^{2 a k_{b}}}{- 1.0 k_{b}^{2} e^{2 a k_{b}} + 1.0 k_{b}^{2} + 2.0 i k_{b} k_{e} e^{2 a k_{b}} + 2.0 i k_{b} k_{e} + 1.0 k_{e}^{2} e^{2 a k_{b}} - 1.0 k_{e}^{2}}$
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [50]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">cbc</span> <span class="o">=</span> <span class="n">Am1</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">ced</span> <span class="o">+</span> <span class="mi">0</span> <span class="o">+</span> <span class="n">Am1</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">ke</span><span class="o">*</span><span class="n">ced</span> <span class="o">+</span> <span class="mi">0</span><span class="p">;</span> <span class="n">simplify</span><span class="p">(</span><span class="n">cbc</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[50]:</div>
-<div class="jp-RenderedLatex jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/latex" tabindex="0">
-$\displaystyle \frac{2.0 c_{ed} k_{e} \left(- i k_{b} + k_{e}\right)}{1.0 k_{b}^{2} e^{2 a k_{b}} - 1.0 k_{b}^{2} - 2.0 i k_{b} k_{e} e^{2 a k_{b}} - 2.0 i k_{b} k_{e} - 1.0 k_{e}^{2} e^{2 a k_{b}} + 1.0 k_{e}^{2}}$
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [51]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">cdd</span> <span class="o">=</span> <span class="n">Am1</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">ced</span> <span class="o">+</span> <span class="mi">0</span> <span class="o">+</span> <span class="n">Am1</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span><span class="o">*</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">ke</span><span class="o">*</span><span class="n">ced</span> <span class="o">+</span> <span class="mi">0</span><span class="p">;</span> <span class="n">simplify</span><span class="p">(</span><span class="n">cdd</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[51]:</div>
-<div class="jp-RenderedLatex jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/latex" tabindex="0">
-$\displaystyle \frac{4.0 i c_{ed} k_{b} k_{e} e^{a \left(k_{b} - 1.0 i k_{e}\right)}}{1.0 k_{b}^{2} + 2.0 i k_{b} k_{e} - 1.0 k_{e}^{2} + \left(- 1.0 k_{b}^{2} + 2.0 i k_{b} k_{e} + 1.0 k_{e}^{2}\right) e^{2 a k_{b}}}$
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Densidade-de-probabilidade">Densidade de probabilidade<a class="anchor-link" href="#Densidade-de-probabilidade">¶</a></h2><p>Assumiremos $c_{ed}\in\mathbb{R}$. Usando as expressões obtidas acima para os coeficientes das funções de onda, obteremos à esquerda da barreira:
+Temos que 
 \begin{align}
-|\Xi_{e}|^{2} &amp; = \Xi_{e}\Xi_{e}^{*} \\
-&amp; = \left(c_{ed}e^{ik_{e}x}+c_{ee}e^{-ik_{e}x}\right)\left(c_{ed}^{*}e^{-ik_{e}x}+c_{ee}^{*}e^{ik_{e}x}\right) \\
-&amp; = |c_{ed}|^{2} + c_{ed}c_{ee}^{*}e^{2ik_{e}x} + c_{ee}c_{ed}^{*}e^{-2ik_{e}x} + |c_{ee}|^{2} \\
-&amp; = |c_{ed}|^{2} + |c_{ee}|^{2} + 2\Re\left(c_{ed}c_{ee}^{*}e^{2ik_{e}x}\right) \\
-&amp; = c_{ed}^{2} + |c_{ee}|^{2} + 2c_{ed}\left(\Re(c_{ee}^{*})\Re\left(e^{2ik_{e}x}\right)-\Im(c_{ee}^{*})\Im\left(e^{2ik_{e}x}\right)\right) \\
-&amp; = c_{ed}^{2} + |c_{ee}|^{2} + 2c_{ed}\left(\Re(c_{ee})\cos(2k_{e}x)+\Im(c_{ee})\sin(2k_{e}x)\right).
-\end{align}
-Na barreira
-\begin{align}
-|\Xi_{b}|^{2} &amp; = \Xi_{b}\Xi_{b}^{*} \\
-&amp; = \left(c_{bd}e^{-k_{b}x}+c_{bc}e^{k_{b}x}\right)\left(c_{bd}^{*}e^{-k_{b}x}+c_{bc}^{*}e^{k_{b}x}\right) \\
-&amp; = |c_{bd}|^{2}e^{-2k_{b}x} + c_{bd}c_{bc}^{*} + c_{bd}^{*}c_{bc} + |c_{bc}|^{2}e^{2k_{b}x} \\
-&amp; = |c_{bd}|^{2}e^{-2k_{b}x} + |c_{bc}|^{2}e^{2k_{b}x} + 2\Re(c_{bd}c_{bc}^{*}) \\
-&amp; = |c_{bd}|^{2}e^{-2k_{b}x} + |c_{bc}|^{2}e^{2k_{b}x} + 2(\Re(c_{bd})\Re(c_{bc}^{*})-\Im(c_{bd})\Im(c_{bc}^{*})) \\
-&amp; = |c_{bd}|^{2}e^{-2k_{b}x} + |c_{bc}|^{2}e^{2k_{b}x} + 2(\Re(c_{bd})\Re(c_{bc})+\Im(c_{bd})\Im(c_{bc})).
-\end{align}
-À direita da barreira
-\begin{align}
-|\Xi_{d}|^{2} &amp; = \Xi_{d}\Xi_{d}^{*} = c_{dd}e^{ik_{e}x}c_{dd}^{*}e^{-ik_{e}x} = |c_{dd}|^{2}.
-\end{align}</p>
-<p>Essas densidades de probabilidade estão mostradas na figura abaixo.</p>
-<p>Claro, o limite de $a$ "muito" grande fornece o mesmo comportamento do potencial degrau.</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interactive</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span>
-<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-<span class="kn">import</span> <span class="nn">math</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="k">def</span> <span class="nf">E_lt_U0</span><span class="p">(</span><span class="n">E</span><span class="p">,</span><span class="n">a</span><span class="p">):</span>
-    <span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">'font.size'</span><span class="p">:</span><span class="mi">12</span><span class="p">});</span> 
-    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">dpi</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
-    <span class="n">U0</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">;</span> <span class="n">m</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">ke</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="n">E</span><span class="p">);</span> 
-    <span class="n">kb</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">U0</span><span class="o">/</span><span class="n">E</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">ke</span><span class="p">;</span> <span class="n">ced</span> <span class="o">=</span> <span class="mf">0.5</span>
-    <span class="n">den</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">kb</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">kb</span><span class="p">)</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">ke</span><span class="p">)</span>\
-    <span class="o">-</span> <span class="n">kb</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">kb</span><span class="p">)</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">ke</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">kb</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">ke</span><span class="p">)</span>\
-    <span class="o">+</span> <span class="n">kb</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">ke</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">kb</span><span class="o">*</span><span class="n">ke</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">kb</span><span class="p">)</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">ke</span><span class="p">)</span>\
-    <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">kb</span><span class="o">*</span><span class="n">ke</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">kb</span><span class="p">)</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">ke</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">kb</span><span class="o">*</span><span class="n">ke</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">ke</span><span class="p">)</span>\
-    <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">kb</span><span class="o">*</span><span class="n">ke</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">ke</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">ke</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">kb</span><span class="p">)</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">ke</span><span class="p">)</span>\
-    <span class="o">+</span> <span class="n">ke</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">kb</span><span class="p">)</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">ke</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">ke</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">ke</span><span class="p">)</span>\
-    <span class="o">-</span> <span class="n">ke</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">ke</span><span class="p">)</span> 
-    <span class="n">cee</span> <span class="o">=</span> <span class="n">ced</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">kb</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">kb</span><span class="p">)</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">ke</span><span class="p">)</span>\
-               <span class="o">+</span> <span class="n">kb</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">kb</span><span class="p">)</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">ke</span><span class="p">)</span>\
-               <span class="o">-</span> <span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">kb</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">ke</span><span class="p">)</span> <span class="o">-</span> <span class="n">kb</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">ke</span><span class="p">)</span>\
-               <span class="o">+</span> <span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">ke</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">kb</span><span class="p">)</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">ke</span><span class="p">)</span>\
-               <span class="o">+</span> <span class="n">ke</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">kb</span><span class="p">)</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">ke</span><span class="p">)</span>\
-               <span class="o">-</span> <span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">ke</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">ke</span><span class="p">)</span> <span class="o">-</span> <span class="n">ke</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">ke</span><span class="p">))</span>
-    <span class="n">cee</span> <span class="o">/=</span> <span class="n">den</span>
-    <span class="n">cbc</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">ced</span><span class="o">*</span><span class="n">ke</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="n">kb</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">ke</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">kb</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">ke</span><span class="p">)</span>\
-                    <span class="o">-</span> <span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">ke</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">ke</span><span class="p">)</span> <span class="o">-</span> <span class="n">ke</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">ke</span><span class="p">))</span>
-    <span class="n">cbc</span> <span class="o">/=</span> <span class="n">den</span>
-    <span class="n">cbd</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">ced</span><span class="o">*</span><span class="n">ke</span><span class="o">*</span><span class="p">(</span><span class="n">kb</span><span class="o">*</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">ke</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">ke</span><span class="p">))</span>\
-                       <span class="o">+</span> <span class="n">ke</span><span class="o">*</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">ke</span><span class="p">)</span>\
-                             <span class="o">-</span> <span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">ke</span><span class="p">)))</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">kb</span><span class="p">)</span>
-    <span class="n">cbd</span> <span class="o">/=</span> <span class="n">den</span>
-    <span class="n">cdd</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">ced</span><span class="o">*</span><span class="n">kb</span><span class="o">*</span><span class="n">ke</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">kb</span><span class="p">)</span>
-    <span class="n">cdd</span> <span class="o">/=</span> <span class="n">den</span> 
-    <span class="n">N</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">;</span> <span class="n">xmin</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">;</span> <span class="n">xmax</span> <span class="o">=</span> <span class="o">-</span><span class="n">xmin</span><span class="p">;</span> <span class="n">dx</span> <span class="o">=</span> <span class="p">(</span><span class="n">xmax</span><span class="o">-</span><span class="n">xmin</span><span class="p">)</span><span class="o">/</span><span class="n">N</span><span class="p">;</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">);</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
-        <span class="n">x</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">xmin</span> <span class="o">+</span> <span class="n">j</span><span class="o">*</span><span class="n">dx</span>
-        <span class="k">if</span> <span class="n">x</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">y</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">ced</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">cee</span><span class="o">.</span><span class="n">real</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">cee</span><span class="o">.</span><span class="n">imag</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>\
-            <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">ced</span><span class="o">*</span><span class="p">((</span><span class="n">cee</span><span class="o">.</span><span class="n">real</span><span class="p">)</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">ke</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>\
-                     <span class="o">+</span><span class="p">(</span><span class="n">cee</span><span class="o">.</span><span class="n">imag</span><span class="p">)</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">ke</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="n">j</span><span class="p">]))</span>
-        <span class="k">elif</span> <span class="n">x</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">x</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">a</span><span class="p">:</span>
-            <span class="n">y</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="n">cbd</span><span class="o">.</span><span class="n">real</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">cbd</span><span class="o">.</span><span class="n">imag</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">kb</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>\
-            <span class="o">+</span><span class="p">((</span><span class="n">cbc</span><span class="o">.</span><span class="n">real</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">cbc</span><span class="o">.</span><span class="n">imag</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">kb</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>\
-            <span class="o">+</span><span class="mi">2</span><span class="o">*</span><span class="p">((</span><span class="n">cbd</span><span class="o">.</span><span class="n">real</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">cbc</span><span class="o">.</span><span class="n">real</span><span class="p">)</span><span class="o">+</span><span class="p">(</span><span class="n">cbd</span><span class="o">.</span><span class="n">imag</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">cbc</span><span class="o">.</span><span class="n">imag</span><span class="p">))</span>
-        <span class="k">elif</span> <span class="n">x</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">a</span><span class="p">:</span>
-            <span class="n">y</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">cdd</span><span class="o">.</span><span class="n">real</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">cdd</span><span class="o">.</span><span class="n">imag</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="sa">r</span><span class="s1">'$E=$'</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">E</span><span class="p">)[:</span><span class="mi">5</span><span class="p">],</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">xmax</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span><span class="mf">0.8</span><span class="p">),</span> 
-                 <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">xmax</span><span class="o">-</span><span class="mi">8</span><span class="p">,</span><span class="mf">0.8</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'$x$'</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">10</span><span class="p">);</span> 
-    <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'$|\Xi|^</span><span class="si">{2}</span><span class="s1">$'</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="sa">r</span><span class="s1">'$a=$'</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">)[:</span><span class="mi">4</span><span class="p">],</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="mf">0.02</span><span class="p">),</span> 
-                 <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="mf">0.02</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="n">xmin</span><span class="p">,</span><span class="n">xmax</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">1.01</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">U0</span><span class="p">),</span> 
-                 <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s2">"-"</span><span class="p">))</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">U0</span><span class="p">),</span> 
-                 <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s2">"-"</span><span class="p">))</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="o">-</span><span class="mf">0.08</span><span class="p">,</span><span class="n">U0</span><span class="o">-</span><span class="mf">0.005</span><span class="p">),</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="mf">0.08</span><span class="p">,</span><span class="n">U0</span><span class="o">-</span><span class="mf">0.005</span><span class="p">),</span> 
-                 <span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s2">"-"</span><span class="p">))</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">'z10_psiEmU.png'</span><span class="p">,</span><span class="nb">format</span> <span class="o">=</span> <span class="s1">'png'</span><span class="p">,</span> <span class="n">dpi</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-    
-<span class="n">interactive</span><span class="p">(</span><span class="n">E_lt_U0</span><span class="p">,</span> <span class="n">E</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="o">+</span><span class="mi">10</span><span class="o">**-</span><span class="mi">3</span><span class="p">,</span><span class="mf">0.5</span><span class="o">-</span><span class="mi">10</span><span class="o">**-</span><span class="mi">3</span><span class="p">,</span><span class="mf">0.01</span><span class="p">),</span> <span class="n">a</span><span class="o">=</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mf">0.5</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[5]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>interactive(children=(FloatSlider(value=0.241, description='E', max=0.499, min=0.001, step=0.01), FloatSlider(…</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Tunelamento-qu%C3%A2ntico">Tunelamento quântico<a class="anchor-link" href="#Tunelamento-qu%C3%A2ntico">¶</a></h2><p>No caso da barreira de potencial, como quantons podem ser refletidos tanto em $x=0$ quanto em $x=a$, iniciaremos calculando o coeficiente de transmissão, que é dado por:
-\begin{equation}
-T:=\frac{|c_{dd}|^{2}}{|c_{ed}|^{2}},
-\end{equation}
-uma vez que a velocidade é a mesma, $\omega/k_{e}$, nas regiões $x&lt;0$ e $x&gt;a$. Simplificando obtemos
-\begin{align}
-c_{dd} &amp; = \frac{-ic_{ed}4k_{e}k_{b}e^{k_{b}a}e^{-ik_{e}a}}{2k_{b}(k_{b}-ik_{e})e^{2k_{b}a}-(k_{b}+ik_{e})(k_{b}+ik_{e}+(k_{b}-ik_{e})e^{2k_{b}a})} \\
-&amp; = \frac{-ic_{ed}4k_{e}k_{b}e^{k_{b}a}e^{-ik_{e}a}} {2(k_{b}^{2}-ik_{b}k_{e})e^{2k_{b}a}-k_{b}^{2}-2ik_{b}k_{e}+k_{e}^{2}-(k_{b}^{2}+k_{e}^{2})e^{2k_{b}a}} \\
-&amp; = \frac{-ic_{ed}4k_{e}k_{b}e^{k_{b}a}e^{-ik_{e}a}} {(2k_{b}^{2}-k_{b}^{2}-k_{e}^{2})e^{2k_{b}a}-k_{b}^{2}+k_{e}^{2}-2ik_{b}k_{e}(e^{2k_{b}a}+1)}\frac{e^{-k_{b}a}}{e^{-k_{b}a}} \\
-&amp; = \frac{-ic_{ed}4k_{e}k_{b}e^{-ik_{e}a}} {(k_{b}^{2}-k_{e}^{2})e^{k_{b}a}-(k_{b}^{2}-k_{e}^{2})e^{-k_{b}a}-2ik_{b}k_{e}(e^{k_{b}a}+e^{-k_{b}a})}\frac{1/4k_{b}k_{e}}{1/4k_{b}k_{e}} \\
-&amp; = \frac{-ic_{ed}e^{-ik_{e}a}} {\frac{k_{b}^{2}-k_{e}^{2}}{2k_{b}k_{e}}\frac{e^{k_{b}a}-e^{-k_{b}a}}{2}-i\frac{e^{k_{b}a}+e^{-k_{b}a}}{2}} \\
-&amp; = \frac{-ie^{-ik_{e}a}} {\frac{k_{b}^{2}-k_{e}^{2}}{2k_{b}k_{e}}\sinh(k_{b}a)-i\cosh(k_{b}a)}c_{ed}.
+\partial_{t}L_{\pm} &amp; = \partial_{t}L_{x}\pm i \partial_{t}L_{y} \\
+&amp; = \omega L_{y} \pm i (-\omega L_{x}) \\
+&amp; = \mp i\omega(L_{x}\pm i L_{y}) \\ 
+&amp;= \mp i\omega L_{\pm}.
 \end{align}</p>
 </div>
 </div>
@@ -7954,62 +7613,156 @@ c_{dd} &amp; = \frac{-ic_{ed}4k_{e}k_{b}e^{k_{b}a}e^{-ik_{e}a}}{2k_{b}(k_{b}-ik_
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Segue assim que
-\begin{align}
-T &amp; = \frac{1} {\frac{(k_{b}^{2}-k_{e}^{2})^{2}}{4k_{b}^{2}k_{e}^{2}}\sinh^{2}(k_{b}a)+\cosh^{2}(k_{b}a)} \\
-&amp; = \frac{4k_{b}^{2}k_{e}^{2}} {(k_{b}^{4}+k_{e}^{4}-2k_{b}^{2}k_{e}^{2})\sinh^{2}(k_{b}a)+4k_{b}^{2}k_{e}^{2}\cosh^{2}(k_{b}a)} \\
-&amp; = \frac{4k_{b}^{2}k_{e}^{2}} {(k_{b}^{4}+k_{e}^{4}+2k_{b}^{2}k_{e}^{2})\sinh^{2}(k_{b}a)+4k_{b}^{2}k_{e}^{2}(\cosh^{2}(k_{b}a)-\sinh^{2}(k_{b}a))} \\
-&amp; = \frac{1} {\frac{(k_{b}^{2}+k_{e}^{2})^{2}}{4k_{b}^{2}k_{e}^{2}}\sinh^{2}(k_{b}a)+1}.
-\end{align}
-Como 
-\begin{align}
-&amp; \frac{(k_{b}^{2}+k_{e}^{2})^{2}}{k_{b}^{2}k_{e}^{2}} = \frac{(2m(U_{0}-E)+2mE)^{2}}{2m(U_{0}-E)2mE} = \frac{U_{0}^{2}}{E(U_{0}-E)} = \frac{1}{\frac{E}{U_{0}}\left(1-\frac{E}{U_{0}}\right)}.
-\end{align}
-obteremos, finalmente, que
+<p>A solução dessa equação diferencial é 
 \begin{equation}
-T = \left(\frac{\sinh^{2}\left(ak_{e}\sqrt{\frac{U_{0}}{E}-1}\right)}{4\frac{E}{U_{0}}\left(1-\frac{E}{U_{0}}\right)}+1\right)^{-1}.
+L_{\pm}(t)=L_{\pm}(0)e^{\mp i\omega t},
+\end{equation}
+que nos fornece
+\begin{align}
+L_{x}(t) &amp;= (1/2)(L_{+}(t)+L_{-}(t)) \\
+&amp; = (1/2)\left(L_{+}(0)e^{- i\omega t}+L_{-}(0)e^{i\omega t}\right) \\
+&amp;= (1/2)\left(\left(L_{x}(0)+iL_{y}(0)\right)e^{- i\omega t}+\left(L_{x}(0)-iL_{y}(0)\right)e^{i\omega t}\right) \\
+&amp;= (1/2)L_{x}(0)\left(e^{- i\omega t}+e^{i\omega t}\right) +(i/2)L_{y}(0)\left(e^{- i\omega t}-e^{i\omega t}\right) \\
+&amp;= L_{x}(0)\cos\omega t + L_{y}(0)\sin\omega t, \\
+L_{y}(t) &amp;= (1/2i)(L_{+}(t)-L_{-}(t)) \\
+&amp; = (1/2i)\left(L_{+}(0)e^{- i\omega t}-L_{-}(0)e^{i\omega t}\right) \\
+&amp;= (1/2i)\left(\left(L_{x}(0)+iL_{y}(0)\right)e^{- i\omega t}-\left(L_{x}(0)-iL_{y}(0)\right)e^{i\omega t}\right) \\
+&amp;= (1/2i)L_{x}(0)\left(e^{- i\omega t}-e^{i\omega t}\right) +(i/2i)L_{y}(0)\left(e^{- i\omega t}+e^{i\omega t}\right) \\
+&amp;= -L_{x}(0)\sin\omega t + L_{y}(0)\cos\omega t.
+\end{align}</p>
+<p>Por conseguinte, usando $\vec{\mu}=\gamma\vec{L}$ vem que
+\begin{align}
+\vec{\mu}(t) &amp;= \begin{bmatrix}\mu_{x}(t) \\ \mu_{y}(t) \\ \mu_{z}(t) \end{bmatrix} \\
+&amp; = \begin{bmatrix} \mu_{x}(0)\cos\omega t + \mu_{y}(0)\sin\omega t \\ -\mu_{x}(0)\sin\omega t+\mu_{y}(0)\cos\omega t  \\ \mu_{z}(0) \end{bmatrix} \\
+&amp;= \begin{bmatrix} \cos\omega t &amp; \sin\omega t &amp; 0 \\ -\sin\omega t &amp; \cos\omega t &amp; 0 \\ 0&amp;0&amp;1\end{bmatrix}\begin{bmatrix}\mu_{x}(0) \\ \mu_{y}(0) \\ \mu_{z}(0) \end{bmatrix} \\
+&amp; = R_{z}(\omega t)\vec{\mu}(0),
+\end{align}
+em que $R_{z}(\omega t)$ é a matriz de rotação em torno de $z$, em $\mathbb{R}^{3}$. Ou seja, o momento magnético <strong>precessa</strong> em torno da direção do campo magnético constante aplicado, com a frequência de presseção proporcional à intensidade do campo magnético aplicado. Essa frequência de presseção é chamada de <strong>frequência de Larmor</strong>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Campo-magn%C3%A9tico-vari%C3%A1vel">Campo magnético variável<a class="anchor-link" href="#Campo-magn%C3%A9tico-vari%C3%A1vel">¶</a></h2><p>A força sobre o dipolo magnético pode ser obtida de
+\begin{align}
+\vec{F} &amp; = -\vec{\nabla}_{\vec{r}}U \\
+&amp; = -\vec{\nabla}_{\vec{r}}(-\vec{\mu}\cdot\vec{B}) \\
+&amp; = \sum_{j=1}^{3}\hat{e}_{j}\partial_{x_{j}}\sum_{k=1}^{3}\mu_{k}B_{k} \\
+&amp; =\sum_{j,k=1}^{3}\hat{e}_{j}\mu_{k}\partial_{x_{j}}B_{k},
+\end{align}
+em que usamos que as componentes do momento magnético não dependem das coordenadas espaciais. Se o campo magnético é constante no espaço, a partícula, por inércia, continua parada ou com movimento retilíneo uniforme:
+\begin{equation}
+\vec{B}(\vec{r})=\vec{B}(\vec{r}')\ \forall \vec{r},\vec{r}'\in\mathbb{R}^{3} \Rightarrow \vec{F}=\vec{0}.
+\end{equation}
+Isso ocorre mesmo se o campo magnético depender de tempo (desde que seja constante no espaço).</p>
+<p>Por outro lado, se o campo magnético varia no espaço, a partícula com momento magnético é acelerada, mudando assim seu estado de movimento. Como um simples exemplo, vamos considerar que
+\begin{equation}
+\vec{B} = -ax\hat{e}_{1}+(b+az)\hat{e}_{3},
+\end{equation}
+com $a,b\in\mathbb{R}$ constantes reais. Nesse caso teremos
+\begin{align}
+\vec{F} &amp;= \sum_{j=1}^{3}\hat{e}_{j}\left(\mu_{1}\partial_{x_{j}}B_{1} + \mu_{2}\partial_{x_{j}}B_{2} + \mu_{3}\partial_{x_{j}}B_{3}\right) \\
+&amp;= \sum_{j=1}^{3}\hat{e}_{j}\left(\mu_{1}\partial_{x_{j}}(-ax_{1}) + \mu_{2}\partial_{x_{j}}(0) + \mu_{3}\partial_{x_{j}}(b+ax_{3})\right) \\
+&amp;= \sum_{j=1}^{3}\hat{e}_{j}\left(-\mu_{1}a\delta_{j,1} + \mu_{3}c\delta_{j,3}\right) \\
+&amp; = -\mu_{x}a\hat{e}_{1}+\mu_{z}a\hat{e}_{3}.
+\end{align}</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Consideremos uma partícula clássica, com momento magnético $\vec{\mu}$, movimentando-se inicialmente no eixo $y$, com 
+$$x=z=0,$$
+com velocidade 
+$$\vec{v}_{0}=d\hat{e}_{2},$$
+com $d\in\mathbb{R}$ constante. Vamos supor que, para $y&gt;0$, essa partícula é sujeita ao campo magnético especificado acima, e por conseguinte à força (note que a dependência temporal de $\vec{\mu}$ é causada pela componente $b\hat{e}_{3}$ de $\vec{B}$):
+\begin{align}
+\vec{F}_{t} &amp;= -\mu_{x}(t)a\hat{e}_{1}+\mu_{z}(t)a\hat{e}_{3} \\
+&amp;= (\mu_{x}(0)\cos\omega t + \mu_{y}(0)\sin\omega t)a\hat{e}_{1}+\mu_{z}(0)a\hat{e}_{3}.
+\end{align}</p>
+<p>Para 
+$$b\gg a,$$
+o tempo de precessão é muito menor que as outras escalas de tempo relevantes nesse problema, e o efeito importante será da <strong>força média</strong>
+\begin{align}
+\langle\vec{F}\rangle &amp;= (\langle\mu_{x}(0)\cos\omega t\rangle + \langle\mu_{y}(0)\sin\omega t\rangle) a\hat{e}_{1}+\langle\mu_{z}(0)\rangle a\hat{e}_{3} \\
+&amp;= \hat{e}_{3}\mu_{z}(0)a,
+\end{align}
+em que usamos que 
+$$\langle\mu_{x}(0)\cos\omega t\rangle=\frac{1}{2\pi}\int_{0}^{2\pi}\mu_{x}(0)\cos(\omega t)d(\omega t)=0.$$ Similarmente 
+$$\langle\sin\omega t\rangle=0 \text{ e }\langle\mu_{z}(0)\rangle=\mu_{z}(0)=:\mu_{z}.$$</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Assim, a única componente da velocidade da partícula que muda é
+\begin{equation}
+v_{z}(t)=v_{z}(0)+a_{z}t = 0 + \frac{F_{z}}{m}t = 0 + \frac{\mu_{z}a}{m}t.
+\end{equation}
+E, depois de passado esse intervalo de tempo, a coordenada $z$ da partícula é
+\begin{align}
+z(t)&amp;=z(0)+v_{z}(0)t+\frac{a_{z}t^{2}}{2} \\
+&amp; = 0+0t+\frac{\mu_{z}a}{m}\frac{t^{2}}{2} \\
+&amp;= \frac{\mu_{z}at^{2}}{2m}.
+\end{align}
+Se colocarmos <strong>detectores</strong> de partículas em várias coordenadas $z$ e em uma certa coordenada $y_{d}$, as partículas chegarão nessa coordenada no instante de tempo obtido como segue
+\begin{align}
+&amp; y_{d}=:y(t=:t_{d})=y(0)+v_{y}(0)t_{d}=0+dt_{d} \\
+&amp; \therefore t_{d}=\frac{y_{d}}{d}.
+\end{align}
+Com isso, temos que a coordenada $z$ na qual a partícula chega no detector pode ser escrita como
+\begin{align}
+z_{d} &amp;  :=z(t_{d}) = \left(\frac{ay_{d}^{2}}{2md^{2}}\right)\mu_{z} = \text{(constante)}\mu_{z} \\
+&amp; =: A\mu_{z}.
+\end{align}</p>
+<p>Vemos assim que a coordenada $z$ da partícula é proporcional à componente $z$ do seu momento magnético. Se essas partículas provém de um forno a uma temperatura alta, espera-se que a orientação do seus momentos magnéticos seja aleatória. Isso implicará que
+\begin{equation}
+z_{d} = \text{contínuo}.
 \end{equation}</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">EltU0</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
-    <span class="n">matplotlib</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">'font.size'</span><span class="p">:</span><span class="mi">12</span><span class="p">});</span> 
-    <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">dpi</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
-    <span class="n">U0</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">m</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">hbb</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">0.999</span><span class="p">,</span><span class="mf">0.005</span><span class="p">);</span> 
-    <span class="n">ke</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">hbb</span><span class="p">;</span> <span class="n">kb</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">U0</span><span class="o">/</span><span class="n">x</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">ke</span>
-    <span class="n">T</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">sinh</span><span class="p">(</span><span class="n">kb</span><span class="o">*</span><span class="n">a</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">((</span><span class="n">kb</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">ke</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">kb</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">ke</span><span class="o">**</span><span class="mi">2</span><span class="p">))));</span> 
-    <span class="n">R</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="n">T</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">R</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">T</span><span class="p">);</span> 
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">1.05</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'$E/U_</span><span class="si">{0}</span><span class="s1">$'</span><span class="p">);</span> 
-    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">((</span><span class="sa">r</span><span class="s1">'$R$'</span><span class="p">,</span><span class="sa">r</span><span class="s1">'$T$'</span><span class="p">),</span><span class="n">loc</span><span class="o">=</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span><span class="mf">0.5</span><span class="p">))</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="sa">r</span><span class="s1">'$a=$'</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">a</span><span class="p">)[:</span><span class="mi">5</span><span class="p">],</span> <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.9</span><span class="p">),</span> 
-                 <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span><span class="mf">0.9</span><span class="p">),</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<span class="n">interactive</span><span class="p">(</span><span class="n">EltU0</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="o">**-</span><span class="mi">10</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mf">0.1</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>interactive(children=(FloatSlider(value=1.4000000001000001, description='a', max=3.0, min=1e-10), Output()), _…</pre>
-</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Momento-magn%C3%A9tico-quantizado">Momento magnético quantizado<a class="anchor-link" href="#Momento-magn%C3%A9tico-quantizado">¶</a></h3><p>Como suposto por Bohr em seu modelo atômico, e como veremos mais adiante, o momento angular de sistemas quânticos é quantizado. Aqui, usando que os valores possíveis do momento angular $L$ são $\hbar\sqrt{l(l+1)}$, com $l=0,1,2,\cdots$, teremos
+\begin{align}
+\mu &amp; = g\frac{q}{2m}L = g\frac{q}{2m}\hbar\sqrt{l(l+1)} \\
+&amp; =: g\mu_{B}\sqrt{l(l+1)},
+\end{align}
+em que definimos o chamado <strong>magneton de Bohr</strong>:
+\begin{equation}
+\mu_{B} := \frac{q\hbar}{2m}.
+\end{equation}</p>
+<p>Para a componente $z$ do momento magnético, usando que os valores de $L_{z}$ são $\hbar m_{l}$, com $m_l = -l,-l+1,\cdots,l-1,l$, teremos
+\begin{align}
+\mu_{z} = g\frac{q}{2m}L_{z} = g\mu_{B}m_{l}.
+\end{align}
+Agora, se considerarmos o mesmo exemplo estudado acima, teremos que
+\begin{align}
+z_{d} &amp; = A\mu_{z} = Ag\mu_{B}m_{l} \\
+&amp; = \text{discreto}.
+\end{align}
+Portanto, somente detectores colocados em um conjunto discreto de valores de $z$ irão "clicar", por consequência da quantização do momento angular quântico. Claro, se $m_l=0$ não teremos desvio algum.</p>
 </div>
 </div>
 </div>
@@ -8020,8 +7773,44 @@ T = \left(\frac{\sinh^{2}\left(ak_{e}\sqrt{\frac{U_{0}}{E}-1}\right)}{4\frac{E}{
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Aplica%C3%A7%C3%B5es">Aplicações<a class="anchor-link" href="#Aplica%C3%A7%C3%B5es">¶</a></h2><p>Vemos assim que, ao contrário do regime clássico, no regime quântico um quanton pode, mesmo tendo energia menor do que a altura da barreira, passar para o outro lado. Esse fenômeno é o chamado de <strong>tunelamento quântico</strong>. O tunelamendo quântico, assim como vários outros fenômenos quânticos, podem ser pensados como sendo cosequência do aspecto ondulatório dos quantons. No caso do tunelamento quântico, existe um fenômeno ondulatório clássico análogo, que é a chamada <strong>reflexão interna total frustrada</strong>.</p>
-<p>O tunelamento quântico possui muitas aplicações físicas e tecnológicas: O funcionamento do <em>olfato</em> envolve, em parte, o tunelamento quântico (<a href="https://www.ted.com/talks/luca_turin_the_science_of_scent?utm_campaign=tedspread&amp;utm_medium=referral&amp;utm_source=tedcomshare">https://www.ted.com/talks/luca_turin_the_science_of_scent?utm_campaign=tedspread&amp;utm_medium=referral&amp;utm_source=tedcomshare</a>), que tem associado um <em>espectroscópio</em> para medida de frequências de vibrações moleculares. Esse fenômeno também tem outras aplicações tecnológicas importantes tais como o <em>microscópio de varredura por tunelamento</em> (<a href="https://www.nobelprize.org/prizes/physics/1986/rohrer/lecture/">https://www.nobelprize.org/prizes/physics/1986/rohrer/lecture/</a>), o <em>diodo túnel</em> (<a href="https://www.nobelprize.org/prizes/physics/1973/esaki/lecture/">https://www.nobelprize.org/prizes/physics/1973/esaki/lecture/</a>), as <em>juncões Josephson</em> (<a href="https://www.nobelprize.org/prizes/physics/1973/josephson/lecture/">https://www.nobelprize.org/prizes/physics/1973/josephson/lecture/</a>), os <em>relógios atômicos</em> (<a href="https://cienciahoje.org.br/coluna/se-nao-fosse-o-relogio-atomico/">https://cienciahoje.org.br/coluna/se-nao-fosse-o-relogio-atomico/</a>), (<a href="https://www.nobelprize.org/uploads/2018/06/hansch-lecture.pdf">https://www.nobelprize.org/uploads/2018/06/hansch-lecture.pdf</a>), etc.</p>
+<h2 id="Momento-angular-intr%C3%ADnseco---spin">Momento angular intrínseco - spin<a class="anchor-link" href="#Momento-angular-intr%C3%ADnseco---spin">¶</a></h2><p>Um experimento muito útil para a história e discussões atuais dos fundamentos da Mecânica Quântica é o experimento de Stern-Gerlach (ESG) (<a href="https://www.nobelprize.org/prizes/physics/1943/stern/lecture/">https://www.nobelprize.org/prizes/physics/1943/stern/lecture/</a>), cujos principais elementos estão mostrados na figura abaixo.</p>
+<figure>
+<img alt="No description has been provided for this image" src="fig_18_stern-gerlach.png" width="450"/>
+<div class="caption"> O número 2 indica o feixe de átomos, que passam pelo campo magnético não homogêneo indicado por 3. Já 4 indica a previsão clássica e 5 indica o que é de fato observado experimentalmente. Fonte: https://commons.wikimedia.org/wiki/File:Stern-Gerlach_experiment_svg.svg. </div>
+</figure>
+<p>Átomos eletricamente neutros que saem de um forno são colimados e passam por um gradiente de campo magnético na direção $z$. Stern e Gerlach observaram que os átomos são separados em dois feixes. Esses resultados experimentais, obtidos em <strong>1922</strong> (portanto antes da teoria de Schrödinger de 1925), "provavam" a quantização do momento angular, previamente assumida teoricamente por Bohr e Sommerfeld (lembrando, estes assumiram que $L = n\hbar$ com $n=1,2,3,\cdots$).</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>No entanto, com vistas na teoria de Schrödinger, que é uma teoria melhor que a de Bohr, o número de faixas que deveriam ser observadas no ESG deveria de igual ao número de valores possíveis de $m_{l}$:</p>
+<ul>
+<li>Para $l=0\therefore m_{l}=0$, e não observaríamos nenhum desvio, e $z_{d}=0$ para todos os quantons.</li>
+<li>Para</li>
+</ul>
+\begin{equation}
+l=1\Rightarrow\begin{cases}m_{l}=+1\therefore z_{d}=Ag\mu_{B}, \\ m_{l}=0\therefore z_{d}=0, \\ m_{l}=-1\therefore z_{d}=-Ag\mu_{B}, \end{cases}
+\end{equation}<p>deveríamos observar três faixas separadas onde os quantons chegam nos detectores.</p>
+<ul>
+<li>O análogo segue para valores maiores de $l$. Em particular, para $l$ inteiro, sempre temos o caso $m_{l}=0\therefore z_{d}=0$.</li>
+</ul>
+<p>No entanto, no ESG não aparece a faixa escura central (que corresponderia a $m_{l}=0$), aparecem somente duas faixas. O não aparecimento dessa faixa central (que deveria estar presente para todos os valores de $l$) era um indicativo de que estava faltando algum elemento na teoria de Schrödinger.</p>
+<p>Esse elemento é o momento angular intrínseco, o <strong>spin</strong>, do elétron $S$, com valores $\hbar\sqrt{s(s+1)}$, conceito proposto por G.E. UHLENBECK e S. GOUDSMIT em 1925 (que quase ganharam o prêmio Nobel de 1947 (<a href="https://www.nobelprize.org/nomination/archive/show.php?id=8351">https://www.nobelprize.org/nomination/archive/show.php?id=8351</a>)), que está associado a um momento magnético intrínseco 
+\begin{equation}
+\mu_{s}=g_{s}\mu_{b}\sqrt{s(s+1)},
+\end{equation}
+com 
+\begin{equation}
+s=\frac{1}{2}\Rightarrow m_{s}=-\frac{1}{2},+\frac{1}{2},
+\end{equation}
+dando conta assim de explicar o aparecimento de apenas duas faixas no ESG (que seriam obtidas para $l=0\therefore m_{l}=0$).</p>
+<p>Vale observar que o spin aparece 'naturalmente' na teoria relativística da MQ de Dirac, embora ainda não entendemos o spin tal como alguns poderiam esperar.</p>
 </div>
 </div>
 </div>
@@ -8033,9 +7822,10 @@ T = \left(\frac{\sinh^{2}\left(ak_{e}\sqrt{\frac{U_{0}}{E}-1}\right)}{4\frac{E}{
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <hr/>
-<h1 id="Exerc%C3%ADcios">Exercícios<a class="anchor-link" href="#Exerc%C3%ADcios">¶</a></h1><p>$1.$ Dadas as definições $\sinh(x):=(e^{x}-e^{-x})/2$ e $\cosh(x):=(e^{x}+e^{-x})/2$, verifique que $\cosh^{2}(x)-\sinh^{2}(x)=1$.</p>
-<p>$2.$ Uma camada de óxido, em um dispositivo semicondutor, forma uma barreira de $0,6\text{ nm}$ de largura e $9\text{ eV}$ de altura. Para elétrons acelerados com uma ddp de $4\text{ V}$, qual é a fração deles que consegue atravessar a barreira? Qual deveria ser a ddp de aceleração para que o valor de $T$ seja o dobro desse valor?</p>
-<p>$3.$ Faça todos os cálculos necessários para obter o coeficiente de trasmissão para $E&gt;U_{0}$, sob as mesmas condições iniciais usadas nas notas de aula para o caso $E&lt;U_{0}$. Faça um gráfico de $T$ e $R$ versus $E/U_{0}$.</p>
+<h1 id="Exerc%C3%ADcios">Exercícios<a class="anchor-link" href="#Exerc%C3%ADcios">¶</a></h1><p>$1.$ Considere um momento magnético $\vec{\mu}$ sujeito a um campo magnético constante $\vec{B}=b\hat{i}$, com $b\in\mathbb{R}$ constante. Calcule $\vec{\mu}(t)$.</p>
+<p>$2.$ Verifique que um campo magnético do tipo $\vec{B}=bz^{a}\hat{e}_{3}$ não satisfaz a lei de Maxwell $\vec{\nabla}\cdot\vec{B}=0$. Verifique que $\vec{B}=-ax\hat{e}_{1}+(b+az)\hat{e}_{3}$ satisfaz essa lei. Nos dois casos, $a,b\in\mathbb{R}$ são constantes não nulas.</p>
+<p>$3.$ Considerando o mesmo exemplo usado em aula, obtenha (as expressões para) as posições $z_{d}$ nas quais os quantons chegam no detector, no experimento de Stern-Gerlach, para $l=2$.</p>
+<p>$4.$ Supondo que o elétron se comporte, classicamente, como uma esfera maciça de raio $r=10^{-15}\text{ m}$, e usando o módulo do seu momento angular intrínseco como $S=\hbar\sqrt{s(s+1)}=\hbar\sqrt{3}/2$, calcule a velocidade tangencial de um ponto situado no equador do elétron. Compare essa velocidade com a velocidade da luz no vácuo.</p>
 </div>
 </div>
 </div>
