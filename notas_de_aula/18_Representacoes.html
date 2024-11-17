@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>17_2_Postulados</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>18_Representacoes</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7493,11 +7493,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Formalismo-Qu%C3%A2ntico">Formalismo Quântico<a class="anchor-link" href="#Formalismo-Qu%C3%A2ntico">¶</a></h1><p>Até então estudamos a Velha Mecânica Quântica e a Mecânica Quântica Ondulatória de Schrödinger. Doravante investigaremos o formalismo matemático da Mecânica Quântica (MQ), a partir do qual podemos obter todos os resultados vistos anteriormente.</p>
-<p>Em toda teoria física, buscamos descrever os <strong>estados</strong> possíveis do sistema de interesse, as <strong>mudanças</strong> desses estados (evolução temporal) e as quantidades <strong>observáveis</strong> e suas medidas.</p>
-<p>Por exemplo, em Mecânica Newtoniana (MN) o estado de um sistema em um certo instante de tempo é especificado pelos valores de posição e velocidade em relação a um certo referencial inercial, e a evolução temporal é dada pela segunda lei de Newton. Os observáveis são essencialmente as posições, das quais obtemos as velocidades usando o parâmetro tempo. Está implicito em MN que os valores dos observáveis estão determinarmos antes mesmo de serem medidos, e que todos esses observáveis podem ter valores bem definidos em um determinado instante de tempo.</p>
-<p>Na sequência veremos os postulados da MQ para descrever estados, mudanças desses estados, observáveis e suas medidas. Veremos que a parte da medida difere muito daquela da MN, principalmente por causa da existência de observáveis que não podem ter valores bem definidos ao mesmo tempo.</p>
-<p>É importante que você tenha um bom conhecimento de Álgebra Linear (<a href="https://github.com/jonasmaziero/algebra_linear">https://github.com/jonasmaziero/algebra_linear</a>) antes de iniciar seus estudos de MQ.</p>
+<h1 id="Representa%C3%A7%C3%B5es-da-din%C3%A2mica-qu%C3%A2ntica">Representações da dinâmica quântica<a class="anchor-link" href="#Representa%C3%A7%C3%B5es-da-din%C3%A2mica-qu%C3%A2ntica">¶</a></h1><p>Assim como em Mecânica Clássica, onde podemos descrever e.g. o movimento de rotação a partir de pontos de vista diferentes mas equivalentes (e.g. partícula em movimento e referencial parado ou partícula parada e referencial em movimento), também usaremos, quando for conveniente, diferentes representações para a dinâmica quântica (que para sistemas fechados é uma rotação no espaço de Hilbert).</p>
 </div>
 </div>
 </div>
@@ -7508,500 +7504,23 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Postulado-dos-estados">Postulado dos estados<a class="anchor-link" href="#Postulado-dos-estados">¶</a></h1><p>O estado de um sistema quântico é descrito por um vetor normalizado em um espaço de Hilbert 
-$$\mathcal{H}.$$</p>
-<p>Por simplicidade, consideraremos $\mathcal{H}$ como sendo um espaço vetorial munido de uma função produto interno 
-$$\langle \cdot|\cdot \rangle:\mathcal{H}\rightarrow\mathbb{C}.$$
-Formalmente, espaços desse tipo são chamados de <em>espaços unitários</em>.</p>
-<p>Um <strong>espaço de Hilbert</strong> é um espaço unitário completo. Um espaço métrico completo, um espaço de Banach, é tal que toda sequência de Cauchy de vetores converge para um limite que também está no espaço. Uma sequência de Cauchy é uma sequência cujos elementos se tornam arbitrariamente próximos um do outro conforme a sequência progride. Formalmente, $\{v_j\}_{j=0}^\infty$ é uma sequência de Cauchy se para todo $\epsilon&gt;0$ existe um $N&gt;0$ tal que $n,m&gt;N\Rightarrow |v_n -v_m|&lt;\epsilon.$</p>
-<p>Por <strong>sistema</strong> nos referimos a um <strong>grau de liberdade</strong>. Por exemplo, o spin (momento angular intrínseco) do elétron é um sistema, outro sistema seria sua posição, e assim por diante. Quando consideramos dois ou mais graus de liberdade como uma única entidade, a chamamos de sistema composto.</p>
-<p>Se dividirmos o <strong>sistema composto</strong> em subsistemas, seu estado é descrito por um vetor normalizado em um espaço de Hilbert obtido tomando-se o produto tensorial dos espaços individuais 
-$$\mathcal{H} = \mathcal{H_{a}}\otimes \mathcal{H_{b}}\otimes\cdots.$$</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Postulado-das-medidas">Postulado das medidas<a class="anchor-link" href="#Postulado-das-medidas">¶</a></h1><p>Quantidades observáveis (mensuráveis) são representadas por <strong>operadores lineares Hermitianos</strong>,
-$$O=O^\dagger,$$
-definidos em $\mathcal{H}$. Ao medirmos um observável obteremos um dos seus possíveis valores, que são representados pelos autovalores do operador Hermitiano.</p>
-<p>A Mecânica Quântica (MQ), em geral, não nos possibilita prever com certeza os resultados de medidas futuras. O que a MQ nos fornece são as frequências relativas (probabilidades) com que esses resultados são obtidos, que são calculadas via a <strong>regra de Born</strong>:
+<h2 id="Representa%C3%A7%C3%A3o-de-Schr%C3%B6dinger-(RS)">Representação de Schrödinger (RS)<a class="anchor-link" href="#Representa%C3%A7%C3%A3o-de-Schr%C3%B6dinger-(RS)">¶</a></h2><p>Nesta representação, o <strong>estado</strong> do sistema <strong>muda</strong> com o tempo mas os <strong>observáveis não mudam</strong> com o tempo.</p>
+<p>Já vimos essa representação quando introduzimos os postulados da MQ. Na RS, estados evoluem unitariamente,
 \begin{equation}
-Pr(o|\psi) = |\langle \psi |o\rangle|^{2} = |\langle o|\psi\rangle|^{2}.
+|\psi_{t}^{S}\rangle = U_t |\psi_{0}^{S}\rangle,
 \end{equation}
-Essa é a probabilidade de obtermos o valor $o$ ao medirmos o observável $O$ de um sistema que está no estado $|\psi\rangle$ imediatamente antes da medida, e $|o\rangle$ é o autovetor de $O$ correspondente ao autovalor $o$.</p>
-<h3 id="Repetibilidade-das-medidas-em-MQ">Repetibilidade das medidas em MQ<a class="anchor-link" href="#Repetibilidade-das-medidas-em-MQ">¶</a></h3><p>Mas como sabemos em qual estado $|\psi\rangle$ o sistema foi preparado?</p>
-<p>Essa pergunta é respondida usando a observação experimental de que ao medirmos um observável duas ou mais vezes imediatamente subsequentes, obteremos o mesmo resultado. Claro, para que isso ocorra devemos ter
-\begin{equation}
-Pr(o|\psi)=1 \text{, o que só é possível se } |\psi\rangle = e^{i\phi_o}|o\rangle.
-\end{equation}
-Então, <em>postulando</em> que esta varificação experimental parcial seja válida de forma geral, quando dizemos que o sistema foi preparado em um certo estado, fica sub-entendido que medimos um observável desse sistema e selecionamos o autovetor correspondente a tal estado.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Sobre-operadores-Hermitianos-$O-=-O%5E%7B%5Cdagger%7D$">Sobre operadores Hermitianos $O = O^{\dagger}$<a class="anchor-link" href="#Sobre-operadores-Hermitianos-$O-=-O%5E%7B%5Cdagger%7D$">¶</a></h3><p>O autovalores desse tipo de operador são números reais, e autovetores correspondentes a autovalores diferentes são ortogonais. O conjunto de autovetores de $O$ forma uma base ortogonal para $\mathcal{H}$.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Rela%C3%A7%C3%A3o-de-completeza">Relação de completeza<a class="anchor-link" href="#Rela%C3%A7%C3%A3o-de-completeza">¶</a></h3><p>Qualquer vetor $|\psi\rangle$ do espaço vetorial $\mathcal{H}$ pode ser escrito como uma combinação linear dos vetores de uma base discreta e completa $\{|b_{j}\rangle\}_{j=1}^{d}$, i.e.,
-\begin{equation}
-|\psi\rangle = \sum_{j=1}^{d}\psi_{b_{j}}|b_{j}\rangle,
-\end{equation}
-onde $d=\dim \mathcal{H}$. Se a base $\{|b_{j}\rangle\}_{j=1}^{d}$ for ortonormal,
-$$\langle b_{j}|b_{k}\rangle = \delta_{jk},$$
-pode-se verificar que os coeficientes da combinação linear são dados por
-\begin{equation}
-\psi_{b_{j}}=\langle b_{j}|\psi\rangle.
-\end{equation}</p>
-<p>Nesse caso também podemos escrever o operador identidade em $\mathcal{H}$ como
-\begin{equation}
-\mathbb{I} = \sum_{j=1}^{d} |b_{j}\rangle\langle b_{j}|.
-\end{equation}</p>
-<p>Por outro lado, se temos uma base ortonormal $\{|b\rangle\}$ com incontáveis vetores, uma base contínua, a condição para ortonormalidade é 
-$$\langle b|b'\rangle = \delta(b-b').$$
-O vetor $|\psi\rangle\in\mathcal{H}$ também pode ser escrito em termos dessa base:
-\begin{equation}
-|\psi\rangle = \int  db \psi_{b}|b\rangle.
-\end{equation}
-De forma análoga ao caso discreto
-\begin{equation}
-\psi_{b}=\langle b|\psi\rangle
-\end{equation}
-e
-\begin{equation}
-\int db |b\rangle\langle b| = \mathbb{I}.
-\end{equation}</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Representa%C3%A7%C3%A3o-matricial-e-representa%C3%A7%C3%A3o-produto-externo">Representação matricial e representação produto externo<a class="anchor-link" href="#Representa%C3%A7%C3%A3o-matricial-e-representa%C3%A7%C3%A3o-produto-externo">¶</a></h3><p>Se compusermos um operador $A$ com o operador identidade, nada muda em relação à ação do primeiro, i.e.,
-\begin{align}
-A &amp; = \mathbb{I} A \mathbb{I} \\
-&amp; = \sum_{j=1}^{d} |b_{j}\rangle\langle b_{j}| A \sum_{k=1}^{d} |b_{k}\rangle\langle b_{k}| \\
-&amp; = \sum_{j,k=1}^{d} \langle b_{j}| A |b_{k}\rangle  |b_{j}\rangle\langle b_{k}| \\
-  &amp; = \sum_{j,k=1}^{d} A_{b_{j},b_{k}}  |b_{j}\rangle\langle b_{k}|,
-\end{align}
 onde 
+$$|\psi_{0}^{S}\rangle =: |\psi_0\rangle$$
+é o estado inicial e $U_{t}^{\dagger}U_{t}=U_{t}U_{t}^{\dagger}=\mathbb{I}$. O operador que descreve um certo observável não muda com o tempo:
 \begin{equation}
-A_{b_{j},b_{k}} = \langle b_{j}| A |b_{k}\rangle
-\end{equation}
-é a <strong>representação matricial</strong> do operador  $A$ na base $\{|b_{j}\rangle\}_{j=1}^{d}.$
-Quando um operador é escrito na forma $A=\sum_{j,k=1}^{d} A_{b_{j},b_{k}}  |b_{j}\rangle\langle b_{k}|$, dizemos que o escrevemos na <strong>forma produto externo</strong>.</p>
-<p>Se a base usada na relação de completeza for contínua, obteremos
-\begin{align}
-A &amp; = \mathbb{I} A \mathbb{I} \\
-&amp; = \int db |b\rangle\langle b| A \int db' |b'\rangle\langle b'| \\
-&amp; = \iint db db' \langle b| A  |b'\rangle |b\rangle\langle b'| \\
-  &amp; = \iint db db' A_{b,b'} |b\rangle\langle b'|.
-\end{align}</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Valor-m%C3%A9dio-de-um-observ%C3%A1vel-na-forma-%22sandu%C3%ADche%22">Valor médio de um observável na forma "sanduíche"<a class="anchor-link" href="#Valor-m%C3%A9dio-de-um-observ%C3%A1vel-na-forma-%22sandu%C3%ADche%22">¶</a></h3><p>Considera o valor médio do observável 
-$$A=\sum_{j=1}^{d} a_{j}  |a_{j}\rangle\langle a_{j}|$$
-para um sistema preparado no estado $|\psi\rangle$:
-\begin{align}
-\langle A\rangle_{\psi} &amp; = \sum_{j=1}^{d}a_{j}Pr(a_{j}|\psi) \\
-&amp; = \sum_{j=1}^{d}a_{j}|\langle a_{j}|\psi\rangle|^{2} \\
-&amp; = \sum_{j=1}^{d}a_{j} \langle a_{j}|\psi\rangle^{*}\langle a_{j}|\psi\rangle  \\
-                        &amp; = \sum_{j=1}^{d}a_{j} \langle \psi| a_{j}\rangle\langle a_{j}|\psi\rangle \\
-                        &amp; = \langle \psi|\left(\sum_{j=1}^{d}a_{j} | a_{j}\rangle\langle a_{j}|\right)|\psi\rangle  \\
-                        &amp; = \langle \psi|A|\psi\rangle.
-\end{align}</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Amplitudes-de-probabilidade-e-normaliza%C3%A7%C3%A3o">Amplitudes de probabilidade e normalização<a class="anchor-link" href="#Amplitudes-de-probabilidade-e-normaliza%C3%A7%C3%A3o">¶</a></h3><p>Os autovetores de um observável qualquer formam uma base ortogonal para pelo menos um sub-espaço do espaço de estados do sistema. Vamos assumir aqui que essa base é completa para todo esse espaço. É frequentemente útil escrevermos o estado do sistema imediatamente antes da medida, $|\psi\rangle$, como uma combinação linear dos autovetores do observável $O$ que vai ser medido:
-\begin{align}
-&amp; |\psi\rangle = \sum_{j=1}^{d} \psi_{o_{j}} |o_{j}\rangle \text{ no caso discreto} \\
-&amp; \text{ ou } |\psi\rangle = \int do \psi_{o} |o\rangle  \text{ no caso contínuo}.
-\end{align}</p>
-<p>Se colocarmos estes vetores de estado na regra de Born, veremos que a probabilidade de obsermos o valor $o_{j}$ é
-\begin{align}
-Pr(o_{j}|\psi) &amp; = |\langle o_{j}|\psi\rangle|^{2} \\
-&amp; = \left|\langle o_{j}|\sum_{k=1}^{d} \psi_{o_{k}} |o_{k}\rangle\right|^{2} \\
-&amp; = \left|\sum_{k=1}^{d} \psi_{o_{k}} \langle o_{j}|o_{k}\rangle\right|^{2} \\
-&amp; = \left|\sum_{k=1}^{d} \psi_{o_{k}} \delta_{jk} \right|^{2} \\
-&amp; = \left|\psi_{o_{j}}\right|^{2}.
-\end{align}
-Para espectros contínuos, obteremos a densidade de probabilidade
-\begin{align}
-\rho(o|\psi) &amp; = \left|\langle b|\psi\rangle\right|^{2} \\
-&amp; = \left|\langle b|\int db' \psi_{b'} |b'\rangle\right|^{2} \\
-&amp; = \left|\int db' \psi_{b'} \langle b|b'\rangle\right|^{2} \\
-&amp; = \left|\int db' \psi_{b'} \delta(b-b')\right|^{2} \\
-&amp; = \left|\psi_{b}\right|^{2}.
-\end{align}
-Com isso fica claro o motivo para chamarmos $\psi_{o_{j}}$ e $\psi_{o}$ de <strong>amplitudes de probabilidade</strong>, o módulo quadrado dessas quantidades é uma probabilidade e uma densidade de probabilidade, respectivamente.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Aqui também podemos ver o <strong>motivo</strong> para exigirmos que os vetores de estado sejam <strong>normalizados</strong>:
-\begin{align}
-||\psi||^{2} &amp; = \langle\psi|\psi\rangle \\
-&amp; = |\psi\rangle^\dagger |\psi\rangle \\
-&amp; = \sum_{j=1}^{d} \psi_{o_{j}}^{*} \langle o_{j}| \sum_{k=1}^{d} \psi_{o_{k}} |o_{k}\rangle \\
-&amp; = \sum_{j,k=1}^{d} \psi_{o_{j}}^{*}\psi_{o_{k}} \langle o_{j}|o_{k}\rangle \\
-&amp; = \sum_{j,k=1}^{d} \psi_{o_{j}}^{*}\psi_{o_{k}} \delta_{jk} \\ 
-&amp; = \sum_{j=1}^{d} |\psi_{o_{j}}|^2 \\
-&amp; = \sum_{j=1}^{d} Pr(o_{j}|\psi) \\
-&amp; := 1.
-\end{align}
-e
-\begin{align}
-||\psi||^{2} &amp; = \langle\psi|\psi\rangle \\
-&amp; = |\psi\rangle^\dagger |\psi\rangle \\
-&amp; = \int do \psi_{o}^{*} \langle o| \int do' \psi_{o'} |o'\rangle \\
-&amp; = \iint do do' \psi_{o}^{*}C_{o'} \langle o|o'\rangle \\
-&amp; = \iint do do' \psi_{o}^{*}\psi_{o'} \delta(o-o') \\
-             &amp; = \int do |\psi_{o}|^{2} \\
-             &amp; = \int do \rho(o|\psi) \\
-             &amp;:= 1.
-\end{align}</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Pulos-qu%C3%A2nticos">Pulos quânticos<a class="anchor-link" href="#Pulos-qu%C3%A2nticos">¶</a></h3><p>Como dito acima, quando medimos um observável $O$ e obtemos um dos seus possíveis valores, preparamos o sistema no vetor de estado igual ao autovetor correspondente ao valor obtido na medida. Ilustraremos esse efeito pelas equações:
-\begin{eqnarray}
-|\psi\rangle &amp; = &amp; \sum_{j=1}^{d} \psi_{o_{j}} |o_{j}\rangle \xrightarrow[]{\text{obtém } o_{k}} |o_{k}\rangle, \\
-|\psi\rangle &amp; = &amp; \int do \psi_{o} |o\rangle  \xrightarrow[]{\text{obtém } o'} |o'\rangle.
-\end{eqnarray}
-Em física clássica, estamos acostumados com mudanças contínuas de estado (de posições e velocidades, por exemplo). Na interpretação de Copenhaguem da MQ, pode ocorrer do sistema pular "instantaneamente" de uma configuração para outra que está a uma "distância finita" da primeira. Ou seja, não podemos traçar uma trajetória no espaço de estados quânticos para descrever o que ocorre durante o processo de medida.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Incompatibilidade-qu%C3%A2ntica">Incompatibilidade quântica<a class="anchor-link" href="#Incompatibilidade-qu%C3%A2ntica">¶</a></h2><h3 id="Teorema:"><strong>Teorema</strong>:<a class="anchor-link" href="#Teorema:">¶</a></h3><p>Dois operadores Hermitianos $A$ e $B$ compartilham o mesmo conjunto de autovetores se e somente se comutarem.</p>
-<h3 id="Prova:">Prova:<a class="anchor-link" href="#Prova:">¶</a></h3><p>Sejam 
-\begin{align}
-&amp; A = \sum_{j=1}^{d}a_{j}|\alpha_{j}\rangle\langle \alpha_{j}|,\\
-&amp; B = \sum_{j=1}^{d}b_{j}|\beta_{j}\rangle\langle \beta_{j}|,
-\end{align}
-com $d:=\dim\mathcal{H}$. Note que por causa da degenerescência, podemos ter e.g. $a_{1}=a_{2}$ ou e.g. $b_{2}=b_{3}=b_{4}$.</p>
-<p>Começamos assumindo que os dois operadores compartilham a mesma base de autovetores, i.e., 
-\begin{equation}
-|\alpha_{j}\rangle\equiv|\beta_{j}\rangle:=|j\rangle.
-\end{equation}
-Nesse caso podemos escrever as representações produto externo: $A = \sum_{j=1}^{d} a_{j}|j\rangle\langle j|$ e $B = \sum_{j=1}^{d} b_{j}|j\rangle\langle j|.$ O comutador é então
-\begin{align}
-[A,B] &amp; = AB - BA \\
-&amp; = \sum_{j=1}^{d} a_{j}|j\rangle\langle j|\sum_{k=1}^{d} b_{k}|k\rangle\langle k| - \sum_{k=1}^{d} b_{k}|k\rangle\langle k|\sum_{j=1}^{d} a_{j}|j\rangle\langle j| \\
-      &amp; = \sum_{j,k=1}^{d} a_{j}b_{k}|j\rangle\langle j|k\rangle\langle k| - \sum_{k,j=1}^{d} b_{k}a_{j}|k\rangle\langle k|j\rangle\langle j| \\
-      &amp; = \sum_{j,k=1}^{d} a_{j}b_{k}|j\rangle\langle k|\delta_{jk} - \sum_{k,j=1}^{d} b_{k}a_{j}|k\rangle\langle j|\delta_{jk} \\
-      &amp; = \sum_{j=1}^{d} a_{j}b_{j}|j\rangle\langle j| - \sum_{j=1}^{d} b_{j}a_{j}|j\rangle\langle j| = 0.
-\end{align}</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Seguindo com a segunda parte da prova, assumimos que os operadores comutam:
-\begin{equation}
-[A,B] = 0 \Rightarrow AB-BA=0 \Rightarrow AB=BA.
-\end{equation}
-Vem assim que, para $A|\alpha_{j}\rangle=\alpha_{j}|\alpha_{j}\rangle$, e $\forall j$:
-\begin{align}
-A(B|\alpha_{j}\rangle) &amp; = (AB)|\alpha_{j}\rangle \\
-&amp; = (BA)|\alpha_{j}\rangle \\
-&amp; = B(A|\alpha_{j}\rangle) \\
-&amp; = B (a_{j}|\alpha_{j}\rangle) \\
-              &amp; = a_{j}(B|\alpha_{j}\rangle). 
-\end{align}
-Ou seja, nesse caso devemos ter que $B|\alpha_{j}\rangle$ e $|\alpha_{j}\rangle$ são ambos autovetores de $A$ correspondentes ao mesmo autovalor $a_{j}$. Se $a_{j}$ é degenerado, existe um subespaço de $\mathcal{H}$ gerado pelos autovetores de $A$ correspondentes ao autovalor $a_{j}$; chamaremos esse subespaço de $\mathcal{H}_{j}$. Seja $\{|\alpha_{k}^{j}\rangle\}_{k=1}^{d_{j}}$ uma base qualquer de $\mathcal{H}_{j}$, com $d_{j}=\dim(\mathcal{H}_{j})$. Temos então que 
-$$A|\alpha_{k}^{j}\rangle=a_{j}|\alpha_{k}^{j}\rangle$$
-para $k=1,\cdots,d_{j}$.</p>
-<p>Além disso, $|\alpha_{j}\rangle\in\mathcal{H}_{j}$. Como $B|\alpha_{j}\rangle\in\mathcal{H}_{j}$, vemos que
-\begin{equation}
-B:\mathcal{H}_{j}\rightarrow \mathcal{H}_{j}.
-\end{equation}
-Como $B$ é um operador Hermitiano, existe uma base de $\mathcal{H}_{j}$ que o diagonaliza. Vamos assumir que essa base é $\{|\alpha_{k}^{j}\rangle\}_{k=1}^{d_{j}}$:
-\begin{equation}
-B|\alpha_{k}^{j}\rangle=b_{j}|\alpha_{k}^{j}\rangle
-\end{equation}
-com $j=1,\cdots,d_{j}$.
-Demonstramos com isso que $[A,B] = 0$ implica que $A$ e $B$ compartilham a mesma base de autovetores, concluindo assim a prova do teorema nesse caso.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Incompatibilidade-e-superposi%C3%A7%C3%A3o-qu%C3%A2ntica">Incompatibilidade e superposição quântica<a class="anchor-link" href="#Incompatibilidade-e-superposi%C3%A7%C3%A3o-qu%C3%A2ntica">¶</a></h3><p>Com a prova deste teorema, sabemos que se dois observáveis $A$ e $B$ de um sistema não comutam, eles não podem compartilhar todos os autovetores. Se, medindo o observável $A$, preparamos o sistema em um estado que não é autovetor do observável $B$, este vetor deve ser obrigatoriamente uma combinação linear dos autovetores de $B$ com duas ou mais amplitudes de probabilidade não nulas. Por exemplo, se $B|a_{3}\rangle$ não é proporcional a $|a_{3}\rangle$ teremos e.g.
-\begin{equation}
-|?\rangle \xrightarrow[\text{sai } a_{3}]{\text{mede } A} |a_{3}\rangle = \sqrt{1/4}|b_{2}\rangle +  \sqrt{3/4}|b_{5}\rangle  \xrightarrow[]{\text{mede } B} \text{sai }  b_{2} \text{ com prob. 1/4 ou } b_{5} \text{ com prob. 3/4}.
+O_{t}^{S} = O_{0}^{S} = \sum_{j}o_{j}|o_{j}^{S}\rangle\langle o_{j}^{S}|.
 \end{equation}</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Postulado-da-din%C3%A2mica">Postulado da dinâmica<a class="anchor-link" href="#Postulado-da-din%C3%A2mica">¶</a></h1><p>As mudanças de estados em MQ são descritas por uma transformação unitária:
+<p>Se o sistema foi preparado no estado $|\psi_{0}^{S}\rangle$, deixado evoluir segundo seu Hamiltoniano por um tempo $t$, e depois medimos o observável $O$, as probabilidades dos seus possíveis valores são dadas por:
 \begin{equation}
-|\psi_{t}\rangle = U_{t}|\psi_{0}\rangle,
+Pr(o_{j}(t)) = \left|\langle o_{j}^{S}|\psi_{t}^{S}\rangle\right|^{2} = \left|\langle o_{j}|\psi_{t}^{S}\rangle\right|^{2},
 \end{equation}
-i.e., 
-$$U_{t}U_{t}^{\dagger}=U_{t}U_{t}^{\dagger}=\mathbb{I}.$$
-O operador de evolução temporal sendo obtido da <strong>equação de Schrödinger</strong>:
-\begin{equation}
-i\hbar\partial_{t} U_{t} = H_{t}U_{t},
-\end{equation}
-com a condição inicial 
-$$U_0=\mathbb{I},$$
-onde $H_{t}$ é o operador Hamiltoniano do sistema no instante de tempo $t$, $\hbar$ é a constante de Planck dividida por $2\pi$ e usamos a notação $\partial_{t} = \frac{\partial}{\partial_{t}}$.</p>
-<p><em>OBS.</em> As duas equações acima são equivalentes à equação de Schrödinger para o estado
-\begin{equation}
-i\hbar\partial_{t} |\psi_{t}\rangle = H_{t}|\psi_{t}\rangle.
-\end{equation}
-Verificamos esse resultado como segue: 
-\begin{align}
-i\hbar\partial_{t} |\psi_{t}\rangle &amp; = i\hbar\partial_{t}(U_{t}|\psi_{0}\rangle) \\
-&amp; = (i\hbar\partial_{t}U_{t})|\psi_{0}\rangle \\
-&amp; = H_{t}U_{t}|\psi_{0}\rangle \\
-                                    &amp; = H_{t}|\psi_{t}\rangle.
-\end{align}</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Solu%C3%A7%C3%A3o-para-$U_%7Bt%7D$-quando-$H_%7Bt%7D=H$">Solução para $U_{t}$ quando $H_{t}=H$<a class="anchor-link" href="#Solu%C3%A7%C3%A3o-para-$U_%7Bt%7D$-quando-$H_%7Bt%7D=H$">¶</a></h2><p>Nesse tipo de situação, i.e., quando o Hamiltoniano não depende do tempo, podemos verificar que a seguinte forma geral é válida:
-\begin{equation}
-U_{t} = e^{-iHt/\hbar}.
-\end{equation}
-Faremos isso primeiramente usando a decomposição espectral do Hamiltoniano, 
-$$H=\sum_{j}E_{j}|E_{j}\rangle\langle E_{j}|,$$
-e aplicando a função de operador:
-\begin{align}
-i\hbar\partial_{t} U_{t} &amp; = i\hbar\partial_{t}e^{-iHt/\hbar} \\
-&amp; = i\hbar\partial_{t}e^{\sum_{j}(-iE_{j}t/\hbar)|E_{j}\rangle\langle E_{j}|}\\ 
-&amp; = i\hbar\partial_{t}\sum_{j}e^{-iE_{j}t/\hbar}|E_{j}\rangle\langle E_{j}| \\ 
-&amp; = i\hbar\sum_{j}\partial_{t}e^{-iE_{j}t/\hbar}|E_{j}\rangle\langle E_{j}| \\
-&amp; = i\hbar\sum_{j}(-i/\hbar)E_{j}e^{-iE_{j}t/\hbar}|E_{j}\rangle\langle E_{j}| \\
-&amp; = \sum_{j}e^{-iE_{j}t/\hbar}E_{j}|E_{j}\rangle\langle E_{j}|  \\
-&amp; = \sum_{j}e^{-iE_{j}t/\hbar}H|E_{j}\rangle\langle E_{j}| \\
-&amp; = H\sum_{j}e^{-iE_{j}t/\hbar}|E_{j}\rangle\langle E_{j}|  \\
-&amp; = H U_{t},
-\end{align}
-em que usamos $H|E_j\rangle=E_j|E_j\rangle$.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Solu%C3%A7%C3%A3o-para-$U_%7Bt%7D$-quando-$%5BH_%7Bt%7D,H_%7Bt'%7D%5D=%5Cmathbb%7B0%7D$">Solução para $U_{t}$ quando $[H_{t},H_{t'}]=\mathbb{0}$<a class="anchor-link" href="#Solu%C3%A7%C3%A3o-para-$U_%7Bt%7D$-quando-$%5BH_%7Bt%7D,H_%7Bt'%7D%5D=%5Cmathbb%7B0%7D$">¶</a></h2><p>Vamos verificar que neste caso
-\begin{equation}
-U_{t} = e^{-\frac{i}{\hbar}\int_{0}^{t}H_{t'}dt'}
-\end{equation}
-é solução da equação de Schrödinger. Teremos
-\begin{align}
-i\hbar\partial_{t} U_{t} &amp; = i\hbar\partial_{t} e^{-\frac{i}{\hbar}\int_{0}^{t}H_{t'}dt'}  \\
-&amp; = i\hbar\partial_{t}\sum_{j=0}^{\infty}\frac{1}{j!}\left(-\frac{i}{\hbar}\int_{0}^{t}H_{t'}dt'\right)^{j} \\
-                         &amp; = i\hbar\partial_{t}\left[\mathbb{I} + \sum_{j=1}^{\infty}\frac{1}{j!}\left(-\frac{i}{\hbar}\int_{0}^{t}H_{t'}dt'\right)^{j}\right] \\
-                         &amp; = i\hbar\left[\mathbb{0} + \sum_{j=1}^{\infty}\frac{j}{j!}\left(-\frac{i}{\hbar}\int_{0}^{t}H_{t'}dt'\right)^{j-1}\partial_{t}\left(-\frac{i}{\hbar}\int_{0}^{t}H_{t'}dt'\right)\right] \\
-                         &amp; = i\hbar\frac{-i}{\hbar}\partial_{t}\left(\int_{0}^{t}H_{t'}dt'\right)\sum_{j=1}^{\infty}\frac{j}{j!}\left(-\frac{i}{\hbar}\int_{0}^{t}H_{t'}dt'\right)^{j-1},
-\end{align}
-No último passo usamos a comutatividade do Hamiltoniano em tempos diferentes.</p>
-<p>Seguindo, aplicando o teorema fundamental do cálculo e fazendo a mudança de variável $k=j-1$ obtemos
-\begin{align}
-i\hbar\partial_{t} U_{t} &amp; = H_{t}\sum_{k=0}^{\infty}\frac{(k+1)}{(k+1)!}\left(-\frac{i}{\hbar}\int_{0}^{t}H_{t'}dt'\right)^{k} \\
-&amp; = H_{t}\sum_{k=0}^{\infty}\frac{1}{k!}\left(-\frac{i}{\hbar}\int_{0}^{t}H_{t'}dt'\right)^{k} \\ 
-                         &amp; = H_{t}e^{-\frac{i}{\hbar}\int_{0}^{t}H_{t'}dt'} \\
-                         &amp; = H_{t}U_{t}.
-\end{align}</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Solu%C3%A7%C3%A3o-para-$U_%7Bt%7D$-quando-$%5BH_%7Bt%7D,H_%7Bt'%7D%5D%5Cne-0$">Solução para $U_{t}$ quando $[H_{t},H_{t'}]\ne 0$<a class="anchor-link" href="#Solu%C3%A7%C3%A3o-para-$U_%7Bt%7D$-quando-$%5BH_%7Bt%7D,H_%7Bt'%7D%5D%5Cne-0$">¶</a></h2><p>Neste caso geral, começamos reescrevendo a <strong>equação de Schrödinger na forma integral</strong>:
-\begin{align}
-&amp; \partial_{t}U_{t}=-(i/\hbar)H_{t}U_{t}, \\
-&amp; \therefore\ \int_{0}^{t}dt'\partial_{t'}U_{t'}=U_{t}-U_{0}=U_{t}-\mathbb{I}=-\frac{i}{\hbar}\int_{0}^{t}dt'H_{t'}U_{t'}, \\
-&amp; \therefore\ U_{t}=\mathbb{I}-\frac{i}{\hbar}\int_{0}^{t}dt'H_{t'}U_{t'}.
-\end{align}
-Note que o operador de evolução temporal em um certo instante de tempo $t$ depende da integral dele multiplicado pelo Hamiltoniano desde $t=0$ até $t$. Mas, como essa equação vale para qualquer instante de tempo, podemos <strong>substituir $U_{t}$ iterativamente</strong>:
-\begin{align}
-U_{t} &amp; = \mathbb{I}-\frac{i}{\hbar}\int_{0}^{t}dt'H_{t'}\left(\mathbb{I}-\frac{i}{\hbar}\int_{0}^{t'}dt''H_{t''}U_{t''}\right) \\
-&amp; = \mathbb{I} + \left(\frac{-i}{\hbar}\right)\int_{0}^{t}dt'H_{t'} + \left(\frac{-i}{\hbar}\right)^{2}\int_{0}^{t}dt'H_{t'}\int_{0}^{t'}dt''H_{t''}U_{t''} \\
-&amp; = \mathbb{I} + \left(\frac{-i}{\hbar}\right)\int_{0}^{t}dt'H_{t'} + \left(\frac{-i}{\hbar}\right)^{2}\int_{0}^{t}dt'H_{t'}\int_{0}^{t'}dt''H_{t''}  \\ 
-&amp; \hspace{0.5cm} + \left(\frac{-i}{\hbar}\right)^{3}\int_{0}^{t}dt'H_{t'}\int_{0}^{t'}dt''H_{t''}\int_{0}^{t''}dt'''H_{t'''}+\cdots \\
-&amp; = \mathbb{I} + \sum_{j=1}^{\infty}\left(\frac{-i}{\hbar}\right)^{j}\int_{0}^{t}dt_{1}H_{t_{1}}\int_{0}^{t_{1}}dt_{2}H_{t_{2}}\cdots\int_{0}^{t_{j-1}}dt_{j}H_{t_{j}} \\
-&amp; = \mathbb{I} + \sum_{j=1}^{\infty}\left(\frac{-i}{\hbar}\right)^{j}\int_{0}^{t}dt_{1}\int_{0}^{t_{1}}dt_{2}\cdots\int_{0}^{t_{j-1}}dt_{j}H_{t_{1}}H_{t_{2}}\cdots H_{t_{j}}, \hspace{1cm} (*)
-\end{align}
-que é chamada de <strong>série de Dyson</strong>. Note que 
-$$0 \le t_{j}\le t_{j-1}\le \cdots\le t'''\equiv t_{3}\le t''\equiv t_{2}\le t'\equiv t_{1}\le t.$$
-Ou seja, temos que ter ordenamento temporal.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Operador-de-ordenamento-temporal">Operador de ordenamento temporal<a class="anchor-link" href="#Operador-de-ordenamento-temporal">¶</a></h4><p>O operador de ordenamento temporal $\mathcal{T}$ é definido de forma que quando aplicado a um produto de operadores, este ordena esses operadores baseado na sua dependência temporal com segue:
-$$\mathcal{T}\big(H_{t_1}H_{t_2}\cdots H_{t_j}\big) = H_{t_{i_1}}H_{t_{i_2}}\cdots H_{t_{i_j}}$$
-com
-$$t_{i_1}\ge t_{i_2} \ge \cdots \ge t_{i_j}.$$
-Ou seja, $\mathcal{T}$ coloca operadores calculados em tempos maiores mais para a esquerda (eles atuam depois).</p>
-<p>Vamos considerar a integral da série de Dyson com somente dois hamiltonianos, i.e.,
-$$J_2 = \int_{0}^{t}dt_1 \int_{0}^{t_1}dt_2 H_{t_1}H_{t_2} \equiv \int_{0}^{t}dt_1 \int_{0}^{t_1}dt_2 \mathcal{T}\big(H_{t_1}H_{t_2}\big). \hspace{1cm} (\star)$$
-Na sequência, vamos tirar a dependência entre as variáveis de integração, fazendo com que todos os limites de integração variem de $0$ a $t$.</p>
-<img alt="No description has been provided for this image" src="fig_T_ordering.png" width="500"/>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>A região de integração da integral $J_2$ está mostrada na figura acima, da esquerda. Podemos obter o mesmo resultado para integral, i.e., percorrer a mesma área de parâmetros de integração, usando:
-$$J_2 = \int_{0}^{t}dt_2 \int_{t_2}^{t}dt_1 H_{t_1}H_{t_2}.$$
-Se trocarmos os limites de integração, obtemos
-$$J_2 = \int_{0}^{t}dt_1 \int_{t_1}^{t}dt_2 H_{t_2}H_{t_1} = \int_{0}^{t}dt_1 \int_{t_1}^{t}dt_2 \mathcal{T}\big(H_{t_1}H_{t_2}\big).  \hspace{1cm} (\star\star)$$</p>
-<p>Assim, das equações $(\star)$ e $(\star\star)$, obtemos
-\begin{align}
-J_2 &amp; = \frac{1}{2}\Big( \int_{0}^{t}dt_1 \int_{0}^{t_1}dt_2 \mathcal{T}\big(H_{t_1}H_{t_2}\big) + \int_{0}^{t}dt_1 \int_{t_1}^{t}dt_2 \mathcal{T}\big(H_{t_1}H_{t_2}\big)\Big) \\
-&amp; = \frac{1}{2}\int_{0}^{t}dt_1 \int_{0}^{t}dt_2 \mathcal{T}\big(H_{t_1}H_{t_2}\big),
-\end{align}
-desacoplando assim os limites de integração.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Para a integral que aparece na série de Dyson,
-$$J_j = \int_{0}^{t}dt_{1}\int_{0}^{t_{1}}dt_{2}\cdots\int_{0}^{t_{j-1}}dt_{j}H_{t_{1}}H_{t_{2}}\cdots H_{t_{j}},$$
-vemos que a integração é feita em uma região limitada por um hipercubo de dimensão $j$, com a região definida por
-$$t_j\ge t_{j-1}\ge\cdots\ge t_2\ge t_1.$$
-O volume dessa região é $1/j!$ do volume do hipercubo, o que nos permite desacoplar os limites de integração e obter
-$$J_j = \frac{1}{j!}\int_{0}^{t}dt_1\int_{0}^{t}dt_2\cdots\int_{0}^{t}dt_j\mathcal{T}\big(H_{t_1}H_{t_2}\cdots H_{t_j}\big).$$</p>
-<p>Substituindo esta expressão na <strong>série de Dyson</strong>, eq. ($*$), obteremos
-\begin{align}
-U_t &amp; = \mathbb{I} + \sum_{j=1}^{\infty}\left(\frac{-i}{\hbar}\right)^{j}\frac{1}{j!}\int_{0}^{t}dt_1\int_{0}^{t}dt_2\cdots\int_{0}^{t}dt_j\mathcal{T}\big(H_{t_1}H_{t_2}\cdots H_{t_j}\big) \\
-&amp; =: \mathcal{T}e^{-\frac{i}{\hbar}\int_{0}^{t}H_{t'}dt'}.
-\end{align}
-Note que esta última expressão, que é elegante e aparece com frequência na literatura, tem nela escondida toda a complicação da 1ª igualdade.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Vamos considerar o <strong>caso particular</strong> em que
-$$[H_t,H_{t'}]=0\ \forall\ t,t'.$$
-Nesse caso o ordenamento temporal não faz diferença, i.e.,
-$$\mathcal{T}\big(H_{t_1}H_{t_2}\cdots H_{t_j}\big)\equiv H_{t_1}H_{t_2}\cdots H_{t_j}.$$
-Assim, podemos escrever
-\begin{align}
-U_t &amp; = \mathbb{I} + \sum_{j=1}^{\infty}\left(\frac{-i}{\hbar}\right)^{j}\frac{1}{j!}\int_{0}^{t}dt_1 H_{t_1}\int_{0}^{t}dt_2 H_{t_2}\cdots\int_{0}^{t}dt_j H_{t_j} \\
-&amp; = \mathbb{I} + \sum_{j=1}^{\infty}\frac{1}{j!}\left(\frac{-i}{\hbar}\int_{0}^{t}dt' H_{t'}\right)^{j} \\
-&amp; = e^{-\frac{i}{\hbar}\int_{0}^{t}dt' H_{t'}},
-\end{align}
-que é o resultado particular esperado.</p>
+em que denotaremos
+$$|o_{j}\rangle := |o_{j}^{S}\rangle = |o_{j}^{S}(t)\rangle.$$</p>
 </div>
 </div>
 </div>
@@ -8013,36 +7532,291 @@ que é o resultado particular esperado.</p>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <hr/>
-<h1 id="Exerc%C3%ADcios">Exercícios<a class="anchor-link" href="#Exerc%C3%ADcios">¶</a></h1><p>$1.$ Considere um vetor qualquer $|\psi\rangle$ de um espaço de Hilbert $\mathcal{H}$. Decomponha $|\psi\rangle$ em termos de uma base ortonormal $\{|b_{j}\rangle\}_{j=1}^{\dim\mathcal{H}}$ de $\mathcal{H}$. Mostre que as componentes de $|\psi\rangle$ nessa base são dadas por $\langle b_{j}|\psi\rangle$. Use esse resultado para mostrar que o operador identidade em $\mathcal{H}$ pode ser escrito em termos da base $\{|b_{j}\rangle\}_{j=1}^{\dim\mathcal{H}}$ como segue: $\mathbb{I}=\sum_{j=1}^{\dim\mathcal{H}}|b_{j}\rangle\langle b_{j}|$.</p>
-<p>$2.$ Considere um sistema quântico de três níveis em que a ação do operador Hamiltoniano na base ortonormal $\{|1\rangle,|2\rangle,|3\rangle\}$ é
-\begin{cases}
-H|1\rangle=a|1\rangle+a|3\rangle, \\
-H|2\rangle=a|2\rangle+b|3\rangle, \\
-H|3\rangle=a|1\rangle+b|2\rangle+a|3\rangle.
-\end{cases}
-Forneça a representação matricial de $H$ na base $\{|1\rangle,|2\rangle,|3\rangle\}$.</p>
-<p>$3.$ Mostre que os autovalores de um operador Hermitiano $A$ são números reais. Verifique que dois autovetores de $A$ correspondentes a autovalores diferentes são ortogonais.</p>
-<p>$4.$ Mostre que se usarmos a base de autovetores de um operador $A$ como base para representá-lo na forma de produto externo, teremos que $\langle a_{j} |A|a_{k}\rangle = a_{k}\delta_{jk}$ e $\langle a|A|a'\rangle = a\delta(a-a')$ e portanto que $A=\sum_{j=1}^{d} a_{j}  |a_{j}\rangle\langle a_{j}|$ e $A=\int da a |a\rangle\langle a|$.</p>
-<p>$5.$ Verifique que se $A$ for um observável com espectro contínuo, podemos escrever seu valor médio na forma: $\langle A\rangle_{\psi}=\langle\psi|A|\psi\rangle$.</p>
-<p>$6.$ Mostre que dois operadores Hermitianos $A$ e $B$ com espectro contínuo compartilham o mesmo conjunto de autovetores se e somente se comutarem.</p>
-<p>$7.$ Para $H_t=H$, verifique que a equação de Schrödinger $i\hbar\partial_{t}U_{t}=H_{t}U_{t}$ é satisfeita pelo operador de evolução temporal $U_{t}=e^{-iHt/\hbar}$ o expandindo em série de Taylor (e depois fazendo a derivada).</p>
-<p>$8.$ Verifique que se o Hamiltoniano for independe do tempo, então este comuta com o operador de evolução temporal, i.e., verifique que $[U_{t},H]=[e^{-iHt/\hbar},H]=0$.</p>
-<p>$9.$ Verifique que se o Hamiltoniano de um quanton puder ser escrito como $H_{t} = f_{t}V$, com $f_{t}$ sendo uma função escalar do tempo $t$ e $V$ um operador Hermitiano independente do tempo, então $[H_{t},H_{t'}]=\mathbb{0}$. Nesse caso, use decomposição espectral de $V=\sum_{j=1}^{\dim H}v_{j}|v_{j}\rangle\langle v_{j}|$ para verificar que $U_{t}=e^{-\frac{i}{\hbar}\int_{0}^{t}H_{t'}dt'}$ satisfaz a equação de Schrödinger $i\hbar\partial_{t}U_{t}=H_{t}U_{t}$.</p>
-<p>$10.$ Para $H_{t}=H$, verifique que a série de Dyson para $U_{t}$ é igual a série de Taylor para $e^{-iHt/\hbar}$.</p>
+<h2 id="Representa%C3%A7%C3%A3o-de-Heisenberg-(RH)">Representação de Heisenberg (RH)<a class="anchor-link" href="#Representa%C3%A7%C3%A3o-de-Heisenberg-(RH)">¶</a></h2><p>Nesta representação, os <strong>observáveis</strong> é que <strong>mudam</strong> com o tempo, os <strong>estados não mudam</strong> com o tempo.</p>
+<p>O <em>objeto essencial</em> que liga o formalismo da MQ com o experimento é o conjunto de <em>probabilidades</em> dadas pela regra de Born. Então, desde que não mudemos esses números, podemos mudar a interpretação dos objetos que aparecem no seu cálculo. Por exemplo, na equação acima, se em lugar de usar $|\psi_{t}^{S}\rangle=U_{t}|\psi_{0}^{S}\rangle$ usarmos $|\psi_{0}^{S}\rangle$ e no lugar de $|o_{j}^{S}\rangle$ usarmos $U_{t}^{\dagger}|o_{j}^{S}\rangle$, obteremos os mesmos valores para as probabilidades:
+\begin{align}
+&amp; \left|\left(U_{t}^{\dagger}| o_{j}^{S}\rangle,|\psi_{0}^{S}\rangle\right)\right|^{2}  = \left|\left(|o_{j}^{S}\rangle,U_{t}|\psi_{0}^{S}\rangle\right)\right|^{2} \\
+&amp; = |\langle o_{j}^{S}|\psi_{t}^{S}\rangle|^{2} = Pr(o_{j}(t)). 
+\end{align}</p>
+<p>Portanto, podemos considerar que o estado do sistema é sempre igual àquele preparado em $t=0$ e que são os autovetores do observável que será medido que evoluíram com o tempo, i.e.,
+\begin{equation}
+|\psi_{t}^{H}\rangle = |\psi_{0}^{S}\rangle =: |\psi_0\rangle
+\end{equation}
+e
+\begin{equation}
+|o_{j}^{H}\rangle := |o_{j}^{H}(t)\rangle = U_{t}^{\dagger}|o_{j}^{S}\rangle.
+\end{equation}
+Nesse caso
+$$Pr(o_j(t)) = |\langle\psi_0|o_j^H\rangle|^2 = |\langle o_j^H|\psi_0\rangle|^2.$$</p>
+<p><em>OBS.</em> Tanto na RS quanto na RH, o operador de evolução temporal é obtido da equação de Schrödinger $$i\hbar\partial_{t}U_{t}=H_{t}U_{t}.$$</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span> 
-</pre></div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Equa%C3%A7%C3%A3o-de-Heisenberg">Equação de Heisenberg<a class="anchor-link" href="#Equa%C3%A7%C3%A3o-de-Heisenberg">¶</a></h3><p>Esta equação diferencial para a evolução temporal de observáveis é útil e.g. para identificar constantes de movimento (quantidades conservadas) e é obtida como segue. Para começar, substítuimos a equação acima na representação produto externo do observável, obtendo:
+\begin{align}
+O_{t}^{H} &amp; = \sum_{j}o_{j}|o_{j}^{H}(t)\rangle\langle o_{j}^{H}(t)| \\
+&amp; = \sum_{j}o_{j}U_{t}^{\dagger}|o_{j}^{S}\rangle\langle o_{j}^{S}|U_{t} \\
+&amp; = U_{t}^{\dagger}\sum_{j}o_{j}|o_{j}^{S}\rangle\langle o_{j}^{S}|U_{t} \\
+     &amp; = U_{t}^{\dagger} O_{0}^{S} U_{t}.
+\end{align}
+Derivando essa equação em relação ao tempo, obteremos
+\begin{align}
+i\hbar\partial_{t}O_{t}^{H} &amp; = i\hbar\partial_{t}(U_{t}^{\dagger}O_{0}^{S} U_{t}) \\
+&amp; = -(-i\hbar\partial_{t}U_{t}^{\dagger})O_{0}^{S} U_{t} + 0 + U_{t}^{\dagger}O_{0}^{S}(i\hbar\partial_{t}U_{t}) \\ 
+&amp; = -U_{t}^{\dagger} H_{t}O_{0}^{S} U_{t} + U_{t}^{\dagger}O_{0}^{S} H_{t}U_{t} \\
+&amp; = -U_{t}^{\dagger} H_{t}\mathbb{I}O_{0}^{S} U_{t} + U_{t}^{\dagger}O_{0}^{S}\mathbb{I}H_{t}U_{t} \\ 
+&amp; = -U_{t}^{\dagger} H_{t}U_{t}U_{t}^{\dagger}O_{0}^{S} U_{t} + U_{t}^{\dagger}O_{0}^{S}U_{t}U_{t}^{\dagger}H_{t}U_{t} \\
+&amp; = -H_{t}^{H}O_{t}^{H} + O_{t}^{H}H_{t}^{H} \\
+&amp; = [O_{t}^{H},H_{t}^{H}],
+\end{align}
+que é a <em>equação de Heisenberg.</em> Acima usamos $H_{t}^{\dagger}=H_{t}$ e $-i\hbar\partial_{t}U_{t}^{\dagger}=U_{t}^{\dagger} H_{t}$.</p>
+<p><em>OBS.</em> Se 
+$$[O_{t}^{H},H_{t}^{H}]=0$$
+então 
+$$\partial_{t}O_{t}^{H}=0 \text{ e } O_{t}^{H}=O_{0}^{S}$$
+é uma <strong>constante de movimento</strong>, ou quantidade conservada, i.e., a distribuição de probabilidades, valor médio e desvio padrão associados não mudam durante a evolução temporal do sistema.</p>
 </div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Equa%C3%A7%C3%A3o-de-Heisenberg-para-observ%C3%A1veis-que-dependem-explicitamente-do-tempo-na-RS">Equação de Heisenberg para observáveis que dependem explicitamente do tempo na RS<a class="anchor-link" href="#Equa%C3%A7%C3%A3o-de-Heisenberg-para-observ%C3%A1veis-que-dependem-explicitamente-do-tempo-na-RS">¶</a></h3><p>Vamos considerar observáveis que dependam explicitamente do tempo na RS: $O_{t}^{H}=U_{t}^{\dagger}O_{t}^{s}U_{t}$. Teremos assim que
+\begin{align}
+i\hbar\partial_{t}O_{t}^{H} &amp;= -(-i\hbar\partial_{t}U_{t}^{\dagger})O_{t}^{s}U_{t} + U_{t}^{\dagger}O_{t}^{s}(i\hbar\partial_{t}U_{t}) + i\hbar U_{t}^{\dagger}(\partial_{t}O_{t}^{s})U_{t} \\
+&amp;= -U_{t}^{\dagger}H_{t}O_{t}^{s}U_{t} + U_{t}^{\dagger}O_{t}^{s}H_{t}U_{t} + i\hbar U_{t}^{\dagger}(\partial_{t}O_{t}^{s})U_{t} \\
+&amp;= -U_{t}^{\dagger}H_{t}U_{t}U_{t}^{\dagger}O_{t}^{s}U_{t} + U_{t}^{\dagger}O_{t}^{s}U_{t}U_{t}^{\dagger}H_{t}U_{t} + i\hbar U_{t}^{\dagger}(\partial_{t}O_{t}^{s})U_{t} \\
+&amp; = [O_{t}^{H},H_{t}^{H}] + i\hbar\partial_{t}^{H}O_{t}^{s},
+\end{align}
+onde definimos o operador derivada na representação de Heisenberg como
+\begin{equation}
+\partial_{t}^{H}O_{t}^{s}=U_{t}^{\dagger}(\partial_{t}O_{t}^{s})U_{t}.
+\end{equation}
+<em>OBS.</em> A derivada de um operador é um operador:
+\begin{equation}
+\partial_{t}O_{t}^{S} := \lim_{\delta t\rightarrow 0}\frac{O_{t+\delta t}^{S}-O_{t}^{S}}{\delta t}.
+\end{equation}</p>
+<p><em>OBS:</em> Além do Hamiltoniano, não conheço nenhum exemplo de observável que dependa explicitamente do tempo na RS.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<hr/>
+<h2 id="Representa%C3%A7%C3%A3o-de-intera%C3%A7%C3%A3o-(RI)">Representação de interação (RI)<a class="anchor-link" href="#Representa%C3%A7%C3%A3o-de-intera%C3%A7%C3%A3o-(RI)">¶</a></h2><p>Nesta representação, tanto os <strong>estados</strong> quanto os <strong>observáveis</strong> podem <strong>evoluir com o tempo</strong>.</p>
+<p>Vamos considerar sistemas físicos para os quais o Hamiltoniano pode ser escrito da seguinte forma:
+\begin{equation}
+H_{t} = H_{c} + V_{t},
+\end{equation}
+onde $H_{c}\ (V_{t})$ é um operador Hermitiano que independe (depende) explicitamente do tempo. Outro contexto no qual a RI é útil é quando $V_t$ está relacionado com a interação entre os constituintes do sistema enquanto $H_c$ é a soma dos hamiltonianos individuais desses subsistemas.</p>
+<p><em>OBS.</em> Veremos que na RI os estados evoluem sob $V_{t}$ e observáveis evoluem sob $H_{c}$.</p>
+<p>Usando a parte independente do tempo do Hamiltoniano, definiremos o seguinte <em>operador unitário:</em>
+\begin{equation}
+W_{t} = e^{-iH_{c}t/\hbar}.
+\end{equation}</p>
+<p>Vamos olhar agora para as <em>probabilidades</em>, cujos valores devem independer de representação:
+\begin{align}
+Pr(o_{j}(t)) &amp; = \left|\langle o_{j}^{S}|\psi_{t}^{S}\rangle\right|^{2} \\
+&amp; = \left|\langle o_{j}^{S}|\mathbb{I}|\psi_{t}^{S}\rangle\right|^{2} \\
+&amp; = \left|\langle o_{j}^{S}|W_{t}W^{\dagger}_{t}|\psi_{t}^{S}\rangle\right|^{2} \\
+&amp; =: \left|\langle o_{j}^{I}(t)|\psi_{t}^{I}\rangle\right|^{2},
+\end{align}
+com
+\begin{align}
+&amp; |\psi_{t}^{I}\rangle := W^{\dagger}_{t}|\psi_{t}^{S}\rangle = W^{\dagger}_{t}U_{t}|\psi_{0}^{S}\rangle \\
+&amp; \text{ e } \\
+&amp; |o_{j}^{I}(t)\rangle := W^{\dagger}_{t}|o_{j}^{S}\rangle
+\end{align}
+sendo, respectivamente, definidos como os <em>vetores de estado</em> e <em>autovetores de observáveis</em> evoluídos no tempo <em>na RI</em>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Equa%C3%A7%C3%A3o-de-Heisenberg-na-RI">Equação de Heisenberg na RI<a class="anchor-link" href="#Equa%C3%A7%C3%A3o-de-Heisenberg-na-RI">¶</a></h3><p>Os observáveis evoluem na RI como
+\begin{align}
+O_{t}^{I} &amp; = \sum_{j}o_{j}|o_{j}^{I}(t)\rangle\langle o_{j}^{I}(t)| \\
+&amp; = \sum_{j}o_{j}W^{\dagger}_{t}|o_{j}^{S}\rangle\langle o_{j}^{S}|W_{t} \\
+&amp; = W^{\dagger}_{t}\sum_{j}o_{j}|o_{j}^{S}\rangle\langle o_{j}^{S}|W_{t} \\
+&amp; = W^{\dagger}_{t} O_{0}^{S} W_{t}.
+\end{align}
+Derivando essa equação, obtemos
+\begin{align}
+i\hbar\partial_{t}O_{t}^{I} &amp; = -(-i\hbar\partial_{t}W_{t}^{\dagger}) O^{S} W_{t} + 0 + W^{\dagger}_{t} O^{S} (i\hbar\partial_{t}W_{t}).
+\end{align}
+Pode-se verificar que $i\hbar\partial_{t}W_{t} = W_{t}H_{c}$. Também usaremos a relação $-i\hbar\partial_{t}W_{t}^{\dagger} = W_{t}^{\dagger}H_{c}$. Com isso obteremos a <em>equação de Heisenberg</em>:
+\begin{align}
+i\hbar\partial_{t}O_{t}^{I} &amp; = -H_{c}W_{t}^{\dagger} O^{S} W_{t} + W^{\dagger}_{t} O^{S} W_{t}H_{c} \\
+&amp; = -H_{c}O_{t}^{I} + O_{t}^{I}H_{c} \\
+&amp; = [O_{t}^{I},H_{c}] \\
+&amp; = [O_{t}^{I},H_{c}^{I}],
+\end{align}
+pois $H_{c}^{I}=W_t^\dagger H_c W_t=H_{c}$ uma vez que $[W_{t},H_{c}]=0$.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Equa%C3%A7%C3%A3o-de-Schr%C3%B6dinger-na-RI">Equação de Schrödinger na RI<a class="anchor-link" href="#Equa%C3%A7%C3%A3o-de-Schr%C3%B6dinger-na-RI">¶</a></h3><p>Vamos derivar a equação apresentada acima para o estado evoluído na RI em relação ao tempo:
+\begin{align}
+i\hbar\partial_{t}|\psi_{t}^{I}\rangle &amp; = i\hbar\partial_{t}(W^{\dagger}_{t}U_{t}|\psi_{0}^{S}\rangle) \\
+&amp;= (i\hbar\partial_{t}W^{\dagger}_{t})U_{t}|\psi_{0}^{S}\rangle + W^{\dagger}_{t}(i\hbar\partial_{t}U_{t})|\psi_{0}^{S}\rangle + 0  \\
+&amp; = -H_{c}W^{\dagger}_{t}U_{t}|\psi_{0}^{S}\rangle + W^{\dagger}_{t}H_{t}U_{t}|\psi_{0}^{S}\rangle \\ 
+&amp; = -H_{c}W^{\dagger}_{t}U_{t}|\psi_{0}^{S}\rangle + W^{\dagger}_{t}(H_{c}+V_{t})U_{t}|\psi_{0}^{S}\rangle \\ 
+&amp; = W^{\dagger}_{t}V_{t}\mathbb{I}U_{t}|\psi_{0}^{S}\rangle \\
+&amp;= W^{\dagger}_{t}V_{t}W_{t}W^{\dagger}_{t}U_{t}|\psi_{0}^{S}\rangle \\ 
+&amp;= V_{t}^{I}|\psi_{t}^{I}\rangle.
+\end{align}
+Acima usamos $[W^{\dagger}_{t},H_{c}]=0$.</p>
+<p>OBS. Nesse caso, também poderíamos definir um operador unitário $\Upsilon_{t}$ tal que $$|\psi_{t}^{I}\rangle=\Upsilon_{t}|\psi_{0}^{I}\rangle$$
+com $\Upsilon_{t}$ obtido da equação de Schrödinger
+$$i\hbar\partial_{t}\Upsilon_{t}=V_{t}^{I}\Upsilon_{t}.$$</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Conjunto-de-equa%C3%A7%C3%B5es-diferenciais-para-obter-$%7C%5Cpsi_%7Bt%7D%5E%7BI%7D%5Crangle$">Conjunto de equações diferenciais para obter $|\psi_{t}^{I}\rangle$<a class="anchor-link" href="#Conjunto-de-equa%C3%A7%C3%B5es-diferenciais-para-obter-$%7C%5Cpsi_%7Bt%7D%5E%7BI%7D%5Crangle$">¶</a></h4><p>Vamos considerar que a parte independente do tempo do Hamiltoniano satisfaz a seguinte equação de autovalores e autovetores:
+\begin{equation}
+H_{c}|E^{c}_{j}\rangle = E^{c}_{j} |E^{c}_{j}\rangle.
+\end{equation}
+Podemos escrever qualquer vetor de estado do sistema, e em particular $|\psi_{t}^{I}\rangle$, como combinação linear dos autovetores de $H_{c}$:
+\begin{equation}
+|\psi_{t}^{I}\rangle = \sum_{j=1}^{d} c_{j}(t)|E^{c}_{j}\rangle,
+\end{equation}
+com 
+$$c_{j}(t) := \langle E^{c}_{j}|\psi_{t}^{I}\rangle.$$
+Notando que $\{|E^{c}_{j}\rangle\}$ não dependem do tempo, vamos tomar o produto interno deles com a equação de Schödinger na RI:
+\begin{align}
+\langle E^{c}_{j}|i\hbar\partial_{t}|\psi_{t}^{I}\rangle &amp; = \langle E^{c}_{j}|V_{t}^{I}|\psi_{t}^{I}\rangle \\
+ \therefore\ i\hbar\partial_{t}\langle E^{c}_{j}|\psi_{t}^{I}\rangle &amp; = \langle E^{c}_{j}|W_{t}^{\dagger}V_{t}W_{t}\sum_{k=1}^{d} c_{k}(t)|E^{c}_{k}\rangle \\
+\therefore\ i\hbar\partial_{t}c_{j}(t)  &amp; = \sum_{k=1}^{d} c_{k}(t)\langle E^{c}_{j}|e^{iH_{c}t/\hbar}V_{t}e^{-iH_{c}t/\hbar}|E^{c}_{k}\rangle \\
+&amp; = \sum_{k=1}^{d} c_{k}(t)\langle E^{c}_{j}|e^{iE^{c}_{j}t/\hbar}V_{t}e^{-iE^{c}_{k}t/\hbar}|E^{c}_{k}\rangle \\
+                                                        &amp; = \sum_{k=1}^{d} c_{k}(t)e^{i(E^{c}_{j}-E^{c}_{k})t/\hbar}\langle E^{c}_{j}|V_{t}|E^{c}_{k}\rangle \\
+                                                        &amp;= \sum_{k=1}^{d} e^{i\omega_{jk}t}V_{jk}(t) c_{k}(t),
+\end{align}
+onde $j=1,\cdots,d$ e definimos as <em>frequências de Bohr</em> como
+\begin{equation}
+\omega_{jk} := \frac{E^{c}_{j}-E^{c}_{k}}{\hbar},
+\end{equation}</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>e os elementos de matriz da parte dependente do tempo do Hamiltoniano na base de autovetores da parte independente do tempo foram denotados por:
+\begin{equation}
+V_{jk}(t) := \langle E^{c}_{j}|V_{t}|E^{c}_{k}\rangle.
+\end{equation}
+Podemos reescrever todas essas $d$ equações em termos de uma equação matricial:
+\begin{equation}
+i\hbar 
+\begin{bmatrix}
+\partial_{t}c_{1}(t) \\ \partial_{t}c_{2}(t) \\ \vdots \\ \partial_{t}c_{d}(t)
+\end{bmatrix}=
+\begin{bmatrix}
+V_{11} &amp; V_{12}e^{i\omega_{12}t} &amp; \cdots &amp; V_{1d}e^{i\omega_{1d}t} \\
+V_{21}e^{i\omega_{21}t} &amp; V_{22} &amp; \cdots &amp; V_{2d}e^{i\omega_{2d}t} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+V_{d1}e^{i\omega_{d1}t} &amp; V_{d2}e^{i\omega_{d2}t} &amp; \cdots &amp; V_{dd}
+\end{bmatrix}
+\begin{bmatrix}
+c_{1}(t) \\ c_{2}(t) \\ \vdots \\ c_{d}(t)
+\end{bmatrix}
+.
+\end{equation}
+Acima usamos e denotamos
+$$\omega_{jj}=0 \text{ e } V_{jk}(t) \equiv V_{jk}.$$ 
+Ademais, note que 
+$$\omega_{jk}=-\omega_{kj}.$$</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Se nosso objetivo for calcular as probabilidades dos autovalores de $H_{c}$, ao resolvermos este sistema de equações diferenciais lineares teremos resolvido o problema pois
+\begin{equation}
+Pr(E_{j}^{c}(t)) = |c_{j}(t)|^{2}.
+\end{equation}</p>
+<p>Por outro lado, se quisermos calcular probabilidades para um observável qualquer, precisamos obter 
+\begin{align}
+|o_{j}^{I}(t)\rangle &amp;= W_{t}^{\dagger} |o_{j}^{S}\rangle \\
+&amp; = e^{iH_{c}t/\hbar}|o_{j}^{S}\rangle \\
+&amp; = e^{iH_{c}t/\hbar}\mathbb{I}|o_{j}^{S}\rangle \\
+&amp; = e^{iH_{c}t/\hbar}\sum_{k=1}^{d}|E_{k}^{c}\rangle\langle E_{k}^{c}||o_{j}^{S}\rangle \\ 
+&amp; = \sum_{k=1}^{d}e^{iH_{c}t/\hbar}|E_{k}^{c}\rangle\langle E_{k}^{c}|o_{j}^{S}\rangle \\
+&amp; = \sum_{k=1}^{d}e^{iE_{k}^{c}t/\hbar}\langle E_{k}^{c}|o_{j}^{S}\rangle |E_{k}^{c}\rangle,
+\end{align}
+para então usá-lo junto com $|\psi_{t}^{I}\rangle$ em
+\begin{align}
+Pr(o_{j}(t)) &amp; = \left|\langle o_{j}^{I}(t)|\psi_{t}^{I}\rangle\right|^{2} \\
+&amp; = \left|\sum_{k=1}^{d}e^{-iE_{k}^{c}t/\hbar}\langle E_{k}^{c}|o_{j}^{S}\rangle^{*}\langle E_{k}^{c}|\sum_{l=1}^{d} c_{l}(t)|E^{c}_{l}\rangle\right|^{2} \\
+&amp; = \left|\sum_{k=1}^{d}e^{-iE_{k}^{c}t/\hbar}\langle E_{k}^{c}|o_{j}^{S}\rangle^{*}c_{k}(t)\right|^{2}.
+\end{align}</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<hr/>
+<h1 id="Exerc%C3%ADcios">Exercícios<a class="anchor-link" href="#Exerc%C3%ADcios">¶</a></h1><p>$1.$ Escrevendo o estado evoluído do sistema, na RS, em termos da base de autovetores do observável de interesse,
+$|\psi_{t}^{S}\rangle = \sum_{j=1}^{d}c_{j}(t)|o_{j}^{S}\rangle$,
+substituindo na equação de Schrödinger $i\hbar\partial_{t}|\psi_{t}^{S}\rangle=H_{t}|\psi_{t}^{S}\rangle$ e tomando o produto interno com $|o_{k}^{S}\rangle$, para $k=1,\cdots,d$, mostre que $i\hbar\partial_{t}c_{k}(t) = \sum_{j=1}^{d}H_{kj}c_{j}(t)$ com $H_{kj}:=\langle o_{k}^{S}|H_{t}|o_{j}^{S}\rangle$. Mostre que essas $d$ equações acopladas podem ser escritas como uma única equação diferencial matricial: $i\hbar\partial_{t}\vec{c}(t)=H_{t}\vec{c}(t)$ identificando $\vec{c}$ e $H_{t}$.</p>
+<p>$2.$ Obtenha $|\psi_{t}^{S}\rangle$ do último exercício usando como observável o próprio Hamiltoniano, o considerando independente do tempo, na RS.</p>
+<p>$3.$ Verifique, usando a definição de derivada, que $(i\hbar\partial_{t}U_{t})^{\dagger} = -i\hbar\partial_{t}U_{t}^{\dagger}$. Verifique assim que $-i\hbar\partial_{t}U_{t}^{\dagger}=U_{t}^{\dagger} H_{t}$.</p>
+<p>$4.$ Consideremos que a relação de comutação entre dois observáveis na representação de Schrödinger é
+$[A_{t}^{S},B_{t}^{S}]=C_{t}^{S}$. Mostre que essa relação de comutação é preservada quando mudamos para a representação de Heisenberg, i.e., verifique que $[A_{t}^{H},B_{t}^{H}] = C_{t}^{H}$. Ou seja, se dois observáveis são incompatíveis (compatíveis) na RS, suas versões na RH também serão incompatíveis (compatíveis).</p>
+<p>$5.$ Sejam $A$ e $B$ operadores Hermitianos comutantes ($[A,B]=\mathbb{O}$). Verifique que $e^{A}e^{B}=e^{A+B}.$</p>
+<p>$6.$ Para $H=H^{\dagger}$ e $U=e^{-iH},$ verifique que $U^{\dagger}=e^{iH}.$</p>
+<p>$7.$ Verifique que $W_{t}= e^{-iH_{c}t/\hbar}$ é um operador unitário, com $H_{c}$ sendo um operador Hermitiano.</p>
+<p>$8.$ Verifique que $[W_{t},H_{c}]=0$, que $i\hbar\partial_{t}W_{t}=H_{c}W_{t}$ e que $-i\hbar\partial_{t}W_{t}^{\dagger}=W_{t}^{\dagger}H_{c}$.</p>
+<p>$9.$ Verifique que se expandirmos o estado evoluído na RI na base de autovetores de $H_{c}$, $|\psi_{t}^{I}\rangle = \sum_{j=1}^{d} c_{j}(t)|E^{c}_{j}\rangle$, podemos escrever: $Pr(E_{j}^{c}(t)) = |c_{j}(t)|^{2}.$</p>
 </div>
 </div>
 </div>

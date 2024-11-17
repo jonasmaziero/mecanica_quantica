@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>17_2_Postulados</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>20_Precessao_de_Spin</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7493,515 +7493,992 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Formalismo-Qu%C3%A2ntico">Formalismo Quântico<a class="anchor-link" href="#Formalismo-Qu%C3%A2ntico">¶</a></h1><p>Até então estudamos a Velha Mecânica Quântica e a Mecânica Quântica Ondulatória de Schrödinger. Doravante investigaremos o formalismo matemático da Mecânica Quântica (MQ), a partir do qual podemos obter todos os resultados vistos anteriormente.</p>
-<p>Em toda teoria física, buscamos descrever os <strong>estados</strong> possíveis do sistema de interesse, as <strong>mudanças</strong> desses estados (evolução temporal) e as quantidades <strong>observáveis</strong> e suas medidas.</p>
-<p>Por exemplo, em Mecânica Newtoniana (MN) o estado de um sistema em um certo instante de tempo é especificado pelos valores de posição e velocidade em relação a um certo referencial inercial, e a evolução temporal é dada pela segunda lei de Newton. Os observáveis são essencialmente as posições, das quais obtemos as velocidades usando o parâmetro tempo. Está implicito em MN que os valores dos observáveis estão determinarmos antes mesmo de serem medidos, e que todos esses observáveis podem ter valores bem definidos em um determinado instante de tempo.</p>
-<p>Na sequência veremos os postulados da MQ para descrever estados, mudanças desses estados, observáveis e suas medidas. Veremos que a parte da medida difere muito daquela da MN, principalmente por causa da existência de observáveis que não podem ter valores bem definidos ao mesmo tempo.</p>
-<p>É importante que você tenha um bom conhecimento de Álgebra Linear (<a href="https://github.com/jonasmaziero/algebra_linear">https://github.com/jonasmaziero/algebra_linear</a>) antes de iniciar seus estudos de MQ.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Postulado-dos-estados">Postulado dos estados<a class="anchor-link" href="#Postulado-dos-estados">¶</a></h1><p>O estado de um sistema quântico é descrito por um vetor normalizado em um espaço de Hilbert 
-$$\mathcal{H}.$$</p>
-<p>Por simplicidade, consideraremos $\mathcal{H}$ como sendo um espaço vetorial munido de uma função produto interno 
-$$\langle \cdot|\cdot \rangle:\mathcal{H}\rightarrow\mathbb{C}.$$
-Formalmente, espaços desse tipo são chamados de <em>espaços unitários</em>.</p>
-<p>Um <strong>espaço de Hilbert</strong> é um espaço unitário completo. Um espaço métrico completo, um espaço de Banach, é tal que toda sequência de Cauchy de vetores converge para um limite que também está no espaço. Uma sequência de Cauchy é uma sequência cujos elementos se tornam arbitrariamente próximos um do outro conforme a sequência progride. Formalmente, $\{v_j\}_{j=0}^\infty$ é uma sequência de Cauchy se para todo $\epsilon&gt;0$ existe um $N&gt;0$ tal que $n,m&gt;N\Rightarrow |v_n -v_m|&lt;\epsilon.$</p>
-<p>Por <strong>sistema</strong> nos referimos a um <strong>grau de liberdade</strong>. Por exemplo, o spin (momento angular intrínseco) do elétron é um sistema, outro sistema seria sua posição, e assim por diante. Quando consideramos dois ou mais graus de liberdade como uma única entidade, a chamamos de sistema composto.</p>
-<p>Se dividirmos o <strong>sistema composto</strong> em subsistemas, seu estado é descrito por um vetor normalizado em um espaço de Hilbert obtido tomando-se o produto tensorial dos espaços individuais 
-$$\mathcal{H} = \mathcal{H_{a}}\otimes \mathcal{H_{b}}\otimes\cdots.$$</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Postulado-das-medidas">Postulado das medidas<a class="anchor-link" href="#Postulado-das-medidas">¶</a></h1><p>Quantidades observáveis (mensuráveis) são representadas por <strong>operadores lineares Hermitianos</strong>,
-$$O=O^\dagger,$$
-definidos em $\mathcal{H}$. Ao medirmos um observável obteremos um dos seus possíveis valores, que são representados pelos autovalores do operador Hermitiano.</p>
-<p>A Mecânica Quântica (MQ), em geral, não nos possibilita prever com certeza os resultados de medidas futuras. O que a MQ nos fornece são as frequências relativas (probabilidades) com que esses resultados são obtidos, que são calculadas via a <strong>regra de Born</strong>:
+<h1 id="Precess%C3%A3o-de-spin">Precessão de spin<a class="anchor-link" href="#Precess%C3%A3o-de-spin">¶</a></h1><p>Aqui veremos o 1º, e mais simples, exemplo de aplicação dos postulados da Mecânica Quântica, um sistema de dois níveis. Em particular, descreveremos o postulados dos estados e das medidas em ação. Também exemplificaremos a descrição da dinâmica quântica nas representações de Schrödinger e de Heisenberg.</p>
+<h2 id="Hamiltoniano">Hamiltoniano<a class="anchor-link" href="#Hamiltoniano">¶</a></h2><p>Considerando o protótipo clássico de dipolo magnético, a espira de corrente, obtemos a seguinte relação entre momento de dipolo magnético e momento angular:
 \begin{equation}
-Pr(o|\psi) = |\langle \psi |o\rangle|^{2} = |\langle o|\psi\rangle|^{2}.
+\vec{\mu} = \frac{q}{2m}\vec{L}.
 \end{equation}
-Essa é a probabilidade de obtermos o valor $o$ ao medirmos o observável $O$ de um sistema que está no estado $|\psi\rangle$ imediatamente antes da medida, e $|o\rangle$ é o autovetor de $O$ correspondente ao autovalor $o$.</p>
-<h3 id="Repetibilidade-das-medidas-em-MQ">Repetibilidade das medidas em MQ<a class="anchor-link" href="#Repetibilidade-das-medidas-em-MQ">¶</a></h3><p>Mas como sabemos em qual estado $|\psi\rangle$ o sistema foi preparado?</p>
-<p>Essa pergunta é respondida usando a observação experimental de que ao medirmos um observável duas ou mais vezes imediatamente subsequentes, obteremos o mesmo resultado. Claro, para que isso ocorra devemos ter
+Para descrever "<em>distribuições mais complicadas de corrente</em>", corrigimos esta expressão usando o <strong>fator giromagnético</strong> $g$, que deve ser determinado experimentalmente para cada partícula em específico, e.g.
+\begin{align}
+&amp; g(\text{elétron}) = g_{e} \approx −2.0023,  \\
+&amp; g(\text{próton}) = g_{p} \approx 5.586, \\ 
+&amp; g(\text{nêutron}) = g_{n} \approx −3.826.
+\end{align}
+Assim
 \begin{equation}
-Pr(o|\psi)=1 \text{, o que só é possível se } |\psi\rangle = e^{i\phi_o}|o\rangle.
-\end{equation}
-Então, <em>postulando</em> que esta varificação experimental parcial seja válida de forma geral, quando dizemos que o sistema foi preparado em um certo estado, fica sub-entendido que medimos um observável desse sistema e selecionamos o autovetor correspondente a tal estado.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Sobre-operadores-Hermitianos-$O-=-O%5E%7B%5Cdagger%7D$">Sobre operadores Hermitianos $O = O^{\dagger}$<a class="anchor-link" href="#Sobre-operadores-Hermitianos-$O-=-O%5E%7B%5Cdagger%7D$">¶</a></h3><p>O autovalores desse tipo de operador são números reais, e autovetores correspondentes a autovalores diferentes são ortogonais. O conjunto de autovetores de $O$ forma uma base ortogonal para $\mathcal{H}$.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Rela%C3%A7%C3%A3o-de-completeza">Relação de completeza<a class="anchor-link" href="#Rela%C3%A7%C3%A3o-de-completeza">¶</a></h3><p>Qualquer vetor $|\psi\rangle$ do espaço vetorial $\mathcal{H}$ pode ser escrito como uma combinação linear dos vetores de uma base discreta e completa $\{|b_{j}\rangle\}_{j=1}^{d}$, i.e.,
-\begin{equation}
-|\psi\rangle = \sum_{j=1}^{d}\psi_{b_{j}}|b_{j}\rangle,
-\end{equation}
-onde $d=\dim \mathcal{H}$. Se a base $\{|b_{j}\rangle\}_{j=1}^{d}$ for ortonormal,
-$$\langle b_{j}|b_{k}\rangle = \delta_{jk},$$
-pode-se verificar que os coeficientes da combinação linear são dados por
-\begin{equation}
-\psi_{b_{j}}=\langle b_{j}|\psi\rangle.
+\vec{\mu} = \frac{gq}{2m}\vec{L}.
 \end{equation}</p>
-<p>Nesse caso também podemos escrever o operador identidade em $\mathcal{H}$ como
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Quando nos referimos ao <em>momento angular intrínseco</em>, o spin, usamos em geral o símbolo $\vec{S}$, que por sua vez é escrito em termos de um outro operador $\vec{\sigma}$ como
 \begin{equation}
-\mathbb{I} = \sum_{j=1}^{d} |b_{j}\rangle\langle b_{j}|.
+\vec{S}=\frac{\hbar}{2}\vec{\sigma}.
+\end{equation}
+Juntando tudo obtemos:
+\begin{equation}
+\vec{\mu} = \frac{\hbar gq}{4m}\vec{\sigma}.
 \end{equation}</p>
-<p>Por outro lado, se temos uma base ortonormal $\{|b\rangle\}$ com incontáveis vetores, uma base contínua, a condição para ortonormalidade é 
-$$\langle b|b'\rangle = \delta(b-b').$$
-O vetor $|\psi\rangle\in\mathcal{H}$ também pode ser escrito em termos dessa base:
+<p>A <em>energia potencial</em> de interação entre um momento e um campo magnético $\vec{B}=B\hat{n}_{B}$ é dada por:
+\begin{align}
+U &amp; = -\vec{\mu}\cdot\vec{B} \\
+&amp; = -\frac{\hbar gqB}{4m}\vec{\sigma}.\hat{n}_{B}  \\
+&amp; =: -\frac{\hbar\omega}{2}\vec{\sigma}.\hat{n}_{B} \\
+&amp; \equiv H,
+\end{align}
+desconsiderando a energia cinética. Acima definimos a <em>frequência de Larmor</em>:
 \begin{equation}
-|\psi\rangle = \int  db \psi_{b}|b\rangle.
+\omega := \frac{g q B}{2m},
 \end{equation}
-De forma análoga ao caso discreto
+que nos fornece a intensidade da interação entre $\vec{\mu}$ e $\vec{B}$.</p>
+<p>Por sua vez, a força sobre uma partícula interagindo dessa forma será
+\begin{align}
+\vec{F} &amp; = -\vec{\nabla}U \\
+&amp; = \sum_{j=x,y,z}\mu_{j}\vec{\nabla}B_{j} \\
+&amp; = \sum_{j=x,y,z}\mu_{j}\left(\hat{i}\partial_{x}B_{j}+\hat{j}\partial_{y}B_{j}+\hat{k}\partial_{z}B_{j}\right).
+\end{align}</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Estados-e-observ%C3%A1veis-de-um-spin-1/2">Estados e observáveis de um spin 1/2<a class="anchor-link" href="#Estados-e-observ%C3%A1veis-de-um-spin-1/2">¶</a></h2><p>Em experimentos de Stern e Gerlach (ESG) (<a href="https://www.nobelprize.org/prizes/physics/1943/stern/lecture/">https://www.nobelprize.org/prizes/physics/1943/stern/lecture/</a>), observa-se a quantização do spin fazendo-se partículas de spin 1/2 atravessar uma região com um gradiente de campo magnético, e observando que somente dois feixes de partículas bem separados resultam dessa interação (veja algumas animações: <a href="https://youtu.be/rg4Fnag4V-E">https://youtu.be/rg4Fnag4V-E</a> e <a href="https://youtu.be/PH1FbkLVJU4">https://youtu.be/PH1FbkLVJU4</a>).</p>
+<img alt="No description has been provided for this image" src="stern_gerlach.png" width="500"/>
+<p>Vamos começar olhando para um detalhe que normalmente não é discutido profundamente em textos de MQ. Nesses textos, quando se explica os ESG considera-se e.g. o gradiente de campo magnético
 \begin{equation}
-\psi_{b}=\langle b|\psi\rangle
+\vec{B}= \beta z\hat{k}
 \end{equation}
+com $\beta$ constante. No entanto, esse campo não satisfaz a equação de Maxwell
+\begin{equation}
+\nabla\cdot\vec{B}=0,
+\end{equation}
+e não é, portanto, fisicamente aceitável.</p>
+<p>Um exemplo de campo magnético que satisfaz essa equação é
+\begin{equation}
+\vec{B}=\beta(x\hat{i}-z\hat{k}).
+\end{equation}
+Mas é notável que nesse caso a força fica escrita como 
+\begin{align}
+\vec{F} &amp; =-\nabla U = -\nabla (-\mu\cdot\vec{B}) = \nabla\beta(\mu_{x}x-\mu_{z}z) \\
+&amp; = \beta(\mu_{x}\hat{i} - \mu_{z}\hat{k}) = F_x \hat{i} + F_z\hat{k}.
+\end{align}
+Mas essa força vai separar o feixe de partículas em quatro feixes, um para cada possível par de valores das componentes do momento magnético $(\mu_{x},\mu_{z})$. Uma maneira de focar na medida de uma única componente é aplicar um campo constante muito forte na direção na qual queremos medir o momento magnético. Um exemplo de tal campo seria (veja a referência 2):
+\begin{equation}
+\vec{B}=\beta x\hat{i}+(\alpha-\beta z)\hat{k}
+\end{equation}
+com 
+$$\beta \ll \alpha.$$
+Observo, no entanto, que na aplicação na interpretação de medidas em MQ, essa exclusão pela média nula de $F_{x}$ complica a interpretação quântica de colapso da função de onda. Não obstante, a seguir assumo que se possa fazer medidas de componente de momento magnético em qualquer direção que se queira.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Componente-$z$">Componente $z$<a class="anchor-link" href="#Componente-$z$">¶</a></h3><p>Consideremos o último exemplo de campo magnético, que nos fornecerá efetivamente $\langle F_{x}\rangle=\langle F_{y}\rangle=0$ e 
+\begin{equation}
+\langle F_{z}\rangle=\mu_{z}\beta.
+\end{equation}
+Como as partículas são desviadas pra cima ou pra baixo, temos duas possibilidades para os estados preparados medindo o observável "componente de spin na direção $z$", que denotaremos por $\sigma_{z}$. Isso nos indica que
+\begin{equation}
+\text{Espaço de estados } = \mathbb{C}^{2}.
+\end{equation}
+Vamos denotar os estados preparados pela medida de $\sigma_{z}$ (que deve ser representado por um operador Hermitiano) por
+\begin{equation}
+\begin{cases}
+\text{ partícula desviada pra cima em z} \Rightarrow |z_{+}\rangle \text{ foi preparado}, \\
+\text{ partícula desviada pra baixo em z} \Rightarrow |z_{-}\rangle \text{ foi preparado}. 
+\end{cases}
+\end{equation}
+Normalizaremos os autovalores para obter
+\begin{equation}
+\begin{cases}
+\text{ partícula desviada pra cima em z} \Rightarrow z_{+} = +1, \\
+\text{ partícula desviada pra baixo em z} \Rightarrow z_{-} = -1. 
+\end{cases}
+\end{equation}
+Por conseguinte, o operador $\sigma_{z}$ e sua representação matricial ficam:
+\begin{align}
+\sigma_{z} &amp; = z_{+}|z_{+}\rangle\langle z_{+}| + z_{-}|z_{-}\rangle\langle z_{-}| \\
+&amp; = |z_{+}\rangle\langle z_{+}| -|z_{-}\rangle\langle z_{-}| \\
+&amp; = \begin{bmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{bmatrix},
+\end{align}
+na base ortonormal $\{|z_{+}\rangle,|z_{-}\rangle\}$.</p>
+<p><em>OBS:</em> Em qualquer direção que se coloque o gradiente de campo magnético, teremos dois feixes desviados com proporções iguais. Por conseguinte, os autovalores terão a <em>mesma magnitude</em> para medida da camponente do spin em qualquer direção.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Componente-$x$">Componente $x$<a class="anchor-link" href="#Componente-$x$">¶</a></h3><p>Determina-se experimentalmente que se prepararmos os quantons no estado $|z_{+}\rangle$ ou $|z_{-}\rangle$, através da medida de $\sigma_{z}$, e os fizermos passar por um gradiente de $\vec{B}$ na direção $x$, metade deles serão desviados pra cima e metade pra baixo. Como $\sigma_{x}$ é um operador Hermitiano, $\{|x_{\pm}\rangle\}$ é uma base ortonormal e podemos escrever
+\begin{cases}
+|z_{+}\rangle = c_{+}^{+}|x_{+}\rangle+c_{+}^{-}|x_{-}\rangle, \\
+|z_{-}\rangle = c_{-}^{+}|x_{+}\rangle+c_{-}^{-}|x_{-}\rangle.
+\end{cases}
+Note que acima usamo o sinal no super-índice (índice de cima) para denotar a qual estado da base estamos nos referindo ($|x_+\rangle$ ou $|x_-\rangle$). O sub-índice (índice de baixo) é usado para denotar qual estado estamos expandindo naquela base ($|z_+\rangle$ ou $|z_-\rangle$).</p>
+<p>Usando a regra de Born, temos que
+\begin{equation}
+Pr(x_{\pm}|z_{\pm})=|c_{\pm}^{\pm}|^{2}=1/2\therefore |c_{\pm}^{\pm}|=1/\sqrt{2}.
+\end{equation}
+Note que na notação acima consideramos todas as combinações de estados preparados e resultados de medida em uma mesma expressão, o que é feito colocando $\pm$ no super-índice e no sub-índice.</p>
+<p>Podemos iniciar assumindo que 
+$$c_{\pm}^{\pm}\in\mathbb{R}\therefore c_{\pm}^{\pm}=\pm 1/\sqrt{2}$$ e que 
+$$|z_{+}\rangle = (1/\sqrt{2})|x_{+}\rangle+(1/\sqrt{2})|x_{-}\rangle.$$
+Agora, $\sigma_{z}$ é um operador Hermitiano e assim $\{|z_{\pm}\rangle\}$ é uma base ortonormal, e portanto devemos ter $\langle z_+|z_-\rangle = 0$, o que pode ser obtido fazendo 
+$$|z_{-}\rangle = (1/\sqrt{2})|x_{+}\rangle-(1/\sqrt{2})|x_{-}\rangle.$$
+Somando ou subtraindo $\{|z_{\pm}\rangle\}$ obtemos
+\begin{equation}
+|x_{\pm}\rangle = \sqrt{1/2}|z_{+}\rangle \pm \sqrt{1/2}|z_{-}\rangle.
+\end{equation}</p>
+<p>Assim, nesse caso o observável fica escrito como:
+\begin{align}
+\sigma_{x} &amp;= x_{+}|x_{+}\rangle\langle x_{+}| + x_{-}|x_{-}\rangle\langle x_{-}| \\
+&amp; = (+1)|x_{+}\rangle\langle x_{+}| + (-1)|x_{-}\rangle\langle x_{-}| \\ 
+&amp; = (\sqrt{1/2}|z_{+}\rangle + \sqrt{1/2}|z_{-}\rangle)(\sqrt{1/2}\langle z_{+}| + \sqrt{1/2}\langle z_{-}|) - (\sqrt{1/2}|z_{+}\rangle - \sqrt{1/2}|z_{-}\rangle)(\sqrt{1/2}\langle z_{+}| - \sqrt{1/2}\langle z_{-}|) \\
+&amp; = (1/2)(|z_{+}\rangle\langle z_{+}| + |z_{+}\rangle\langle z_{-}| + |z_{-}\rangle\langle z_{+}| + |z_{-}\rangle\langle z_{-}|) - (1/2)(|z_{+}\rangle\langle z_{+}| - |z_{+}\rangle\langle z_{-}| - |z_{-}\rangle\langle z_{+}| + |z_{-}\rangle\langle z_{-}|) \\
+&amp; = |z_{+}\rangle\langle z_{-}| + |z_{-}\rangle\langle z_{+}| \\
+&amp; =
+\begin{bmatrix}
+0 &amp; 1 \\
+1 &amp; 0
+\end{bmatrix},
+\end{align}
+na base $\{|z_{+}\rangle,|z_{-}\rangle\}$.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Componente-$y$">Componente $y$<a class="anchor-link" href="#Componente-$y$">¶</a></h3><p>Aqui começamos escrevendo
+\begin{equation}
+|y_{\pm}\rangle = d_{\pm}^{+}|z_{+}\rangle + d_{\pm}^{-}|z_{-}\rangle.
+\end{equation}
+Também é um fato empírico que se preparamos os quantons em qualquer um dos estados $\{|y_{\pm}\rangle\}$ e os fizermos passar por um gradiente de $\vec{B}$ na direção $z$, a probabilidade de desvio pra cima ou pra baixo é $1/2$. Assim, pela regra de Born, devemos ter que:
+\begin{equation}
+Pr(z_{\pm}|y_{\pm})=|d_{\pm}^{\pm}|^{2}=1/2 \therefore |d_{\pm}^{\pm}|=1/\sqrt{2}.
+\end{equation}
+Assim, se usamos 
+$$d_{\pm}^{\pm}=|d_{\pm}^{\pm}|e^{i\phi_{\pm}^{\pm}}=(1/\sqrt{2})e^{i\phi_{\pm}^{\pm}},$$
+teremos que
+\begin{cases}
+|y_{+}\rangle = (e^{i\phi_{+}^{+}}/\sqrt{2})(|z_{+}\rangle + e^{i(\phi_{+}^{-}-\phi_{+}^{+})}|z_{-}\rangle) \equiv (1/\sqrt{2})(|z_{+}\rangle + e^{i\phi_{+}}|z_{-}\rangle), \\ 
+|y_{-}\rangle = (e^{i\phi_{-}^{+}}/\sqrt{2})(|z_{+}\rangle + e^{i(\phi_{-}^{-}-\phi_{-}^{+})}|z_{-}\rangle) \equiv (1/\sqrt{2})(|z_{+}\rangle + e^{i\phi_{-}}|z_{-}\rangle).
+\end{cases}
+Como $\sigma_{y}$ é um observável, devemos ter
+\begin{align}
+&amp; \langle y_{\pm}|y_{\mp}\rangle\propto 1+e^{\pm i(\phi_{+}-\phi_{-})}=1+\cos(\phi_{+}-\phi_{-})\pm i\sin(\phi_{+}-\phi_{-})=0 \\
+&amp; \therefore\ \phi_{+}-\phi_{-}=\pi.
+\end{align}</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Usando e.g. $\langle x_{+}|=(1/\sqrt{2})(\langle z_{+}|+\langle z_{-}|)$ e o fato empírico $Pr(x_{+}|y_{+})=1/2$ teremos
+\begin{align}
+&amp; |\langle x_{+}|y_{+}\rangle|^{2} = (1/4)|1+e^{i\phi_{+}}|^{2}=(1/2)(1+\cos\phi_{+})=1/2 \therefore \cos\phi_{+}=0 \\
+&amp; \therefore\  \phi_{+}=\pi/2=-\phi_{-}.
+\end{align}
+Por conseguinte
+\begin{cases}
+|y_{+}\rangle = (1/\sqrt{2})(|z_{+}\rangle + i|z_{-}\rangle), \\ 
+|y_{-}\rangle = (1/\sqrt{2})(|z_{+}\rangle - i|z_{-}\rangle),
+\end{cases}
+com $i=\sqrt{-1}$. Isso nos leva à seguinte matriz que representa a componente $y$ do spin 1/2:
+\begin{align}
+\sigma_{y} &amp;= y_{+}|y_{+}\rangle\langle y_{+}| + y_{-}|y_{-}\rangle\langle y_{-}| \\
+&amp; = (+1)|y_{+}\rangle\langle y_{+}| + (-1)|y_{-}\rangle\langle y_{-}| \\
+&amp; = (\sqrt{1/2}|z_{+}\rangle + i\sqrt{1/2}|z_{-}\rangle)(\sqrt{1/2}\langle z_{+}| - i\sqrt{1/2}\langle z_{-}|) - (\sqrt{1/2}|z_{+}\rangle - i\sqrt{1/2}|z_{-}\rangle)(\sqrt{1/2}\langle z_{+}| + i\sqrt{1/2}\langle z_{-}|) \\
+&amp; = (1/2)(|z_{+}\rangle\langle z_{+}| - i|z_{+}\rangle\langle z_{-}| + i|z_{-}\rangle\langle z_{+}| + |z_{-}\rangle\langle z_{-}|) - (1/2)(|z_{+}\rangle\langle z_{+}| + i|z_{+}\rangle\langle z_{-}| - i|z_{-}\rangle\langle z_{+}| + |z_{-}\rangle\langle z_{-}|) \\
+&amp; = -i|z_{+}\rangle\langle z_{-}| + i|z_{-}\rangle\langle z_{+}| \\
+&amp; =
+\begin{bmatrix}
+0 &amp; -i \\
+i &amp; 0
+\end{bmatrix},
+\end{align}
+na base $\{|z_{+}\rangle,|z_{-}\rangle\}$.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Componente-na-dire%C3%A7%C3%A3o-$%5Chat%7Bn%7D$">Componente na direção $\hat{n}$<a class="anchor-link" href="#Componente-na-dire%C3%A7%C3%A3o-$%5Chat%7Bn%7D$">¶</a></h3><p>Agora, para descrever a componente do spin 1/2 em uma <em>direção qualquer</em>, consideramos o vetor de Pauli
+\begin{equation}
+\vec{\sigma}=\hat{i}\sigma_{x}+\hat{j}\sigma_{y}+\hat{k}\sigma_{z}
+\end{equation}
+e o versor naquela direção ($\theta\in[0,\pi]$, $\phi\in[0,2\pi]$),
+\begin{align}
+\hat{n} &amp; = \hat{i}n_{x}+\hat{j}n_{y}+\hat{k}n_{z} \\
+&amp; = \hat{i}\sin\theta\cos\phi+\hat{j}\sin\theta\sin\phi+\hat{k}\cos\theta,
+\end{align}
+para escrever
+\begin{align}
+\hat{n}\cdot\vec{\sigma} &amp; = \sigma_{x}\sin\theta\cos\phi + \sigma_{y}\sin\theta\sin\phi + \sigma_{z}\cos\theta \\
+&amp; =
+\begin{bmatrix}
+\cos\theta &amp; e^{-i\phi}\sin\theta \\
+e^{i\phi}\sin\theta &amp; -\cos\theta
+\end{bmatrix},
+\end{align}
+cujos autovalores são $n_{\pm}=\pm 1$ e autovetores podem ser expressos como:
+\begin{cases}
+|n_{+}\rangle = \cos(\theta/2)|z_{+}\rangle + e^{i\phi}\sin(\theta/2)|z_{-}\rangle, \\
+|n_{-}\rangle = \sin(\theta/2)|z_{+}\rangle - e^{i\phi}\cos(\theta/2)|z_{-}\rangle.
+\end{cases}</p>
+<p>OBS. As  matrizes de Pauli $\sigma_{x},\sigma_{y},\sigma_{z}$ formam uma base para matrizes $2\mathrm{x}2$ com traço nulo, como é o caso de $\hat{n}\cdot\vec{\sigma}$.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Incompatibilidade-qu%C3%A2ntica-e-medidas-qu%C3%A2nticas">Incompatibilidade quântica e medidas quânticas<a class="anchor-link" href="#Incompatibilidade-qu%C3%A2ntica-e-medidas-qu%C3%A2nticas">¶</a></h2><p>Pode-se verificar (veja o código Sympy abaixo) que as matrizes de Pauli satisfazem a seguinte relação de comutação:
+$$[\sigma_j,\sigma_k] = 2i\epsilon_{jkl}\sigma_l \equiv  2i\sum_{l=1}^3\epsilon_{jkl}\sigma_l,$$
+com $j,k,l=1,2,3$ e $\epsilon_{jkl}$ é o símbolo de Levi-Civita (que é a função sinal para 3 números, como pode ser visto em detalhes em <a href="https://github.com/jonasmaziero/algebra_linear">https://github.com/jonasmaziero/algebra_linear</a>).</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">Matrix</span><span class="p">,</span> <span class="n">init_printing</span>
+<span class="n">init_printing</span><span class="p">(</span><span class="n">use_unicode</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">s1</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]]);</span> <span class="n">s2</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="n">j</span><span class="p">],[</span><span class="mi">1</span><span class="n">j</span><span class="p">,</span><span class="mi">0</span><span class="p">]]);</span> <span class="n">s3</span> <span class="o">=</span> <span class="n">Matrix</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">s1</span><span class="p">,</span> <span class="n">s2</span><span class="p">,</span> <span class="n">s3</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[17]:</div>
+<div class="jp-RenderedLatex jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/latex" tabindex="0">
+$\displaystyle \left( \left[\begin{matrix}0 &amp; 1\\1 &amp; 0\end{matrix}\right], \  \left[\begin{matrix}0 &amp; - 1.0 i\\1.0 i &amp; 0\end{matrix}\right], \  \left[\begin{matrix}1 &amp; 0\\0 &amp; -1\end{matrix}\right]\right)$
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">comm</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span> <span class="o">-</span> <span class="n">y</span><span class="o">*</span><span class="n">x</span>
+
+<span class="n">comm</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span><span class="n">s2</span><span class="p">),</span> <span class="n">comm</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span><span class="n">s3</span><span class="p">),</span> <span class="n">comm</span><span class="p">(</span><span class="n">s2</span><span class="p">,</span><span class="n">s3</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[18]:</div>
+<div class="jp-RenderedLatex jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/latex" tabindex="0">
+$\displaystyle \left( \left[\begin{matrix}2.0 i &amp; 0\\0 &amp; - 2.0 i\end{matrix}\right], \  \left[\begin{matrix}0 &amp; -2\\2 &amp; 0\end{matrix}\right], \  \left[\begin{matrix}0 &amp; 2.0 i\\2.0 i &amp; 0\end{matrix}\right]\right)$
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Ou seja, as 3 componentes em $\mathbb{R}^3$ do momento angular de spin de um spin 1/2 são observáveis incompatíveis, e portanto não podem compartilhar a mesma base de autovetores. Na verdade, teremos que 
+\begin{align}
+[\hat{n}\cdot\vec{\sigma},\hat{n}'\cdot\vec{\sigma}] &amp; = \Big[\sum_{j=1}^3 n_j\sigma_j,\sum_{k=1}^3 n'_k \sigma_k \Big] \\
+&amp; = \sum_{j,k=1}^3 n_j n'_k[\sigma_j,\sigma_k] \\
+&amp; = \sum_{j,k=1}^3 n_j n'_k 2i\epsilon_{jkl}\sigma_l \\
+&amp; = 2i\big(n_1 n'_2 \epsilon_{123}\sigma_3 + n_2 n'_1 \epsilon_{213}\sigma_3 + n_1 n'_3 \epsilon_{132}\sigma_2 + n_3 n'_1 \epsilon_{312}\sigma_2 + n_2 n'_3 \epsilon_{231}\sigma_1 + n_3 n'_2 \epsilon_{321}\sigma_1\big) \\
+&amp; = 2i\big((n_1 n'_2 - n_2 n'_1)\sigma_3 + (-n_1 n'_3 + n_3 n'_1)\sigma_2 + (n_2 n'_3 - n_3 n'_2)\sigma_1\big) \\
+&amp; = 2i\big((\sin\theta\cos\phi \sin\theta'\sin\phi' - \sin\theta\sin\phi \sin\theta'\cos\phi')\sigma_3 + (-\sin\theta\cos\phi \cos\theta' + \cos\theta \sin\theta'\cos\phi')\sigma_2 \\
+&amp; \hspace{1cm} + (\sin\theta\sin\phi \cos\theta' - \cos\theta \sin\theta'\sin\phi')\sigma_1\big) \\
+&amp; = 2i\big(\sin\theta\sin\theta'\sin(\phi'-\phi)\sigma_3 + (-\sin\theta\cos\phi \cos\theta' + \cos\theta \sin\theta'\cos\phi')\sigma_2 \\
+&amp; \hspace{1cm} + (\sin\theta\sin\phi \cos\theta' - \cos\theta \sin\theta'\sin\phi')\sigma_1\big) \\
+&amp; = 2i\big(\sin\theta\sin\theta'\sin(\phi'-\phi)\sigma_3 + 2^{-1}\big(\sin(\theta+\theta')(-\cos\phi + \cos\phi') + \sin(\theta-\theta')(\cos\phi + \cos\phi')\big)\sigma_2 \\
+&amp; \hspace{1cm} + 2^{-1}\big(\sin(\theta+\theta')(\sin\phi - \sin\phi') + \sin(\theta-\theta')(\sin\phi + \sin\phi')\big)\sigma_1\big) \\
+\end{align}
+em que
+\begin{align}
+&amp; \hat{n} = (n_1,n_2,n_3) = (\sin\theta\cos\phi,\sin\theta\sin\phi,\cos\theta),\\
+&amp; \hat{n}' = (n'_1,n'_2,n'_3) = (\sin\theta'\cos\phi',\sin\theta'\sin\phi',\cos\theta').
+\end{align}
+Pode-se verificar (veja o código abaixo) que se $(\theta'=\theta,\ \phi'=\phi)\ \therefore\ \hat{n}'=\hat{n}$ ou $(\theta'=\pi-\theta,\ \phi'=\pi+\phi)\ \therefore\ \hat{n}'=-\hat{n}$, então $[\hat{n}\cdot\vec{\sigma},\hat{n}'\cdot\vec{\sigma}]=0.$ Ou seja, medidas da componente de um spin 1/2 são companíveis se tiverem alinhadas ou antialinhadas, que na prática são feitas usando um gradiente de campo magnético colocado na mesma direção.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">sin</span><span class="p">,</span> <span class="n">cos</span><span class="p">,</span> <span class="n">simplify</span>
+<span class="n">th</span><span class="p">,</span> <span class="n">ph</span><span class="p">,</span> <span class="n">xi</span><span class="p">,</span> <span class="n">et</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">'theta phi xi eta'</span><span class="p">)</span>
+<span class="n">ns</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">th</span><span class="p">)</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">ph</span><span class="p">)</span><span class="o">*</span><span class="n">s1</span> <span class="o">+</span> <span class="n">sin</span><span class="p">(</span><span class="n">th</span><span class="p">)</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">ph</span><span class="p">)</span><span class="o">*</span><span class="n">s2</span> <span class="o">+</span> <span class="n">cos</span><span class="p">(</span><span class="n">th</span><span class="p">)</span><span class="o">*</span><span class="n">s3</span>
+<span class="n">nls</span> <span class="o">=</span> <span class="n">sin</span><span class="p">(</span><span class="n">xi</span><span class="p">)</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">et</span><span class="p">)</span><span class="o">*</span><span class="n">s1</span> <span class="o">+</span> <span class="n">sin</span><span class="p">(</span><span class="n">xi</span><span class="p">)</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">et</span><span class="p">)</span><span class="o">*</span><span class="n">s2</span> <span class="o">+</span> <span class="n">cos</span><span class="p">(</span><span class="n">xi</span><span class="p">)</span><span class="o">*</span><span class="n">s3</span>
+<span class="n">simplify</span><span class="p">(</span><span class="n">ns</span><span class="p">),</span> <span class="n">simplify</span><span class="p">(</span><span class="n">nls</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[22]:</div>
+<div class="jp-RenderedLatex jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/latex" tabindex="0">
+$\displaystyle \left( \left[\begin{matrix}\cos{\left(\theta \right)} &amp; 1.0 e^{- i \phi} \sin{\left(\theta \right)}\\1.0 e^{i \phi} \sin{\left(\theta \right)} &amp; - \cos{\left(\theta \right)}\end{matrix}\right], \  \left[\begin{matrix}\cos{\left(\xi \right)} &amp; 1.0 e^{- i \eta} \sin{\left(\xi \right)}\\1.0 e^{i \eta} \sin{\left(\xi \right)} &amp; - \cos{\left(\xi \right)}\end{matrix}\right]\right)$
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [24]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">simplify</span><span class="p">(</span><span class="n">comm</span><span class="p">(</span><span class="n">ns</span><span class="p">,</span><span class="n">nls</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[24]:</div>
+<div class="jp-RenderedLatex jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/latex" tabindex="0">
+$\displaystyle \left[\begin{matrix}2.0 i \sin{\left(\theta \right)} \sin{\left(\xi \right)} \sin{\left(\eta - \phi \right)} &amp; - 2.0 e^{- i \phi} \sin{\left(\theta \right)} \cos{\left(\xi \right)} + 2.0 e^{- i \eta} \sin{\left(\xi \right)} \cos{\left(\theta \right)}\\- 2.0 e^{i \eta} \sin{\left(\xi \right)} \cos{\left(\theta \right)} + 2.0 e^{i \phi} \sin{\left(\theta \right)} \cos{\left(\xi \right)} &amp; - 2.0 i \sin{\left(\theta \right)} \sin{\left(\xi \right)} \sin{\left(\eta - \phi \right)}\end{matrix}\right]$
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [25]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">f_ns</span><span class="p">(</span><span class="n">th</span><span class="p">,</span><span class="n">ph</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">sin</span><span class="p">(</span><span class="n">th</span><span class="p">)</span><span class="o">*</span><span class="n">cos</span><span class="p">(</span><span class="n">ph</span><span class="p">)</span><span class="o">*</span><span class="n">s1</span> <span class="o">+</span> <span class="n">sin</span><span class="p">(</span><span class="n">th</span><span class="p">)</span><span class="o">*</span><span class="n">sin</span><span class="p">(</span><span class="n">ph</span><span class="p">)</span><span class="o">*</span><span class="n">s2</span> <span class="o">+</span> <span class="n">cos</span><span class="p">(</span><span class="n">th</span><span class="p">)</span><span class="o">*</span><span class="n">s3</span>
+
+<span class="n">simplify</span><span class="p">(</span><span class="n">comm</span><span class="p">(</span><span class="n">f_ns</span><span class="p">(</span><span class="n">th</span><span class="p">,</span><span class="n">ph</span><span class="p">),</span><span class="n">f_ns</span><span class="p">(</span><span class="n">th</span><span class="p">,</span><span class="n">ph</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[25]:</div>
+<div class="jp-RenderedLatex jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/latex" tabindex="0">
+$\displaystyle \left[\begin{matrix}0 &amp; 0\\0 &amp; 0\end{matrix}\right]$
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [26]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">pi</span>
+<span class="n">simplify</span><span class="p">(</span><span class="n">comm</span><span class="p">(</span><span class="n">f_ns</span><span class="p">(</span><span class="n">th</span><span class="p">,</span><span class="n">ph</span><span class="p">),</span><span class="n">f_ns</span><span class="p">(</span><span class="n">pi</span><span class="o">-</span><span class="n">th</span><span class="p">,</span><span class="n">pi</span><span class="o">+</span><span class="n">ph</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[26]:</div>
+<div class="jp-RenderedLatex jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/latex" tabindex="0">
+$\displaystyle \left[\begin{matrix}0 &amp; 0\\0 &amp; 0\end{matrix}\right]$
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>A física clássica nos induz a pensar que observáveis tem valores bem definidos independentemente de se observamos esses valores ou não. No entanto, para sistemas quânticos essa lógica não é válida. Para ilustrar isso, consideremos medidas sequenciais de componentes de um spin 1/2. Consideremos spin 1/2 em um estado desconhecido passando por um gradiente de campo magnético na direção $z$ ($SG_z$), depois passando por um gradiente de campo magnético na direção $x$ ($SG_x$) e depois passando por $SG_z$ novamente:
+$$|?\rangle \xrightarrow[]{SG_z} \begin{cases} |z_+\rangle \xrightarrow[]{SG_x} \begin{cases}Pr(|x_+\rangle) = 1/2 \xrightarrow[]{SG_z} \begin{cases}Pr(|z_+\rangle) = 1/2 \\ Pr(|z_-\rangle) = 1/2 \end{cases} \\ Pr(|x_-\rangle) = 1/2 \xrightarrow[]{SG_z} \begin{cases}Pr(|z_+\rangle) = 1/2 \\ Pr(|z_-\rangle) = 1/2 \end{cases} \end{cases} \\ |z_-\rangle \xrightarrow[]{SG_x} \begin{cases}Pr(|x_+\rangle) = 1/2 \xrightarrow[]{SG_z} \begin{cases}Pr(|z_+\rangle) = 1/2 \\ Pr(|z_-\rangle) = 1/2 \end{cases} \\ Pr(|x_-\rangle) = 1/2 \xrightarrow[]{SG_z} \begin{cases}Pr(|z_+\rangle) = 1/2 \\ Pr(|z_-\rangle) = 1/2 \end{cases} \end{cases} \end{cases}.$$</p>
+<p>Ou seja, mesmo sabendo que o spin 1/2 está e.g. no estado $|z_+\rangle$ depois da 1ª medida, se medirmos um observável incompatível a $\sigma_z$ (no exemplo medimos $\sigma_x$), "apagaremos" a informação sobre o valor de $\sigma_z$. Posteriormente, ao medirmos $\sigma_z$ podemos obter qualquer um dos seus valores de forma aleatória, e no caso considerado com mesma probabilidade.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Precess%C3%A3o-de-spin-na-representa%C3%A7%C3%A3o-de-Schr%C3%B6dinger-(RS)">Precessão de spin na representação de Schrödinger (RS)<a class="anchor-link" href="#Precess%C3%A3o-de-spin-na-representa%C3%A7%C3%A3o-de-Schr%C3%B6dinger-(RS)">¶</a></h2><p>Vamos considerar a evolução temporal do spin 1/2 quando este está submetido a um campo magnético constante na direção $z$, i.e., $\vec{B}=B\hat{k}$. Nesse caso o Hamiltoniano será
+\begin{equation}
+H = -\frac{\hbar\omega}{2}\vec{\sigma}\cdot\hat{k} = -\frac{\hbar\omega}{2}\sigma_{z} =
+\begin{bmatrix}
+-\frac{\hbar\omega}{2} &amp; 0 \\
+0 &amp; \frac{\hbar\omega}{2}
+\end{bmatrix}
+= -\frac{\hbar\omega}{2}|z_{+}\rangle\langle z_{+}| + \frac{\hbar\omega}{2}|z_{-}\rangle\langle z_{-}|.
+\end{equation}</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [32]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mf">0.2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="sa">r</span><span class="s1">'$|z_{+}\rangle$'</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="sa">r</span><span class="s1">'$-\hbar\omega/2$'</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">hlines</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mf">0.2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="sa">r</span><span class="s1">'$|z_{-}\rangle$'</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="sa">r</span><span class="s1">'$+\hbar\omega/2$'</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s2">""</span><span class="p">,</span><span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">arrowprops</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">arrowstyle</span><span class="o">=</span><span class="s2">"&lt;-&gt;"</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.51</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="sa">r</span><span class="s1">'$\hbar\omega=h\nu$'</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'off'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedImage jp-OutputArea-output" tabindex="0">
+<img alt="No description has been provided for this image" class="" src="data:image/png;base64,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"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Como o Hamiltoniano é independente do tempo, o operador de evolução temporal (que é solução de $i\hbar\partial_{t}U_{t}=H_{t}U_{t}$) pode ser escrito como
+\begin{equation}
+U_{t} = e^{-iHt/\hbar} = e^{i\hbar\omega\sigma_{z}t/2\hbar} = e^{i\omega\sigma_{z}t/2}.
+\end{equation}</p>
+<p>Vamos considerar que o sistema foi preparado no estado inicial 
+\begin{equation}
+|\psi_{0}^{S}\rangle:=|n_{+}\rangle.
+\end{equation}
+O estado evoluído do sistema será:
+\begin{align}
+|\psi_{t}^{S}\rangle &amp; = U_{t}|\psi_{0}^{S}\rangle = U_{t}|n_{+}\rangle \\
+&amp; = U_{t}\left(\cos(\theta/2)|z_{+}\rangle + e^{i\phi}\sin(\theta/2)|z_{-}\rangle\right) \\
+&amp; = \cos(\theta/2)U_{t}|z_{+}\rangle + e^{i\phi}\sin(\theta/2)U_{t}|z_{-}\rangle \\ 
+&amp;= \cos(\theta/2)e^{i\omega\sigma_{z}t/2}|z_{+}\rangle + e^{i\phi}\sin(\theta/2)e^{i\omega\sigma_{z}t/2}|z_{-}\rangle \\
+&amp; = \cos(\theta/2)e^{i\omega t/2}|z_{+}\rangle + e^{i\phi}\sin(\theta/2)e^{-i\omega t/2}|z_{-}\rangle.
+\end{align}</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Como não mudamos as probabilidades calculadas via regra de Born pela multiplicação de um vetor de estado por uma fase global, vamos considerar
+\begin{align}
+|\psi_{t}^{S}\rangle &amp; \equiv e^{-i\omega t/2}|\psi_{t}^{S}\rangle \\\
+&amp; = \cos(\theta/2)|z_{+}\rangle + e^{i(\phi -\omega t)}\sin(\theta/2)|z_{-}\rangle \\
+&amp; =: \cos(\theta_{t}/2)|z_{+}\rangle + e^{i\phi_{t}}\sin(\theta_{t}/2)|z_{-}\rangle,
+\end{align}
+com 
+\begin{equation}
+\theta_{t}=\theta=\text{constante} \text{ e } \phi_{t}=\phi-\omega t.
+\end{equation}</p>
+<h4 id="Componente-$z$:">Componente $z$:<a class="anchor-link" href="#Componente-$z$:">¶</a></h4><p>Lembrando que na RS os observáveis não mudam com $t$, abaixo calculamos as probabilidades, valores médios e desvios padrões para as três componentes do spin 1/2. Será útil observar que $\sigma_{j}^{2}=\mathbb{I}$, para $j=1,2,3$, e portanto que $\langle\sigma_{j}^{2}\rangle=\langle\psi_{t}^{S}|\mathbb{I}|\psi_{t}^{S}\rangle=1$. Começando com a componente $z$ do spin:
+\begin{align}
+Pr(z_{+}(t)) &amp; = |\langle z_{+}|\psi_{t}^{S}\rangle|^{2} = |\langle z_{+}|(\cos(\theta_{t}/2)|z_{+}\rangle + e^{i\phi_{t}}\sin(\theta_{t}/2)|z_{-}\rangle)|^{2} \\
+&amp; = \cos^{2}(\theta_{t}/2) = (1+\cos\theta_{t})/2, \\
+Pr(z_{-}(t)) &amp; = 1- Pr(z_{+}(t)) = (1-\cos\theta_{t})/2, \\
+\langle\sigma_{z}(t)\rangle &amp; = (-1)Pr(z_{-}(t))+(+1)Pr(z_{+}(t)) = Pr(z_{+}(t))-Pr(z_{-}(t)) = \cos\theta_{t}, \\
+&amp; \sigma_{\sigma_{z}} = \sqrt{\langle\sigma_{z}^{2}\rangle-\langle\sigma_{z}\rangle^{2}} = \sqrt{1-\cos^{2}\theta_{t}} = \sin\theta_{t}.
+\end{align}
+Note que a distribuição de probabilidades para $\sigma_{z}$ não muda como o tempo.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Componente-$x$:">Componente $x$:<a class="anchor-link" href="#Componente-$x$:">¶</a></h4>\begin{align}
+Pr(x_{+}(t)) &amp; = \left|\langle x_{+}|\psi_{t}^{S}\rangle\right|^{2} = \left|\langle x_{+}|(\cos(\theta_{t}/2)|z_{+}\rangle + e^{i\phi_{t}}\sin(\theta_{t}/2)|z_{-}\rangle)\right|^{2} \\
+&amp; = \left|(\cos(\theta_{t}/2) + e^{i\phi_{t}}\sin(\theta_{t}/2))/\sqrt{2}\right|^{2} \\ 
+&amp; = (\cos^{2}(\theta_{t}/2))+\sin^{2}(\theta_{t}/2)+\cos(\theta_{t}/2)\sin(\theta_{t}/2)(e^{i\phi_{t}}+e^{-i\phi_{t}}))/2 \\
+&amp; = \left(1+2\cos(\theta_{t}/2)\sin(\theta_{t}/2)\cos\phi_{t})/2 = (1+\sin\theta_{t}\cos\phi_{t}\right)/2, \\
+Pr(x_{-}(t)) &amp; = 1- Pr(x_{+}(t)) = (1-\sin\theta_{t}\cos\phi_{t})/2, \\
+\langle\sigma_{x}(t)\rangle &amp; = (-1)Pr(x_{-}(t))+(+1)Pr(x_{+}(t)) = Pr(x_{+}(t))-Pr(x_{-}(t)) = \sin\theta_{t}\cos\phi_{t}, \\
+&amp; \sigma_{\sigma_{x}} = \sqrt{\langle\sigma_{x}^{2}\rangle-\langle\sigma_{x}\rangle^{2}} = \sqrt{1-\sin^{2}\theta_{t}\cos^{2}\phi_{t}}.
+\end{align}<p>Acima usamos $\langle x_{+}|z_{\pm}\rangle=1/\sqrt{2}$.</p>
+<h4 id="Componente-$y$:">Componente $y$:<a class="anchor-link" href="#Componente-$y$:">¶</a></h4>\begin{align}
+Pr(y_{+}(t)) &amp; = \left|\langle y_{+}|\psi_{t}^{S}\rangle\right|^{2} = \left|\langle y_{+}|(\cos(\theta_{t}/2)|z_{+}\rangle + e^{i\phi_{t}}\sin(\theta_{t}/2)|z_{-}\rangle)\right|^{2} \\
+&amp; = \left|(\cos(\theta_{t}/2) - ie^{i\phi_{t}}\sin(\theta_{t}/2))/\sqrt{2}\right|^{2} \\ 
+&amp; = \left(\cos^{2}(\theta_{t}/2))+\sin^{2}(\theta_{t}/2)-\cos(\theta_{t}/2)\sin(\theta_{t}/2)i(e^{i\phi_{t}}-e^{-i\phi_{t}})\right)/2 \\
+&amp; = (1+2\cos(\theta_{t}/2)\sin(\theta_{t}/2)\sin\phi_{t})/2 = (1+\sin\theta_{t}\sin\phi_{t})/2, \\
+Pr(y_{-}(t)) &amp; = 1- Pr(y_{+}(t)) = (1-\sin\theta_{t}\sin\phi_{t})/2, \\
+\langle\sigma_{y}(t)\rangle &amp; = (-1)Pr(y_{-}(t))+(+1)Pr(y_{+}(t)) = Pr(y_{+}(t))-Pr(y_{-}(t)) = \sin\theta_{t}\sin\phi_{t},  \\
+&amp; \sigma_{\sigma_{y}} = \sqrt{\langle\sigma_{y}^{2}\rangle-\langle\sigma_{y}\rangle^{2}} = \sqrt{1-\sin^{2}\theta_{t}\sin^{2}\phi_{t}}.
+\end{align}<p>Acima usamos $\langle y_{+}|z_{+}\rangle=1/\sqrt{2}$ e $\langle y_{+}|z_{-}\rangle=-i/\sqrt{2}$.</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [37]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">from</span> <span class="nn">ipywidgets</span> <span class="kn">import</span> <span class="n">interactive</span><span class="p">,</span> <span class="n">interact</span><span class="p">,</span> <span class="n">fixed</span><span class="p">,</span> <span class="n">interact_manual</span><span class="p">,</span> <span class="n">widgets</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="k">def</span> <span class="nf">spin_precession</span><span class="p">(</span><span class="n">th</span><span class="p">,</span><span class="n">ph</span><span class="p">):</span>
+    <span class="n">N</span> <span class="o">=</span> <span class="mi">200</span><span class="p">;</span> <span class="n">dx</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span><span class="o">/</span><span class="n">N</span><span class="p">;</span> <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+    <span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">);</span> <span class="n">y2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">);</span> <span class="n">y3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+    <span class="n">y1s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">);</span> <span class="n">y2s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">);</span> <span class="n">y3s</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
+        <span class="n">x</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">j</span><span class="o">*</span><span class="n">dx</span>
+        <span class="n">y1s</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">th</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">ph</span><span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="n">j</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">y1</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">th</span><span class="p">)</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">ph</span><span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+        <span class="n">y2</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">th</span><span class="p">)</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">ph</span><span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="n">j</span><span class="p">]);</span> <span class="n">y3</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">th</span><span class="p">)</span>  
+        <span class="n">y2s</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">th</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">ph</span><span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="n">j</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+        <span class="n">y3s</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">th</span><span class="p">)</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y1</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">'blue'</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y2</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y3</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">'red'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y1s</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">'blue'</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">'--'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y2s</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">'black'</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">'--'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y3s</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">'red'</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">'--'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'$\omega t$'</span><span class="p">)</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">((</span><span class="sa">r</span><span class="s1">'$\langle\sigma_</span><span class="si">{x}</span><span class="s1">\rangle$'</span><span class="p">,</span>\
+                <span class="sa">r</span><span class="s1">'$\langle\sigma_</span><span class="si">{y}</span><span class="s1">\rangle$'</span><span class="p">,</span>\
+                <span class="sa">r</span><span class="s1">'$\langle\sigma_</span><span class="si">{z}</span><span class="s1">\rangle$'</span><span class="p">,</span>\
+                <span class="sa">r</span><span class="s1">'$\sigma_{\sigma_</span><span class="si">{x}</span><span class="s1">}$'</span><span class="p">,</span>\
+                <span class="sa">r</span><span class="s1">'$\sigma_{\sigma_</span><span class="si">{y}</span><span class="s1">}$'</span><span class="p">,</span><span class="sa">r</span><span class="s1">'$\sigma_{\sigma_</span><span class="si">{z}</span><span class="s1">}$'</span><span class="p">)</span>\
+               <span class="p">,</span><span class="n">loc</span><span class="o">=</span><span class="p">(</span><span class="mf">1.01</span><span class="p">,</span><span class="mf">0.2</span><span class="p">))</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">1.1</span><span class="p">,</span><span class="mf">1.1</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">interactive</span><span class="p">(</span><span class="n">spin_precession</span><span class="p">,</span><span class="n">th</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mf">0.05</span><span class="p">),</span><span class="n">ph</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mf">0.1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[37]:</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>interactive(children=(FloatSlider(value=1.55, description='th', max=3.141592653589793, step=0.05), FloatSlider…</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Representa%C3%A7%C3%A3o-do-estado-de-um-spin-1/2-em-$%5Cmathbb%7BR%7D%5E%7B3%7D$">Representação do estado de um spin 1/2 em $\mathbb{R}^{3}$<a class="anchor-link" href="#Representa%C3%A7%C3%A3o-do-estado-de-um-spin-1/2-em-$%5Cmathbb%7BR%7D%5E%7B3%7D$">¶</a></h3><p>Notemos que
+\begin{align}
+&amp; (\langle\sigma_{x}(t)\rangle,\langle\sigma_{y}(t)\rangle,\langle\sigma_{y}(t)\rangle) = (\sin\theta_{t}\cos\phi_{t},\sin\theta_{t}\sin\phi_{t},\cos\theta_{t}) \\
+&amp; = (n_{x}(t),n_{y}(t),n_{z}(t)) = \hat{n}_{t},
+\end{align}
+é a direção para onde aponta o vetor em $\mathbb{R}^{3}$ que corresponde ao estado quântico $|\psi_{t}^{S}\rangle$ do spin 1/2 no instante de tempo $t$, pois se medirmos a componente do spin nessa direção obteremos $n_{+}$ com probabilidade igual a $1$, i.e.,
+\begin{equation}
+Pr(n_{+}(t)) = 1.
+\end{equation}</p>
+<p>Na realidade, essa evolução temporal quântica em $\mathbb{C}^{2}$ é equivalente a uma rotação em $\mathbb{R}^{3}$ em torno do eixo $z$ por um ângulo $-\omega t$:
+\begin{align}
+R_{z}(-\omega t)\hat{n}_{0} &amp; = \begin{bmatrix} \cos\omega t &amp; \sin\omega t &amp; 0 \\ -\sin\omega t &amp; \cos\omega t &amp; 0 \\ 0 &amp; 0 &amp; 1  \end{bmatrix}\begin{bmatrix}\sin\theta\cos\phi \\ \sin\theta\sin\phi \\ \cos\theta \end{bmatrix} \\
+&amp; = \begin{bmatrix}\cos\omega t\sin\theta\cos\phi+\sin\omega t\sin\theta\sin\phi \\ -\sin\omega t\sin\theta\cos\phi+\cos\omega t\sin\theta\sin\phi \\ \cos\theta \end{bmatrix} \\ 
+&amp; = \begin{bmatrix}\sin\theta\cos(\phi-\omega t) \\ \sin\theta\sin(\phi-\omega t) \\ \cos\theta \end{bmatrix} =\begin{bmatrix} n_{x}(t) \\ n_{y}(t) \\ n_{z}(t) \end{bmatrix} = \hat{n}_{t}.
+\end{align}</p>
+<p>OBS. Para mais detalhes sobre matrizes de rotação, veja <a href="https://github.com/jonasmaziero/teoria_de_grupos/blob/main/04_U_O_Sp.ipynb">https://github.com/jonasmaziero/teoria_de_grupos/blob/main/04_U_O_Sp.ipynb</a>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="Precess%C3%A3o-de-spin-na-representa%C3%A7%C3%A3o-de-Heisenberg-(RH)">Precessão de spin na representação de Heisenberg (RH)<a class="anchor-link" href="#Precess%C3%A3o-de-spin-na-representa%C3%A7%C3%A3o-de-Heisenberg-(RH)">¶</a></h2><p>Na RH, se o spin 1/2 foi preparado no estado $|n_{+}\rangle=\cos(\theta/2)|z_{+}\rangle+e^{i\phi}\sin(\theta/2)|z_{-}\rangle$, usaremos este mesmo vetor para calcular probabilidades em tempos posteriores. Por outro lado, evoluiremos os oberváveis. Para isso usaremos novamente: 
+\begin{equation}
+U_{t} = e^{i\omega\sigma_{z}t/2}= e^{i\omega t/2}|z_{+}\rangle\langle z_{+}| + e^{-i\omega t/2}|z_{-}\rangle\langle z_{-}|.
+\end{equation}</p>
+<h4 id="Componente-$z$:">Componente $z$:<a class="anchor-link" href="#Componente-$z$:">¶</a></h4>\begin{align}
+|z_{+}(t)\rangle &amp; = U_{t}^{\dagger}|z_{+}\rangle = (e^{-i\omega t/2}|z_{+}\rangle\langle z_{+}| + e^{i\omega t/2}|z_{-}\rangle\langle z_{-}|)|z_{+}\rangle \\
+                 &amp; = e^{-i\omega t/2}|z_{+}\rangle\langle z_{+}|z_{+}\rangle + e^{i\omega t/2}|z_{-}\rangle\langle z_{-}|z_{+}\rangle \\ 
+                 &amp; = e^{-i\omega t/2}|z_{+}\rangle, \\
+|z_{-}(t)\rangle &amp; = U_{t}^{\dagger}|z_{-}\rangle = e^{i\omega t/2}|z_{-}\rangle.
+\end{align}<p>Ou seja, estes autovetores só ganham uma fase global. Teremos assim que as probabilidades são constantes para medidas de $\sigma_{z}$:
+\begin{align}
+Pr(z_{+}(t)) &amp; = |\langle z_{+}(t)|n_{+}\rangle|^{2} = |e^{i\omega t/2}\langle z_{+}|n_{+}\rangle|^{2} = |\langle z_{+}|n_{+}\rangle|^{2} = Pr(z_{+}) = (1+\cos\theta)/2, \\ 
+Pr(z_{-}(t)) &amp; = 1-Pr(z_{+}(t)) = (1-\cos\theta)/2.
+\end{align}</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Componente-$x$:">Componente $x$:<a class="anchor-link" href="#Componente-$x$:">¶</a></h4>\begin{align}
+|x_{+}(t)\rangle &amp; = U_{t}^{\dagger}|x_{+}\rangle = (e^{-i\omega t/2}|z_{+}\rangle\langle z_{+}| + e^{i\omega t/2}|z_{-}\rangle\langle z_{-}|)(|z_{+}\rangle+|z_{-}\rangle)/\sqrt{2} \\
+&amp; = (e^{-i\omega t/2}|z_{+}\rangle + e^{i\omega t/2}|z_{-}\rangle)/\sqrt{2} = e^{-i\omega t/2}(|z_{+}\rangle + e^{i\omega t}|z_{-}\rangle)/\sqrt{2}, \\
+|x_{-}(t)\rangle &amp; = U_{t}^{\dagger}|x_{-}\rangle = e^{-i\omega t/2}(|z_{+}\rangle - e^{i\omega t}|z_{-}\rangle)/\sqrt{2}.
+\end{align}<p>As probabilidades serão:
+\begin{align}
+Pr(x_{+}(t)) &amp; = |\langle x_{+}(t)|n_{+}\rangle|^{2} \\ 
+&amp; = \left|e^{i\omega t/2}(\langle z_{+}| + e^{-i\omega t}\langle z_{-}|)(\cos(\theta/2)|z_{+}\rangle+e^{i\phi}\sin(\theta/2)|z_{-}\rangle)/\sqrt{2}\right|^{2} \\
+&amp; = \left|\cos(\theta/2) + e^{i(\phi-\omega t)}\sin(\theta/2)\right|^{2}/2 \\
+&amp; = (\cos^{2}(\theta/2) + \sin(\theta/2)\cos(\theta/2)(e^{i(\phi-\omega t)}+e^{-i(\phi-\omega t)}) + \sin^{2}(\theta/2))/2 \\
+&amp; = (1+\sin\theta\cos(\phi-\omega t))/2. \\
+Pr(x_{-}(t)) &amp; = 1-Pr(x_{+}(t)) = (1-\sin\theta\cos(\phi-\omega t))/2.
+\end{align}</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h4 id="Componente-$y$:">Componente $y$:<a class="anchor-link" href="#Componente-$y$:">¶</a></h4>\begin{align}
+|y_{+}(t)\rangle &amp; = U_{t}^{\dagger}|y_{+}\rangle = (e^{-i\omega t/2}|z_{+}\rangle\langle z_{+}| + e^{i\omega t/2}|z_{-}\rangle\langle z_{-}|)(|z_{+}\rangle+i|z_{-}\rangle)/\sqrt{2} \\
+&amp; = (e^{-i\omega t/2}|z_{+}\rangle + ie^{i\omega t/2}|z_{-}\rangle)/\sqrt{2} = e^{-i\omega t/2}(|z_{+}\rangle + ie^{i\omega t}|z_{-}\rangle)/\sqrt{2}, \\
+|y_{-}(t)\rangle &amp; = U_{t}^{\dagger}|y_{-}\rangle = e^{-i\omega t/2}(|z_{+}\rangle - ie^{i\omega t}|z_{-}\rangle)/\sqrt{2}.
+\end{align}<p>As probabilidades serão:
+\begin{align}
+Pr(y_{+}(t)) &amp; = |\langle y_{+}(t)|n_{+}\rangle|^{2} \\ 
+&amp; = \left|e^{i\omega t/2}(\langle z_{+}| - ie^{-i\omega t}\langle z_{-}|)(\cos(\theta/2)|z_{+}\rangle+e^{i\phi}\sin(\theta/2)|z_{-}\rangle)/\sqrt{2}\right|^{2} \\
+&amp; = \left|\cos(\theta/2) - ie^{i(\phi-\omega t)}\sin(\theta/2)\right|^{2}/2 \\ 
+&amp; = \left(\cos^{2}(\theta/2) + i\sin(\theta/2)\cos(\theta/2)(e^{-i(\phi-\omega t)}-e^{i(\phi-\omega t)})+\sin^{2}(\theta/2)\right)/2 \\
+&amp; = (1+\sin\theta\sin(\phi-\omega t))/2. \\
+Pr(y_{-}(t)) &amp; = 1-Pr(y_{+}(t)) = (1-\sin\theta\sin(\phi-\omega t))/2.
+\end{align}</p>
+<p>Obtivemos assim os mesmos resultados para as probabilidades que na RS. Os valores médios e desvios padrões são obtidos como na RS.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Precess%C3%A3o-de-spin-a-partir-da-equa%C3%A7%C3%A3o-de-Heisenberg">Precessão de spin a partir da equação de Heisenberg<a class="anchor-link" href="#Precess%C3%A3o-de-spin-a-partir-da-equa%C3%A7%C3%A3o-de-Heisenberg">¶</a></h3><p>Aqui usaremos a eq. de Heisenberg
+\begin{equation}
+i\hbar\partial_{t}O_{t}^{H}=[O_{t}^{H},H_{t}^{H}]+i\hbar\partial_{t}^{H}O_{t}^{S}.
+\end{equation}
+Nesse caso
+\begin{equation}
+\partial_{t}^{H}O_{t}^{S} = U_{t}^{\dagger}(\partial_{t}^{S}O_{t}^{S})U_{t}=U_{t}^{\dagger}(\mathbb{O})U_{t}=\mathbb{O},
+\end{equation}
+pois os observáveis considerados, $\{\sigma_{j}^{S}\}_{j=x,y,z}$, não dependem explicitamente do tempo. Usaremos também a relação de comutação geral entre matrizes de Pauli:
+\begin{equation}
+[\sigma_{j}^{S},\sigma_{k}^{S}]=2i\epsilon_{jkl}\sigma_{l}^{S} \therefore [\sigma_{j}^{H},\sigma_{k}^{H}]=2i\epsilon_{jkl}\sigma_{l}^{H}.
+\end{equation}
+Precisaremos também do Hamiltoniano
+\begin{equation}
+H_{t}^{H} = -\frac{\hbar\omega}{2}\sigma_{z}^{H}.
+\end{equation}</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Teremos assim que
+\begin{align}
+&amp; i\hbar\partial_{t}\sigma_{x}^{H}  = [\sigma_{x}^{H},H^{H}] =[\sigma_{x}^{H},-\frac{\hbar\omega}{2}\sigma_{z}^{H}] = -\frac{\hbar\omega}{2}2i\epsilon_{132}\sigma_{y}^{H} \\
+&amp; \Rightarrow \partial_{t}\sigma_{x}^{H} = \omega\sigma_{y}^{H}. \\
+&amp; i\hbar\partial_{t}\sigma_{y}^{H} = [\sigma_{y}^{H},H^{H}] =[\sigma_{y}^{H},-\frac{\hbar\omega}{2}\sigma_{z}^{H}] = -\frac{\hbar\omega}{2}2i\epsilon_{231}\sigma_{y}^{H} \\
+&amp; \Rightarrow \partial_{t}\sigma_{y}^{H} = -\omega\sigma_{x}^{H}. \\
+&amp; i\hbar\partial_{t}\sigma_{z}^{H} = [\sigma_{z}^{H},H^{H}] =[\sigma_{z}^{H},-\frac{\hbar\omega}{2}\sigma_{z}^{H}] = \mathbb{0} \\
+&amp; \Rightarrow \sigma_{z}^{H} = \sigma_{z}^{S}.
+\end{align}
+Uma possibilidade de solução é
+\begin{align}
+\sigma_{x}^{H} &amp;= \sigma_{x}^{S}\cos\omega t + \sigma_{y}^{S}\sin\omega t, \\
+\sigma_{y}^{H} &amp;= -\sigma_{x}^{S}\sin\omega t + \sigma_{y}^{S}\cos\omega t.
+\end{align}
+Ou, na forma matricial
+\begin{equation}
+\begin{bmatrix} \sigma_{x}^{H} \\ \sigma_{y}^{H} \end{bmatrix} = \begin{bmatrix} \cos\omega t &amp; \sin\omega t \\ -\sin\omega t &amp; \cos\omega t \end{bmatrix}\begin{bmatrix} \sigma_{x}^{S} \\ \sigma_{y}^{S} \end{bmatrix}.
+\end{equation}
+OBS. Note que a matriz que relaciona os "vetores de observáveis" é a matriz de rotação em $\mathbb{R}^{2}$.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Para obter os valores médios vamos usar:
+\begin{cases}
+\sigma_{x}|z_{+}\rangle = |z_{-}\rangle \text{, }\sigma_{x}|z_{-}\rangle = |z_{+}\rangle, \\
+\sigma_{y}|z_{+}\rangle = i|z_{-}\rangle \text{, }\sigma_{y}|z_{-}\rangle = -i|z_{+}\rangle, \\
+\sigma_{z}|z_{+}\rangle = |z_{+}\rangle \text{, }\sigma_{z}|z_{-}\rangle = -|z_{-}\rangle.
+\end{cases}
+Assim
+\begin{align}
+\langle\sigma_{x}\rangle_{n_{+}} &amp; = \langle n_{+}|\sigma_{x}|n_{+}\rangle \\
+&amp; = \langle n_{+}|\sigma_{x}(\cos(\theta/2)|z_{+}\rangle+e^{i\phi}\sin(\theta/2)|z_{-}\rangle) \\
+&amp; = (\cos(\theta/2)\langle z_{+}|+e^{-i\phi}\sin(\theta/2)\langle z_{-}|)(\cos(\theta/2)|z_{-}\rangle+e^{i\phi}\sin(\theta/2)|z_{+}\rangle) \\
+&amp; = \sin(\theta/2)\cos(\theta/2)(e^{i\phi}+e^{-i\phi}) \\
+&amp; = 2\sin(\theta/2)\cos(\theta/2)\cos\phi \\
+&amp; = \sin\theta\cos\phi, \\
+\langle\sigma_{y}\rangle_{n_{+}} &amp; = \langle n_{+}|\sigma_{y}|n_{+}\rangle \\
+&amp; = \langle n_{+}|\sigma_{y}(\cos(\theta/2)|z_{+}\rangle+e^{i\phi}\sin(\theta/2)|z_{-}\rangle) \\
+&amp; = (\cos(\theta/2)\langle z_{+}|+e^{-i\phi}\sin(\theta/2)\langle z_{-}|)(i\cos(\theta/2)|z_{-}\rangle-ie^{i\phi}\sin(\theta/2)|z_{+}\rangle) \\
+&amp; = -i\sin(\theta/2)\cos(\theta/2)(e^{i\phi}-e^{-i\phi}) \\
+&amp; = -i2\sin(\theta/2)\cos(\theta/2)i\sin\phi \\
+&amp; = \sin\theta\sin\phi, \\
+\langle\sigma_{z}\rangle_{n_{+}} &amp; = \langle n_{+}|\sigma_{z}|n_{+}\rangle \\
+&amp; = \langle n_{+}|\sigma_{z}(\cos(\theta/2)|z_{+}\rangle+e^{i\phi}\sin(\theta/2)|z_{-}\rangle) \\
+&amp; = (\cos(\theta/2)\langle z_{+}|+e^{-i\phi}\sin(\theta/2)\langle z_{-}|)(\cos(\theta/2)|z_{+}\rangle-e^{i\phi}\sin(\theta/2)|z_{-}\rangle) \\
+&amp; = \cos^{2}(\theta/2)-\sin^{2}(\theta/2) \\
+&amp; = \cos\theta.
+\end{align}</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Com isso obteremos:
+\begin{align}
+\langle\sigma_{x}(t)\rangle &amp; = \langle\psi_{0}^{S}|\sigma_{x}^{H}|\psi_{0}^{S}\rangle \\
+&amp; = \langle\psi_{0}^{S}|(\sigma_{x}^{S}\cos\omega t + \sigma_{y}^{S}\sin\omega t)|\psi_{0}^{S}\rangle \\ 
+&amp; = \langle\sigma_{x}^{S}\rangle_{n_{+}}\cos\omega t + \langle\sigma_{y}^{S}\rangle_{n_{+}}\sin\omega t \\
+&amp; = \sin\theta\cos\phi\cos\omega t + \sin\theta\sin\phi\sin\omega t \\
+&amp; = \sin\theta\cos(\phi+\omega t), \\
+\langle\sigma_{y}(t)\rangle &amp; = \langle\psi_{0}^{S}|\sigma_{y}^{H}|\psi_{0}^{S}\rangle \\
+&amp; = \langle\psi_{0}^{S}|(-\sigma_{x}^{S}\sin\omega t + \sigma_{y}^{S}\cos\omega t)|\psi_{0}^{S}\rangle \\ 
+&amp; = -\langle\sigma_{x}^{S}\rangle_{n_{+}}\sin\omega t + \langle\sigma_{y}^{S}\rangle_{n_{+}}\cos\omega t \\
+&amp; = -\sin\theta\cos\phi\sin\omega t + \sin\theta\sin\phi\cos\omega t \\
+&amp; = \sin\theta\sin(\phi+\omega t), \\
+\langle\sigma_{z}(t)\rangle &amp; = \langle\psi_{0}^{S}|\sigma_{z}^{H}|\psi_{0}^{S}\rangle \\
+&amp; = \langle\psi_{0}^{S}|\sigma_{z}^{S}|\psi_{0}^{S}\rangle \\ 
+&amp; = \cos\theta,
+\end{align}
+que são os mesmos resultados que obtivemos na RS.</p>
+<p>OBS. Vale mencionar que, na RH, se usamos as equações de Heisenberg, não obtemos as probabilidades, mas somente os valores médios.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Precess%C3%A3o-de-spin-para-$%5BH_t,H_%7Bt'%7D%5D=0$">Precessão de spin para $[H_t,H_{t'}]=0$<a class="anchor-link" href="#Precess%C3%A3o-de-spin-para-$%5BH_t,H_%7Bt'%7D%5D=0$">¶</a></h3><p>Vamos considerar um exemplo de sistema físico para o qual o operador hamiltoniano comuta em tempos diferentes, e que por conseguinte podemos utilizar a forma $U_t = e^{-\frac{i}{\hbar}\int_0^t H_{t'}dt'}$ para o operador de evolução temporal.</p>
+<p>Vamos considerar um quanton de spin 1/2 sujeito a um campo magnético constante no espaço mas dependente do tempo
+$$\vec{B}_t = B_t \hat{k}.$$
+Lembrando, o momento de dipolo magnético pode ser escrito como 
+$$\vec{\mu} = \frac{g q}{2m}\vec{S} = \frac{\hbar g q}{4m}\vec{\sigma}.$$
+Com isso, o hamiltoniano de interação do momento de dipolo magnético com o campo magnético é
+\begin{align}
+H_t &amp; = -\vec{\mu}\cdot\vec{B}_t = -\frac{\hbar g q}{4m}\vec{\sigma}\cdot B_t \hat{k} \\
+&amp; =: -\frac{\hbar\omega_t}{2}\sigma_z, 
+\end{align}
+em que definimos a frequência
+$$\omega_t := \frac{g qB_t}{2m}.$$
+Note que essa frequência depende da forma de $B_t$. Se este e.g. varia senoidalmente, a frequência também varia dessa forma. Se e.g. $B_t = B_0 t$, então a frequência aumentará linearmente com o tempo. Mas para as contas que faremos na sequência, não precisaremos especificar a forma da dependência do campo magnético com o tempo.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Começamos verificando que esse hamiltoniano comuta em tempos diferentes:
+\begin{align}
+[H_t,H_{t'}] &amp; = \big[-\frac{\hbar\omega_t}{2}\sigma_z,-\frac{\hbar\omega_{t'}}{2}\sigma_z\big] = \frac{\hbar^2 \omega_t\omega_{t'}}{4}[\sigma_z,\sigma_z] \\
+&amp; = 0.
+\end{align}</p>
+<p>Vimos que nesta situação o operador de evolução temporal 
+$$U_t = e^{-\frac{i}{\hbar}\int_{0}^{t}H_{t'}dt'}$$
+é solução da equação de Schrödiner
+$i\hbar\partial_t U_t = H_t U_t.$
+Com isso, vem que
+\begin{align}
+U_t &amp; = e^{-\frac{i}{\hbar}\int_{0}^{t}(-\hbar\omega_{t'}\sigma_z /2)dt'} = e^{i\big(\int_{0}^{t}\omega_{t'}dt'\big)\sigma_z /2} \\
+&amp; =: e^{if_t \sigma_z /2} \\
+&amp; = e^{if_t /2}|z_+\rangle\langle z_+| + e^{-if_t /2}|z_-\rangle\langle z_-|,
+\end{align}
+em que definimos a função escalar do tempo
+$$f_t := \int_{0}^{t}\omega_{t'}dt'.$$</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Com isso, começando com um estado de spin geral na direção $\hat{n}$, i.e., 
+$$|\psi_0\rangle = |n_+\rangle = \cos(\theta/2)|z_+\rangle + e^{i\phi}\sin(\theta/2)|z_-\rangle,$$
+teremos que o estado evoluído será dado por
+\begin{align}
+|\psi_t\rangle &amp; = U_t|\psi_0\rangle \\
+&amp; = \big(e^{if_t /2}|z_+\rangle\langle z_+| + e^{-if_t /2}|z_-\rangle\langle z_-|\big)\big(\cos(\theta/2)|z_+\rangle + e^{i\phi}\sin(\theta/2)|z_-\rangle\big) \\
+&amp; = e^{if_t /2}\cos(\theta/2)|z_+\rangle + e^{-if_t /2}e^{i\phi}\sin(\theta/2)|z_-\rangle \\
+&amp; = e^{if_t /2}\big(\cos(\theta/2)|z_+\rangle + e^{i(\phi-f_t)}\sin(\theta/2)|z_-\rangle\big) \\
+&amp; \equiv \cos(\theta/2)|z_+\rangle + e^{i(\phi-f_t)}\sin(\theta/2)|z_-\rangle,
+\end{align}
+em que desconsideramos a fase global $e^{if_t /2}$. Se usarmos a representação de estados quânticos de sistemas de 2 níveis na esfera de Bloch (isomorfismo $SU(2)\leftrightarrow SO(3)$), vemos que a representação deste estado em $\mathbb{R}^3$ precessa em torno da direção $z$ positiva, com o ângulo azimutal dado por
+$$\phi_t = \phi_0 - f_t.$$</p>
+<p>Por exemplo, se o campo magnético aumenta linearmente com o tempo,
+$$B_t = B_0 t,$$ 
+então 
+$$\omega_t = \frac{gqB_0}{2m}t=\omega_0 t$$
 e
-\begin{equation}
-\int db |b\rangle\langle b| = \mathbb{I}.
-\end{equation}</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Representa%C3%A7%C3%A3o-matricial-e-representa%C3%A7%C3%A3o-produto-externo">Representação matricial e representação produto externo<a class="anchor-link" href="#Representa%C3%A7%C3%A3o-matricial-e-representa%C3%A7%C3%A3o-produto-externo">¶</a></h3><p>Se compusermos um operador $A$ com o operador identidade, nada muda em relação à ação do primeiro, i.e.,
-\begin{align}
-A &amp; = \mathbb{I} A \mathbb{I} \\
-&amp; = \sum_{j=1}^{d} |b_{j}\rangle\langle b_{j}| A \sum_{k=1}^{d} |b_{k}\rangle\langle b_{k}| \\
-&amp; = \sum_{j,k=1}^{d} \langle b_{j}| A |b_{k}\rangle  |b_{j}\rangle\langle b_{k}| \\
-  &amp; = \sum_{j,k=1}^{d} A_{b_{j},b_{k}}  |b_{j}\rangle\langle b_{k}|,
-\end{align}
-onde 
-\begin{equation}
-A_{b_{j},b_{k}} = \langle b_{j}| A |b_{k}\rangle
-\end{equation}
-é a <strong>representação matricial</strong> do operador  $A$ na base $\{|b_{j}\rangle\}_{j=1}^{d}.$
-Quando um operador é escrito na forma $A=\sum_{j,k=1}^{d} A_{b_{j},b_{k}}  |b_{j}\rangle\langle b_{k}|$, dizemos que o escrevemos na <strong>forma produto externo</strong>.</p>
-<p>Se a base usada na relação de completeza for contínua, obteremos
-\begin{align}
-A &amp; = \mathbb{I} A \mathbb{I} \\
-&amp; = \int db |b\rangle\langle b| A \int db' |b'\rangle\langle b'| \\
-&amp; = \iint db db' \langle b| A  |b'\rangle |b\rangle\langle b'| \\
-  &amp; = \iint db db' A_{b,b'} |b\rangle\langle b'|.
-\end{align}</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Valor-m%C3%A9dio-de-um-observ%C3%A1vel-na-forma-%22sandu%C3%ADche%22">Valor médio de um observável na forma "sanduíche"<a class="anchor-link" href="#Valor-m%C3%A9dio-de-um-observ%C3%A1vel-na-forma-%22sandu%C3%ADche%22">¶</a></h3><p>Considera o valor médio do observável 
-$$A=\sum_{j=1}^{d} a_{j}  |a_{j}\rangle\langle a_{j}|$$
-para um sistema preparado no estado $|\psi\rangle$:
-\begin{align}
-\langle A\rangle_{\psi} &amp; = \sum_{j=1}^{d}a_{j}Pr(a_{j}|\psi) \\
-&amp; = \sum_{j=1}^{d}a_{j}|\langle a_{j}|\psi\rangle|^{2} \\
-&amp; = \sum_{j=1}^{d}a_{j} \langle a_{j}|\psi\rangle^{*}\langle a_{j}|\psi\rangle  \\
-                        &amp; = \sum_{j=1}^{d}a_{j} \langle \psi| a_{j}\rangle\langle a_{j}|\psi\rangle \\
-                        &amp; = \langle \psi|\left(\sum_{j=1}^{d}a_{j} | a_{j}\rangle\langle a_{j}|\right)|\psi\rangle  \\
-                        &amp; = \langle \psi|A|\psi\rangle.
-\end{align}</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Amplitudes-de-probabilidade-e-normaliza%C3%A7%C3%A3o">Amplitudes de probabilidade e normalização<a class="anchor-link" href="#Amplitudes-de-probabilidade-e-normaliza%C3%A7%C3%A3o">¶</a></h3><p>Os autovetores de um observável qualquer formam uma base ortogonal para pelo menos um sub-espaço do espaço de estados do sistema. Vamos assumir aqui que essa base é completa para todo esse espaço. É frequentemente útil escrevermos o estado do sistema imediatamente antes da medida, $|\psi\rangle$, como uma combinação linear dos autovetores do observável $O$ que vai ser medido:
-\begin{align}
-&amp; |\psi\rangle = \sum_{j=1}^{d} \psi_{o_{j}} |o_{j}\rangle \text{ no caso discreto} \\
-&amp; \text{ ou } |\psi\rangle = \int do \psi_{o} |o\rangle  \text{ no caso contínuo}.
-\end{align}</p>
-<p>Se colocarmos estes vetores de estado na regra de Born, veremos que a probabilidade de obsermos o valor $o_{j}$ é
-\begin{align}
-Pr(o_{j}|\psi) &amp; = |\langle o_{j}|\psi\rangle|^{2} \\
-&amp; = \left|\langle o_{j}|\sum_{k=1}^{d} \psi_{o_{k}} |o_{k}\rangle\right|^{2} \\
-&amp; = \left|\sum_{k=1}^{d} \psi_{o_{k}} \langle o_{j}|o_{k}\rangle\right|^{2} \\
-&amp; = \left|\sum_{k=1}^{d} \psi_{o_{k}} \delta_{jk} \right|^{2} \\
-&amp; = \left|\psi_{o_{j}}\right|^{2}.
-\end{align}
-Para espectros contínuos, obteremos a densidade de probabilidade
-\begin{align}
-\rho(o|\psi) &amp; = \left|\langle b|\psi\rangle\right|^{2} \\
-&amp; = \left|\langle b|\int db' \psi_{b'} |b'\rangle\right|^{2} \\
-&amp; = \left|\int db' \psi_{b'} \langle b|b'\rangle\right|^{2} \\
-&amp; = \left|\int db' \psi_{b'} \delta(b-b')\right|^{2} \\
-&amp; = \left|\psi_{b}\right|^{2}.
-\end{align}
-Com isso fica claro o motivo para chamarmos $\psi_{o_{j}}$ e $\psi_{o}$ de <strong>amplitudes de probabilidade</strong>, o módulo quadrado dessas quantidades é uma probabilidade e uma densidade de probabilidade, respectivamente.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Aqui também podemos ver o <strong>motivo</strong> para exigirmos que os vetores de estado sejam <strong>normalizados</strong>:
-\begin{align}
-||\psi||^{2} &amp; = \langle\psi|\psi\rangle \\
-&amp; = |\psi\rangle^\dagger |\psi\rangle \\
-&amp; = \sum_{j=1}^{d} \psi_{o_{j}}^{*} \langle o_{j}| \sum_{k=1}^{d} \psi_{o_{k}} |o_{k}\rangle \\
-&amp; = \sum_{j,k=1}^{d} \psi_{o_{j}}^{*}\psi_{o_{k}} \langle o_{j}|o_{k}\rangle \\
-&amp; = \sum_{j,k=1}^{d} \psi_{o_{j}}^{*}\psi_{o_{k}} \delta_{jk} \\ 
-&amp; = \sum_{j=1}^{d} |\psi_{o_{j}}|^2 \\
-&amp; = \sum_{j=1}^{d} Pr(o_{j}|\psi) \\
-&amp; := 1.
-\end{align}
-e
-\begin{align}
-||\psi||^{2} &amp; = \langle\psi|\psi\rangle \\
-&amp; = |\psi\rangle^\dagger |\psi\rangle \\
-&amp; = \int do \psi_{o}^{*} \langle o| \int do' \psi_{o'} |o'\rangle \\
-&amp; = \iint do do' \psi_{o}^{*}C_{o'} \langle o|o'\rangle \\
-&amp; = \iint do do' \psi_{o}^{*}\psi_{o'} \delta(o-o') \\
-             &amp; = \int do |\psi_{o}|^{2} \\
-             &amp; = \int do \rho(o|\psi) \\
-             &amp;:= 1.
-\end{align}</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Pulos-qu%C3%A2nticos">Pulos quânticos<a class="anchor-link" href="#Pulos-qu%C3%A2nticos">¶</a></h3><p>Como dito acima, quando medimos um observável $O$ e obtemos um dos seus possíveis valores, preparamos o sistema no vetor de estado igual ao autovetor correspondente ao valor obtido na medida. Ilustraremos esse efeito pelas equações:
-\begin{eqnarray}
-|\psi\rangle &amp; = &amp; \sum_{j=1}^{d} \psi_{o_{j}} |o_{j}\rangle \xrightarrow[]{\text{obtém } o_{k}} |o_{k}\rangle, \\
-|\psi\rangle &amp; = &amp; \int do \psi_{o} |o\rangle  \xrightarrow[]{\text{obtém } o'} |o'\rangle.
-\end{eqnarray}
-Em física clássica, estamos acostumados com mudanças contínuas de estado (de posições e velocidades, por exemplo). Na interpretação de Copenhaguem da MQ, pode ocorrer do sistema pular "instantaneamente" de uma configuração para outra que está a uma "distância finita" da primeira. Ou seja, não podemos traçar uma trajetória no espaço de estados quânticos para descrever o que ocorre durante o processo de medida.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Incompatibilidade-qu%C3%A2ntica">Incompatibilidade quântica<a class="anchor-link" href="#Incompatibilidade-qu%C3%A2ntica">¶</a></h2><h3 id="Teorema:"><strong>Teorema</strong>:<a class="anchor-link" href="#Teorema:">¶</a></h3><p>Dois operadores Hermitianos $A$ e $B$ compartilham o mesmo conjunto de autovetores se e somente se comutarem.</p>
-<h3 id="Prova:">Prova:<a class="anchor-link" href="#Prova:">¶</a></h3><p>Sejam 
-\begin{align}
-&amp; A = \sum_{j=1}^{d}a_{j}|\alpha_{j}\rangle\langle \alpha_{j}|,\\
-&amp; B = \sum_{j=1}^{d}b_{j}|\beta_{j}\rangle\langle \beta_{j}|,
-\end{align}
-com $d:=\dim\mathcal{H}$. Note que por causa da degenerescência, podemos ter e.g. $a_{1}=a_{2}$ ou e.g. $b_{2}=b_{3}=b_{4}$.</p>
-<p>Começamos assumindo que os dois operadores compartilham a mesma base de autovetores, i.e., 
-\begin{equation}
-|\alpha_{j}\rangle\equiv|\beta_{j}\rangle:=|j\rangle.
-\end{equation}
-Nesse caso podemos escrever as representações produto externo: $A = \sum_{j=1}^{d} a_{j}|j\rangle\langle j|$ e $B = \sum_{j=1}^{d} b_{j}|j\rangle\langle j|.$ O comutador é então
-\begin{align}
-[A,B] &amp; = AB - BA \\
-&amp; = \sum_{j=1}^{d} a_{j}|j\rangle\langle j|\sum_{k=1}^{d} b_{k}|k\rangle\langle k| - \sum_{k=1}^{d} b_{k}|k\rangle\langle k|\sum_{j=1}^{d} a_{j}|j\rangle\langle j| \\
-      &amp; = \sum_{j,k=1}^{d} a_{j}b_{k}|j\rangle\langle j|k\rangle\langle k| - \sum_{k,j=1}^{d} b_{k}a_{j}|k\rangle\langle k|j\rangle\langle j| \\
-      &amp; = \sum_{j,k=1}^{d} a_{j}b_{k}|j\rangle\langle k|\delta_{jk} - \sum_{k,j=1}^{d} b_{k}a_{j}|k\rangle\langle j|\delta_{jk} \\
-      &amp; = \sum_{j=1}^{d} a_{j}b_{j}|j\rangle\langle j| - \sum_{j=1}^{d} b_{j}a_{j}|j\rangle\langle j| = 0.
-\end{align}</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Seguindo com a segunda parte da prova, assumimos que os operadores comutam:
-\begin{equation}
-[A,B] = 0 \Rightarrow AB-BA=0 \Rightarrow AB=BA.
-\end{equation}
-Vem assim que, para $A|\alpha_{j}\rangle=\alpha_{j}|\alpha_{j}\rangle$, e $\forall j$:
-\begin{align}
-A(B|\alpha_{j}\rangle) &amp; = (AB)|\alpha_{j}\rangle \\
-&amp; = (BA)|\alpha_{j}\rangle \\
-&amp; = B(A|\alpha_{j}\rangle) \\
-&amp; = B (a_{j}|\alpha_{j}\rangle) \\
-              &amp; = a_{j}(B|\alpha_{j}\rangle). 
-\end{align}
-Ou seja, nesse caso devemos ter que $B|\alpha_{j}\rangle$ e $|\alpha_{j}\rangle$ são ambos autovetores de $A$ correspondentes ao mesmo autovalor $a_{j}$. Se $a_{j}$ é degenerado, existe um subespaço de $\mathcal{H}$ gerado pelos autovetores de $A$ correspondentes ao autovalor $a_{j}$; chamaremos esse subespaço de $\mathcal{H}_{j}$. Seja $\{|\alpha_{k}^{j}\rangle\}_{k=1}^{d_{j}}$ uma base qualquer de $\mathcal{H}_{j}$, com $d_{j}=\dim(\mathcal{H}_{j})$. Temos então que 
-$$A|\alpha_{k}^{j}\rangle=a_{j}|\alpha_{k}^{j}\rangle$$
-para $k=1,\cdots,d_{j}$.</p>
-<p>Além disso, $|\alpha_{j}\rangle\in\mathcal{H}_{j}$. Como $B|\alpha_{j}\rangle\in\mathcal{H}_{j}$, vemos que
-\begin{equation}
-B:\mathcal{H}_{j}\rightarrow \mathcal{H}_{j}.
-\end{equation}
-Como $B$ é um operador Hermitiano, existe uma base de $\mathcal{H}_{j}$ que o diagonaliza. Vamos assumir que essa base é $\{|\alpha_{k}^{j}\rangle\}_{k=1}^{d_{j}}$:
-\begin{equation}
-B|\alpha_{k}^{j}\rangle=b_{j}|\alpha_{k}^{j}\rangle
-\end{equation}
-com $j=1,\cdots,d_{j}$.
-Demonstramos com isso que $[A,B] = 0$ implica que $A$ e $B$ compartilham a mesma base de autovetores, concluindo assim a prova do teorema nesse caso.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Incompatibilidade-e-superposi%C3%A7%C3%A3o-qu%C3%A2ntica">Incompatibilidade e superposição quântica<a class="anchor-link" href="#Incompatibilidade-e-superposi%C3%A7%C3%A3o-qu%C3%A2ntica">¶</a></h3><p>Com a prova deste teorema, sabemos que se dois observáveis $A$ e $B$ de um sistema não comutam, eles não podem compartilhar todos os autovetores. Se, medindo o observável $A$, preparamos o sistema em um estado que não é autovetor do observável $B$, este vetor deve ser obrigatoriamente uma combinação linear dos autovetores de $B$ com duas ou mais amplitudes de probabilidade não nulas. Por exemplo, se $B|a_{3}\rangle$ não é proporcional a $|a_{3}\rangle$ teremos e.g.
-\begin{equation}
-|?\rangle \xrightarrow[\text{sai } a_{3}]{\text{mede } A} |a_{3}\rangle = \sqrt{1/4}|b_{2}\rangle +  \sqrt{3/4}|b_{5}\rangle  \xrightarrow[]{\text{mede } B} \text{sai }  b_{2} \text{ com prob. 1/4 ou } b_{5} \text{ com prob. 3/4}.
-\end{equation}</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Postulado-da-din%C3%A2mica">Postulado da dinâmica<a class="anchor-link" href="#Postulado-da-din%C3%A2mica">¶</a></h1><p>As mudanças de estados em MQ são descritas por uma transformação unitária:
-\begin{equation}
-|\psi_{t}\rangle = U_{t}|\psi_{0}\rangle,
-\end{equation}
-i.e., 
-$$U_{t}U_{t}^{\dagger}=U_{t}U_{t}^{\dagger}=\mathbb{I}.$$
-O operador de evolução temporal sendo obtido da <strong>equação de Schrödinger</strong>:
-\begin{equation}
-i\hbar\partial_{t} U_{t} = H_{t}U_{t},
-\end{equation}
-com a condição inicial 
-$$U_0=\mathbb{I},$$
-onde $H_{t}$ é o operador Hamiltoniano do sistema no instante de tempo $t$, $\hbar$ é a constante de Planck dividida por $2\pi$ e usamos a notação $\partial_{t} = \frac{\partial}{\partial_{t}}$.</p>
-<p><em>OBS.</em> As duas equações acima são equivalentes à equação de Schrödinger para o estado
-\begin{equation}
-i\hbar\partial_{t} |\psi_{t}\rangle = H_{t}|\psi_{t}\rangle.
-\end{equation}
-Verificamos esse resultado como segue: 
-\begin{align}
-i\hbar\partial_{t} |\psi_{t}\rangle &amp; = i\hbar\partial_{t}(U_{t}|\psi_{0}\rangle) \\
-&amp; = (i\hbar\partial_{t}U_{t})|\psi_{0}\rangle \\
-&amp; = H_{t}U_{t}|\psi_{0}\rangle \\
-                                    &amp; = H_{t}|\psi_{t}\rangle.
-\end{align}</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Solu%C3%A7%C3%A3o-para-$U_%7Bt%7D$-quando-$H_%7Bt%7D=H$">Solução para $U_{t}$ quando $H_{t}=H$<a class="anchor-link" href="#Solu%C3%A7%C3%A3o-para-$U_%7Bt%7D$-quando-$H_%7Bt%7D=H$">¶</a></h2><p>Nesse tipo de situação, i.e., quando o Hamiltoniano não depende do tempo, podemos verificar que a seguinte forma geral é válida:
-\begin{equation}
-U_{t} = e^{-iHt/\hbar}.
-\end{equation}
-Faremos isso primeiramente usando a decomposição espectral do Hamiltoniano, 
-$$H=\sum_{j}E_{j}|E_{j}\rangle\langle E_{j}|,$$
-e aplicando a função de operador:
-\begin{align}
-i\hbar\partial_{t} U_{t} &amp; = i\hbar\partial_{t}e^{-iHt/\hbar} \\
-&amp; = i\hbar\partial_{t}e^{\sum_{j}(-iE_{j}t/\hbar)|E_{j}\rangle\langle E_{j}|}\\ 
-&amp; = i\hbar\partial_{t}\sum_{j}e^{-iE_{j}t/\hbar}|E_{j}\rangle\langle E_{j}| \\ 
-&amp; = i\hbar\sum_{j}\partial_{t}e^{-iE_{j}t/\hbar}|E_{j}\rangle\langle E_{j}| \\
-&amp; = i\hbar\sum_{j}(-i/\hbar)E_{j}e^{-iE_{j}t/\hbar}|E_{j}\rangle\langle E_{j}| \\
-&amp; = \sum_{j}e^{-iE_{j}t/\hbar}E_{j}|E_{j}\rangle\langle E_{j}|  \\
-&amp; = \sum_{j}e^{-iE_{j}t/\hbar}H|E_{j}\rangle\langle E_{j}| \\
-&amp; = H\sum_{j}e^{-iE_{j}t/\hbar}|E_{j}\rangle\langle E_{j}|  \\
-&amp; = H U_{t},
-\end{align}
-em que usamos $H|E_j\rangle=E_j|E_j\rangle$.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Solu%C3%A7%C3%A3o-para-$U_%7Bt%7D$-quando-$%5BH_%7Bt%7D,H_%7Bt'%7D%5D=%5Cmathbb%7B0%7D$">Solução para $U_{t}$ quando $[H_{t},H_{t'}]=\mathbb{0}$<a class="anchor-link" href="#Solu%C3%A7%C3%A3o-para-$U_%7Bt%7D$-quando-$%5BH_%7Bt%7D,H_%7Bt'%7D%5D=%5Cmathbb%7B0%7D$">¶</a></h2><p>Vamos verificar que neste caso
-\begin{equation}
-U_{t} = e^{-\frac{i}{\hbar}\int_{0}^{t}H_{t'}dt'}
-\end{equation}
-é solução da equação de Schrödinger. Teremos
-\begin{align}
-i\hbar\partial_{t} U_{t} &amp; = i\hbar\partial_{t} e^{-\frac{i}{\hbar}\int_{0}^{t}H_{t'}dt'}  \\
-&amp; = i\hbar\partial_{t}\sum_{j=0}^{\infty}\frac{1}{j!}\left(-\frac{i}{\hbar}\int_{0}^{t}H_{t'}dt'\right)^{j} \\
-                         &amp; = i\hbar\partial_{t}\left[\mathbb{I} + \sum_{j=1}^{\infty}\frac{1}{j!}\left(-\frac{i}{\hbar}\int_{0}^{t}H_{t'}dt'\right)^{j}\right] \\
-                         &amp; = i\hbar\left[\mathbb{0} + \sum_{j=1}^{\infty}\frac{j}{j!}\left(-\frac{i}{\hbar}\int_{0}^{t}H_{t'}dt'\right)^{j-1}\partial_{t}\left(-\frac{i}{\hbar}\int_{0}^{t}H_{t'}dt'\right)\right] \\
-                         &amp; = i\hbar\frac{-i}{\hbar}\partial_{t}\left(\int_{0}^{t}H_{t'}dt'\right)\sum_{j=1}^{\infty}\frac{j}{j!}\left(-\frac{i}{\hbar}\int_{0}^{t}H_{t'}dt'\right)^{j-1},
-\end{align}
-No último passo usamos a comutatividade do Hamiltoniano em tempos diferentes.</p>
-<p>Seguindo, aplicando o teorema fundamental do cálculo e fazendo a mudança de variável $k=j-1$ obtemos
-\begin{align}
-i\hbar\partial_{t} U_{t} &amp; = H_{t}\sum_{k=0}^{\infty}\frac{(k+1)}{(k+1)!}\left(-\frac{i}{\hbar}\int_{0}^{t}H_{t'}dt'\right)^{k} \\
-&amp; = H_{t}\sum_{k=0}^{\infty}\frac{1}{k!}\left(-\frac{i}{\hbar}\int_{0}^{t}H_{t'}dt'\right)^{k} \\ 
-                         &amp; = H_{t}e^{-\frac{i}{\hbar}\int_{0}^{t}H_{t'}dt'} \\
-                         &amp; = H_{t}U_{t}.
-\end{align}</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Solu%C3%A7%C3%A3o-para-$U_%7Bt%7D$-quando-$%5BH_%7Bt%7D,H_%7Bt'%7D%5D%5Cne-0$">Solução para $U_{t}$ quando $[H_{t},H_{t'}]\ne 0$<a class="anchor-link" href="#Solu%C3%A7%C3%A3o-para-$U_%7Bt%7D$-quando-$%5BH_%7Bt%7D,H_%7Bt'%7D%5D%5Cne-0$">¶</a></h2><p>Neste caso geral, começamos reescrevendo a <strong>equação de Schrödinger na forma integral</strong>:
-\begin{align}
-&amp; \partial_{t}U_{t}=-(i/\hbar)H_{t}U_{t}, \\
-&amp; \therefore\ \int_{0}^{t}dt'\partial_{t'}U_{t'}=U_{t}-U_{0}=U_{t}-\mathbb{I}=-\frac{i}{\hbar}\int_{0}^{t}dt'H_{t'}U_{t'}, \\
-&amp; \therefore\ U_{t}=\mathbb{I}-\frac{i}{\hbar}\int_{0}^{t}dt'H_{t'}U_{t'}.
-\end{align}
-Note que o operador de evolução temporal em um certo instante de tempo $t$ depende da integral dele multiplicado pelo Hamiltoniano desde $t=0$ até $t$. Mas, como essa equação vale para qualquer instante de tempo, podemos <strong>substituir $U_{t}$ iterativamente</strong>:
-\begin{align}
-U_{t} &amp; = \mathbb{I}-\frac{i}{\hbar}\int_{0}^{t}dt'H_{t'}\left(\mathbb{I}-\frac{i}{\hbar}\int_{0}^{t'}dt''H_{t''}U_{t''}\right) \\
-&amp; = \mathbb{I} + \left(\frac{-i}{\hbar}\right)\int_{0}^{t}dt'H_{t'} + \left(\frac{-i}{\hbar}\right)^{2}\int_{0}^{t}dt'H_{t'}\int_{0}^{t'}dt''H_{t''}U_{t''} \\
-&amp; = \mathbb{I} + \left(\frac{-i}{\hbar}\right)\int_{0}^{t}dt'H_{t'} + \left(\frac{-i}{\hbar}\right)^{2}\int_{0}^{t}dt'H_{t'}\int_{0}^{t'}dt''H_{t''}  \\ 
-&amp; \hspace{0.5cm} + \left(\frac{-i}{\hbar}\right)^{3}\int_{0}^{t}dt'H_{t'}\int_{0}^{t'}dt''H_{t''}\int_{0}^{t''}dt'''H_{t'''}+\cdots \\
-&amp; = \mathbb{I} + \sum_{j=1}^{\infty}\left(\frac{-i}{\hbar}\right)^{j}\int_{0}^{t}dt_{1}H_{t_{1}}\int_{0}^{t_{1}}dt_{2}H_{t_{2}}\cdots\int_{0}^{t_{j-1}}dt_{j}H_{t_{j}} \\
-&amp; = \mathbb{I} + \sum_{j=1}^{\infty}\left(\frac{-i}{\hbar}\right)^{j}\int_{0}^{t}dt_{1}\int_{0}^{t_{1}}dt_{2}\cdots\int_{0}^{t_{j-1}}dt_{j}H_{t_{1}}H_{t_{2}}\cdots H_{t_{j}}, \hspace{1cm} (*)
-\end{align}
-que é chamada de <strong>série de Dyson</strong>. Note que 
-$$0 \le t_{j}\le t_{j-1}\le \cdots\le t'''\equiv t_{3}\le t''\equiv t_{2}\le t'\equiv t_{1}\le t.$$
-Ou seja, temos que ter ordenamento temporal.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Operador-de-ordenamento-temporal">Operador de ordenamento temporal<a class="anchor-link" href="#Operador-de-ordenamento-temporal">¶</a></h4><p>O operador de ordenamento temporal $\mathcal{T}$ é definido de forma que quando aplicado a um produto de operadores, este ordena esses operadores baseado na sua dependência temporal com segue:
-$$\mathcal{T}\big(H_{t_1}H_{t_2}\cdots H_{t_j}\big) = H_{t_{i_1}}H_{t_{i_2}}\cdots H_{t_{i_j}}$$
-com
-$$t_{i_1}\ge t_{i_2} \ge \cdots \ge t_{i_j}.$$
-Ou seja, $\mathcal{T}$ coloca operadores calculados em tempos maiores mais para a esquerda (eles atuam depois).</p>
-<p>Vamos considerar a integral da série de Dyson com somente dois hamiltonianos, i.e.,
-$$J_2 = \int_{0}^{t}dt_1 \int_{0}^{t_1}dt_2 H_{t_1}H_{t_2} \equiv \int_{0}^{t}dt_1 \int_{0}^{t_1}dt_2 \mathcal{T}\big(H_{t_1}H_{t_2}\big). \hspace{1cm} (\star)$$
-Na sequência, vamos tirar a dependência entre as variáveis de integração, fazendo com que todos os limites de integração variem de $0$ a $t$.</p>
-<img alt="No description has been provided for this image" src="fig_T_ordering.png" width="500"/>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>A região de integração da integral $J_2$ está mostrada na figura acima, da esquerda. Podemos obter o mesmo resultado para integral, i.e., percorrer a mesma área de parâmetros de integração, usando:
-$$J_2 = \int_{0}^{t}dt_2 \int_{t_2}^{t}dt_1 H_{t_1}H_{t_2}.$$
-Se trocarmos os limites de integração, obtemos
-$$J_2 = \int_{0}^{t}dt_1 \int_{t_1}^{t}dt_2 H_{t_2}H_{t_1} = \int_{0}^{t}dt_1 \int_{t_1}^{t}dt_2 \mathcal{T}\big(H_{t_1}H_{t_2}\big).  \hspace{1cm} (\star\star)$$</p>
-<p>Assim, das equações $(\star)$ e $(\star\star)$, obtemos
-\begin{align}
-J_2 &amp; = \frac{1}{2}\Big( \int_{0}^{t}dt_1 \int_{0}^{t_1}dt_2 \mathcal{T}\big(H_{t_1}H_{t_2}\big) + \int_{0}^{t}dt_1 \int_{t_1}^{t}dt_2 \mathcal{T}\big(H_{t_1}H_{t_2}\big)\Big) \\
-&amp; = \frac{1}{2}\int_{0}^{t}dt_1 \int_{0}^{t}dt_2 \mathcal{T}\big(H_{t_1}H_{t_2}\big),
-\end{align}
-desacoplando assim os limites de integração.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Para a integral que aparece na série de Dyson,
-$$J_j = \int_{0}^{t}dt_{1}\int_{0}^{t_{1}}dt_{2}\cdots\int_{0}^{t_{j-1}}dt_{j}H_{t_{1}}H_{t_{2}}\cdots H_{t_{j}},$$
-vemos que a integração é feita em uma região limitada por um hipercubo de dimensão $j$, com a região definida por
-$$t_j\ge t_{j-1}\ge\cdots\ge t_2\ge t_1.$$
-O volume dessa região é $1/j!$ do volume do hipercubo, o que nos permite desacoplar os limites de integração e obter
-$$J_j = \frac{1}{j!}\int_{0}^{t}dt_1\int_{0}^{t}dt_2\cdots\int_{0}^{t}dt_j\mathcal{T}\big(H_{t_1}H_{t_2}\cdots H_{t_j}\big).$$</p>
-<p>Substituindo esta expressão na <strong>série de Dyson</strong>, eq. ($*$), obteremos
-\begin{align}
-U_t &amp; = \mathbb{I} + \sum_{j=1}^{\infty}\left(\frac{-i}{\hbar}\right)^{j}\frac{1}{j!}\int_{0}^{t}dt_1\int_{0}^{t}dt_2\cdots\int_{0}^{t}dt_j\mathcal{T}\big(H_{t_1}H_{t_2}\cdots H_{t_j}\big) \\
-&amp; =: \mathcal{T}e^{-\frac{i}{\hbar}\int_{0}^{t}H_{t'}dt'}.
-\end{align}
-Note que esta última expressão, que é elegante e aparece com frequência na literatura, tem nela escondida toda a complicação da 1ª igualdade.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Vamos considerar o <strong>caso particular</strong> em que
-$$[H_t,H_{t'}]=0\ \forall\ t,t'.$$
-Nesse caso o ordenamento temporal não faz diferença, i.e.,
-$$\mathcal{T}\big(H_{t_1}H_{t_2}\cdots H_{t_j}\big)\equiv H_{t_1}H_{t_2}\cdots H_{t_j}.$$
-Assim, podemos escrever
-\begin{align}
-U_t &amp; = \mathbb{I} + \sum_{j=1}^{\infty}\left(\frac{-i}{\hbar}\right)^{j}\frac{1}{j!}\int_{0}^{t}dt_1 H_{t_1}\int_{0}^{t}dt_2 H_{t_2}\cdots\int_{0}^{t}dt_j H_{t_j} \\
-&amp; = \mathbb{I} + \sum_{j=1}^{\infty}\frac{1}{j!}\left(\frac{-i}{\hbar}\int_{0}^{t}dt' H_{t'}\right)^{j} \\
-&amp; = e^{-\frac{i}{\hbar}\int_{0}^{t}dt' H_{t'}},
-\end{align}
-que é o resultado particular esperado.</p>
+$$f_{t} = \int_{0}^{t}\omega_0 t'dt' = \frac{\omega_0 t^2}{2}.$$
+Assim
+$$\phi_t = \phi_0 - f_t = \phi_0 - \frac{\omega_0 t^2}{2}.$$</p>
 </div>
 </div>
 </div>
@@ -8013,22 +8490,94 @@ que é o resultado particular esperado.</p>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <hr/>
-<h1 id="Exerc%C3%ADcios">Exercícios<a class="anchor-link" href="#Exerc%C3%ADcios">¶</a></h1><p>$1.$ Considere um vetor qualquer $|\psi\rangle$ de um espaço de Hilbert $\mathcal{H}$. Decomponha $|\psi\rangle$ em termos de uma base ortonormal $\{|b_{j}\rangle\}_{j=1}^{\dim\mathcal{H}}$ de $\mathcal{H}$. Mostre que as componentes de $|\psi\rangle$ nessa base são dadas por $\langle b_{j}|\psi\rangle$. Use esse resultado para mostrar que o operador identidade em $\mathcal{H}$ pode ser escrito em termos da base $\{|b_{j}\rangle\}_{j=1}^{\dim\mathcal{H}}$ como segue: $\mathbb{I}=\sum_{j=1}^{\dim\mathcal{H}}|b_{j}\rangle\langle b_{j}|$.</p>
-<p>$2.$ Considere um sistema quântico de três níveis em que a ação do operador Hamiltoniano na base ortonormal $\{|1\rangle,|2\rangle,|3\rangle\}$ é
+<h1 id="Exerc%C3%ADcios">Exercícios<a class="anchor-link" href="#Exerc%C3%ADcios">¶</a></h1><p>$1.$ Verifique que um campo magnético $\vec{B} = \beta z\hat{k}$, com $\beta$ sendo uma constante real, não satisfaz a equação de Maxwell $\vec{\nabla}\cdot\vec{B}=0$. Verifique que $\vec{B}=\beta(x\hat{i}-z\hat{k})$ e $\vec{B}=\beta x\hat{i}+(\alpha-\beta z)\hat{k}$ satisfazem essa equação, com $\alpha$ sendo uma constante real.</p>
+<p>$2.$ Verifique que $|x_{\pm}\rangle = \sqrt{1/2}|z_{+}\rangle \pm \sqrt{1/2}|z_{-}\rangle$ e que eles formam uma base ortonormal. Verifique também que $|z_{+}\rangle = (1/\sqrt{2})(|y_{+}\rangle+|y_{-}\rangle)$, $|z_{-}\rangle = (-i/\sqrt{2})(|y_{+}\rangle-|y_{-}\rangle)$, $|y_{\pm}\rangle = ((1\pm i)/2)|x_{+}\rangle + ((1\mp i)/2)|x_{-}\rangle$ e $|x_{\pm}\rangle = ((1\mp i)/2)|y_{+}\rangle + ((1\pm i)/2)|y_{-}\rangle$.</p>
+<p>$3.$ Verifique que os autovalores de $\hat{n}\cdot\vec{\sigma} = \begin{bmatrix} \cos\theta &amp; e^{-i\phi}\sin\theta \\ e^{i\phi}\sin\theta &amp; -\cos\theta \end{bmatrix}$ são $n_{\pm}=\pm 1$ e que seus autovetores podem ser expressos como 
+$|n_{+}\rangle = \cos(\theta/2)|z_{+}\rangle + e^{i\phi}\sin(\theta/2)|z_{-}\rangle$ e $|n_{-}\rangle = \sin(\theta/2)|z_{+}\rangle - e^{i\phi}\cos(\theta/2)|z_{-}\rangle$.</p>
+<p>$4.$ Verifique que se multiplicarmos o estado do sistema por uma fase global, não modificamos as probabilidades, i.e., mostre que $Pr(o_{j}|\psi)=Pr(o_{j}|\phi)$ para $|\phi\rangle:=e^{i\xi}|\psi\rangle$ com $\xi\in\mathbb{R}.$</p>
+<p>$5.$ No contexto da descrição da precessão de spin na representação de Schrödinger, obtenha o estado evoluído, as probabilidades, os valores médios e os desvios padrões considerando um campo magnético constante aplicado na direção $x$, e com o spin 1/2 preparado inicialmente em um estado genérico $|n_{+}\rangle$. Verifique também que $R_{x}(-\omega t)\hat{n}_{0}=\hat{n}_{t}$ com $\hat{n}_{t}=\begin{bmatrix} \langle\sigma_{x}\rangle_{\psi_{t}} &amp; \langle\sigma_{y}\rangle_{\psi_{t}} &amp; \langle\sigma_{z}\rangle_{\psi_{t}} \end{bmatrix}^{T}$.</p>
+<p>$6.$ Verifique a relação de comutação geral entre matrizes de Pauli: $[\sigma_{j},\sigma_{k}]=2i\epsilon_{jkl}\sigma_{l}$.</p>
+<p>$7.$ Verifique que
 \begin{cases}
-H|1\rangle=a|1\rangle+a|3\rangle, \\
-H|2\rangle=a|2\rangle+b|3\rangle, \\
-H|3\rangle=a|1\rangle+b|2\rangle+a|3\rangle.
-\end{cases}
-Forneça a representação matricial de $H$ na base $\{|1\rangle,|2\rangle,|3\rangle\}$.</p>
-<p>$3.$ Mostre que os autovalores de um operador Hermitiano $A$ são números reais. Verifique que dois autovetores de $A$ correspondentes a autovalores diferentes são ortogonais.</p>
-<p>$4.$ Mostre que se usarmos a base de autovetores de um operador $A$ como base para representá-lo na forma de produto externo, teremos que $\langle a_{j} |A|a_{k}\rangle = a_{k}\delta_{jk}$ e $\langle a|A|a'\rangle = a\delta(a-a')$ e portanto que $A=\sum_{j=1}^{d} a_{j}  |a_{j}\rangle\langle a_{j}|$ e $A=\int da a |a\rangle\langle a|$.</p>
-<p>$5.$ Verifique que se $A$ for um observável com espectro contínuo, podemos escrever seu valor médio na forma: $\langle A\rangle_{\psi}=\langle\psi|A|\psi\rangle$.</p>
-<p>$6.$ Mostre que dois operadores Hermitianos $A$ e $B$ com espectro contínuo compartilham o mesmo conjunto de autovetores se e somente se comutarem.</p>
-<p>$7.$ Para $H_t=H$, verifique que a equação de Schrödinger $i\hbar\partial_{t}U_{t}=H_{t}U_{t}$ é satisfeita pelo operador de evolução temporal $U_{t}=e^{-iHt/\hbar}$ o expandindo em série de Taylor (e depois fazendo a derivada).</p>
-<p>$8.$ Verifique que se o Hamiltoniano for independe do tempo, então este comuta com o operador de evolução temporal, i.e., verifique que $[U_{t},H]=[e^{-iHt/\hbar},H]=0$.</p>
-<p>$9.$ Verifique que se o Hamiltoniano de um quanton puder ser escrito como $H_{t} = f_{t}V$, com $f_{t}$ sendo uma função escalar do tempo $t$ e $V$ um operador Hermitiano independente do tempo, então $[H_{t},H_{t'}]=\mathbb{0}$. Nesse caso, use decomposição espectral de $V=\sum_{j=1}^{\dim H}v_{j}|v_{j}\rangle\langle v_{j}|$ para verificar que $U_{t}=e^{-\frac{i}{\hbar}\int_{0}^{t}H_{t'}dt'}$ satisfaz a equação de Schrödinger $i\hbar\partial_{t}U_{t}=H_{t}U_{t}$.</p>
-<p>$10.$ Para $H_{t}=H$, verifique que a série de Dyson para $U_{t}$ é igual a série de Taylor para $e^{-iHt/\hbar}$.</p>
+\sigma_{x}|z_{+}\rangle = |z_{-}\rangle \text{, }\sigma_{x}|z_{-}\rangle = |z_{+}\rangle, \\
+\sigma_{y}|z_{+}\rangle = i|z_{-}\rangle \text{, }\sigma_{y}|z_{-}\rangle = -i|z_{+}\rangle, \\
+\sigma_{z}|z_{+}\rangle = |z_{+}\rangle \text{, }\sigma_{z}|z_{-}\rangle = -|z_{-}\rangle.
+\end{cases}</p>
+<p>$8.$ No contexto da descrição da precessão de spin na representação de Heisenberg,  calcule probabilidades e valores médios evoluídos no tempo nas direções $x,y,z$ considerando um campo magnético constante aplicado na direção $x$, e com o spin 1/2 preparado inicialmente em um estado genérico $|n_{+}\rangle$.</p>
+<p>$9.$ Para $H=-\frac{\hbar\omega}{2}\sigma_{x},$, obtenha $\langle\sigma_{x}(t)\rangle,\langle\sigma_{y}(t)\rangle,\langle\sigma_{x}(t)\rangle$ a partir da solução da equação de Heisenberg. Use $\langle\sigma_x(0)\rangle = \sin\theta\cos\phi$, $\langle\sigma_y(0)\rangle = \sin\theta\sin\phi$ e $\langle\sigma_z(0)\rangle = \cos\theta$.</p>
+<p>$10.$ As três componentes do momento angular de spin de uma partícula de spin $1$ são representadas pelos seguintes operadores Hermitianos:
+\begin{equation}
+S_{x} = \frac{\hbar}{\sqrt{2}}\begin{bmatrix} 0 &amp; 1 &amp; 0 \\ 1 &amp; 0 &amp; 1 \\ 0 &amp; 1 &amp; 0 \end{bmatrix}\text{, }
+S_{y} = \frac{\hbar}{\sqrt{2}}\begin{bmatrix} 0 &amp; -i &amp; 0 \\ i &amp; 0 &amp; -i \\ 0 &amp; i &amp; 0 \end{bmatrix}\text{, }
+S_{z} = \hbar\begin{bmatrix} 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; -1 \end{bmatrix}. \\
+\end{equation}
+Essas matrizes tem espectro de autovalores $-\hbar,0,+\hbar$. Os autovetores normalizados de $S_{x}$ são
+\begin{equation}
+|x_{-\hbar}\rangle = \frac{1}{2}\begin{bmatrix} 1 \\ -\sqrt{2} \\ 1 \end{bmatrix}\text{, }
+|x_{0}\rangle = \frac{1}{\sqrt{2}}\begin{bmatrix} -1 \\ 0 \\ 1 \end{bmatrix}\text{, }
+|x_{+\hbar}\rangle = \frac{1}{2}\begin{bmatrix} 1 \\ \sqrt{2} \\ 1 \end{bmatrix}.
+\end{equation}
+Dito que a componente do spin dessa partícula na direção $x$ foi medida e que foi obtido o valor $0$, calcule as probabilidades dos diferentes valores de $S_{z}$.</p>
+<p>$11.$ Dado que os autovetores de $S_{y}$ são
+\begin{equation}
+|y_{-\hbar}\rangle = \frac{1}{2}\begin{bmatrix} -1 \\ i\sqrt{2} \\ 1 \end{bmatrix}\text{, }
+|y_{0}\rangle = \frac{1}{\sqrt{2}}\begin{bmatrix} 1 \\ 0 \\ 1 \end{bmatrix}\text{, }
+|y_{+\hbar}\rangle = \frac{1}{2}\begin{bmatrix} -1 \\ -i\sqrt{2} \\ 1 \end{bmatrix},
+\end{equation}
+considere uma partícula de spin $1$ sujeita a um campo magnético constante na direção $z$ positiva e preparada inicialmente no estado $|y_{0}\rangle$. Calcule o estado evoluído no tempo, $|\psi_{t}\rangle$, e a probabilidade  $Pr(y_{0}|\psi_{t})$.</p>
+<p>$12.$ Considere uma partícula de spin $s=2$, cujas componentes são descritas pelas seguintes matrizes Hermitianas:
+\begin{equation}
+S_{x}=\frac{\hbar}{2}\begin{bmatrix} 0 &amp; 2 &amp; 0 &amp; 0 &amp; 0 \\ 2 &amp; 0 &amp; \sqrt{6} &amp; 0 &amp; 0 \\ 0 &amp; \sqrt{6} &amp; 0 &amp; \sqrt{6} &amp; 0 \\ 0 &amp; 0 &amp; \sqrt{6} &amp; 0 &amp; 2 \\ 0 &amp; 0 &amp; 0 &amp; 2 &amp; 0 \end{bmatrix} \text{, } S_{y}=\frac{\hbar}{2}\begin{bmatrix} 0 &amp; -2i &amp; 0 &amp; 0 &amp; 0 \\ 2i &amp; 0 &amp; -\sqrt{6}i &amp; 0 &amp; 0 \\ 0 &amp; \sqrt{6}i &amp; 0 &amp; -\sqrt{6}i &amp; 0 \\ 0 &amp; 0 &amp; \sqrt{6}i &amp; 0 &amp; -2i \\ 0 &amp; 0 &amp; 0 &amp; 2i &amp; 0 \end{bmatrix}\text{, } S_{z}=\hbar\begin{bmatrix} 2 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; -1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; -2 \end{bmatrix}.
+\end{equation}
+Considere que a componente $x$ desse spin foi medida e que se obteve o valor $2\hbar$, cujo autovetor correspondente é $|x_{2\hbar}\rangle=\begin{bmatrix} 1 &amp; 2 &amp; \sqrt{6} &amp; 2 &amp; 1 \end{bmatrix}^{T}/4$. Se a componente $z$ for medida na sequência, quais são as probabilidades para os seus possíveis valores?</p>
+<p>$13.$ Para os estados de polarização da luz (direções de oscilação do campo elétrico) teremos o análogo do que vimos para as componentes do momento magnético intrínseco de uma partícula de spin 1/2, i.e., a base ortonormal de autovetores de $\sigma_{z}$ é $\{|\leftrightarrow\rangle,|\updownarrow\rangle\}$ (polarizações horizontal e vertical), a base ortonormal de autovetores de $\sigma_{x}$ é $\{|\nearrow\rangle=(|\leftrightarrow\rangle+|\updownarrow\rangle)/\sqrt{2},|\nwarrow\rangle=(|\leftrightarrow\rangle-|\updownarrow\rangle)/\sqrt{2}\}$ (polarizações diagonal direita e diagonal esquerda) e a base ortonormal de autovetores de $\sigma_{y}$ é $\{|\circlearrowright\rangle=(|\leftrightarrow\rangle+i|\updownarrow\rangle)/\sqrt{2},|\circlearrowleft\rangle=(|\leftrightarrow\rangle-i|\updownarrow\rangle)/\sqrt{2}\}$ (polarizações circular direita e circular esquerda). Considere analisadores de polarização $P_{x},P_{y},P_{z}$, que fazem o processo de medida análogo ao feito pelos aparelhos de Stern-Gerlach $SG_{x},SG_{y},SG_{z}$, respectivamente. Calcule as probabilidades para os possíveis resultados das seguintes sequências de preparações e medidas:
+\begin{align}
+(a) \hspace{1cm} &amp; |\leftrightarrow\rangle \hspace{0.3cm} \underrightarrow{P_{z}} \hspace{0.3cm} |?\rangle \text{;}\\
+(b) \hspace{1cm} &amp; |\leftrightarrow\rangle \hspace{0.3cm} \underrightarrow{P_{z}} \hspace{0.3cm} |?\rangle \hspace{0.3cm} \underrightarrow{P_{x}} \hspace{0.3cm} |?\rangle \text{;} \\
+(c) \hspace{1cm} &amp; |\leftrightarrow\rangle \hspace{0.3cm} \underrightarrow{P_{z}} \hspace{0.3cm} |?\rangle \hspace{0.3cm} \underrightarrow{P_{x}} \hspace{0.3cm} |?\rangle \hspace{0.3cm} \underrightarrow{P_{y}} \hspace{0.3cm} |?\rangle.
+\end{align}</p>
+<p>$14.$ Se spins 3/2 vindos de um forno passam por um gradiente efetivo de campo magnético na direção $\hat{x}$ (lembre que nesse caso temos efetivamente $\langle\vec{F}\rangle=\langle(-\vec{\nabla}U)\rangle=\langle(-\vec{\nabla}(-\vec{\mu}\cdot\vec{B}))\rangle\propto \mu_x$), em quantas direções diferentes eles podem ser desviados? Se um desses spins foi desviado pra cima na direção $\hat{x}$ com o maior ângulo de desvio possível, em que estado quântico $|\psi\rangle$ esse spin foi preparado? Se fizermos esse spin, preparado inicialmente nesse estado $|\psi\rangle$, passar novamente por um gradiente efetivo de campo magnético na direção $\hat{x}$, qual será o estado $|\phi\rangle$ do spin depois da interação com o gradiente de campo magnético? Se fizermos o spin 3/2 preparado nesse estado $|\phi\rangle$ passar por um gradiente efetivo de campo magnético na direção $\hat{y}$, qual é a probabilidade do spin ter o maior ângulo possível de desvio nessa direção?</p>
+<p>$15.$ Considere o quanton de spin 3/2 sujeito a um campo magnético constante, no tempo e no espaço, na direção $\hat{z}$, o que efetivamente nos fornece um hamiltoniano $H=-\omega S_z$. Considere o spin 3/2 preparado inicialmente no estado $|\psi\rangle$ da questão $14$. Calcule o estado do spin 3/2 em um instante de tempo $t$ qualquer, seguindo a representação de Schrödinger da dinâmica quântica.</p>
+<p>$16.$ Considerando o mesmo hamiltoniano da questão $15$, na representação de Heisenberg, usando a equação de Heisenberg, calcule $S_x^H(t)$, $S_y^H(t)$ e $S_z^H(t)$. Dica: $[S_x^H,S_z^H]=-i\hbar S_y^H$, $[S_y^H,S_z^H]=i\hbar S_x^H$.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<hr/>
+<h1 id="Material-suplementar">Material suplementar<a class="anchor-link" href="#Material-suplementar">¶</a></h1><p>Para um spin $s$ qualquer, os operadores que descrevem as componentes $x$, $y$ e $z$ desse spin $\vec{S}$ tem os seguinte elementos não nulos
+\begin{align}
+&amp; S^x_{j,k} = 2^{-1}\hbar(\delta_{j,k+1}+\delta_{j+1,k})\sqrt{(s+1)(j+k-1)-jk}, \\
+&amp; S^y_{j,k} = 2^{-1}i\hbar(\delta_{j,k+1}-\delta_{j+1,k})\sqrt{(s+1)(j+k-1)-jk}, \\
+&amp; S^z_{j,k} = \hbar(s+1-j)\delta_{j,k} = \hbar(s+1-k)\delta_{j,k}, \\
+\end{align}
+com
+$$1\le j\le 2s+1,\ 1\le k\le 2s+1.$$</p>
+<p>Para $s=1/2$ temos
+$$S_x = \frac{\hbar}{2}\begin{bmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{bmatrix},\ S_y = \frac{\hbar}{2}\begin{bmatrix} 0 &amp; -i \\ i &amp; 0 \end{bmatrix},\ S_z = \frac{\hbar}{2}\begin{bmatrix} 1 &amp; 0 \\ 0 &amp; -1 \end{bmatrix}.$$</p>
+<p>Para $s=1$ temos
+$$S_x = \frac{\hbar}{2}\begin{bmatrix} 0 &amp; \sqrt{2} &amp; 0 \\ \sqrt{2} &amp; 0 &amp; \sqrt{2} \\ 0 &amp; \sqrt{2} &amp; 0 \end{bmatrix},\ S_y = \frac{\hbar}{2}\begin{bmatrix} 0 &amp; -i\sqrt{2} &amp; 0 \\ i\sqrt{2} &amp; 0 &amp; -i\sqrt{2} \\ 0 &amp; i\sqrt{2} &amp; 0 \end{bmatrix},\ S_z = \frac{\hbar}{2}\begin{bmatrix} 2 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; -2 \end{bmatrix}.$$</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Para $s=3/2$ temos
+$$S_x = \frac{\hbar}{2}\begin{bmatrix} 0 &amp; \sqrt{3} &amp; 0 &amp; 0 \\ \sqrt{3} &amp; 0 &amp; 2 &amp; 0 \\ 0 &amp; 2 &amp; 0 &amp; \sqrt{3} \\ 0 &amp; 0 &amp; \sqrt{3}&amp; 0 \end{bmatrix},\ S_y = \frac{\hbar}{2}\begin{bmatrix} 0 &amp; -i\sqrt{3} &amp; 0 &amp; 0 \\ i\sqrt{3} &amp; 0 &amp; -2i &amp; 0 \\ 0 &amp; 2i &amp; 0 &amp; -i\sqrt{3} \\ 0 &amp; 0 &amp; i\sqrt{3}&amp; 0 \end{bmatrix},\ S_z = \frac{\hbar}{2}\begin{bmatrix} 3 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; -1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; -3 \end{bmatrix}.$$</p>
+<p>Para $s=2$ temos
+$$S_x = \frac{\hbar}{2}\begin{bmatrix} 0 &amp; 2 &amp; 0 &amp; 0 &amp; 0 \\ 2 &amp; 0 &amp; \sqrt{6} &amp; 0 &amp; 0 \\ 0 &amp; \sqrt{6} &amp; 0 &amp; \sqrt{6} &amp; 0 \\ 0 &amp; 0 &amp; \sqrt{6} &amp; 0 &amp; 2 \\ 0 &amp; 0 &amp; 0 &amp; 2 &amp; 0 \end{bmatrix},\ S_y = \frac{\hbar}{2}\begin{bmatrix} 0 &amp; -2i &amp; 0 &amp; 0 &amp; 0 \\ 2i &amp; 0 &amp; -i\sqrt{6} &amp; 0 &amp; 0 \\ 0 &amp; i\sqrt{6} &amp; 0 &amp; -i\sqrt{6} &amp; 0 \\ 0 &amp; 0 &amp; i\sqrt{6} &amp; 0 &amp; -2i \\ 0 &amp; 0 &amp; 0 &amp; 2i &amp; 0 \end{bmatrix},\ S_z = \frac{\hbar}{2}\begin{bmatrix} 4 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 2 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; -2 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; -4 \end{bmatrix}.$$</p>
+<p>Para $s=5/2$ temos
+$$S_x = \frac{\hbar}{2}\begin{bmatrix} 0 &amp; \sqrt{5} &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ \sqrt{5} &amp; 0 &amp; 2\sqrt{2} &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 2\sqrt{2} &amp; 0 &amp; 3 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 3 &amp; 0 &amp; 2\sqrt{2} &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 2\sqrt{2} &amp; 0 &amp; \sqrt{5} \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; \sqrt{5} &amp; 0  \end{bmatrix},\ S_y = \frac{\hbar}{2}\begin{bmatrix} 0 &amp; -i\sqrt{5} &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ i\sqrt{5} &amp; 0 &amp; -2\sqrt{2}i &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; i2\sqrt{2} &amp; 0 &amp; -3i &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 3i &amp; 0 &amp; -2\sqrt{2}i &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 2\sqrt{2}i &amp; 0 &amp; -\sqrt{5}i \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; \sqrt{5}i &amp; 0 \end{bmatrix},\ S_z = \frac{\hbar}{2}\begin{bmatrix} 5 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 3 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; -1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; -3 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; -5 \end{bmatrix}.$$</p>
 </div>
 </div>
 </div>
@@ -8037,11 +8586,251 @@ Forneça a representação matricial de $H$ na base $\{|1\rangle,|2\rangle,|3\ra
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [53]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span> 
+<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">f_Sx</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">sqrt</span><span class="p">,</span> <span class="n">zeros</span>
+    <span class="n">hb</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">'hbar'</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">s</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span> <span class="n">Sx</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">d</span><span class="p">)</span><span class="c1">#; print(d,Sx)</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">d</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">d</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span>
+                <span class="n">Sx</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">hb</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">sqrt</span><span class="p">((</span><span class="n">s</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+            <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span>
+                <span class="n">Sx</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">hb</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">sqrt</span><span class="p">((</span><span class="n">s</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">Sx</span>
+
+<span class="k">def</span> <span class="nf">f_Sy</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">sqrt</span><span class="p">,</span> <span class="n">zeros</span>
+    <span class="n">hb</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">'hbar'</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">s</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span> <span class="n">Sy</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">d</span><span class="p">)</span><span class="c1">#; print(d,Sx)</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">d</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">d</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span>
+                <span class="n">Sy</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">hb</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">sqrt</span><span class="p">((</span><span class="n">s</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+            <span class="k">if</span> <span class="n">k</span> <span class="o">==</span> <span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span>
+                <span class="n">Sy</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="n">hb</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">sqrt</span><span class="p">((</span><span class="n">s</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">-</span><span class="p">(</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">Sy</span>
+
+<span class="k">def</span> <span class="nf">f_Sz</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+    <span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">symbols</span><span class="p">,</span> <span class="n">sqrt</span><span class="p">,</span> <span class="n">zeros</span>
+    <span class="n">hb</span> <span class="o">=</span> <span class="n">symbols</span><span class="p">(</span><span class="s1">'hbar'</span><span class="p">)</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">s</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span> <span class="n">Sz</span> <span class="o">=</span> <span class="n">zeros</span><span class="p">(</span><span class="n">d</span><span class="p">,</span><span class="n">d</span><span class="p">)</span><span class="c1">#; print(d,Sx)</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">d</span><span class="p">):</span>
+        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">d</span><span class="p">):</span>
+            <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="n">k</span><span class="p">:</span>
+                <span class="n">Sz</span><span class="p">[</span><span class="n">j</span><span class="p">,</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">hb</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="o">-</span><span class="n">j</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">Sz</span>
 </pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [55]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">init_printing</span><span class="p">,</span> <span class="n">cse</span>
+<span class="n">init_printing</span><span class="p">(</span><span class="n">use_unicode</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [57]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">Sx</span> <span class="o">=</span> <span class="n">f_Sx</span><span class="p">(</span><span class="n">s</span><span class="p">);</span> <span class="n">Sy</span> <span class="o">=</span> <span class="n">f_Sy</span><span class="p">(</span><span class="n">s</span><span class="p">);</span> <span class="n">Sz</span> <span class="o">=</span> <span class="n">f_Sz</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="n">Sx</span><span class="p">,</span> <span class="n">Sy</span><span class="p">,</span> <span class="n">Sz</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[57]:</div>
+<div class="jp-RenderedLatex jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/latex" tabindex="0">
+$\displaystyle \left( \left[\begin{matrix}0 &amp; 0.5 \hbar\\0.5 \hbar &amp; 0\end{matrix}\right], \  \left[\begin{matrix}0 &amp; - 0.5 i \hbar\\0.5 i \hbar &amp; 0\end{matrix}\right], \  \left[\begin{matrix}0.5 \hbar &amp; 0\\0 &amp; - 0.5 \hbar\end{matrix}\right]\right)$
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [59]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">Sx</span> <span class="o">=</span> <span class="n">f_Sx</span><span class="p">(</span><span class="n">s</span><span class="p">);</span> <span class="n">Sy</span> <span class="o">=</span> <span class="n">f_Sy</span><span class="p">(</span><span class="n">s</span><span class="p">);</span> <span class="n">Sz</span> <span class="o">=</span> <span class="n">f_Sz</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="n">Sx</span><span class="p">,</span> <span class="n">Sy</span><span class="p">,</span> <span class="n">Sz</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[59]:</div>
+<div class="jp-RenderedLatex jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/latex" tabindex="0">
+$\displaystyle \left( \left[\begin{matrix}0 &amp; \frac{\sqrt{2} \hbar}{2} &amp; 0\\\frac{\sqrt{2} \hbar}{2} &amp; 0 &amp; \frac{\sqrt{2} \hbar}{2}\\0 &amp; \frac{\sqrt{2} \hbar}{2} &amp; 0\end{matrix}\right], \  \left[\begin{matrix}0 &amp; - 0.5 \sqrt{2} i \hbar &amp; 0\\0.5 \sqrt{2} i \hbar &amp; 0 &amp; - 0.5 \sqrt{2} i \hbar\\0 &amp; 0.5 \sqrt{2} i \hbar &amp; 0\end{matrix}\right], \  \left[\begin{matrix}\hbar &amp; 0 &amp; 0\\0 &amp; 0 &amp; 0\\0 &amp; 0 &amp; - \hbar\end{matrix}\right]\right)$
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [61]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="mi">3</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">Sx</span> <span class="o">=</span> <span class="n">f_Sx</span><span class="p">(</span><span class="n">s</span><span class="p">);</span> <span class="n">Sy</span> <span class="o">=</span> <span class="n">f_Sy</span><span class="p">(</span><span class="n">s</span><span class="p">);</span> <span class="n">Sz</span> <span class="o">=</span> <span class="n">f_Sz</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="n">Sx</span><span class="p">,</span> <span class="n">Sy</span><span class="p">,</span> <span class="n">Sz</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[61]:</div>
+<div class="jp-RenderedLatex jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/latex" tabindex="0">
+$\displaystyle \left( \left[\begin{matrix}0 &amp; 0.866025403784439 \hbar &amp; 0 &amp; 0\\0.866025403784439 \hbar &amp; 0 &amp; 1.0 \hbar &amp; 0\\0 &amp; 1.0 \hbar &amp; 0 &amp; 0.866025403784439 \hbar\\0 &amp; 0 &amp; 0.866025403784439 \hbar &amp; 0\end{matrix}\right], \  \left[\begin{matrix}0 &amp; - 0.866025403784439 i \hbar &amp; 0 &amp; 0\\0.866025403784439 i \hbar &amp; 0 &amp; - 1.0 i \hbar &amp; 0\\0 &amp; 1.0 i \hbar &amp; 0 &amp; - 0.866025403784439 i \hbar\\0 &amp; 0 &amp; 0.866025403784439 i \hbar &amp; 0\end{matrix}\right], \  \left[\begin{matrix}1.5 \hbar &amp; 0 &amp; 0 &amp; 0\\0 &amp; 0.5 \hbar &amp; 0 &amp; 0\\0 &amp; 0 &amp; - 0.5 \hbar &amp; 0\\0 &amp; 0 &amp; 0 &amp; - 1.5 \hbar\end{matrix}\right]\right)$
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [63]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sympy</span> <span class="kn">import</span> <span class="n">sqrt</span>
+<span class="n">sqrt</span><span class="p">(</span><span class="mf">3.</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[63]:</div>
+<div class="jp-RenderedLatex jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/latex" tabindex="0">
+$\displaystyle 0.866025403784439$
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [65]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">Sx</span> <span class="o">=</span> <span class="n">f_Sx</span><span class="p">(</span><span class="n">s</span><span class="p">);</span> <span class="n">Sy</span> <span class="o">=</span> <span class="n">f_Sy</span><span class="p">(</span><span class="n">s</span><span class="p">);</span> <span class="n">Sz</span> <span class="o">=</span> <span class="n">f_Sz</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="n">Sx</span><span class="p">,</span> <span class="n">Sy</span><span class="p">,</span> <span class="n">Sz</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[65]:</div>
+<div class="jp-RenderedLatex jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/latex" tabindex="0">
+$\displaystyle \left( \left[\begin{matrix}0 &amp; \hbar &amp; 0 &amp; 0 &amp; 0\\\hbar &amp; 0 &amp; \frac{\sqrt{6} \hbar}{2} &amp; 0 &amp; 0\\0 &amp; \frac{\sqrt{6} \hbar}{2} &amp; 0 &amp; \frac{\sqrt{6} \hbar}{2} &amp; 0\\0 &amp; 0 &amp; \frac{\sqrt{6} \hbar}{2} &amp; 0 &amp; \hbar\\0 &amp; 0 &amp; 0 &amp; \hbar &amp; 0\end{matrix}\right], \  \left[\begin{matrix}0 &amp; - 1.0 i \hbar &amp; 0 &amp; 0 &amp; 0\\1.0 i \hbar &amp; 0 &amp; - 0.5 \sqrt{6} i \hbar &amp; 0 &amp; 0\\0 &amp; 0.5 \sqrt{6} i \hbar &amp; 0 &amp; - 0.5 \sqrt{6} i \hbar &amp; 0\\0 &amp; 0 &amp; 0.5 \sqrt{6} i \hbar &amp; 0 &amp; - 1.0 i \hbar\\0 &amp; 0 &amp; 0 &amp; 1.0 i \hbar &amp; 0\end{matrix}\right], \  \left[\begin{matrix}2 \hbar &amp; 0 &amp; 0 &amp; 0 &amp; 0\\0 &amp; \hbar &amp; 0 &amp; 0 &amp; 0\\0 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\0 &amp; 0 &amp; 0 &amp; - \hbar &amp; 0\\0 &amp; 0 &amp; 0 &amp; 0 &amp; - 2 \hbar\end{matrix}\right]\right)$
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [67]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="mi">5</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">Sx</span> <span class="o">=</span> <span class="n">f_Sx</span><span class="p">(</span><span class="n">s</span><span class="p">);</span> <span class="n">Sy</span> <span class="o">=</span> <span class="n">f_Sy</span><span class="p">(</span><span class="n">s</span><span class="p">);</span> <span class="n">Sz</span> <span class="o">=</span> <span class="n">f_Sz</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="n">Sx</span><span class="p">,</span> <span class="n">Sy</span><span class="p">,</span> <span class="n">Sz</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[67]:</div>
+<div class="jp-RenderedLatex jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/latex" tabindex="0">
+$\displaystyle \left( \left[\begin{matrix}0 &amp; 1.11803398874989 \hbar &amp; 0 &amp; 0 &amp; 0 &amp; 0\\1.11803398874989 \hbar &amp; 0 &amp; 1.4142135623731 \hbar &amp; 0 &amp; 0 &amp; 0\\0 &amp; 1.4142135623731 \hbar &amp; 0 &amp; 1.5 \hbar &amp; 0 &amp; 0\\0 &amp; 0 &amp; 1.5 \hbar &amp; 0 &amp; 1.4142135623731 \hbar &amp; 0\\0 &amp; 0 &amp; 0 &amp; 1.4142135623731 \hbar &amp; 0 &amp; 1.11803398874989 \hbar\\0 &amp; 0 &amp; 0 &amp; 0 &amp; 1.11803398874989 \hbar &amp; 0\end{matrix}\right], \  \left[\begin{matrix}0 &amp; - 1.11803398874989 i \hbar &amp; 0 &amp; 0 &amp; 0 &amp; 0\\1.11803398874989 i \hbar &amp; 0 &amp; - 1.4142135623731 i \hbar &amp; 0 &amp; 0 &amp; 0\\0 &amp; 1.4142135623731 i \hbar &amp; 0 &amp; - 1.5 i \hbar &amp; 0 &amp; 0\\0 &amp; 0 &amp; 1.5 i \hbar &amp; 0 &amp; - 1.4142135623731 i \hbar &amp; 0\\0 &amp; 0 &amp; 0 &amp; 1.4142135623731 i \hbar &amp; 0 &amp; - 1.11803398874989 i \hbar\\0 &amp; 0 &amp; 0 &amp; 0 &amp; 1.11803398874989 i \hbar &amp; 0\end{matrix}\right], \  \left[\begin{matrix}2.5 \hbar &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0\\0 &amp; 1.5 \hbar &amp; 0 &amp; 0 &amp; 0 &amp; 0\\0 &amp; 0 &amp; 0.5 \hbar &amp; 0 &amp; 0 &amp; 0\\0 &amp; 0 &amp; 0 &amp; - 0.5 \hbar &amp; 0 &amp; 0\\0 &amp; 0 &amp; 0 &amp; 0 &amp; - 1.5 \hbar &amp; 0\\0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; - 2.5 \hbar\end{matrix}\right]\right)$
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [69]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">sqrt</span><span class="p">(</span><span class="mf">5.</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">sqrt</span><span class="p">(</span><span class="mf">2.</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[69]:</div>
+<div class="jp-RenderedLatex jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/latex" tabindex="0">
+$\displaystyle \left( 1.11803398874989, \  1.4142135623731\right)$
 </div>
 </div>
 </div>
